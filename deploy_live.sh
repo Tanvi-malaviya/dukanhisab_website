@@ -50,16 +50,16 @@ echo -e "${GREEN}✓ Deployed commit:${NC} $COMMIT_HASH"
 
 # Step 2: Install / Update Dependencies
 echo -e "\n${YELLOW}[2/4] Installing project dependencies...${NC}"
-export NODE_ENV=production
 
 if [ -f "package-lock.json" ]; then
-    npm ci --prefer-offline --no-audit || npm install --no-audit
+    npm ci --include=dev --no-audit || npm install --include=dev --no-audit
 else
-    npm install --no-audit
+    npm install --include=dev --no-audit
 fi
 
 # Step 3: Build Next.js Application
 echo -e "\n${YELLOW}[3/4] Building Next.js production bundle...${NC}"
+rm -rf .next
 npm run build
 
 # Step 4: Reload or Start PM2 Process (Zero Downtime)
