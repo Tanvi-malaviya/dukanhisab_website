@@ -28,8 +28,8 @@ export default function CustomerSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-20">
           
           <div className="lg:col-span-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3">
-              <UsersIcon className="w-3.5 h-3.5 text-emerald-700" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider mb-3">
+              <UsersIcon className="w-3.5 h-3.5 text-teal-700" />
               Customer Relationship Memory
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
@@ -41,19 +41,19 @@ export default function CustomerSection() {
 
             <ul className="mt-6 space-y-3 text-sm text-slate-700">
               <li className="flex items-start gap-2.5">
-                <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-5 h-5 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center shrink-0 mt-0.5">
                   <CheckIcon className="w-3.5 h-3.5" />
                 </div>
                 <span><strong>Instant Outstanding Balance:</strong> Clear visibility of pending khata before issuing new goods.</span>
               </li>
               <li className="flex items-start gap-2.5">
-                <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-5 h-5 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center shrink-0 mt-0.5">
                   <CheckIcon className="w-3.5 h-3.5" />
                 </div>
                 <span><strong>Complete Transaction History:</strong> Every purchase, return, and payment receipt linked to their mobile number.</span>
               </li>
               <li className="flex items-start gap-2.5">
-                <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-5 h-5 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center shrink-0 mt-0.5">
                   <CheckIcon className="w-3.5 h-3.5" />
                 </div>
                 <span><strong>1-Click WhatsApp Payment Reminder:</strong> Send respectful, professional balance statements directly to their phone.</span>
@@ -67,7 +67,7 @@ export default function CustomerSection() {
               
               <div className="flex items-center justify-between pb-5 border-b border-slate-100">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-13 h-13 rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-700 text-white font-extrabold text-lg flex items-center justify-center shadow-md">
+                  <div className="w-13 h-13 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-700 text-white font-extrabold text-lg flex items-center justify-center shadow-md">
                     RP
                   </div>
                   <div>
@@ -75,7 +75,7 @@ export default function CustomerSection() {
                     <p className="text-xs text-slate-500 font-medium">+91 98765 43210 • Regular Customer</p>
                   </div>
                 </div>
-                <span className="text-xs font-bold px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-full">
+                <span className="text-xs font-bold px-2.5 py-1 bg-teal-100 text-teal-800 rounded-full">
                   Active Khata
                 </span>
               </div>
@@ -88,7 +88,7 @@ export default function CustomerSection() {
                 </div>
                 <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 text-center">
                   <span className="text-[11px] text-slate-500 font-medium">Total Paid</span>
-                  <p className="text-base font-extrabold text-emerald-600 mt-0.5">₹39,000</p>
+                  <p className="text-base font-extrabold text-teal-600 mt-0.5">₹39,000</p>
                 </div>
                 <div className="bg-amber-50 p-3 rounded-xl border border-amber-200 text-center">
                   <span className="text-[11px] text-amber-800 font-bold">Pending Khata</span>
@@ -104,7 +104,7 @@ export default function CustomerSection() {
                 </div>
                 <div className="flex justify-between">
                   <span className="font-medium">Saved Custom Pricing:</span>
-                  <span className="font-bold text-emerald-700">12 Products Configured</span>
+                  <span className="font-bold text-teal-700">12 Products Configured</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="font-medium">Credit Limit:</span>
@@ -114,7 +114,7 @@ export default function CustomerSection() {
 
               <div className="mt-4 pt-3 flex items-center justify-between text-xs">
                 <span className="text-slate-400">DukanHisab Customer Memory</span>
-                <span className="text-emerald-600 font-semibold flex items-center gap-1">
+                <span className="text-teal-600 font-semibold flex items-center gap-1">
                   View Full Statement →
                 </span>
               </div>
@@ -127,8 +127,8 @@ export default function CustomerSection() {
         {/* Section 11: Customer-Specific Pricing */}
         <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-xl">
           <div className="max-w-3xl mb-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-2">
-              <TagIcon className="w-3.5 h-3.5 text-emerald-700" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider mb-2">
+              <TagIcon className="w-3.5 h-3.5 text-teal-700" />
               Smart Pricing Engine
             </div>
             <h3 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -159,7 +159,7 @@ export default function CustomerSection() {
                 onClick={() => setSelectedTier("rahul")}
                 className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                   selectedTier === "rahul"
-                    ? "bg-emerald-600 text-white shadow-xs"
+                    ? "bg-teal-600 text-white shadow-xs"
                     : "text-slate-600 hover:text-slate-900"
                 }`}
               >
@@ -191,13 +191,13 @@ export default function CustomerSection() {
                       <td className="py-3.5 px-4 text-center font-medium text-slate-500">
                         ₹{prod.regularPrice}
                       </td>
-                      <td className="py-3.5 px-4 text-center font-bold text-emerald-600">
+                      <td className="py-3.5 px-4 text-center font-bold text-teal-600">
                         ₹{prod.customerPrice}
                       </td>
                       <td className="py-3.5 px-4 text-right">
                         <span className={`inline-block font-extrabold px-2.5 py-1 rounded-lg ${
                           selectedTier === "rahul" 
-                            ? "bg-emerald-100 text-emerald-900" 
+                            ? "bg-teal-100 text-teal-900" 
                             : "bg-slate-100 text-slate-900"
                         }`}>
                           ₹{applied}
@@ -212,10 +212,10 @@ export default function CustomerSection() {
                   <td colSpan="3" className="py-3.5 px-4 text-slate-700">
                     Grand Total for Counter Bill:
                   </td>
-                  <td className="py-3.5 px-4 text-right text-base text-emerald-700 font-extrabold">
+                  <td className="py-3.5 px-4 text-right text-base text-teal-700 font-extrabold">
                     ₹{totalBill}
                     {selectedTier === "rahul" && (
-                      <span className="block text-[10px] text-emerald-600 font-semibold">
+                      <span className="block text-[10px] text-teal-600 font-semibold">
                         (₹{totalSavings} saved via custom pricing)
                       </span>
                     )}
@@ -226,7 +226,7 @@ export default function CustomerSection() {
           </div>
 
           <p className="mt-4 text-xs text-slate-500 flex items-center gap-1.5">
-            <CheckIcon className="w-4 h-4 text-emerald-600" />
+            <CheckIcon className="w-4 h-4 text-teal-600" />
             No manual discount calculations or remembering separate price lists on sticky notes.
           </p>
 

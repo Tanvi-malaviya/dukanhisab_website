@@ -55,7 +55,7 @@ export default function ReturnsSection() {
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
-              <ReceiptIcon className="w-4 h-4 text-emerald-600" />
+              <ReceiptIcon className="w-4 h-4 text-teal-600" />
               <span>Sale Return (Customer Return)</span>
             </button>
             <button
@@ -83,7 +83,7 @@ export default function ReturnsSection() {
                 {returnType === "sale" ? "Customer Sale Return Flow" : "Supplier Purchase Return Flow"}
               </h3>
             </div>
-            <span className="text-xs font-mono font-semibold bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full">
+            <span className="text-xs font-mono font-semibold bg-teal-100 text-teal-800 px-3 py-1 rounded-full">
               Zero Stock Desync
             </span>
           </div>
@@ -92,13 +92,13 @@ export default function ReturnsSection() {
             {currentSteps.map((st, i) => (
               <div
                 key={st.title}
-                className="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs hover:border-emerald-300 transition-all"
+                className="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs hover:border-teal-300 transition-all"
               >
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-[10px] font-mono font-bold bg-slate-100 text-slate-600 px-2 py-0.5 rounded">
                     STAGE 0{i + 1}
                   </span>
-                  <CheckIcon className="w-3.5 h-3.5 text-emerald-600" />
+                  <CheckIcon className="w-3.5 h-3.5 text-teal-600" />
                 </div>
                 <h4 className="text-sm font-bold text-slate-900">{st.title}</h4>
                 <p className="text-xs text-slate-600 mt-1 leading-relaxed">{st.desc}</p>
@@ -110,7 +110,7 @@ export default function ReturnsSection() {
             <span className="font-semibold text-slate-800">
               ✓ Stock and Khata automatically sync in both directions.
             </span>
-            <span className="text-emerald-700 font-bold">
+            <span className="text-teal-700 font-bold">
               Original invoices remain audit-compliant.
             </span>
           </div>

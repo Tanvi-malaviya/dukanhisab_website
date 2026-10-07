@@ -39,7 +39,7 @@ export default function FAQSection() {
         
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">
+          <span className="text-xs font-bold uppercase tracking-wider text-teal-700 bg-teal-100 px-3 py-1 rounded-full">
             Frequently Asked Questions
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mt-3">
@@ -68,7 +68,7 @@ export default function FAQSection() {
                     {faq.q}
                   </span>
                   <div className={`w-7 h-7 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 transition-transform ${
-                    isOpen ? "rotate-180 bg-emerald-600 text-white border-emerald-600" : "text-slate-500"
+                    isOpen ? "rotate-180 bg-teal-600 text-white border-teal-600" : "text-slate-500"
                   }`}>
                     <ChevronDownIcon className="w-4 h-4" />
                   </div>

@@ -43,7 +43,7 @@ export default function SupplierSection() {
                 </div>
                 <div className="bg-white p-3 rounded-xl border border-slate-200 text-center shadow-xs">
                   <span className="text-[11px] text-slate-500 font-medium">Amount Paid</span>
-                  <p className="text-base font-extrabold text-emerald-600 mt-0.5">₹98,000</p>
+                  <p className="text-base font-extrabold text-teal-600 mt-0.5">₹98,000</p>
                 </div>
                 <div className="bg-rose-50 p-3 rounded-xl border border-rose-200 text-center shadow-xs">
                   <span className="text-[11px] text-rose-800 font-bold">To Pay</span>
@@ -68,7 +68,7 @@ export default function SupplierSection() {
                     <div className="text-right">
                       <span className="font-extrabold text-slate-900">₹{b.amount.toLocaleString()}</span>
                       <span className={`block text-[10px] font-semibold ${
-                        b.status.includes("Pending") ? "text-rose-600" : "text-emerald-600"
+                        b.status.includes("Pending") ? "text-rose-600" : "text-teal-600"
                       }`}>
                         {b.status}
                       </span>

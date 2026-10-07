@@ -90,15 +90,15 @@ export default function InteractiveShopSimulator() {
   return (
     <section id="interactive-demo" className="py-20 lg:py-28 bg-slate-900 text-white relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-600/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-teal-600/20 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-600/20 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950 border border-emerald-700/60 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-3">
-            <SparklesIcon className="w-3.5 h-3.5 text-emerald-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-950 border border-teal-700/60 text-teal-400 text-xs font-bold uppercase tracking-wider mb-3">
+            <SparklesIcon className="w-3.5 h-3.5 text-teal-400" />
             Interactive Simulator
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
@@ -121,9 +121,9 @@ export default function InteractiveShopSimulator() {
                   onClick={() => setCurrentStep(s.stepNumber)}
                   className={`flex flex-col items-center p-2 rounded-xl border transition-all text-center ${
                     isCurrent
-                      ? "bg-emerald-600 border-emerald-400 shadow-lg shadow-emerald-900/60 scale-105"
+                      ? "bg-teal-600 border-teal-400 shadow-lg shadow-teal-900/60 scale-105"
                       : isPast
-                      ? "bg-slate-800/90 border-emerald-600/60 text-emerald-400"
+                      ? "bg-slate-800/90 border-teal-600/60 text-teal-400"
                       : "bg-slate-800/40 border-slate-700/60 text-slate-400 hover:border-slate-600"
                   }`}
                 >
@@ -142,7 +142,7 @@ export default function InteractiveShopSimulator() {
           
           <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-700/80">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+              <span className="text-xs font-bold uppercase tracking-wider text-teal-400">
                 Step {current.stepNumber} of 7
               </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
@@ -173,29 +173,29 @@ export default function InteractiveShopSimulator() {
                   {current.actionDesc}
                 </p>
               </div>
-              <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs font-semibold text-emerald-400">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs font-semibold text-teal-400">
+                <span className="w-2 h-2 rounded-full bg-teal-400 animate-ping"></span>
                 <span>{current.metricHighlight}</span>
               </div>
             </div>
 
             {/* DukanHisab Automatic Link */}
-            <div className="bg-gradient-to-br from-emerald-950/90 to-slate-900 rounded-2xl p-6 border border-emerald-700/50 flex flex-col justify-between">
+            <div className="bg-gradient-to-br from-teal-950/90 to-slate-900 rounded-2xl p-6 border border-teal-700/50 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-emerald-400 uppercase tracking-wide">
+                  <span className="text-xs font-bold text-teal-400 uppercase tracking-wide">
                     What DukanHisab Connects
                   </span>
-                  <span className="text-[10px] bg-emerald-900/80 text-emerald-200 px-2 py-0.5 rounded font-mono">
+                  <span className="text-[10px] bg-teal-900/80 text-teal-200 px-2 py-0.5 rounded font-mono">
                     Instant Memory
                   </span>
                 </div>
-                <p className="mt-3 text-sm sm:text-base font-mono text-emerald-200 leading-relaxed">
+                <p className="mt-3 text-sm sm:text-base font-mono text-teal-200 leading-relaxed">
                   "{current.systemRecord}"
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-emerald-900/80 flex items-center justify-between text-xs text-slate-300">
+              <div className="mt-6 pt-4 border-t border-teal-900/80 flex items-center justify-between text-xs text-slate-300">
                 <span>Manual duplicate ledger entry:</span>
                 <span className="font-bold text-rose-400 line-through">Not needed</span>
               </div>
@@ -204,36 +204,36 @@ export default function InteractiveShopSimulator() {
 
           {/* If Step 7: Show Full Reconciled Summary */}
           {currentStep === 7 && (
-            <div className="mb-8 p-6 bg-emerald-950/70 border border-emerald-500/80 rounded-2xl">
+            <div className="mb-8 p-6 bg-teal-950/70 border border-teal-500/80 rounded-2xl">
               <div className="text-center mb-5">
                 <h4 className="text-xl sm:text-2xl font-black text-white">
                   That's DukanHisab.
                 </h4>
-                <p className="text-sm text-emerald-200 mt-1">
+                <p className="text-sm text-teal-200 mt-1">
                   At 9:30 PM, your day's tally is 100% accounted for without sitting with 4 different notebooks.
                 </p>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 text-center">
-                <div className="bg-slate-900/80 p-3 rounded-xl border border-emerald-800/60">
+                <div className="bg-slate-900/80 p-3 rounded-xl border border-teal-800/60">
                   <span className="text-[11px] text-slate-400 font-medium">Today's Sales</span>
                   <p className="text-base font-extrabold text-white mt-1">₹2,400</p>
                 </div>
-                <div className="bg-slate-900/80 p-3 rounded-xl border border-emerald-800/60">
+                <div className="bg-slate-900/80 p-3 rounded-xl border border-teal-800/60">
                   <span className="text-[11px] text-slate-400 font-medium">Purchases</span>
                   <p className="text-base font-extrabold text-white mt-1">₹22,000</p>
                 </div>
-                <div className="bg-slate-900/80 p-3 rounded-xl border border-emerald-800/60">
+                <div className="bg-slate-900/80 p-3 rounded-xl border border-teal-800/60">
                   <span className="text-[11px] text-slate-400 font-medium">Items Sold</span>
                   <p className="text-base font-extrabold text-white mt-1">2 Bags</p>
                 </div>
-                <div className="bg-slate-900/80 p-3 rounded-xl border border-emerald-800/60">
+                <div className="bg-slate-900/80 p-3 rounded-xl border border-teal-800/60">
                   <span className="text-[11px] text-slate-400 font-medium">Cash Received</span>
-                  <p className="text-base font-extrabold text-emerald-400 mt-1">₹2,400</p>
+                  <p className="text-base font-extrabold text-teal-400 mt-1">₹2,400</p>
                 </div>
-                <div className="col-span-2 sm:col-span-1 bg-slate-900/80 p-3 rounded-xl border border-emerald-800/60">
+                <div className="col-span-2 sm:col-span-1 bg-slate-900/80 p-3 rounded-xl border border-teal-800/60">
                   <span className="text-[11px] text-slate-400 font-medium">Inventory</span>
-                  <p className="text-base font-extrabold text-emerald-400 mt-1">Updated ✓</p>
+                  <p className="text-base font-extrabold text-teal-400 mt-1">Updated ✓</p>
                 </div>
               </div>
             </div>
@@ -250,7 +250,7 @@ export default function InteractiveShopSimulator() {
             {currentStep < 7 ? (
               <button
                 onClick={handleNext}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-emerald-900/50 transition-all active:scale-95"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-teal-600 hover:bg-teal-500 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-teal-900/50 transition-all active:scale-95"
               >
                 <span>Simulate Next Step ({steps[currentStep].title})</span>
                 <ArrowRightIcon className="w-4 h-4" />
@@ -258,7 +258,7 @@ export default function InteractiveShopSimulator() {
             ) : (
               <button
                 onClick={handleReset}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-emerald-900/50 transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-500 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-teal-900/50 transition-all"
               >
                 <RotateCcwIcon className="w-4 h-4" />
                 <span>Restart Shop Simulator</span>

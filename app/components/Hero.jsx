@@ -1,332 +1,1406 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { 
   BarcodeIcon, 
-  SmartphoneIcon, 
   ReceiptIcon, 
   RupeeIcon, 
   UsersIcon, 
-  PackageIcon, 
+  TruckIcon,
+  WalletIcon,
+  LandmarkIcon,
+  WhatsAppIcon,
+  PrinterIcon,
   ArrowRightIcon, 
   PlayIcon,
   CheckIcon,
   SparklesIcon,
-  StoreIcon
+  StoreIcon,
+  SearchIcon,
+  ShieldCheckIcon,
+  GooglePlayIcon,
+  MonitorIcon
 } from "./Icons";
 
-export default function Hero() {
-  const [activeCard, setActiveCard] = useState(0);
+// Real Multi-Language translations (from C:\xampp\htdocs\Dukanhisab\lang)
+const translations = {
+  en: {
+    hero_pill: "Every Sale. Every Purchase. Every Rupee. Remembered.",
+    hero_title_1: "Your Shop Has a ",
+    hero_title_accent: "Memory.",
+    hero_subtitle: "DukanHisab remembers every sale, purchase, payment, product, customer and expense — all in one connected system.",
+    hero_note: "Run your everyday shop from the app. Understand your complete business from the web panel.",
+    cta_primary: "Explore DukanHisab",
+    cta_secondary: "See How It Works",
+    tag_1: "No accounting jargon",
+    tag_2: "Lightning-fast barcode billing",
+    tag_3: "Works on any phone & PC",
+    sales_pos: "Sales (POS)",
+    dashboard: "Dashboard",
+    cashbook: "Cashbook (Galla)",
+    customers: "Customer Khata",
+    today_sales: "Today's Sales",
+    today_purchases: "Purchases",
+    cash_balance: "Cash In Hand",
+    bank_balance: "Bank Balance",
+    customer_due: "Customer Due",
+    supplier_due: "Supplier Due",
+    search_placeholder: "Search item or category...",
+    scan_placeholder: "Scan barcode #...",
+    cart_title: "Live Billing Cart",
+    walk_in: "Walk-in Cash Customer",
+    cust_price: "Cust Rate",
+    low_stock: "Low Stock",
+    payment_mode: "Payment Mode",
+    cash: "Cash",
+    upi: "UPI / QR",
+    khata: "Udhar (Khata)",
+    print_bill: "Generate Bill & Print",
+    whatsapp_bill: "Send WhatsApp Bill",
+    subtotal: "Subtotal",
+    tax_gst: "GST (5%)",
+    grand_total: "Grand Total",
+    clear_cart: "Clear All",
+  },
+  gu: {
+    hero_pill: "દરેક વેચાણ. દરેક ખરીદી. દરેક રૂપિયો. હંમેશા યાદ.",
+    hero_title_1: "તમારી દુકાન પાસે એક ",
+    hero_title_accent: "મેમરી છે.",
+    hero_subtitle: "દુકાનહિસાબ દરેક વેચાણ, ખરીદી, ચુકવણી, પ્રોડક્ટ, ગ્રાહક અને ખર્ચ એક જ કનેક્ટેડ સિસ્ટમમાં સાચવે છે.",
+    hero_note: "મોબાઇલ એપથી રોજિંદી દુકાન ચલાવો. વેબ પેનલથી આખા ધંધાનો નફો-નુકસાન સમજો.",
+    cta_primary: "દુકાનહિસાબ જુઓ",
+    cta_secondary: "કેવી રીતે કામ કરે છે",
+    tag_1: "કોઈ અઘરા એકાઉન્ટિંગ શબ્દો નહીં",
+    tag_2: "સુપરફાસ્ટ બારકોડ બિલિંગ",
+    tag_3: "કોઈપણ ફોન અને કમ્પ્યુટર પર ચાલે",
+    sales_pos: "સેલ્સ POS બિલિંગ",
+    dashboard: "ડેશબોર્ડ",
+    cashbook: "દુકાન ગલ્લો (કેશબુક)",
+    customers: "ગ્રાહક ખાતાવહી (ઉધાર)",
+    today_sales: "આજનું વેચાણ",
+    today_purchases: "આજની ખરીદી",
+    cash_balance: "ગલ્લામાં રોકડ",
+    bank_balance: "બેંક સિલક",
+    customer_due: "ગ્રાહક પાસેથી બાકી",
+    supplier_due: "વેપારીને બાકી",
+    search_placeholder: "સામાન શોધો...",
+    scan_placeholder: "બારકોડ સ્કેન કરો...",
+    cart_title: "બિલિંગ કાર્ટ",
+    walk_in: "રોકડ ખરીદનાર ગ્રાહક",
+    cust_price: "ખાસ ભાવ",
+    low_stock: "ઓછો સ્ટોક",
+    payment_mode: "ચૂકવણી મોડ",
+    cash: "રોકડ (Cash)",
+    upi: "UPI / QR કોડ",
+    khata: "ખાતામાં ઉધાર",
+    print_bill: "બિલ બનાવો & પ્રિન્ટ",
+    whatsapp_bill: "વોટ્સએપ પર બિલ મોકલો",
+    subtotal: "કુલ કિંમત",
+    tax_gst: "GST (5%)",
+    grand_total: "કુલ રકમ",
+    clear_cart: "ખાલી કરો",
+  },
+  hi: {
+    hero_pill: "हर बिक्री। हर खरीद। हर रुपया। हमेशा याद।",
+    hero_title_1: "आपकी दुकान के पास है एक ",
+    hero_title_accent: "मेमोरी।",
+    hero_subtitle: "दुकानहिसाब हर बिक्री, खरीद, भुगतान, सामान, ग्राहक और खर्च को एक स्मार्ट सिस्टम में जोड़ता है।",
+    hero_note: "मोबाइल ऐप से काउंटर चलाएं। वेब पैनल से पूरे बिज़नेस का पूरा बहीखाता समझें।",
+    cta_primary: "दुकानहिसाब देखें",
+    cta_secondary: "यह कैसे काम करता है",
+    tag_1: "कोई कठिन अकाउंटिंग नहीं",
+    tag_2: "तेज़ बारकोड बिलिंग",
+    tag_3: "हर फोन और कंप्यूटर पर उपलब्ध",
+    sales_pos: "पीओएस बिलिंग",
+    dashboard: "डैशबोर्ड",
+    cashbook: "दुकान गल्ला (Cashbook)",
+    customers: "ग्राहक खाता (उधार)",
+    today_sales: "आज की बिक्री",
+    today_purchases: "आज की खरीद",
+    cash_balance: "गल्ला रोकड़ शेष",
+    bank_balance: "बैंक बैलेंस",
+    customer_due: "ग्राहकों से बकाया",
+    supplier_due: "सप्लायर बकाया",
+    search_placeholder: "सामान खोजें...",
+    scan_placeholder: "बारकोड स्कैन करें...",
+    cart_title: "बिलिंग कार्ट",
+    walk_in: "नकद ग्राहक",
+    cust_price: "खास रेट",
+    low_stock: "कम स्टॉक",
+    payment_mode: "भुगतान का प्रकार",
+    cash: "नकद (Cash)",
+    upi: "UPI / QR",
+    khata: "उधार (खाता)",
+    print_bill: "बिल बनाएं व प्रिंट करें",
+    whatsapp_bill: "व्हाट्सएप बिल भेजें",
+    subtotal: "उप-कुल",
+    tax_gst: "GST (5%)",
+    grand_total: "कुल राशि",
+    clear_cart: "साफ करें",
+  },
+};
 
-  const heroTransactions = [
+// Realistic products based on real Indian shopkeeper retail inventory
+const retailProducts = [
+  {
+    id: 1,
+    name: "Kolam Rice 25kg (Fortune)",
+    barcode: "89012345601",
+    category: "Grocery",
+    stock: 18,
+    lowStockThreshold: 5,
+    mrp: 1300,
+    sellingPrice: 1200,
+    customPrice: 1180,
+    unit: "Bag",
+  },
+  {
+    id: 2,
+    name: "Fortune Refined Oil 5L Can",
+    barcode: "89012345602",
+    category: "Oil & Ghee",
+    stock: 12,
+    lowStockThreshold: 4,
+    mrp: 850,
+    sellingPrice: 810,
+    customPrice: 795,
+    unit: "Can",
+  },
+  {
+    id: 3,
+    name: "Aashirvaad Shudh Chakki Atta 10kg",
+    barcode: "89012345603",
+    category: "Flour",
+    stock: 24,
+    lowStockThreshold: 6,
+    mrp: 420,
+    sellingPrice: 395,
+    customPrice: 390,
+    unit: "Pack",
+  },
+  {
+    id: 4,
+    name: "Tata Salt Vacuum Evaporated 1kg",
+    barcode: "89012345604",
+    category: "Grocery",
+    stock: 45,
+    lowStockThreshold: 10,
+    mrp: 28,
+    sellingPrice: 26,
+    customPrice: 25,
+    unit: "Pouch",
+  },
+  {
+    id: 5,
+    name: "Amul Butter Pasteurised 500g",
+    barcode: "89012345605",
+    category: "Dairy",
+    stock: 8,
+    lowStockThreshold: 10,
+    mrp: 280,
+    sellingPrice: 265,
+    customPrice: null,
+    unit: "Pack",
+  },
+  {
+    id: 6,
+    name: "Maggi 2-Minute Masala Noodles 70g",
+    barcode: "89012345606",
+    category: "Instant Food",
+    stock: 65,
+    lowStockThreshold: 15,
+    mrp: 14,
+    sellingPrice: 13,
+    customPrice: null,
+    unit: "Pouch",
+  },
+];
+
+// Sample customers from C:\xampp\htdocs\Dukanhisab
+const shopCustomers = [
+  { id: "cust-0", name: "Walk-in Cash Customer", mobile: "N/A", khata: 0, hasSpecialRate: false },
+  { id: "cust-1", name: "Rahul Patel", mobile: "+91 98250 12345", khata: 4200, hasSpecialRate: true },
+  { id: "cust-2", name: "Anita Sharma", mobile: "+91 98790 67890", khata: 0, hasSpecialRate: false },
+  { id: "cust-3", name: "Deepak Mehta (Wholesale)", mobile: "+91 94260 54321", khata: 12850, hasSpecialRate: true },
+];
+
+export default function Hero() {
+  const [lang, setLang] = useState("en"); // 'en', 'gu', 'hi'
+  const [activeTab, setActiveTab] = useState("sales"); // 'sales', 'dashboard', 'cashbook', 'customers'
+  const [searchQuery, setSearchQuery] = useState("");
+  const [barcodeInput, setBarcodeInput] = useState("");
+  const [selectedCustomerId, setSelectedCustomerId] = useState("cust-1");
+  const [paymentMode, setPaymentMode] = useState("Cash");
+  const [cartItems, setCartItems] = useState([
     {
-      id: 0,
-      badge: "SCAN & BILL",
-      title: "Rice 25kg (Fortune Kolam)",
-      detail: "Barcode #890123 scanned at counter",
-      impact: "Added to Bill #DH-4029 • ₹1,250",
-      type: "sale",
-      time: "10:03 AM",
+      productId: 1,
+      name: "Kolam Rice 25kg (Fortune)",
+      price: 1180,
+      regularPrice: 1200,
+      qty: 1,
+      unit: "Bag",
     },
     {
-      id: 1,
-      badge: "CUSTOMER PAYMENT",
-      title: "Rahul Patel (Regular Khata)",
-      detail: "Received ₹2,500 Cash at counter",
-      impact: "Outstanding reduced: ₹9,500 → ₹7,000",
-      type: "payment",
-      time: "11:20 AM",
+      productId: 2,
+      name: "Fortune Refined Oil 5L Can",
+      price: 795,
+      regularPrice: 810,
+      qty: 1,
+      unit: "Can",
     },
-    {
-      id: 2,
-      badge: "STOCK UPDATED",
-      title: "Rice 25kg Inventory Count",
-      detail: "Auto-deducted after sale completion",
-      impact: "Shop Warehouse: 20 Bags → 18 Bags",
-      type: "stock",
-      time: "10:05 AM",
-    },
-    {
-      id: 3,
-      badge: "PURCHASE INWARD",
-      title: "ABC Traders (Supplier Inward)",
-      detail: "Purchase Bill #PB-881 verified",
-      impact: "+20 Bags added to stock • ₹22,000",
-      type: "purchase",
-      time: "09:15 AM",
-    },
-  ];
+  ]);
+
+  const [notification, setNotification] = useState("");
+  const [showReceiptModal, setShowReceiptModal] = useState(false);
+  const [lastGeneratedInvoice, setLastGeneratedInvoice] = useState(null);
+  const [whatsappSentTo, setWhatsappSentTo] = useState(null);
+
+  const t = (key) => translations[lang]?.[key] || translations.en[key] || key;
+  const currentCustomer = shopCustomers.find((c) => c.id === selectedCustomerId) || shopCustomers[0];
+
+  // Cart Calculations
+  const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.qty, 0);
+  const tax = Math.round(subtotal * 0.05); // 5% GST
+  const grandTotal = subtotal + tax;
+
+  const triggerNotification = (msg) => {
+    setNotification(msg);
+    setTimeout(() => {
+      setNotification("");
+    }, 3000);
+  };
+
+  const addToCart = (product) => {
+    const isSpecial = currentCustomer.hasSpecialRate && product.customPrice;
+    const finalPrice = isSpecial ? product.customPrice : product.sellingPrice;
+
+    setCartItems((prev) => {
+      const existing = prev.find((item) => item.productId === product.id);
+      if (existing) {
+        return prev.map((item) =>
+          item.productId === product.id ? { ...item, qty: item.qty + 1 } : item
+        );
+      }
+      return [
+        ...prev,
+        {
+          productId: product.id,
+          name: product.name,
+          price: finalPrice,
+          regularPrice: product.sellingPrice,
+          qty: 1,
+          unit: product.unit,
+        },
+      ];
+    });
+
+    triggerNotification(`Added ${product.name} to bill`);
+  };
+
+  const updateQty = (productId, delta) => {
+    setCartItems((prev) =>
+      prev
+        .map((item) => {
+          if (item.productId === productId) {
+            const newQty = item.qty + delta;
+            return newQty > 0 ? { ...item, qty: newQty } : null;
+          }
+          return item;
+        })
+        .filter(Boolean)
+    );
+  };
+
+  const removeItem = (productId) => {
+    setCartItems((prev) => prev.filter((item) => item.productId !== productId));
+  };
+
+  const clearCart = () => {
+    setCartItems([]);
+    triggerNotification("Cart cleared");
+  };
+
+  const handleBarcodeSubmit = (e) => {
+    e.preventDefault();
+    if (!barcodeInput.trim()) return;
+    const found = retailProducts.find(
+      (p) => p.barcode === barcodeInput.trim() || p.barcode.endsWith(barcodeInput.trim())
+    );
+    if (found) {
+      addToCart(found);
+      setBarcodeInput("");
+      triggerNotification(`BEEP! Scanned: ${found.name}`);
+    } else {
+      triggerNotification("Barcode not found in catalog");
+    }
+  };
+
+  const handleGenerateInvoice = () => {
+    if (cartItems.length === 0) {
+      triggerNotification("Cart is empty! Add products first.");
+      return;
+    }
+    const invoiceNum = "DH-" + Math.floor(1000 + Math.random() * 9000);
+    const invoiceData = {
+      invoiceNum,
+      customer: currentCustomer,
+      items: [...cartItems],
+      subtotal,
+      tax,
+      grandTotal,
+      paymentMode,
+      date: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+    };
+    setLastGeneratedInvoice(invoiceData);
+    setShowReceiptModal(true);
+    triggerNotification(`Invoice #${invoiceNum} saved! Instant updates applied to Cashbook, Khata & Stock.`);
+  };
+
+  const handleSendWhatsappReminder = (customerName, pendingAmount, phone) => {
+    setWhatsappSentTo({ name: customerName, amount: pendingAmount, phone });
+    triggerNotification(`WhatsApp reminder dispatched to ${customerName}`);
+  };
+
+  const filteredProducts = retailProducts.filter(
+    (p) =>
+      p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.barcode.includes(searchQuery)
+  );
 
   return (
-    <section className="relative pt-8 pb-20 lg:pt-16 lg:pb-28 overflow-hidden bg-gradient-to-b from-emerald-50/40 via-white to-slate-50">
-      {/* Decorative background grid and ambient glows */}
-      <div className="absolute inset-0 bg-dot-pattern opacity-60 pointer-events-none" />
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[720px] h-[360px] bg-gradient-to-tr from-emerald-200/40 to-teal-100/30 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative pt-8 pb-14 lg:pt-12 lg:pb-20 overflow-hidden bg-gradient-to-b from-[#e8f8f2] via-[#f0fcf7] to-white">
+      {/* Soft ambient glow on the right */}
+      <div className="absolute -top-40 right-0 w-[550px] h-[450px] bg-gradient-to-bl from-teal-200/30 to-transparent rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Core Brand Pill */}
-        <div className="flex justify-center mb-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-300/80 text-emerald-900 text-xs sm:text-sm font-semibold shadow-xs">
-            <SparklesIcon className="w-4 h-4 text-emerald-600 animate-spin" style={{ animationDuration: '8s' }} />
-            <span>Every Sale. Every Purchase. Every Rupee. Remembered.</span>
-          </div>
-        </div>
-
-        {/* Hero Headline */}
-        <div className="text-center max-w-4xl mx-auto mb-10 lg:mb-14">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
-            Your Shop Has a <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 underline decoration-emerald-300 decoration-wavy decoration-2">Memory.</span>
-          </h1>
-
-          <p className="mt-5 text-lg sm:text-xl lg:text-2xl text-slate-700 font-medium max-w-3xl mx-auto leading-relaxed">
-            DukanHisab remembers every sale, purchase, payment, product, customer and expense — all in one connected system.
-          </p>
-
-          <p className="mt-3 text-sm sm:text-base text-slate-600 font-normal">
-            Run your everyday shop from the app. Understand your complete business from the web panel.
-          </p>
-
-          {/* Action CTAs */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="#interactive-demo"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base px-7 py-3.5 rounded-2xl shadow-lg shadow-emerald-600/25 hover:shadow-xl transition-all hover:-translate-y-0.5 active:translate-y-0"
-            >
-              <span>Explore DukanHisab</span>
-              <ArrowRightIcon className="w-5 h-5" />
-            </a>
-
-            <a
-              href="#day-in-shop"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white hover:bg-slate-50 text-slate-800 font-bold text-base px-6 py-3.5 rounded-2xl border border-slate-300 shadow-xs hover:border-slate-400 transition-all"
-            >
-              <PlayIcon className="w-4 h-4 text-emerald-600" />
-              <span>See How It Works</span>
-            </a>
-          </div>
-
-          <div className="mt-4 flex items-center justify-center gap-6 text-xs text-slate-500">
-            <span className="flex items-center gap-1.5">
-              <CheckIcon className="w-3.5 h-3.5 text-emerald-600" />
-              No accounting jargon
-            </span>
-            <span className="flex items-center gap-1.5">
-              <CheckIcon className="w-3.5 h-3.5 text-emerald-600" />
-              Lightning-fast barcode billing
-            </span>
-            <span className="flex items-center gap-1.5">
-              <CheckIcon className="w-3.5 h-3.5 text-emerald-600" />
-              Works on any phone & PC
-            </span>
-          </div>
-        </div>
-
-        {/* Hero Interactive Digital Shop Scene */}
-        <div className="relative max-w-5xl mx-auto">
-          {/* Main Shop Counter Mockup Frame */}
-          <div className="relative rounded-3xl bg-white border border-slate-200/90 shadow-2xl shadow-slate-300/50 p-4 sm:p-7 overflow-hidden">
+        
+        {/* ===================== HERO 2-COLUMN SECTION (PREMIUM INDIAN SAAS) ===================== */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center mb-16 pt-4 lg:pt-8">
+          
+          {/* Left Column: Pill, Headline, Copy, 4 Trust Points & Two CTA Buttons */}
+          <div className="lg:col-span-6 space-y-6 text-left">
             
-            {/* Counter Top Bar */}
-            <div className="flex flex-wrap items-center justify-between pb-4 mb-4 border-b border-slate-100 gap-3">
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 rounded-full bg-emerald-500 animate-ping"></div>
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Live Shop Counter</span>
-                  <p className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
-                    <StoreIcon className="w-4 h-4 text-emerald-600" />
-                    Shree Ganesh General Store & Kirana
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-lg">
-                <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-                <span>Active Memory Sync • Real-Time</span>
-              </div>
+            {/* Small Pill/Badge: MADE FOR INDIAN SHOPKEEPERS */}
+            <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200/90 text-emerald-800 px-3.5 py-1.5 rounded-full text-xs font-black tracking-wider uppercase shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>MADE FOR INDIAN SHOPKEEPERS</span>
             </div>
 
-            {/* Central Stage: The Connected Shop Counter */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            {/* Main Headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-black text-slate-900 tracking-tight leading-[1.12]">
+              Everything Your Shop Needs, <br className="hidden sm:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-emerald-700 to-teal-700">
+                All in One App
+              </span>
+            </h1>
+
+            {/* Supporting Paragraph */}
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl font-medium">
+              From billing and inventory to customers, suppliers and business reports — DukanHisab helps you manage your entire shop simply and professionally.
+            </p>
+
+            {/* 4 Small Trust Points with Green Check Icons */}
+            <div className="grid grid-cols-2 gap-3.5 pt-1">
+              {[
+                { title: "Easy to Use" },
+                { title: "Works Offline" },
+                { title: "Secure & Reliable" },
+                { title: "Made for Indian Shops" },
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-center gap-2.5">
+                  <div className="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-2xs">
+                    <CheckIcon className="w-3 h-3 text-white" />
+                  </div>
+                  <span className="text-sm font-bold text-slate-800">
+                    {item.title}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Two Action CTA Buttons */}
+            <div className="flex flex-wrap items-center gap-3.5 pt-2">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.app.dukanhisab&hl=en_IN"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-bold text-base px-6 py-3.5 rounded-2xl shadow-lg shadow-emerald-700/25 hover:shadow-xl transition-all active:scale-98 group cursor-pointer"
+              >
+                <GooglePlayIcon className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
+                <span>Download App</span>
+              </a>
+
+              <a
+                href="https://dukanhisab.in/shop"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-bold text-base px-6 py-3.5 rounded-2xl border border-slate-300 shadow-2xs hover:border-emerald-500 hover:text-emerald-700 transition-all cursor-pointer group"
+              >
+                <MonitorIcon className="w-4 h-4 text-emerald-600 group-hover:scale-110 transition-transform" />
+                <span>Open Web Panel</span>
+                <ArrowRightIcon className="w-4 h-4 text-slate-400 group-hover:translate-x-1 group-hover:text-emerald-600 transition-transform" />
+              </a>
+            </div>
+
+            {/* Trust Line */}
+            <div className="pt-1 flex items-center gap-2 text-xs text-slate-500 font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              <span>No complicated setup • Built for everyday shopkeepers</span>
+            </div>
+
+          </div>
+
+          {/* Right Column: High-Polished Product Showcase (Shopkeeper + Smartphone + Floating Cards + Handwritten Note) */}
+          <div className="lg:col-span-6 relative flex justify-center items-center">
+            
+            {/* Subtle Abstract Green Blobs Behind Product */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[480px] bg-gradient-to-tr from-emerald-400/20 via-teal-300/15 to-transparent rounded-full blur-3xl pointer-events-none" />
+
+            <div className="relative w-full max-w-lg lg:max-w-xl">
               
-              {/* Left Side: Barcode Scanner & Product On Counter */}
-              <div className="lg:col-span-4 space-y-4">
-                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 relative overflow-hidden">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-[11px] font-bold text-slate-500 tracking-wide uppercase">Shop Counter Hardware</span>
-                    <span className="text-[10px] bg-slate-200 text-slate-700 px-1.5 py-0.5 rounded font-mono">USB / BT</span>
-                  </div>
+              {/* Main Realistic Shopkeeper + Phone Visual */}
+              <div className="relative z-10">
+                <Image
+                  src="/images/home_hero_shopkeeper_smooth.png"
+                  alt="DukanHisab - Indian Shopkeeper and Mobile Billing Dashboard"
+                  width={796}
+                  height={780}
+                  priority
+                  className="w-full h-auto object-contain block drop-shadow-xl select-none pointer-events-none"
+                />
+              </div>
 
-                  {/* Visual Barcode Scanner with Red Beam */}
-                  <div className="relative bg-white border border-slate-300/80 rounded-xl p-3 shadow-inner">
-                    <div className="relative flex flex-col items-center justify-center py-3 bg-slate-950 rounded-lg overflow-hidden">
-                      {/* Laser red scan line */}
-                      <div className="absolute w-full h-0.5 bg-red-500 shadow-[0_0_8px_#ef4444] animate-laser"></div>
+              {/* Decorative Handwritten Note & Curved Arrow */}
+              <div className="absolute -top-3 left-0 sm:left-4 z-20 bg-white/95 backdrop-blur-sm border border-emerald-200/90 py-2 px-3.5 rounded-2xl shadow-md rotate-[-5deg] pointer-events-none select-none">
+                <p className="text-xs font-black text-slate-900 leading-tight">Simple.</p>
+                <p className="text-xs font-black text-emerald-700 leading-tight">Powerful.</p>
+                <p className="text-[11px] font-bold text-slate-600 leading-tight">Made for Shopkeepers.</p>
+                {/* Curved Hand-Drawn Arrow pointing to Smartphone */}
+                <svg
+                  className="w-8 h-8 text-emerald-600 mt-1 translate-x-12 rotate-6"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M 6,8 Q 24,24 34,18" />
+                  <path d="M 26,13 L 34,18 L 29,26" />
+                </svg>
+              </div>
 
-                      {/* Barcode Graphic */}
-                      <div className="flex items-center justify-center gap-1.5 px-4">
-                        <span className="w-1 h-12 bg-white rounded-xs"></span>
-                        <span className="w-2 h-12 bg-white rounded-xs"></span>
-                        <span className="w-0.5 h-12 bg-white"></span>
-                        <span className="w-1.5 h-12 bg-white"></span>
-                        <span className="w-0.5 h-12 bg-white"></span>
-                        <span className="w-3 h-12 bg-white"></span>
-                        <span className="w-1 h-12 bg-white"></span>
-                        <span className="w-2 h-12 bg-white"></span>
-                        <span className="w-0.5 h-12 bg-white"></span>
-                        <span className="w-1.5 h-12 bg-white"></span>
-                      </div>
-                      <p className="text-[10px] font-mono text-emerald-400 mt-2 tracking-widest">
-                        8901234567890 • BEEP!
-                      </p>
-                    </div>
-
-                    <div className="mt-3 flex items-center justify-between">
-                      <div>
-                        <p className="text-xs font-bold text-slate-900">Rice 25kg (Kolam)</p>
-                        <p className="text-[11px] text-slate-500">In Stock: 18 Bags left</p>
-                      </div>
-                      <div className="text-right">
-                        <span className="text-sm font-extrabold text-emerald-600">₹1,250</span>
-                        <p className="text-[10px] text-slate-400 line-through">₹1,300 MRP</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Customer At Counter */}
-                  <div className="mt-3 bg-white border border-slate-200/80 rounded-xl p-3 flex items-center justify-between">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs">
-                        RP
-                      </div>
-                      <div>
-                        <p className="text-xs font-bold text-slate-900">Rahul Patel</p>
-                        <p className="text-[10px] text-slate-500">Regular Customer • Custom Pricing</p>
-                      </div>
-                    </div>
-                    <span className="text-[10px] font-semibold bg-amber-50 text-amber-800 border border-amber-200 px-2 py-0.5 rounded-full">
-                      Khata: ₹7,000
+              {/* Floating UI Card 1: Today's Sales ₹12,450 +12% */}
+              <div className="absolute -top-2 right-2 sm:right-6 z-20 bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg animate-float-slow hidden sm:flex items-center gap-3 pointer-events-none select-none">
+                <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-base border border-emerald-100">
+                  ₹
+                </div>
+                <div>
+                  <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Today's Sales</span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-sm font-black text-slate-900 font-mono">₹12,450</span>
+                    <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100/90 px-1.5 py-0.2 rounded-md">
+                      +12% ↑
                     </span>
                   </div>
                 </div>
               </div>
 
-              {/* Middle: Phone with DukanHisab App */}
-              <div className="lg:col-span-4 flex justify-center">
-                <div className="relative w-64 rounded-[36px] bg-slate-900 p-2.5 shadow-2xl shadow-emerald-950/20 border-4 border-slate-800">
-                  {/* Phone Speaker / Notch */}
-                  <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-4 bg-slate-900 rounded-b-xl z-20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-slate-800"></div>
-                  </div>
+              {/* Floating UI Card 2: Stock Updated ✓ */}
+              <div className="absolute top-1/3 -left-3 sm:-left-6 z-20 bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl py-2 px-3.5 shadow-lg animate-float-delayed flex items-center gap-2 pointer-events-none select-none">
+                <div className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-2xs">
+                  <CheckIcon className="w-3.5 h-3.5 text-white" />
+                </div>
+                <span className="text-xs font-black text-slate-800">
+                  Stock Updated ✓
+                </span>
+              </div>
 
-                  {/* Phone Screen */}
-                  <div className="bg-slate-50 rounded-[28px] overflow-hidden border border-slate-200 text-slate-900 text-xs">
-                    {/* App Header */}
-                    <div className="bg-emerald-600 text-white p-3 pt-5">
-                      <div className="flex items-center justify-between">
-                        <span className="font-extrabold text-sm tracking-tight">DukanHisab POS</span>
-                        <span className="text-[10px] bg-emerald-700 px-2 py-0.5 rounded-full">Bill #4029</span>
-                      </div>
-                      <p className="text-[11px] text-emerald-100 mt-0.5">Counter Billing • Rahul Patel</p>
-                    </div>
-
-                    {/* App Cart Content */}
-                    <div className="p-3 space-y-2.5 bg-white min-h-[170px]">
-                      <div className="flex items-center justify-between border-b border-slate-100 pb-2">
-                        <div>
-                          <p className="font-bold text-slate-800">Rice 25kg</p>
-                          <p className="text-[10px] text-slate-500">1 Bag × ₹1,250</p>
-                        </div>
-                        <span className="font-bold text-slate-900">₹1,250</span>
-                      </div>
-
-                      <div className="flex items-center justify-between border-b border-slate-100 pb-2">
-                        <div>
-                          <p className="font-bold text-slate-800">Fortune Oil 5L</p>
-                          <p className="text-[10px] text-slate-500">1 Can × ₹820 (Saved Rate)</p>
-                        </div>
-                        <span className="font-bold text-slate-900">₹820</span>
-                      </div>
-
-                      <div className="pt-1 flex items-center justify-between font-extrabold text-sm text-slate-900">
-                        <span>Grand Total:</span>
-                        <span className="text-emerald-700">₹2,070</span>
-                      </div>
-                    </div>
-
-                    {/* Payment Bar */}
-                    <div className="p-2.5 bg-slate-100 border-t border-slate-200 flex gap-2">
-                      <button className="flex-1 bg-emerald-600 text-white font-bold py-1.5 rounded-lg text-center shadow-xs">
-                        Cash Paid ✓
-                      </button>
-                      <button className="flex-1 bg-white border border-slate-300 font-bold py-1.5 rounded-lg text-slate-700 text-center">
-                        Add Khata
-                      </button>
-                    </div>
-                  </div>
+              {/* Floating UI Card 3: New Invoice Created */}
+              <div className="absolute top-1/2 -right-2 sm:-right-5 z-20 bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl py-2 px-3.5 shadow-lg animate-float-reverse flex items-center gap-2.5 pointer-events-none select-none">
+                <div className="w-7 h-7 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100">
+                  <ReceiptIcon className="w-4 h-4 text-blue-600" />
+                </div>
+                <div>
+                  <span className="text-xs font-black text-slate-800 block">New Invoice Created</span>
+                  <span className="text-[10px] text-slate-400 font-mono">Bill #DH-4029 • ₹2,128</span>
                 </div>
               </div>
 
-              {/* Right Side: Generated Connected Memory Records */}
-              <div className="lg:col-span-4 space-y-2.5">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-slate-700 uppercase tracking-wide">
-                    Connected Shop Records
-                  </span>
-                  <span className="text-[11px] text-emerald-600 font-semibold">Click to inspect</span>
+              {/* Floating UI Card 4: Payment Received ₹2,500 */}
+              <div className="absolute bottom-6 left-2 sm:left-8 z-20 bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl py-2 px-3.5 shadow-lg animate-float-slow flex items-center gap-2.5 pointer-events-none select-none">
+                <div className="w-7 h-7 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-sm border border-emerald-100">
+                  ₹
                 </div>
-
-                <div className="space-y-2">
-                  {heroTransactions.map((tx, idx) => {
-                    const isSelected = activeCard === idx;
-                    return (
-                      <div
-                        key={tx.id}
-                        onClick={() => setActiveCard(idx)}
-                        className={`cursor-pointer rounded-xl p-3 border transition-all ${
-                          isSelected
-                            ? "bg-emerald-50/90 border-emerald-400 shadow-md translate-x-1"
-                            : "bg-white hover:bg-slate-50 border-slate-200"
-                        }`}
-                      >
-                        <div className="flex items-center justify-between text-[11px] mb-1">
-                          <span className={`font-bold px-1.5 py-0.5 rounded text-[10px] ${
-                            tx.type === "sale" ? "bg-emerald-100 text-emerald-800" :
-                            tx.type === "payment" ? "bg-blue-100 text-blue-800" :
-                            tx.type === "stock" ? "bg-amber-100 text-amber-800" :
-                            "bg-purple-100 text-purple-800"
-                          }`}>
-                            {tx.badge}
-                          </span>
-                          <span className="text-slate-400 font-medium">{tx.time}</span>
-                        </div>
-                        <p className="text-xs font-bold text-slate-900">{tx.title}</p>
-                        <p className="text-[11px] text-slate-600 mt-0.5">{tx.detail}</p>
-                        <p className="text-[11px] font-semibold text-emerald-700 mt-1 flex items-center gap-1">
-                          <CheckIcon className="w-3 h-3 text-emerald-600" />
-                          {tx.impact}
-                        </p>
-                      </div>
-                    );
-                  })}
+                <div>
+                  <span className="text-[10px] text-slate-400 font-bold uppercase block">Payment Received</span>
+                  <span className="text-xs font-black text-emerald-700 font-mono">+₹2,500 (UPI QR)</span>
                 </div>
               </div>
 
-            </div>
-
-            {/* Bottom Memory Connecting Ribbon */}
-            <div className="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-600 bg-slate-50/80 -mx-4 -mb-4 sm:-mx-7 sm:-mb-7 p-4 rounded-b-3xl">
-              <div className="flex items-center gap-2 font-medium">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
-                <span>The DukanHisab Rule:</span>
-                <strong className="text-slate-900">One action at the counter updates Sales, Inventory, Customer Khata & Cash simultaneously.</strong>
-              </div>
-              <span className="text-emerald-700 font-semibold">Zero duplicate entries →</span>
             </div>
 
           </div>
+
+        </div>
+
+        {/* ===================== 5 QUICK FEATURE CARDS ROW (FROM USER SCREENSHOT) ===================== */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 mb-14">
+          {[
+            {
+              icon: "⏱️",
+              title: "Create Bills in Seconds",
+              bg: "bg-emerald-50/80 border-emerald-200 hover:bg-emerald-100/70",
+              textColor: "text-emerald-950",
+            },
+            {
+              icon: "📑",
+              title: "GST & Non-GST Support",
+              bg: "bg-amber-50/80 border-amber-200 hover:bg-amber-100/70",
+              textColor: "text-amber-950",
+            },
+            {
+              icon: "🖨️",
+              title: "Print & Share Instantly",
+              bg: "bg-purple-50/80 border-purple-200 hover:bg-purple-100/70",
+              textColor: "text-purple-950",
+            },
+            {
+              icon: "％",
+              title: "Apply Discounts & Offers",
+              bg: "bg-blue-50/80 border-blue-200 hover:bg-blue-100/70",
+              textColor: "text-blue-950",
+            },
+            {
+              icon: "👥",
+              title: "Add Customers Easily",
+              bg: "bg-rose-50/80 border-rose-200 hover:bg-rose-100/70",
+              textColor: "text-rose-950",
+            },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className={`p-4 rounded-2xl border ${item.bg} text-center flex flex-col items-center justify-center transition-all duration-200 hover:-translate-y-1 shadow-xs group cursor-pointer`}
+            >
+              <span className="text-2xl mb-1.5 group-hover:scale-110 transition-transform">
+                {item.icon}
+              </span>
+              <span className={`text-xs font-bold ${item.textColor} leading-tight`}>
+                {item.title}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* HERO INTERACTIVE POS SECTION */}
+        <div id="interactive-demo" className="relative max-w-6xl mx-auto pt-6 border-t border-slate-200/60">
+          <div className="text-center mb-8">
+            <span className="text-xs font-bold uppercase tracking-wider text-teal-700 bg-teal-50 px-3 py-1 rounded-full border border-teal-200">
+              Interactive Web-App Terminal
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">
+              Experience the Real DukanHisab Counter Interface
+            </h3>
+            <p className="text-slate-600 text-sm mt-1">
+              Click items below, scan barcodes, and generate bills in seconds.
+            </p>
+          </div>
+
+          {/* Main Desktop App Mockup Frame */}
+          <div className="relative rounded-3xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-2xl shadow-teal-900/10 p-3.5 sm:p-6 lg:p-7 overflow-hidden">
+            
+            {/* Top Browser Bar & Shop Header */}
+            <div className="flex flex-wrap items-center justify-between pb-3.5 mb-4 border-b border-slate-200/90 gap-3">
+              
+              {/* Left: macOS Dots + URL pill */}
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-3 h-3 rounded-full bg-rose-400"></span>
+                  <span className="w-3 h-3 rounded-full bg-amber-400"></span>
+                  <span className="w-3 h-3 rounded-full bg-emerald-400"></span>
+                </div>
+                <a
+                  href="https://dukanhisab.in/shop"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hidden sm:flex items-center gap-1.5 bg-slate-100 hover:bg-emerald-50 px-3 py-1 rounded-lg border border-slate-200 hover:border-emerald-300 text-[11px] font-mono text-slate-600 hover:text-emerald-700 transition-colors"
+                >
+                  <StoreIcon className="w-3.5 h-3.5 text-teal-600" />
+                  <span>dukanhisab.in/shop</span>
+                  <span className="text-[9px] bg-emerald-600 text-white font-sans font-bold px-1 rounded">Live ↗</span>
+                </a>
+              </div>
+
+              {/* Center / Right: Shop Status & Multi-Language Toggle */}
+              <div className="flex items-center gap-2.5">
+                <div className="flex items-center gap-1.5 bg-teal-50 border border-teal-200 text-teal-800 text-xs font-bold px-3 py-1 rounded-xl">
+                  <span className="w-2 h-2 rounded-full bg-teal-500 animate-ping"></span>
+                  <span>Shree Ganesh General Store & Kirana</span>
+                </div>
+
+                {/* Language Switcher */}
+                <div className="flex items-center bg-slate-100 p-0.5 rounded-xl border border-slate-200 text-[11px] font-bold">
+                  {[
+                    { id: "en", label: "EN" },
+                    { id: "gu", label: "ગુજ" },
+                    { id: "hi", label: "हिन्दी" },
+                  ].map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => setLang(item.id)}
+                      className={`px-2 py-1 rounded-lg transition-all ${
+                        lang === item.id
+                          ? "bg-white text-teal-700 shadow-xs font-extrabold"
+                          : "text-slate-500 hover:text-slate-800"
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+
+            {/* Navigation Tabs (Matching C:\xampp\htdocs\Dukanhisab\resources\views\shopowner\partials\sidebar.blade.php) */}
+            <div className="flex flex-wrap items-center gap-1.5 pb-3 mb-4 border-b border-slate-100">
+              <button
+                onClick={() => setActiveTab("sales")}
+                className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                  activeTab === "sales"
+                    ? "bg-teal-600 text-white shadow-sm"
+                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                }`}
+              >
+                <BarcodeIcon className="w-4 h-4" />
+                <span>{t("sales_pos")}</span>
+              </button>
+
+              <button
+                onClick={() => setActiveTab("dashboard")}
+                className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                  activeTab === "dashboard"
+                    ? "bg-teal-600 text-white shadow-sm"
+                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                }`}
+              >
+                <ReceiptIcon className="w-4 h-4" />
+                <span>{t("dashboard")}</span>
+              </button>
+
+              <button
+                onClick={() => setActiveTab("cashbook")}
+                className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                  activeTab === "cashbook"
+                    ? "bg-teal-600 text-white shadow-sm"
+                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                }`}
+              >
+                <WalletIcon className="w-4 h-4" />
+                <span>{t("cashbook")}</span>
+              </button>
+
+              <button
+                onClick={() => setActiveTab("customers")}
+                className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                  activeTab === "customers"
+                    ? "bg-teal-600 text-white shadow-sm"
+                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                }`}
+              >
+                <UsersIcon className="w-4 h-4" />
+                <span>{t("customers")}</span>
+              </button>
+
+              {/* Status Notice */}
+              <span className="ml-auto text-[11px] text-teal-700 font-semibold hidden md:inline-flex items-center gap-1">
+                <CheckIcon className="w-3.5 h-3.5 text-teal-600" />
+                Auto-Synchronized
+              </span>
+            </div>
+
+            {/* Notification Toast */}
+            {notification && (
+              <div className="mb-3.5 bg-teal-50 border border-teal-200 text-teal-800 px-3.5 py-2 rounded-xl text-xs font-bold flex items-center justify-between animate-fade-in shadow-xs">
+                <div className="flex items-center gap-2">
+                  <SparklesIcon className="w-4 h-4 text-teal-600" />
+                  <span>{notification}</span>
+                </div>
+                <span className="text-[10px] text-teal-600 uppercase font-mono">Real-Time Sync</span>
+              </div>
+            )}
+
+            {/* TAB 1: REAL POS BILLING COUNTER (Modeled on sales-pos.blade.php) */}
+            {activeTab === "sales" && (
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+                
+                {/* Left Side: Search, Barcode & Products */}
+                <div className="lg:col-span-7 space-y-3.5">
+                  
+                  {/* Search & Barcode Bar */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <div className="relative">
+                      <input
+                        type="text"
+                        placeholder={t("search_placeholder")}
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-9 pr-3 py-2 text-xs text-slate-900 focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                      />
+                      <SearchIcon className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+                    </div>
+
+                    <form onSubmit={handleBarcodeSubmit} className="relative">
+                      <input
+                        type="text"
+                        placeholder={t("scan_placeholder")}
+                        value={barcodeInput}
+                        onChange={(e) => setBarcodeInput(e.target.value)}
+                        className="w-full bg-slate-50 border border-teal-400/80 rounded-xl pl-9 pr-14 py-2 text-xs text-slate-900 focus:ring-2 focus:ring-teal-500 focus:outline-none placeholder:text-slate-500 font-mono"
+                      />
+                      <BarcodeIcon className="w-4 h-4 text-teal-600 absolute left-3 top-2.5" />
+                      <button
+                        type="submit"
+                        className="absolute right-1.5 top-1.5 bg-teal-600 hover:bg-teal-700 text-white font-bold text-[10px] px-2.5 py-1 rounded-lg transition-colors cursor-pointer"
+                      >
+                        Scan
+                      </button>
+                    </form>
+                  </div>
+
+                  {/* Product Cards Grid - Clean responsive display, no cut-off! */}
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                    {filteredProducts.map((prod) => {
+                      const isSpecial = currentCustomer.hasSpecialRate && prod.customPrice;
+                      const priceToUse = isSpecial ? prod.customPrice : prod.sellingPrice;
+
+                      return (
+                        <div
+                          key={prod.id}
+                          onClick={() => addToCart(prod)}
+                          className="bg-white border border-slate-200/90 hover:border-teal-400 rounded-2xl p-3 cursor-pointer transition-all hover:shadow-md hover:-translate-y-0.5 flex flex-col justify-between group"
+                        >
+                          <div>
+                            <div className="flex items-start justify-between gap-1">
+                              <h4 className="font-bold text-xs text-slate-900 leading-snug group-hover:text-teal-700 transition-colors">
+                                {prod.name}
+                              </h4>
+                              {isSpecial && (
+                                <span className="text-[9px] bg-teal-100 text-teal-800 px-1 py-0.5 rounded font-extrabold shrink-0">
+                                  {t("cust_price")}
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-[10px] text-slate-400 font-mono mt-1">
+                              #{prod.barcode.slice(-4)} • {prod.unit}
+                            </p>
+                          </div>
+
+                          <div className="mt-3 pt-2 border-t border-slate-100 flex items-end justify-between">
+                            <div>
+                              {isSpecial && (
+                                <span className="text-[10px] text-slate-400 line-through block">
+                                  ₹{prod.sellingPrice}
+                                </span>
+                              )}
+                              <p className="text-sm font-extrabold text-teal-600">
+                                ₹{priceToUse}
+                              </p>
+                            </div>
+
+                            <span
+                              className={`text-[10px] px-1.5 py-0.5 rounded-full font-semibold ${
+                                prod.stock <= prod.lowStockThreshold
+                                  ? "bg-rose-50 text-rose-700 border border-rose-200"
+                                  : "bg-slate-100 text-slate-600"
+                              }`}
+                            >
+                              {prod.stock <= prod.lowStockThreshold ? t("low_stock") : `${prod.stock} in stock`}
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Right Side: Interactive Billing Cart */}
+                <div className="lg:col-span-5 bg-slate-50 border border-slate-200/90 rounded-2xl p-4 flex flex-col justify-between">
+                  <div>
+                    {/* Customer Selection */}
+                    <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-200 gap-2">
+                      <div className="flex-1">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block">
+                          Select Customer
+                        </span>
+                        <select
+                          value={selectedCustomerId}
+                          onChange={(e) => setSelectedCustomerId(e.target.value)}
+                          className="block w-full bg-white border border-slate-300 text-slate-900 rounded-xl px-2.5 py-1.5 text-xs font-bold mt-1 focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                        >
+                          {shopCustomers.map((c) => (
+                            <option key={c.id} value={c.id}>
+                              {c.name} {c.khata > 0 ? `(Khata: ₹${c.khata})` : ""}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+
+                      <button
+                        onClick={clearCart}
+                        className="text-[11px] text-rose-600 hover:text-rose-700 font-semibold hover:underline self-end pb-1.5"
+                      >
+                        {t("clear_cart")}
+                      </button>
+                    </div>
+
+                    {/* Cart Items List */}
+                    <div className="space-y-2 min-h-[140px]">
+                      {cartItems.length === 0 ? (
+                        <div className="text-center py-8 text-slate-400 text-xs">
+                          <BarcodeIcon className="w-7 h-7 mx-auto text-slate-300 mb-1.5" />
+                          <p className="font-semibold text-slate-600">Cart is empty</p>
+                          <p className="text-[11px] text-slate-400">Click any product or scan barcode</p>
+                        </div>
+                      ) : (
+                        cartItems.map((item) => (
+                          <div
+                            key={item.productId}
+                            className="bg-white border border-slate-200/80 p-2.5 rounded-xl flex items-center justify-between text-xs shadow-2xs"
+                          >
+                            <div className="flex-1 pr-2">
+                              <p className="font-bold text-slate-900 truncate">{item.name}</p>
+                              <p className="text-[10px] text-slate-500">
+                                ₹{item.price} / {item.unit}
+                              </p>
+                            </div>
+
+                            <div className="flex items-center gap-2">
+                              <div className="flex items-center bg-slate-100 rounded-lg border border-slate-200">
+                                <button
+                                  onClick={() => updateQty(item.productId, -1)}
+                                  className="px-2 py-0.5 text-slate-700 hover:text-slate-900 font-bold"
+                                >
+                                  -
+                                </button>
+                                <span className="px-2 text-xs font-bold text-teal-700">
+                                  {item.qty}
+                                </span>
+                                <button
+                                  onClick={() => updateQty(item.productId, 1)}
+                                  className="px-2 py-0.5 text-slate-700 hover:text-slate-900 font-bold"
+                                >
+                                  +
+                                </button>
+                              </div>
+
+                              <span className="font-bold text-slate-900 w-14 text-right">
+                                ₹{item.price * item.qty}
+                              </span>
+
+                              <button
+                                onClick={() => removeItem(item.productId)}
+                                className="text-slate-400 hover:text-rose-600 text-xs px-1"
+                              >
+                                ✕
+                              </button>
+                            </div>
+                          </div>
+                        ))
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Cart Totals & Checkout Section */}
+                  <div className="mt-4 pt-3.5 border-t border-slate-200 space-y-3">
+                    <div className="space-y-1 text-xs text-slate-600">
+                      <div className="flex justify-between">
+                        <span>{t("subtotal")}:</span>
+                        <span className="font-bold text-slate-900">₹{subtotal}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>{t("tax_gst")}:</span>
+                        <span className="font-bold text-slate-900">₹{tax}</span>
+                      </div>
+                      <div className="flex justify-between text-sm font-extrabold text-slate-900 pt-1.5 border-t border-slate-200">
+                        <span>{t("grand_total")}:</span>
+                        <span className="text-teal-700 text-base font-black">₹{grandTotal}</span>
+                      </div>
+                    </div>
+
+                    {/* Payment Mode Selector */}
+                    <div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block mb-1">
+                        {t("payment_mode")}
+                      </span>
+                      <div className="grid grid-cols-3 gap-1.5">
+                        {[
+                          { id: "Cash", label: t("cash") },
+                          { id: "UPI", label: t("upi") },
+                          { id: "Khata", label: t("khata") },
+                        ].map((mode) => (
+                          <button
+                            key={mode.id}
+                            onClick={() => setPaymentMode(mode.id)}
+                            className={`py-1.5 px-2 text-center text-xs font-bold rounded-lg border transition-all ${
+                              paymentMode === mode.id
+                                ? "bg-teal-600 text-white border-teal-600 shadow-xs"
+                                : "bg-white text-slate-700 border-slate-300 hover:border-slate-400"
+                            }`}
+                          >
+                            {mode.label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="grid grid-cols-2 gap-2 pt-1">
+                      <button
+                        onClick={handleGenerateInvoice}
+                        className="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-md shadow-teal-600/20 transition-all hover:scale-[1.02] cursor-pointer"
+                      >
+                        <PrinterIcon className="w-4 h-4" />
+                        <span>{t("print_bill")}</span>
+                      </button>
+
+                      <button
+                        onClick={() => {
+                          if (cartItems.length === 0) {
+                            triggerNotification("Add items to bill first");
+                            return;
+                          }
+                          handleSendWhatsappReminder(
+                            currentCustomer.name,
+                            grandTotal,
+                            currentCustomer.mobile
+                          );
+                        }}
+                        className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition-all hover:scale-[1.02] cursor-pointer"
+                      >
+                        <WhatsAppIcon className="w-4 h-4 text-emerald-100" />
+                        <span>{t("whatsapp_bill")}</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            )}
+
+            {/* TAB 2: LIVE SHOP DASHBOARD (Modeled on dashboard.blade.php) */}
+            {activeTab === "dashboard" && (
+              <div className="space-y-5">
+                {/* 6 Real KPI Cards from Laravel App */}
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  
+                  {/* Today Sales */}
+                  <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between">
+                    <div className="flex justify-between items-start">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                        {t("today_sales")}
+                      </span>
+                      <span className="p-1.5 rounded-lg bg-teal-100 text-teal-700">
+                        <ReceiptIcon className="w-4 h-4" />
+                      </span>
+                    </div>
+                    <div className="mt-2.5">
+                      <span className="text-2xl font-black text-slate-900">₹18,450</span>
+                      <p className="text-[11px] text-teal-700 font-semibold mt-0.5">
+                        24 Invoices • +14% vs yesterday
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Today Purchases */}
+                  <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between">
+                    <div className="flex justify-between items-start">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                        {t("today_purchases")}
+                      </span>
+                      <span className="p-1.5 rounded-lg bg-blue-100 text-blue-700">
+                        <TruckIcon className="w-4 h-4" />
+                      </span>
+                    </div>
+                    <div className="mt-2.5">
+                      <span className="text-2xl font-black text-slate-900">₹12,200</span>
+                      <p className="text-[11px] text-slate-500 font-semibold mt-0.5">
+                        2 Inward Bills Verified
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Cash in Hand / Galla */}
+                  <div className="bg-teal-50/80 p-4 rounded-2xl border border-teal-200 flex flex-col justify-between">
+                    <div className="flex justify-between items-start">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-teal-800">
+                        {t("cash_balance")}
+                      </span>
+                      <span className="p-1.5 rounded-lg bg-teal-200/80 text-teal-800">
+                        <WalletIcon className="w-4 h-4" />
+                      </span>
+                    </div>
+                    <div className="mt-2.5">
+                      <span className="text-2xl font-black text-teal-900">₹9,840</span>
+                      <p className="text-[11px] text-teal-700 font-semibold mt-0.5">
+                        Daily Dukan Galla Reconciled
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Bank Balance */}
+                  <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col justify-between">
+                    <div className="flex justify-between items-start">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                        {t("bank_balance")}
+                      </span>
+                      <span className="p-1.5 rounded-lg bg-cyan-100 text-cyan-700">
+                        <LandmarkIcon className="w-4 h-4" />
+                      </span>
+                    </div>
+                    <div className="mt-2.5">
+                      <span className="text-2xl font-black text-slate-900">₹45,620</span>
+                      <p className="text-[11px] text-slate-500 font-semibold mt-0.5">
+                        HDFC Bank + Shop QR UPI
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Customer Due (Udhar) */}
+                  <div className="bg-amber-50/80 p-4 rounded-2xl border border-amber-200 flex flex-col justify-between">
+                    <div className="flex justify-between items-start">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-amber-800">
+                        {t("customer_due")}
+                      </span>
+                      <span className="p-1.5 rounded-lg bg-amber-200/80 text-amber-800">
+                        <UsersIcon className="w-4 h-4" />
+                      </span>
+                    </div>
+                    <div className="mt-2.5">
+                      <span className="text-2xl font-black text-amber-900">₹28,500</span>
+                      <p className="text-[11px] text-amber-700 font-semibold mt-0.5">
+                        8 Regular Khata Accounts
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Supplier Due */}
+                  <div className="bg-rose-50/80 p-4 rounded-2xl border border-rose-200 flex flex-col justify-between">
+                    <div className="flex justify-between items-start">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-rose-800">
+                        {t("supplier_due")}
+                      </span>
+                      <span className="p-1.5 rounded-lg bg-rose-200/80 text-rose-800">
+                        <TruckIcon className="w-4 h-4" />
+                      </span>
+                    </div>
+                    <div className="mt-2.5">
+                      <span className="text-2xl font-black text-rose-900">₹14,000</span>
+                      <p className="text-[11px] text-rose-700 font-semibold mt-0.5">
+                        ABC Traders (Due Next Friday)
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Recent Invoices Table */}
+                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
+                      Recent Invoices & Connected Sync
+                    </h3>
+                    <span className="text-[11px] text-teal-700 font-semibold">
+                      Auto-Updating Live
+                    </span>
+                  </div>
+
+                  <div className="divide-y divide-slate-200 text-xs">
+                    {[
+                      { id: "DH-4029", customer: "Rahul Patel", amount: "₹2,070", mode: "Cash", time: "2 min ago", status: "Synced" },
+                      { id: "DH-4028", customer: "Walk-in Cash", amount: "₹450", mode: "UPI", time: "18 min ago", status: "Synced" },
+                      { id: "DH-4027", customer: "Deepak Mehta", amount: "₹6,800", mode: "Khata", time: "42 min ago", status: "Synced" },
+                    ].map((inv) => (
+                      <div key={inv.id} className="py-2.5 flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <span className="font-mono font-bold text-teal-700">{inv.id}</span>
+                          <span className="text-slate-900 font-medium">{inv.customer}</span>
+                          <span className="text-[10px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-mono">
+                            {inv.mode}
+                          </span>
+                        </div>
+
+                        <div className="flex items-center gap-4">
+                          <span className="font-black text-slate-900">{inv.amount}</span>
+                          <span className="text-[10px] text-slate-400 font-mono hidden sm:inline">{inv.time}</span>
+                          <span className="text-[10px] bg-teal-100 text-teal-800 px-2 py-0.5 rounded-full font-bold">
+                            ✓ {inv.status}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* TAB 3: DAILY CASHBOOK (Modeled on cashbook.blade.php) */}
+            {activeTab === "cashbook" && (
+              <div className="space-y-4">
+                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4">
+                  <div className="flex flex-wrap items-center justify-between pb-3 border-b border-slate-200 gap-2">
+                    <div>
+                      <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                        <WalletIcon className="w-4 h-4 text-teal-600" />
+                        <span>Daily Dukan Cashbook (Galla Hisab)</span>
+                      </h3>
+                      <p className="text-[11px] text-slate-500 mt-0.5">
+                        Every cash sale and physical shop expense recorded automatically.
+                      </p>
+                    </div>
+
+                    <div className="bg-teal-100 border border-teal-200 px-3 py-1.5 rounded-xl">
+                      <span className="text-[10px] uppercase font-bold text-teal-800 block">
+                        Current Cash In Galla
+                      </span>
+                      <span className="text-lg font-black text-teal-900">₹9,840</span>
+                    </div>
+                  </div>
+
+                  <div className="mt-3 divide-y divide-slate-200 text-xs">
+                    {[
+                      { title: "Opening Cash Balance (Morning)", in: "₹5,000", out: "-", balance: "₹5,000", time: "8:30 AM" },
+                      { title: "Cash Sale - Bill #DH-4029 (Rahul Patel)", in: "₹2,070", out: "-", balance: "₹7,070", time: "11:15 AM" },
+                      { title: "Milk & Dairy Supplier Inward Payment", in: "-", out: "₹650", balance: "₹6,420", time: "1:00 PM" },
+                      { title: "Counter Cash Sales (Afternoon batch)", in: "₹4,870", out: "-", balance: "₹11,290", time: "4:30 PM" },
+                      { title: "Shop Electricity & Daily Misc Expense", in: "-", out: "₹1,450", balance: "₹9,840", time: "6:45 PM" },
+                    ].map((entry, idx) => (
+                      <div key={idx} className="py-2.5 flex items-center justify-between gap-2">
+                        <div>
+                          <p className="font-bold text-slate-900">{entry.title}</p>
+                          <p className="text-[10px] text-slate-400 font-mono mt-0.5">{entry.time}</p>
+                        </div>
+
+                        <div className="flex items-center gap-4 text-right">
+                          {entry.in !== "-" ? (
+                            <span className="text-teal-700 font-bold font-mono">+{entry.in}</span>
+                          ) : (
+                            <span className="text-rose-600 font-bold font-mono">-{entry.out}</span>
+                          )}
+                          <div className="w-20 text-right">
+                            <span className="text-[10px] text-slate-400 block">Balance</span>
+                            <span className="font-black text-slate-900 font-mono">{entry.balance}</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* TAB 4: CUSTOMER KHATA & WHATSAPP (Modeled on customers.blade.php) */}
+            {activeTab === "customers" && (
+              <div className="space-y-4">
+                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4">
+                  <div className="flex items-center justify-between pb-3 border-b border-slate-200 mb-3">
+                    <div>
+                      <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                        <UsersIcon className="w-4 h-4 text-amber-600" />
+                        <span>Customer Khata & WhatsApp Collection</span>
+                      </h3>
+                      <p className="text-[11px] text-slate-500 mt-0.5">
+                        Send instant WhatsApp payment reminders with UPI link in 1-click.
+                      </p>
+                    </div>
+
+                    <div className="text-right">
+                      <span className="text-[10px] uppercase font-bold text-amber-800 block">
+                        Total Khata Udhar
+                      </span>
+                      <span className="text-lg font-black text-amber-900">₹28,500</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2.5">
+                    {[
+                      { name: "Rahul Patel", phone: "98250 12345", due: "₹4,200", lastBill: "Rice 25kg, Oil 5L", rate: "Custom Rate (5% Off)" },
+                      { name: "Deepak Mehta (Wholesale)", phone: "94260 54321", due: "₹12,850", lastBill: "Bulk Atta & Sugar", rate: "Wholesale Tier" },
+                      { name: "Vikram Chauhan", phone: "97120 99887", due: "₹3,400", lastBill: "Dairy & Masala", rate: "Standard Rate" },
+                      { name: "Pooja Varma", phone: "98980 44332", due: "₹8,050", lastBill: "Monthly Ration Pack", rate: "Standard Rate" },
+                    ].map((cust, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-white border border-slate-200/90 p-3 rounded-xl flex flex-wrap items-center justify-between gap-3 shadow-2xs"
+                      >
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <span className="font-bold text-slate-900 text-xs sm:text-sm">{cust.name}</span>
+                            <span className="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono">
+                              +91 {cust.phone}
+                            </span>
+                          </div>
+                          <p className="text-[11px] text-slate-500 mt-0.5">
+                            Recent Purchase: {cust.lastBill} • <span className="text-teal-700 font-semibold">{cust.rate}</span>
+                          </p>
+                        </div>
+
+                        <div className="flex items-center gap-3">
+                          <div className="text-right">
+                            <span className="text-[10px] uppercase font-bold text-slate-400 block">Udhar</span>
+                            <span className="text-sm font-black text-amber-800">{cust.due}</span>
+                          </div>
+
+                          <button
+                            onClick={() => handleSendWhatsappReminder(cust.name, cust.due, cust.phone)}
+                            className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
+                          >
+                            <WhatsAppIcon className="w-3.5 h-3.5" />
+                            <span>Send Reminder</span>
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Bottom Memory Connecting Ribbon */}
+            <div className="mt-5 pt-3.5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-600 bg-slate-50/80 -mx-3.5 -mb-3.5 sm:-mx-6 sm:-mb-6 lg:-mx-7 lg:-mb-7 p-3.5 sm:p-4 rounded-b-3xl">
+              <div className="flex items-center gap-2 font-medium">
+                <span className="w-2.5 h-2.5 rounded-full bg-teal-500 animate-ping shrink-0"></span>
+                <span>The DukanHisab Rule:</span>
+                <strong className="text-slate-900">One counter action updates POS, Inventory, Customer Khata & Daily Cashbook simultaneously.</strong>
+              </div>
+              <span className="text-teal-700 font-bold flex items-center gap-1">
+                Zero Duplicate Entries →
+              </span>
+            </div>
+
+          </div>
+
         </div>
 
       </div>
+
+      {/* MODAL: Thermal Receipt Preview */}
+      {showReceiptModal && lastGeneratedInvoice && (
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 animate-fade-in">
+          <div className="bg-white text-slate-900 rounded-2xl max-w-sm w-full p-5 shadow-2xl border border-slate-200">
+            <div className="text-center pb-3 border-b border-slate-200">
+              <h3 className="font-black text-base uppercase tracking-tight">Shree Ganesh General Store</h3>
+              <p className="text-[11px] text-slate-500">Station Road, Anand, Gujarat • GSTIN: 24AAACG1234F1Z5</p>
+              <p className="text-xs font-mono font-bold text-teal-700 mt-1">
+                INVOICE #{lastGeneratedInvoice.invoiceNum} • {lastGeneratedInvoice.date}
+              </p>
+            </div>
+
+            <div className="py-2.5 border-b border-slate-100 text-xs">
+              <div className="flex justify-between text-slate-600">
+                <span>Customer:</span>
+                <span className="font-bold text-slate-900">{lastGeneratedInvoice.customer.name}</span>
+              </div>
+              <div className="flex justify-between text-slate-600 mt-0.5">
+                <span>Payment Mode:</span>
+                <span className="font-bold text-teal-700">{lastGeneratedInvoice.paymentMode}</span>
+              </div>
+            </div>
+
+            {/* Receipt Items */}
+            <div className="py-2.5 space-y-1.5 text-xs max-h-48 overflow-y-auto">
+              {lastGeneratedInvoice.items.map((it, idx) => (
+                <div key={idx} className="flex justify-between items-center">
+                  <span className="font-medium text-slate-800 truncate pr-2">
+                    {it.name} ({it.qty} × ₹{it.price})
+                  </span>
+                  <span className="font-bold text-slate-900">₹{it.price * it.qty}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="pt-2 border-t border-slate-200 space-y-1 text-xs">
+              <div className="flex justify-between text-slate-600">
+                <span>Subtotal:</span>
+                <span className="font-bold">₹{lastGeneratedInvoice.subtotal}</span>
+              </div>
+              <div className="flex justify-between text-slate-600">
+                <span>GST (5%):</span>
+                <span className="font-bold">₹{lastGeneratedInvoice.tax}</span>
+              </div>
+              <div className="flex justify-between text-sm font-black text-slate-900 pt-1 border-t border-slate-200">
+                <span>Total Amount:</span>
+                <span className="text-teal-700">₹{lastGeneratedInvoice.grandTotal}</span>
+              </div>
+            </div>
+
+            <div className="mt-4 pt-3 border-t border-slate-200 flex gap-2">
+              <button
+                onClick={() => {
+                  setShowReceiptModal(false);
+                  triggerNotification("Receipt sent to 80mm thermal printer ✓");
+                }}
+                className="flex-1 bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 rounded-xl text-xs flex items-center justify-center gap-1.5 cursor-pointer"
+              >
+                <PrinterIcon className="w-3.5 h-3.5" />
+                <span>Print Bill</span>
+              </button>
+
+              <button
+                onClick={() => setShowReceiptModal(false)}
+                className="px-4 py-2 border border-slate-300 font-bold rounded-xl text-xs text-slate-700 hover:bg-slate-100 cursor-pointer"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* MODAL: WhatsApp Reminder Simulation */}
+      {whatsappSentTo && (
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 animate-fade-in">
+          <div className="bg-[#0b141a] text-white rounded-2xl max-w-sm w-full p-4 shadow-2xl border border-[#202c33]">
+            <div className="flex items-center gap-2.5 pb-3 border-b border-[#202c33]">
+              <div className="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs">
+                DH
+              </div>
+              <div>
+                <p className="text-xs font-bold text-white">DukanHisab WhatsApp Messenger</p>
+                <p className="text-[10px] text-emerald-400">To: {whatsappSentTo.name}</p>
+              </div>
+            </div>
+
+            {/* Chat Bubble */}
+            <div className="my-4 bg-[#005c4b] p-3 rounded-2xl text-xs space-y-1.5 shadow-sm">
+              <p className="font-bold text-[#e9edef]">
+                🙏 Namaste {whatsappSentTo.name} ji,
+              </p>
+              <p className="text-[#d1d7db] text-[11px] leading-relaxed">
+                This is a friendly payment reminder from <strong>Shree Ganesh General Store & Kirana</strong>.
+              </p>
+              <p className="text-[#e9edef] font-bold text-xs bg-[#025142] p-2 rounded-lg">
+                Pending Balance: {whatsappSentTo.amount}
+              </p>
+              <p className="text-[10px] text-[#8696a0]">
+                Pay securely via UPI: <span className="underline text-emerald-300 font-mono">dukanhisab@icici</span> or visit our counter.
+              </p>
+              <p className="text-[9px] text-right text-[#8696a0]">Delivered ✓✓</p>
+            </div>
+
+            <button
+              onClick={() => setWhatsappSentTo(null)}
+              className="w-full bg-[#202c33] hover:bg-[#2a3942] text-white font-bold py-2 rounded-xl text-xs cursor-pointer"
+            >
+              Done
+            </button>
+          </div>
+        </div>
+      )}
+
     </section>
   );
 }

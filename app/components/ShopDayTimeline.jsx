@@ -57,7 +57,7 @@ export default function ShopDayTimeline() {
       action: "Bill printed and sent via WhatsApp to Rahul Patel.",
       recordCreated: "Invoice #DH-4029 saved. Stock reduced: 20 → 18 Bags. ₹1,250 cash added.",
       connected: "Sales • WhatsApp Bill • Stock • Cash",
-      badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-300",
+      badgeColor: "bg-teal-100 text-teal-800 border-teal-300",
     },
     {
       time: "11:20 AM",
@@ -67,7 +67,7 @@ export default function ShopDayTimeline() {
       action: "Regular customer comes in to clear past month's pending balance.",
       recordCreated: "Payment Receipt #PR-882: ₹2,500 Cash collected. Rahul's balance reduced.",
       connected: "Customer Khata • Cash In Hand",
-      badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-300",
+      badgeColor: "bg-teal-100 text-teal-800 border-teal-300",
     },
     {
       time: "1:30 PM",
@@ -107,7 +107,7 @@ export default function ShopDayTimeline() {
       action: "Continuous customer stream. 42 bills generated within 60 minutes.",
       recordCreated: "Each item scanned instantly decrements live stock and tallies revenue.",
       connected: "High-Speed POS • Real-Time Stock",
-      badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-300",
+      badgeColor: "bg-teal-100 text-teal-800 border-teal-300",
     },
     {
       time: "9:30 PM",
@@ -131,7 +131,7 @@ export default function ShopDayTimeline() {
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold uppercase tracking-wider mb-3">
-            <ClockIcon className="w-3.5 h-3.5 text-emerald-600" />
+            <ClockIcon className="w-3.5 h-3.5 text-teal-600" />
             Signature Timeline
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
@@ -150,7 +150,7 @@ export default function ShopDayTimeline() {
             
             {/* Active filled progress bar */}
             <div 
-              className="absolute top-1/2 left-4 h-1 bg-emerald-500 -translate-y-1/2 transition-all duration-300 -z-0"
+              className="absolute top-1/2 left-4 h-1 bg-teal-500 -translate-y-1/2 transition-all duration-300 -z-0"
               style={{ width: `${(activeStep / (timelineEvents.length - 1)) * 96}%` }}
             ></div>
 
@@ -165,15 +165,15 @@ export default function ShopDayTimeline() {
                 >
                   <div className={`w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs transition-all duration-200 shadow-sm ${
                     isSelected 
-                      ? "bg-emerald-600 text-white ring-4 ring-emerald-100 scale-110" 
+                      ? "bg-teal-600 text-white ring-4 ring-teal-100 scale-110" 
                       : isPast
-                      ? "bg-emerald-100 text-emerald-800 border-2 border-emerald-500"
+                      ? "bg-teal-100 text-teal-800 border-2 border-teal-500"
                       : "bg-white text-slate-500 border-2 border-slate-300 group-hover:border-slate-400"
                   }`}>
                     {idx + 1}
                   </div>
                   <span className={`mt-2 text-xs font-bold transition-colors ${
-                    isSelected ? "text-emerald-700 font-extrabold" : "text-slate-600"
+                    isSelected ? "text-teal-700 font-extrabold" : "text-slate-600"
                   }`}>
                     {event.time}
                   </span>
@@ -192,7 +192,7 @@ export default function ShopDayTimeline() {
             
             <div className="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-slate-200">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 text-emerald-600 flex items-center justify-center shadow-xs">
+                <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 text-teal-600 flex items-center justify-center shadow-xs">
                   <IconComponent className="w-6 h-6" />
                 </div>
                 <div>
@@ -218,7 +218,7 @@ export default function ShopDayTimeline() {
                 <button
                   onClick={() => setActiveStep((prev) => Math.min(timelineEvents.length - 1, prev + 1))}
                   disabled={activeStep === timelineEvents.length - 1}
-                  className="px-3 py-1.5 rounded-lg bg-emerald-600 text-xs font-bold text-white hover:bg-emerald-700 disabled:opacity-40"
+                  className="px-3 py-1.5 rounded-lg bg-teal-600 text-xs font-bold text-white hover:bg-teal-700 disabled:opacity-40"
                 >
                   Later →
                 </button>
@@ -239,20 +239,20 @@ export default function ShopDayTimeline() {
                 </div>
               </div>
 
-              <div className="bg-emerald-950 text-white rounded-2xl p-5 border border-emerald-900 shadow-inner">
+              <div className="bg-teal-950 text-white rounded-2xl p-5 border border-teal-900 shadow-inner">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-teal-400 flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
                     DukanHisab Memory Record Created
                   </span>
-                  <span className="text-[10px] bg-emerald-900 text-emerald-200 font-mono px-2 py-0.5 rounded">
+                  <span className="text-[10px] bg-teal-900 text-teal-200 font-mono px-2 py-0.5 rounded">
                     Auto-Linked
                   </span>
                 </div>
-                <p className="mt-2 text-sm sm:text-base font-medium text-emerald-100 leading-relaxed font-mono">
+                <p className="mt-2 text-sm sm:text-base font-medium text-teal-100 leading-relaxed font-mono">
                   "{current.recordCreated}"
                 </p>
-                <div className="mt-4 pt-3 border-t border-emerald-800/80 flex items-center justify-between text-xs text-emerald-300">
+                <div className="mt-4 pt-3 border-t border-teal-800/80 flex items-center justify-between text-xs text-teal-300">
                   <span>Connected Subsystems:</span>
                   <span className="font-semibold text-white">{current.connected}</span>
                 </div>

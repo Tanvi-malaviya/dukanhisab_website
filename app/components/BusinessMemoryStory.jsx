@@ -53,15 +53,15 @@ export default function BusinessMemoryStory() {
   return (
     <section className="py-20 lg:py-28 bg-slate-900 text-white relative overflow-hidden">
       {/* Ambient background lights */}
-      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-emerald-600/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-teal-600/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-950 border border-emerald-700/60 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-3">
-            <SparklesIcon className="w-3.5 h-3.5 text-emerald-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-950 border border-teal-700/60 text-teal-400 text-xs font-bold uppercase tracking-wider mb-3">
+            <SparklesIcon className="w-3.5 h-3.5 text-teal-400" />
             The Emotional Centerpiece
           </div>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
@@ -86,19 +86,19 @@ export default function BusinessMemoryStory() {
                   onClick={() => setSelectedDay(key)}
                   className={`p-5 rounded-2xl border text-left transition-all ${
                     isSelected
-                      ? "bg-emerald-600 border-emerald-400 shadow-xl shadow-emerald-950/60 scale-[1.02]"
+                      ? "bg-teal-600 border-teal-400 shadow-xl shadow-teal-950/60 scale-[1.02]"
                       : "bg-slate-800/70 border-slate-700/80 hover:bg-slate-800 text-slate-300"
                   }`}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <span className="font-extrabold text-lg text-white">{d.day}</span>
                     <span className={`text-[11px] font-mono px-2 py-0.5 rounded-full ${
-                      isSelected ? "bg-emerald-700 text-emerald-100" : "bg-slate-700 text-slate-300"
+                      isSelected ? "bg-teal-700 text-teal-100" : "bg-slate-700 text-slate-300"
                     }`}>
                       Archive
                     </span>
                   </div>
-                  <p className="text-2xl font-black text-emerald-300">{d.sales}</p>
+                  <p className="text-2xl font-black text-teal-300">{d.sales}</p>
                   <div className="mt-2 text-xs text-slate-300/90 space-y-0.5">
                     <p>{d.purchases}</p>
                     <p>{d.customers}</p>
@@ -112,8 +112,8 @@ export default function BusinessMemoryStory() {
           <div className="bg-slate-800/90 rounded-3xl p-6 sm:p-10 border border-slate-700 shadow-2xl backdrop-blur-xs">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-5 border-b border-slate-700">
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-                <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+                <span className="w-2.5 h-2.5 rounded-full bg-teal-400 animate-ping"></span>
+                <span className="text-xs font-bold uppercase tracking-wider text-teal-400">
                   Transaction Deep Memory Drilldown
                 </span>
               </div>
@@ -131,8 +131,8 @@ export default function BusinessMemoryStory() {
                 <p className="text-sm text-slate-300 mt-2">
                   {current.highlightTransaction.details}
                 </p>
-                <div className="mt-4 inline-flex items-center gap-2 bg-emerald-950/80 border border-emerald-700/80 px-3 py-1.5 rounded-xl text-emerald-300 font-bold text-sm">
-                  <CheckIcon className="w-4 h-4 text-emerald-400" />
+                <div className="mt-4 inline-flex items-center gap-2 bg-teal-950/80 border border-teal-700/80 px-3 py-1.5 rounded-xl text-teal-300 font-bold text-sm">
+                  <CheckIcon className="w-4 h-4 text-teal-400" />
                   <span>{current.highlightTransaction.amount}</span>
                 </div>
               </div>
@@ -140,7 +140,7 @@ export default function BusinessMemoryStory() {
               <div className="bg-slate-900/90 p-5 rounded-2xl border border-slate-700/80 text-xs text-slate-300 space-y-2">
                 <p className="font-bold text-white text-sm">Why this matters to a shop owner:</p>
                 <p className="leading-relaxed">
-                  6 months from now, if Rahul Patel asks: <em className="text-emerald-300">"What rate did you charge me for rice on that Tuesday?"</em>, you don't guess.
+                  6 months from now, if Rahul Patel asks: <em className="text-teal-300">"What rate did you charge me for rice on that Tuesday?"</em>, you don't guess.
                 </p>
                 <p className="leading-relaxed">
                   You pull up the exact timestamp in 2 seconds. Trust is preserved. Khata disputes vanish.

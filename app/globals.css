@@ -1,18 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
-  --primary-green: #059669;
-  --primary-dark: #064e3b;
-  --primary-light: #ecfdf5;
+  /* DukanHisab Brand Teal - matches logo & app dashboards */
+  --brand-50:   #f0fdfa;
+  --brand-100:  #ccfbf1;
+  --brand-200:  #99f6e4;
+  --brand-300:  #5eead4;
+  --brand-400:  #2dd4bf;
+  --brand-500:  #14b8a6;
+  --brand-600:  #0d9488;
+  --brand-700:  #0f766e;
+  --brand-800:  #115e59;
+  --brand-900:  #134e4a;
+
+  --primary:          var(--brand-600);
+  --primary-hover:    var(--brand-700);
+  --primary-light:    var(--brand-50);
+  --primary-mid:      var(--brand-100);
+  --primary-dark:     var(--brand-900);
+
+  --cta-bg:           #0d9488;
+  --cta-bg-hover:     #0f766e;
+  --cta-shadow:       rgba(13, 148, 136, 0.28);
+
+  --background:   #f8fafc;
+  --surface:      #ffffff;
+  --foreground:   #0f172a;
+  --muted:        #64748b;
+  --border:       #e2e8f0;
+
+  /* Section gradient tokens */
+  --section-hero-from: #e6f7f6;
+  --section-hero-via:  #f2fbfa;
+  --section-hero-to:   #ffffff;
+  --section-alt-from:  #f0fdfa;
+  --section-alt-to:    #ffffff;
+  --section-light:     #f5fafa;
+
+  /* Legacy compat */
+  --primary-green: #0d9488;
+  --primary-dark:  #115e59;
 }
 
 body {
-  background-color: var(--background);
+  background-color: var(--surface);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Custom laser scan keyframe */
@@ -53,19 +88,47 @@ body {
   animation: floatGentle 7s ease-in-out 1.5s infinite;
 }
 
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+.animate-float-reverse {
+  animation: floatReverse 5.5s ease-in-out infinite;
+}
+
+/* Shimmer wave */
+@keyframes shimmerWave {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmerWave 2.8s infinite;
+}
+
+
 /* Pulse radar ring */
 @keyframes pulseRing {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
+    box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.5);
   }
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 16px rgba(16, 185, 129, 0);
+    box-shadow: 0 0 0 16px rgba(13, 148, 136, 0);
   }
   100% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    box-shadow: 0 0 0 0 rgba(13, 148, 136, 0);
   }
 }
 
@@ -73,17 +136,17 @@ body {
   animation: pulseRing 2.5s infinite;
 }
 
-/* Subtle dot pattern background */
+/* Dot pattern background (teal-tinted) */
 .bg-dot-pattern {
-  background-image: radial-gradient(rgba(148, 163, 184, 0.25) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(13, 148, 136, 0.10) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
 .bg-grid-subtle {
   background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(226, 232, 240, 0.6) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(226, 232, 240, 0.6) 1px, transparent 1px);
+  background-image:
+    linear-gradient(to right, rgba(13, 148, 136, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(13, 148, 136, 0.07) 1px, transparent 1px);
 }
 
 /* Custom smooth scrollbar */
@@ -93,14 +156,98 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: var(--brand-50);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: var(--brand-300);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: var(--brand-500);
+}
+
+/* ---- Section Background Utilities ---- */
+/* Apply to <section> tags for consistent teal-gradient backgrounds */
+
+.section-hero {
+  background: linear-gradient(
+    to bottom,
+    var(--section-hero-from),
+    var(--section-hero-via),
+    var(--section-hero-to)
+  );
+}
+
+.section-alt {
+  background: linear-gradient(
+    to bottom,
+    var(--section-alt-from),
+    var(--section-alt-to)
+  );
+}
+
+.section-light   { background-color: var(--section-light); }
+.section-white   { background-color: var(--surface); }
+
+.section-brand {
+  background: linear-gradient(
+    135deg,
+    var(--brand-900) 0%,
+    var(--brand-800) 40%,
+    var(--brand-600) 100%
+  );
+  color: #ffffff;
+}
+
+.section-gradient {
+  background: linear-gradient(
+    160deg,
+    var(--brand-50) 0%,
+    #ffffff 45%,
+    var(--brand-50) 100%
+  );
+}
+
+/* ---- Badge ---- */
+.badge-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-600);
+  background-color: var(--brand-50);
+  border: 1px solid var(--brand-200);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+/* ---- Card ---- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  transition: box-shadow 0.25s, border-color 0.25s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 12px 32px rgba(13, 148, 136, 0.12), 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-color: var(--brand-200);
+  transform: translateY(-2px);
+}
+
+/* ---- Focus ring ---- */
+:focus-visible {
+  outline: 2px solid var(--brand-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ---- 3D Transform Utility ---- */
+.transform-style-3d {
+  transform-style: preserve-3d;
 }

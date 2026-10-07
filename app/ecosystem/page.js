@@ -13,20 +13,20 @@ export const metadata = {
 
 export default function EcosystemPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-emerald-100 selection:text-emerald-900">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-teal-100 selection:text-teal-900">
       <Navbar />
 
       <main className="flex-1">
         {/* Page Hero Header */}
-        <section className="pt-12 pb-14 bg-gradient-to-b from-emerald-50/50 via-white to-slate-50 border-b border-slate-200">
+        <section className="pt-12 pb-14 bg-gradient-to-b section-hero border-b border-slate-200">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-4">
-              <CloudSyncIcon className="w-3.5 h-3.5 text-emerald-700" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider mb-4">
+              <CloudSyncIcon className="w-3.5 h-3.5 text-teal-700" />
               Connected Devices
             </div>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
               Your Shop in Your Pocket. <br />
-              <span className="text-emerald-600">Your Business on Your Screen.</span>
+              <span className="text-teal-600">Your Business on Your Screen.</span>
             </h1>
             <p className="mt-4 text-base sm:text-xl text-slate-600 font-medium max-w-3xl mx-auto leading-relaxed">
               Use your phone for fast barcode scans and counter bills during the day. Open your laptop in the evening to review profit, download Excel reports, and reconcile accounts.
@@ -45,7 +45,7 @@ export default function EcosystemPage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl">
               <div className="max-w-3xl">
-                <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+                <span className="text-xs font-bold uppercase tracking-wider text-teal-400">
                   Reliability Under Pressure
                 </span>
                 <h2 className="text-2xl sm:text-4xl font-extrabold text-white mt-2">
@@ -57,15 +57,15 @@ export default function EcosystemPage() {
 
                 <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-bold text-slate-200">
                   <div className="flex items-center gap-2">
-                    <CheckIcon className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <CheckIcon className="w-4 h-4 text-teal-400 shrink-0" />
                     <span>Zero counter stoppage</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckIcon className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <CheckIcon className="w-4 h-4 text-teal-400 shrink-0" />
                     <span>Automatic background sync</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckIcon className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <CheckIcon className="w-4 h-4 text-teal-400 shrink-0" />
                     <span>Safe from phone damage</span>
                   </div>
                 </div>

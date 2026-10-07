@@ -63,8 +63,8 @@ export default function BarcodeSection() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3">
-            <BarcodeIcon className="w-3.5 h-3.5 text-emerald-700" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider mb-3">
+            <BarcodeIcon className="w-3.5 h-3.5 text-teal-700" />
             Fast Counter Operations
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
@@ -83,9 +83,9 @@ export default function BarcodeSection() {
               return (
                 <div 
                   key={st.title} 
-                  className="bg-slate-50 border border-slate-200/90 rounded-2xl p-4 text-center hover:border-emerald-300 hover:bg-emerald-50/40 transition-all group"
+                  className="bg-slate-50 border border-slate-200/90 rounded-2xl p-4 text-center hover:border-teal-300 hover:bg-teal-50/40 transition-all group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 text-emerald-600 flex items-center justify-center mx-auto mb-2.5 shadow-xs group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 text-teal-600 flex items-center justify-center mx-auto mb-2.5 shadow-xs group-hover:bg-teal-600 group-hover:text-white transition-colors">
                     <Icon className="w-5 h-5" />
                   </div>
                   <span className="text-[10px] font-mono font-bold text-slate-400 block mb-0.5">
@@ -103,7 +103,7 @@ export default function BarcodeSection() {
         <div className="max-w-4xl mx-auto bg-slate-900 rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl text-white">
           <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-800">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+              <span className="text-xs font-bold uppercase tracking-wider text-teal-400">
                 Interactive Scanner Simulation
               </span>
               <p className="text-sm text-slate-300 mt-0.5">
@@ -117,7 +117,7 @@ export default function BarcodeSection() {
                 onClick={() => handleScanClick("rice")}
                 className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                   selectedProduct === "rice"
-                    ? "bg-emerald-600 text-white shadow-md"
+                    ? "bg-teal-600 text-white shadow-md"
                     : "bg-slate-800 text-slate-300 hover:bg-slate-700"
                 }`}
               >
@@ -127,7 +127,7 @@ export default function BarcodeSection() {
                 onClick={() => handleScanClick("oil")}
                 className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                   selectedProduct === "oil"
-                    ? "bg-emerald-600 text-white shadow-md"
+                    ? "bg-teal-600 text-white shadow-md"
                     : "bg-slate-800 text-slate-300 hover:bg-slate-700"
                 }`}
               >
@@ -137,7 +137,7 @@ export default function BarcodeSection() {
                 onClick={() => handleScanClick("sugar")}
                 className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                   selectedProduct === "sugar"
-                    ? "bg-emerald-600 text-white shadow-md"
+                    ? "bg-teal-600 text-white shadow-md"
                     : "bg-slate-800 text-slate-300 hover:bg-slate-700"
                 }`}
               >
@@ -156,8 +156,8 @@ export default function BarcodeSection() {
               <div className="absolute left-0 right-0 h-1 bg-red-500 shadow-[0_0_12px_#ef4444] animate-laser"></div>
 
               {scanTriggered && (
-                <div className="absolute inset-0 bg-emerald-500/20 backdrop-blur-xs flex items-center justify-center z-10 animate-pulse">
-                  <span className="bg-emerald-600 text-white font-mono font-bold text-xs px-3 py-1 rounded-full shadow-lg">
+                <div className="absolute inset-0 bg-teal-500/20 backdrop-blur-xs flex items-center justify-center z-10 animate-pulse">
+                  <span className="bg-teal-600 text-white font-mono font-bold text-xs px-3 py-1 rounded-full shadow-lg">
                     ✓ BEEP! SCANNED
                   </span>
                 </div>
@@ -191,8 +191,8 @@ export default function BarcodeSection() {
                 </span>
               </div>
 
-              <div className="mt-4 flex items-center justify-center gap-2 text-xs text-emerald-400 font-mono">
-                <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <div className="mt-4 flex items-center justify-center gap-2 text-xs text-teal-400 font-mono">
+                <span className="w-2 h-2 rounded-full bg-teal-400"></span>
                 <span>Response Time: 180ms</span>
               </div>
             </div>
@@ -201,7 +201,7 @@ export default function BarcodeSection() {
             <div className="md:col-span-7 bg-slate-800/80 rounded-2xl p-6 border border-slate-700">
               <div className="flex items-center justify-between pb-3 border-b border-slate-700">
                 <span className="text-xs font-bold text-slate-400">PRODUCT LOOKUP RESULT</span>
-                <span className="text-xs bg-emerald-950 text-emerald-300 font-mono border border-emerald-800 px-2 py-0.5 rounded">
+                <span className="text-xs bg-teal-950 text-teal-300 font-mono border border-teal-800 px-2 py-0.5 rounded">
                   Match Found: 100%
                 </span>
               </div>
@@ -215,20 +215,20 @@ export default function BarcodeSection() {
                 <div className="grid grid-cols-2 gap-3 pt-2">
                   <div className="bg-slate-900/90 p-3 rounded-xl border border-slate-800">
                     <span className="text-[11px] text-slate-400">Sale Price</span>
-                    <p className="text-lg font-extrabold text-emerald-400">{current.salePrice}</p>
+                    <p className="text-lg font-extrabold text-teal-400">{current.salePrice}</p>
                     <span className="text-[10px] text-slate-500 line-through">MRP {current.mrp}</span>
                   </div>
 
                   <div className="bg-slate-900/90 p-3 rounded-xl border border-slate-800">
                     <span className="text-[11px] text-slate-400">Live Inventory</span>
                     <p className="text-base font-bold text-white mt-0.5">{current.stock}</p>
-                    <span className="text-[10px] text-emerald-400">Auto-decrements on sale</span>
+                    <span className="text-[10px] text-teal-400">Auto-decrements on sale</span>
                   </div>
                 </div>
 
                 <div className="pt-2 text-xs text-slate-400 flex items-center justify-between">
                   <span>Fast product lookup • Zero typing errors • Ready for 1-click bill</span>
-                  <span className="text-emerald-400 font-bold">Added to Cart ✓</span>
+                  <span className="text-teal-400 font-bold">Added to Cart ✓</span>
                 </div>
               </div>
             </div>
@@ -238,15 +238,15 @@ export default function BarcodeSection() {
           {/* Bottom Bullet Points */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-800 text-xs text-slate-300">
             <div className="flex items-center gap-2">
-              <CheckIcon className="w-4 h-4 text-emerald-400 shrink-0" />
+              <CheckIcon className="w-4 h-4 text-teal-400 shrink-0" />
               <span>Compatible with all standard USB & Bluetooth 1D/2D scanners</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckIcon className="w-4 h-4 text-emerald-400 shrink-0" />
+              <CheckIcon className="w-4 h-4 text-teal-400 shrink-0" />
               <span>Use your phone's built-in camera when roaming in aisles</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckIcon className="w-4 h-4 text-emerald-400 shrink-0" />
+              <CheckIcon className="w-4 h-4 text-teal-400 shrink-0" />
               <span>Eliminates typing mistakes during evening rush hours</span>
             </div>
           </div>

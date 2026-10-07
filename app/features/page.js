@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Navbar from "../components/Navbar";
+import FeatureHero from "../components/FeatureHero";
 import FeatureExplorer from "../components/FeatureExplorer";
 import BarcodeSection from "../components/BarcodeSection";
 import CustomerSection from "../components/CustomerSection";
@@ -12,32 +13,18 @@ import Footer from "../components/Footer";
 import { PackageIcon, ArrowRightIcon } from "../components/Icons";
 
 export const metadata = {
-  title: "DukanHisab Features — Barcode Billing, Khata, Pricing Engine & Ledgers",
-  description: "Explore DukanHisab's retail features: fast barcode POS, customer-specific prices, supplier payables, dual money flow, return notes, and WhatsApp invoicing.",
+  title: "DukanHisab Features — Everything Your Shop Needs in One App",
+  description: "From billing to inventory, customer khata to business reports — DukanHisab gives you all the tools to manage your retail business easily and professionally.",
 };
 
 export default function FeaturesPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-emerald-100 selection:text-emerald-900">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-teal-100 selection:text-teal-900">
       <Navbar />
 
       <main className="flex-1">
-        {/* Page Hero Header */}
-        <section className="pt-12 pb-14 bg-gradient-to-b from-emerald-50/50 via-white to-slate-50 border-b border-slate-200">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-4">
-              <PackageIcon className="w-3.5 h-3.5 text-emerald-700" />
-              Complete Retail Toolset
-            </div>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
-              Powerful Modules. <br />
-              <span className="text-emerald-600">Simple Everyday Shop Operations.</span>
-            </h1>
-            <p className="mt-4 text-base sm:text-xl text-slate-600 font-medium max-w-3xl mx-auto leading-relaxed">
-              Every tool a shop owner needs to sell faster, track credit balances accurately, manage inward inventory, and stop losing money on unrecorded expenses.
-            </p>
-          </div>
-        </section>
+        {/* Unique Feature Hero with authentic shopkeeper & smartphone mockup + 8 quick cards */}
+        <FeatureHero />
 
         {/* 1. Shop Control Center Category Explorer */}
         <FeatureExplorer />
@@ -58,9 +45,9 @@ export default function FeaturesPage() {
         </div>
 
         {/* 5. Dual Money Flow & Everyday Expense Logging */}
-        <div id="money-flow">
+        {/* <div id="money-flow">
           <MoneyFlowSection />
-        </div>
+        </div> */}
 
         {/* 6. Sale & Purchase Returns */}
         <div id="returns">
@@ -84,7 +71,7 @@ export default function FeaturesPage() {
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/ecosystem"
-                className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all"
+                className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all"
               >
                 <span>Explore Mobile App & Web Panel</span>
                 <ArrowRightIcon className="w-4 h-4" />

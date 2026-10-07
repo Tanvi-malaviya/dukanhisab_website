@@ -14,11 +14,11 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="w-9 h-9 rounded-xl bg-emerald-600 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+              <div className="w-9 h-9 rounded-xl bg-teal-600 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
                 <StoreIcon className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-extrabold text-white tracking-tight">
-                Dukan<span className="text-emerald-500">Hisab</span>
+                Dukan<span className="text-teal-500">Hisab</span>
               </span>
             </Link>
 
@@ -29,7 +29,29 @@ export default function Footer() {
               DukanHisab connects every sale, purchase, payment, product, customer and expense into one unified, intelligent shop management ecosystem.
             </p>
 
-            <div className="pt-2 text-xs text-slate-500 font-mono">
+            <div className="pt-2 flex flex-wrap items-center gap-2.5">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.app.dukanhisab&hl=en_IN"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs px-3 py-2 rounded-xl border border-slate-800 hover:border-teal-500 transition-all"
+              >
+                <SmartphoneIcon className="w-3.5 h-3.5 text-teal-400" />
+                <span>Google Play App</span>
+              </a>
+
+              <a
+                href="https://dukanhisab.in/shop"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs px-3 py-2 rounded-xl border border-slate-800 hover:border-teal-500 transition-all"
+              >
+                <MonitorIcon className="w-3.5 h-3.5 text-teal-400" />
+                <span>Web Panel (Shop) ↗</span>
+              </a>
+            </div>
+
+            <div className="pt-1 text-xs text-slate-500 font-mono">
               Every Sale. Every Purchase. Every Rupee. Remembered.
             </div>
           </div>
@@ -40,13 +62,34 @@ export default function Footer() {
               Explore Pages
             </h4>
             <ul className="space-y-2.5">
-              <li><Link href="/" className="hover:text-emerald-400 transition-colors">Home Page</Link></li>
-              <li><Link href="/how-it-works" className="hover:text-emerald-400 transition-colors">How It Works (Shop Day)</Link></li>
-              <li><Link href="/features" className="hover:text-emerald-400 transition-colors">Features & Modules</Link></li>
-              <li><Link href="/ecosystem" className="hover:text-emerald-400 transition-colors">Mobile App & Web Panel</Link></li>
-              <li><Link href="/pricing" className="hover:text-emerald-400 transition-colors">Pricing & Plans</Link></li>
-              <li><Link href="/faq" className="hover:text-emerald-400 transition-colors">Frequently Asked Questions</Link></li>
-              <li><Link href="/contact" className="hover:text-emerald-400 transition-colors">Contact & Demo Request</Link></li>
+              <li><Link href="/" className="hover:text-teal-400 transition-colors">Home Page</Link></li>
+              <li><Link href="/how-it-works" className="hover:text-teal-400 transition-colors">How It Works (Shop Day)</Link></li>
+              <li><Link href="/features" className="hover:text-teal-400 transition-colors">Features & Modules</Link></li>
+              <li><Link href="/ecosystem" className="hover:text-teal-400 transition-colors">Mobile App & Web Panel</Link></li>
+              <li><Link href="/pricing" className="hover:text-teal-400 transition-colors">Pricing & Plans</Link></li>
+              <li><Link href="/tools/gst-calculator" className="hover:text-teal-400 transition-colors">Free GST Calculator</Link></li>
+              <li>
+                <a
+                  href="https://dukanhisab.in/shop"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-teal-400 font-bold hover:underline flex items-center gap-1"
+                >
+                  <span>Shop Web Panel</span>
+                  <span>↗</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.app.dukanhisab&hl=en_IN"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-teal-400 font-bold hover:underline flex items-center gap-1"
+                >
+                  <span>Google Play App</span>
+                  <span>↗</span>
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -56,12 +99,12 @@ export default function Footer() {
               Capabilities
             </h4>
             <ul className="space-y-2.5">
-              <li><Link href="/features#barcode" className="hover:text-emerald-400 transition-colors">Barcode POS Billing</Link></li>
-              <li><Link href="/features#customer-pricing" className="hover:text-emerald-400 transition-colors">Customer-Specific Pricing</Link></li>
-              <li><Link href="/features#suppliers" className="hover:text-emerald-400 transition-colors">Supplier Purchases & Ledger</Link></li>
-              <li><Link href="/features#money-flow" className="hover:text-emerald-400 transition-colors">Cash & Expense Tracking</Link></li>
-              <li><Link href="/features#returns" className="hover:text-emerald-400 transition-colors">Sale & Purchase Returns</Link></li>
-              <li><Link href="/features#invoices" className="hover:text-emerald-400 transition-colors">WhatsApp & PDF Invoices</Link></li>
+              <li><Link href="/features#barcode" className="hover:text-teal-400 transition-colors">Barcode POS Billing</Link></li>
+              <li><Link href="/features#customer-pricing" className="hover:text-teal-400 transition-colors">Customer-Specific Pricing</Link></li>
+              <li><Link href="/features#suppliers" className="hover:text-teal-400 transition-colors">Supplier Purchases & Ledger</Link></li>
+              <li><Link href="/features#money-flow" className="hover:text-teal-400 transition-colors">Cash & Expense Tracking</Link></li>
+              <li><Link href="/features#returns" className="hover:text-teal-400 transition-colors">Sale & Purchase Returns</Link></li>
+              <li><Link href="/features#invoices" className="hover:text-teal-400 transition-colors">WhatsApp & PDF Invoices</Link></li>
             </ul>
           </div>
 
@@ -72,7 +115,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5">
               <li className="flex items-center gap-2">
-                <WhatsAppIcon className="w-4 h-4 text-emerald-400" />
+                <WhatsAppIcon className="w-4 h-4 text-teal-400" />
                 <span className="text-slate-300">WhatsApp: +91 98250 00000</span>
               </li>
               <li className="flex items-center gap-2">

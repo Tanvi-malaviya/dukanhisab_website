@@ -2,213 +2,424 @@
 
 import React, { useState } from "react";
 import { 
-  RupeeIcon, 
-  UsersIcon, 
-  TruckIcon, 
-  WalletIcon, 
-  LandmarkIcon, 
-  ArrowRightIcon, 
-  TrendingUpIcon, 
-  CheckIcon 
-} from "./Icons";
+  ArrowUpRight, 
+  ArrowDownRight, 
+  Wallet, 
+  Landmark, 
+  Receipt, 
+  TrendingUp, 
+  CheckCircle2, 
+  ArrowRightLeft,
+  Coins,
+  ShieldCheck,
+  Sparkles
+} from "lucide-react";
 
 export default function MoneyFlowSection() {
-  const [activeExpenseFilter, setActiveExpenseFilter] = useState("all");
+  const [activeTab, setActiveTab] = useState("all"); // 'all', 'inflow', 'outflow', 'closure'
 
-  const expenses = [
-    { title: "Tempo / Transport", amount: "₹350", category: "Logistics", date: "Today 1:30 PM", drawer: "Cash" },
-    { title: "Electricity Bill", amount: "₹2,400", category: "Utilities", date: "Yesterday", drawer: "HDFC Bank" },
-    { title: "Packaging & Bags", amount: "₹850", category: "Supplies", date: "16 Sep", drawer: "Cash" },
-    { title: "Tea & Shop Snacks", amount: "₹120", category: "Daily", date: "Today 4:00 PM", drawer: "Cash" },
+  // Live real transactions modeled from DukanHisab Cashbook
+  const inflowItems = [
+    {
+      id: "in-1",
+      title: "Rahul Patel - Khata Due Clearance",
+      source: "Customer Ledger Repayment",
+      mode: "UPI / PhonePe",
+      account: "HDFC Bank",
+      time: "Today 11:45 AM",
+      amount: "+₹2,500",
+      status: "Verified",
+    },
+    {
+      id: "in-2",
+      title: "Counter POS Sale #DH-4029",
+      source: "Walk-in Retail Cash Sale",
+      mode: "Physical Cash",
+      account: "Cash Drawer (Galla)",
+      time: "Today 01:15 PM",
+      amount: "+₹1,850",
+      status: "In Drawer",
+    },
+    {
+      id: "in-3",
+      title: "Wholesale Grocery Order",
+      source: "Invoice #DH-4030",
+      mode: "Split: Cash + UPI",
+      account: "Dual Split",
+      time: "Today 03:20 PM",
+      amount: "+₹4,200",
+      status: "Reconciled",
+    },
+    {
+      id: "in-4",
+      title: "Returnable Jar Security Deposit",
+      source: "Bisleri 20L Water Jars (4)",
+      mode: "Physical Cash",
+      account: "Cash Drawer (Galla)",
+      time: "Today 04:10 PM",
+      amount: "+₹600",
+      status: "Asset Held",
+    },
+  ];
+
+  const outflowItems = [
+    {
+      id: "out-1",
+      title: "Supplier Purchase: ABC Traders",
+      dest: "Stock Inward Bill #PB-881",
+      type: "Inventory (COGS)",
+      mode: "Bank NEFT",
+      account: "HDFC Bank",
+      time: "Today 12:30 PM",
+      amount: "-₹6,500",
+    },
+    {
+      id: "out-2",
+      title: "Monthly Shop Electricity Bill",
+      dest: "Torrent Power Bill #7721",
+      type: "Operating Overhead",
+      mode: "UPI Autopay",
+      account: "HDFC Bank",
+      time: "Yesterday",
+      amount: "-₹2,400",
+    },
+    {
+      id: "out-3",
+      title: "Tempo Logistics & Unloading",
+      dest: "Freight delivery charge",
+      type: "Daily Expense",
+      mode: "Physical Cash",
+      account: "Cash Drawer (Galla)",
+      time: "Today 02:00 PM",
+      amount: "-₹450",
+    },
+    {
+      id: "out-4",
+      title: "Shop Tea & Staff Refreshments",
+      dest: "Counter Daily Expense",
+      type: "Daily Expense",
+      mode: "Physical Cash",
+      account: "Cash Drawer (Galla)",
+      time: "Today 05:30 PM",
+      amount: "-₹120",
+    },
+  ];
+
+  const denominationTally = [
+    { note: "₹500", count: 24, total: "₹12,000" },
+    { note: "₹200", count: 15, total: "₹3,000" },
+    { note: "₹100", count: 32, total: "₹3,200" },
+    { note: "₹50 & Coins", count: "Mixed", total: "₹450" },
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-slate-50 border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200 relative overflow-hidden">
+      
+      {/* Decorative Subtle Background */}
+      <div className="absolute top-10 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 left-0 w-[500px] h-[500px] bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3">
-            <RupeeIcon className="w-3.5 h-3.5 text-emerald-700" />
-            Complete Cash & Bank Transparency
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3.5 shadow-2xs">
+            <Coins className="w-3.5 h-3.5 text-emerald-600" />
+            <span>Complete Cash & Bank Transparency</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
             Track Money Coming In. <br />
-            <span className="text-emerald-600">Track Money Going Out.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700">
+              Track Money Going Out.
+            </span>
           </h2>
-          <p className="mt-4 text-base sm:text-xl text-slate-600 font-medium">
-            Every rupee in your cash drawer and bank account is connected to an actual transaction.
+
+          <p className="mt-4 text-sm sm:text-base text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto">
+            Every rupee in your counter cash drawer and bank account is connected to an actual verified transaction. Eliminate evening drawer shortages and double-counted expenses.
           </p>
+
+          {/* Quick Metrics Bar */}
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto text-left">
+            <div className="bg-white border border-slate-200/90 p-4 rounded-2xl shadow-2xs">
+              <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Today's Inflow</span>
+              <div className="flex items-center gap-1.5 mt-0.5">
+                <ArrowUpRight className="w-4 h-4 text-emerald-600" />
+                <span className="text-lg font-black text-emerald-700 font-mono">+₹9,150</span>
+              </div>
+            </div>
+
+            <div className="bg-white border border-slate-200/90 p-4 rounded-2xl shadow-2xs">
+              <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Today's Outflow</span>
+              <div className="flex items-center gap-1.5 mt-0.5">
+                <ArrowDownRight className="w-4 h-4 text-rose-600" />
+                <span className="text-lg font-black text-rose-700 font-mono">-₹9,470</span>
+              </div>
+            </div>
+
+            <div className="bg-white border border-slate-200/90 p-4 rounded-2xl shadow-2xs">
+              <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Cash in Hand (Galla)</span>
+              <div className="flex items-center gap-1.5 mt-0.5">
+                <Wallet className="w-4 h-4 text-teal-600" />
+                <span className="text-lg font-black text-slate-900 font-mono">₹18,650</span>
+              </div>
+            </div>
+
+            <div className="bg-white border border-slate-200/90 p-4 rounded-2xl shadow-2xs">
+              <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Bank & UPI Balance</span>
+              <div className="flex items-center gap-1.5 mt-0.5">
+                <Landmark className="w-4 h-4 text-blue-600" />
+                <span className="text-lg font-black text-slate-900 font-mono">₹64,280</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Dual Money Flow Stage */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-14">
+        {/* Dual Flow Cards: Inflow (Green) vs Outflow (Red/Slate) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 items-stretch">
           
-          {/* Money Coming In (Green theme) */}
-          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-emerald-200/90 shadow-lg relative overflow-hidden">
-            <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
-              <div className="flex items-center gap-2.5">
-                <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
-                <h3 className="text-lg sm:text-xl font-black text-slate-900 uppercase tracking-wide">
-                  Money Coming In
-                </h3>
+          {/* ================= LEFT: MONEY COMING IN (INFLOW) ================= */}
+          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-emerald-200/90 shadow-lg shadow-emerald-700/5 flex flex-col justify-between">
+            <div>
+              {/* Card Header */}
+              <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-2xl bg-emerald-100/80 text-emerald-700 flex items-center justify-center font-bold shadow-xs">
+                    <ArrowUpRight className="w-6 h-6 text-emerald-700" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-black text-slate-900">
+                      Money Coming In
+                    </h3>
+                    <p className="text-xs text-slate-500 font-medium">Sales, Customer Khata & Advance Deposits</p>
+                  </div>
+                </div>
+                <span className="text-xs font-black text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full uppercase tracking-wider">
+                  Inflow
+                </span>
               </div>
-              <span className="text-xs font-extrabold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">
-                Revenue & Khata Inflow
-              </span>
+
+              {/* Transactions List */}
+              <div className="space-y-3">
+                {inflowItems.map((item) => (
+                  <div
+                    key={item.id}
+                    className="p-3.5 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:bg-emerald-50/40 hover:border-emerald-200 transition-all flex items-center justify-between gap-3"
+                  >
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-bold text-slate-900 truncate">
+                          {item.title}
+                        </span>
+                        <span className="text-[10px] font-semibold bg-white border border-slate-200 px-2 py-0.5 rounded-md text-slate-600 shrink-0">
+                          {item.mode}
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-slate-500 mt-0.5 flex items-center gap-2">
+                        <span>{item.source}</span>
+                        <span className="text-slate-300">•</span>
+                        <span className="font-mono text-slate-400">{item.time}</span>
+                      </p>
+                    </div>
+
+                    <div className="text-right shrink-0">
+                      <span className="text-sm font-black text-emerald-700 font-mono block">
+                        {item.amount}
+                      </span>
+                      <span className="text-[10px] text-emerald-600 font-bold">
+                        {item.status} ✓
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Visual Step-by-Step Flow */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-4 bg-emerald-50/70 p-4 rounded-2xl border border-emerald-200/80">
-                <div className="w-10 h-10 rounded-xl bg-white text-emerald-700 flex items-center justify-center font-bold shadow-xs">
-                  <UsersIcon className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-emerald-700">Source 01</span>
-                  <p className="text-sm font-bold text-slate-900">Customer Purchase or Khata Clearance</p>
-                  <p className="text-xs text-slate-600 mt-0.5">Counter sale generated or past pending credit paid.</p>
-                </div>
+            {/* Inflow Bottom Summary Strip */}
+            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs bg-emerald-50/60 -mx-6 -mb-6 sm:-mx-8 sm:-mb-8 p-4 rounded-b-3xl">
+              <div className="flex items-center gap-2 text-emerald-900 font-bold">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                <span>Auto-Updated in Galla & Bank Ledgers</span>
               </div>
-
-              <div className="flex justify-center -my-2 text-emerald-600">
-                ↓
-              </div>
-
-              <div className="flex items-center gap-4 bg-emerald-50/70 p-4 rounded-2xl border border-emerald-200/80">
-                <div className="w-10 h-10 rounded-xl bg-white text-emerald-700 flex items-center justify-center font-bold shadow-xs">
-                  <RupeeIcon className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-emerald-700">Source 02</span>
-                  <p className="text-sm font-bold text-slate-900">Payment Verified (Cash or UPI)</p>
-                  <p className="text-xs text-slate-600 mt-0.5">Customer pays via physical cash, GPay/PhonePe, or bank transfer.</p>
-                </div>
-              </div>
-
-              <div className="flex justify-center -my-2 text-emerald-600">
-                ↓
-              </div>
-
-              <div className="flex items-center gap-4 bg-emerald-600 text-white p-4 rounded-2xl shadow-md">
-                <div className="w-10 h-10 rounded-xl bg-white/20 text-white flex items-center justify-center font-bold">
-                  <WalletIcon className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-emerald-200">Destination</span>
-                  <p className="text-sm font-bold">Cash Drawer / Bank Ledger Credited</p>
-                  <p className="text-xs text-emerald-100 mt-0.5">Instant match with physical counter cash or bank statement.</p>
-                </div>
-              </div>
+              <span className="font-mono font-black text-emerald-800 text-sm">
+                +₹9,150 Total
+              </span>
             </div>
           </div>
 
-          {/* Money Going Out (Slate/Rose theme) */}
-          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-lg relative overflow-hidden">
-            <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
-              <div className="flex items-center gap-2.5">
-                <div className="w-3 h-3 rounded-full bg-rose-500"></div>
-                <h3 className="text-lg sm:text-xl font-black text-slate-900 uppercase tracking-wide">
-                  Money Going Out
-                </h3>
+          {/* ================= RIGHT: MONEY GOING OUT (OUTFLOW) ================= */}
+          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-lg shadow-slate-200/50 flex flex-col justify-between">
+            <div>
+              {/* Card Header */}
+              <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center font-bold border border-rose-100">
+                    <ArrowDownRight className="w-6 h-6 text-rose-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-black text-slate-900">
+                      Money Going Out
+                    </h3>
+                    <p className="text-xs text-slate-500 font-medium">Distributor Purchases & Daily Shop Expenses</p>
+                  </div>
+                </div>
+                <span className="text-xs font-black text-rose-800 bg-rose-50 border border-rose-200 px-3 py-1 rounded-full uppercase tracking-wider">
+                  Outflow
+                </span>
               </div>
-              <span className="text-xs font-extrabold text-rose-700 bg-rose-100 px-3 py-1 rounded-full">
-                Vendor & Shop Outflow
-              </span>
+
+              {/* Transactions List */}
+              <div className="space-y-3">
+                {outflowItems.map((item) => (
+                  <div
+                    key={item.id}
+                    className="p-3.5 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:bg-rose-50/30 hover:border-rose-200 transition-all flex items-center justify-between gap-3"
+                  >
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-bold text-slate-900 truncate">
+                          {item.title}
+                        </span>
+                        <span className="text-[10px] font-semibold bg-white border border-slate-200 px-2 py-0.5 rounded-md text-slate-600 shrink-0">
+                          {item.type}
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-slate-500 mt-0.5 flex items-center gap-2">
+                        <span>{item.dest}</span>
+                        <span className="text-slate-300">•</span>
+                        <span className="font-mono text-slate-400">{item.time}</span>
+                      </p>
+                    </div>
+
+                    <div className="text-right shrink-0">
+                      <span className="text-sm font-black text-rose-700 font-mono block">
+                        {item.amount}
+                      </span>
+                      <span className="text-[10px] text-slate-500 font-medium">
+                        {item.account}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Visual Step-by-Step Flow */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200">
-                <div className="w-10 h-10 rounded-xl bg-white text-slate-700 flex items-center justify-center font-bold shadow-xs">
-                  <TruckIcon className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500">Destination 01</span>
-                  <p className="text-sm font-bold text-slate-900">Supplier Inward or Shop Expense</p>
-                  <p className="text-xs text-slate-600 mt-0.5">Paying ABC Traders or recording tempo/packaging bills.</p>
-                </div>
+            {/* Outflow Bottom Summary Strip */}
+            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs bg-slate-50 -mx-6 -mb-6 sm:-mx-8 sm:-mb-8 p-4 rounded-b-3xl">
+              <div className="flex items-center gap-2 text-slate-700 font-bold">
+                <ShieldCheck className="w-4 h-4 text-slate-600" />
+                <span>Expenses Isolated from Purchases (COGS Protection)</span>
               </div>
-
-              <div className="flex justify-center -my-2 text-slate-400">
-                ↓
-              </div>
-
-              <div className="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200">
-                <div className="w-10 h-10 rounded-xl bg-white text-slate-700 flex items-center justify-center font-bold shadow-xs">
-                  <RupeeIcon className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500">Destination 02</span>
-                  <p className="text-sm font-bold text-slate-900">Payment Method Disbursed</p>
-                  <p className="text-xs text-slate-600 mt-0.5">Deducted from drawer cash or issued via NEFT/Cheque.</p>
-                </div>
-              </div>
-
-              <div className="flex justify-center -my-2 text-slate-400">
-                ↓
-              </div>
-
-              <div className="flex items-center gap-4 bg-slate-900 text-white p-4 rounded-2xl shadow-md">
-                <div className="w-10 h-10 rounded-xl bg-white/20 text-white flex items-center justify-center font-bold">
-                  <LandmarkIcon className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-slate-400">Result</span>
-                  <p className="text-sm font-bold">Vendor Debit Note & Cash Balanced</p>
-                  <p className="text-xs text-slate-300 mt-0.5">Supplier pending balance drops accurately. Zero missing notes.</p>
-                </div>
-              </div>
+              <span className="font-mono font-black text-slate-900 text-sm">
+                -₹9,470 Total
+              </span>
             </div>
           </div>
 
         </div>
 
-        {/* Section 15: Everyday Expenses Showcase */}
-        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-xl">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-6 border-b border-slate-200 gap-4">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-2">
-                <WalletIcon className="w-3.5 h-3.5 text-amber-700" />
-                Everyday Expenses
+        {/* ================= 3RD SECTION: DAILY REGISTER CLOSURE & CONTRA TRANSFERS ================= */}
+        <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-slate-200/90 shadow-xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            {/* Left: Explanation of Register Closure & Contra Transfers */}
+            <div className="lg:col-span-6 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
+                <span>Day-End Reconciled</span>
               </div>
+
               <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                Small Expenses Add Up.
+                Daily Register Closure &amp; <br />
+                <span className="text-emerald-600">Denomination Calculator</span>
               </h3>
-              <p className="text-sm text-slate-600 mt-1">
-                Record everyday expenses in 5 seconds so they don't disappear from your business history.
+
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                When you close your shop at night, enter the count of physical currency notes (₹500, ₹200, ₹100, ₹50, ₹20, ₹10 &amp; coins). DukanHisab instantly matches the drawer tally against all registered bills to flag any cash shortage.
               </p>
+
+              {/* 2 Key Pillars */}
+              <div className="space-y-3 pt-2">
+                <div className="flex items-start gap-3 p-3 rounded-2xl bg-slate-50 border border-slate-200/80">
+                  <div className="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                    <Coins className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-xs text-slate-900">Zero Drawer Leakage</h5>
+                    <p className="text-[11px] text-slate-500">
+                      Calculates Expected Cash vs Physical Drawer count to show exact variance (+/- ₹0).
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 p-3 rounded-2xl bg-slate-50 border border-slate-200/80">
+                  <div className="w-8 h-8 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5">
+                    <ArrowRightLeft className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-xs text-slate-900">Bank Contra Transfers</h5>
+                    <p className="text-[11px] text-slate-500">
+                      Record <strong>Deposit Cash</strong> (Galla → Bank) and <strong>Withdraw Cash</strong> (Bank → Galla) without distorting business profit.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="text-right">
-              <span className="text-xs font-bold text-slate-500 uppercase tracking-wide">
-                Today's Recorded Expenses
-              </span>
-              <p className="text-2xl font-black text-slate-900">₹3,720</p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-            {expenses.map((ex) => (
-              <div key={ex.title} className="bg-slate-50 border border-slate-200 rounded-2xl p-4 hover:border-emerald-300 transition-colors">
-                <div className="flex items-center justify-between text-[11px] mb-2">
-                  <span className="font-bold text-slate-500">{ex.category}</span>
-                  <span className="text-[10px] font-semibold bg-white border border-slate-200 px-2 py-0.5 rounded-full text-slate-700">
-                    {ex.drawer}
+            {/* Right: Live Interactive Denomination Calculator Box */}
+            <div className="lg:col-span-6 bg-slate-900 text-white rounded-3xl p-5 sm:p-6 shadow-2xl border border-slate-800 space-y-4">
+              
+              <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                  <span className="text-xs font-bold text-white tracking-wide">
+                    Night Register Closure • 09:30 PM
                   </span>
                 </div>
-                <p className="text-sm font-bold text-slate-900">{ex.title}</p>
-                <div className="mt-3 flex items-center justify-between">
-                  <span className="text-lg font-black text-emerald-700">{ex.amount}</span>
-                  <span className="text-[11px] text-slate-400">{ex.date}</span>
+                <span className="text-[10px] font-mono bg-slate-800 text-emerald-400 px-2 py-0.5 rounded-md border border-slate-700">
+                  Galla Balanced ✓
+                </span>
+              </div>
+
+              {/* Denomination Counter Table */}
+              <div className="divide-y divide-slate-800 text-xs">
+                {denominationTally.map((d, idx) => (
+                  <div key={idx} className="py-2.5 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <span className="font-mono font-bold text-slate-300 w-24">{d.note}</span>
+                      <span className="text-[11px] text-slate-500 bg-slate-800 px-2 py-0.5 rounded-md">
+                        {d.count} {typeof d.count === "number" ? "Notes" : ""}
+                      </span>
+                    </div>
+                    <span className="font-mono font-black text-white">{d.total}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Tally Math Result */}
+              <div className="pt-3 border-t border-slate-800 bg-slate-800/60 -mx-5 -mb-5 sm:-mx-6 sm:-mb-6 p-4 rounded-b-3xl flex flex-wrap items-center justify-between gap-3 text-xs">
+                <div>
+                  <span className="text-[10px] text-slate-400 uppercase font-bold block">
+                    Expected POS Cash: ₹18,650
+                  </span>
+                  <span className="font-black text-white text-base font-mono">
+                    Physical Count: ₹18,650
+                  </span>
+                </div>
+
+                <div className="text-right">
+                  <span className="text-[10px] text-emerald-400 font-bold block uppercase tracking-wide">
+                    Discrepancy (Shortage)
+                  </span>
+                  <span className="font-mono font-black text-emerald-400 text-sm">
+                    ₹0 (100% Reconciled)
+                  </span>
                 </div>
               </div>
-            ))}
-          </div>
 
-          <p className="mt-6 text-xs text-slate-500 text-center">
-            At the end of the month, your profit calculation accounts for every tea, tempo, and bulb. No surprise shortages.
-          </p>
+            </div>
+
+          </div>
         </div>
 
       </div>

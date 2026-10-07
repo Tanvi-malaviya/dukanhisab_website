@@ -15,20 +15,20 @@ export const metadata = {
 
 export default function HowItWorksPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-emerald-100 selection:text-emerald-900">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-teal-100 selection:text-teal-900">
       <Navbar />
 
       <main className="flex-1">
         {/* Page Hero Header */}
-        <section className="pt-12 pb-14 bg-gradient-to-b from-emerald-50/50 via-white to-slate-50 border-b border-slate-200">
+        <section className="pt-12 pb-14 bg-gradient-to-b section-hero border-b border-slate-200">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-4">
-              <ClockIcon className="w-3.5 h-3.5 text-emerald-700" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider mb-4">
+              <ClockIcon className="w-3.5 h-3.5 text-teal-700" />
               Story of an Actual Shop Day
             </div>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
               Whatever Happens in Your Shop, <br />
-              <span className="text-emerald-600">The Record Stays Connected.</span>
+              <span className="text-teal-600">The Record Stays Connected.</span>
             </h1>
             <p className="mt-4 text-base sm:text-xl text-slate-600 font-medium max-w-3xl mx-auto leading-relaxed">
               Follow real shop workflows: from morning shutter opening, truck inward deliveries, customer billing, and tempo expenses to evening closure.
@@ -60,7 +60,7 @@ export default function HowItWorksPage() {
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/features"
-                className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all"
+                className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all"
               >
                 <span>View All Features & POS</span>
                 <ArrowRightIcon className="w-4 h-4" />

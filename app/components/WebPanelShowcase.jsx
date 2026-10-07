@@ -61,8 +61,8 @@ export default function WebPanelShowcase() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3">
-            <MonitorIcon className="w-3.5 h-3.5 text-emerald-700" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider mb-3">
+            <MonitorIcon className="w-3.5 h-3.5 text-teal-700" />
             Complete Business Record Center
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
@@ -81,15 +81,32 @@ export default function WebPanelShowcase() {
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-rose-500"></div>
               <div className="w-3 h-3 rounded-full bg-amber-500"></div>
-              <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
-              <span className="ml-3 text-xs font-mono text-slate-400">
-                https://app.dukanhisab.com/portal
-              </span>
+              <div className="w-3 h-3 rounded-full bg-teal-500"></div>
+              <a
+                href="https://dukanhisab.in/shop"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-3 text-xs font-mono text-teal-400 hover:text-teal-300 hover:underline flex items-center gap-1.5 bg-slate-900 px-3 py-1 rounded-md border border-slate-800"
+              >
+                <span>https://dukanhisab.in/shop</span>
+                <span className="text-[10px] text-teal-300">↗</span>
+              </a>
             </div>
 
-            <div className="flex items-center gap-2 text-xs font-bold text-emerald-400">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>Shop Web Portal Connected</span>
+            <div className="flex items-center gap-3">
+              <div className="hidden sm:flex items-center gap-2 text-xs font-bold text-teal-400">
+                <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
+                <span>Shop Web Portal Connected</span>
+              </div>
+              <a
+                href="https://dukanhisab.in/shop"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-teal-600 hover:bg-teal-500 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow transition-all flex items-center gap-1"
+              >
+                <span>Open Live Panel</span>
+                <span>↗</span>
+              </a>
             </div>
           </div>
 
@@ -102,7 +119,7 @@ export default function WebPanelShowcase() {
               onClick={() => setActiveTab("sales")}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                 activeTab === "sales"
-                  ? "bg-emerald-600 text-white shadow-sm"
+                  ? "bg-teal-600 text-white shadow-sm"
                   : "bg-slate-800 text-slate-300 hover:bg-slate-700"
               }`}
             >
@@ -113,7 +130,7 @@ export default function WebPanelShowcase() {
               onClick={() => setActiveTab("customers")}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                 activeTab === "customers"
-                  ? "bg-emerald-600 text-white shadow-sm"
+                  ? "bg-teal-600 text-white shadow-sm"
                   : "bg-slate-800 text-slate-300 hover:bg-slate-700"
               }`}
             >
@@ -124,7 +141,7 @@ export default function WebPanelShowcase() {
               onClick={() => setActiveTab("products")}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                 activeTab === "products"
-                  ? "bg-emerald-600 text-white shadow-sm"
+                  ? "bg-teal-600 text-white shadow-sm"
                   : "bg-slate-800 text-slate-300 hover:bg-slate-700"
               }`}
             >
@@ -135,7 +152,7 @@ export default function WebPanelShowcase() {
               onClick={() => setActiveTab("suppliers")}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                 activeTab === "suppliers"
-                  ? "bg-emerald-600 text-white shadow-sm"
+                  ? "bg-teal-600 text-white shadow-sm"
                   : "bg-slate-800 text-slate-300 hover:bg-slate-700"
               }`}
             >
@@ -151,7 +168,7 @@ export default function WebPanelShowcase() {
                 <h3 className="text-lg font-black text-white">{current.title}</h3>
                 <p className="text-xs text-slate-400 mt-0.5">{current.desc}</p>
               </div>
-              <span className="text-[10px] font-mono bg-slate-800 text-emerald-400 px-3 py-1 rounded-lg border border-slate-700">
+              <span className="text-[10px] font-mono bg-slate-800 text-teal-400 px-3 py-1 rounded-lg border border-slate-700">
                 Live Data Synchronized
               </span>
             </div>
@@ -177,7 +194,7 @@ export default function WebPanelShowcase() {
                           ) : cell.includes("Warning") ? (
                             <span className="text-amber-400 font-bold">{cell}</span>
                           ) : cell.includes("Completed") || cell.includes("Settled") || cell.includes("Clear") ? (
-                            <span className="text-emerald-400 font-bold">{cell}</span>
+                            <span className="text-teal-400 font-bold">{cell}</span>
                           ) : (
                             <span>{cell}</span>
                           )}
@@ -191,7 +208,7 @@ export default function WebPanelShowcase() {
 
             <div className="mt-4 flex flex-wrap items-center justify-between text-[11px] text-slate-400 gap-2">
               <span>Showing real-time records • Searchable by date, invoice, or phone</span>
-              <span className="text-emerald-400 font-semibold cursor-pointer hover:underline">
+              <span className="text-teal-400 font-semibold cursor-pointer hover:underline">
                 Export to Excel / CSV →
               </span>
             </div>

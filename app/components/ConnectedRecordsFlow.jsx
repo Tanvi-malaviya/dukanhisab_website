@@ -90,13 +90,13 @@ export default function ConnectedRecordsFlow() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3">
-            <CheckIcon className="w-3.5 h-3.5 text-emerald-600" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider mb-3">
+            <CheckIcon className="w-3.5 h-3.5 text-teal-600" />
             Zero Redundant Work
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
             One Sale. Multiple Records. <br />
-            <span className="text-emerald-600">Automatically Connected.</span>
+            <span className="text-teal-600">Automatically Connected.</span>
           </h2>
           <p className="mt-4 text-base sm:text-xl text-slate-600 font-medium">
             In ordinary shops, one sale means updating 3 different books or software screens. In DukanHisab, one action handles everything.
@@ -114,14 +114,14 @@ export default function ConnectedRecordsFlow() {
                 onClick={() => setActiveNode(node.id)}
                 className={`cursor-pointer rounded-2xl p-5 border transition-all duration-200 relative ${
                   isSelected
-                    ? "bg-white border-emerald-500 shadow-xl ring-2 ring-emerald-500/20 -translate-y-1"
+                    ? "bg-white border-teal-500 shadow-xl ring-2 ring-teal-500/20 -translate-y-1"
                     : "bg-white/80 hover:bg-white border-slate-200 hover:border-slate-300 shadow-xs"
                 }`}
               >
                 {/* Step pill */}
                 <div className="flex items-center justify-between mb-3">
                   <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-full ${
-                    isSelected ? "bg-emerald-600 text-white" : "bg-slate-100 text-slate-600"
+                    isSelected ? "bg-teal-600 text-white" : "bg-slate-100 text-slate-600"
                   }`}>
                     0{node.id + 1}
                   </span>
@@ -130,7 +130,7 @@ export default function ConnectedRecordsFlow() {
 
                 <div className="flex items-center gap-3 mb-2">
                   <div className={`w-9 h-9 rounded-xl flex items-center justify-center transition-colors ${
-                    isSelected ? "bg-emerald-100 text-emerald-700" : "bg-slate-100 text-slate-600"
+                    isSelected ? "bg-teal-100 text-teal-700" : "bg-slate-100 text-slate-600"
                   }`}>
                     <Icon className="w-5 h-5" />
                   </div>
@@ -142,8 +142,8 @@ export default function ConnectedRecordsFlow() {
                 </p>
 
                 {isSelected && (
-                  <div className="mt-3 pt-3 border-t border-emerald-100 text-[11px] font-semibold text-emerald-700 flex items-center gap-1.5">
-                    <CheckIcon className="w-3.5 h-3.5 text-emerald-600" />
+                  <div className="mt-3 pt-3 border-t border-teal-100 text-[11px] font-semibold text-teal-700 flex items-center gap-1.5">
+                    <CheckIcon className="w-3.5 h-3.5 text-teal-600" />
                     <span>Auto-Linked in DukanHisab</span>
                   </div>
                 )}
@@ -153,13 +153,13 @@ export default function ConnectedRecordsFlow() {
         </div>
 
         {/* Selected Node Detailed Explanation Banner */}
-        <div className="max-w-4xl mx-auto bg-white rounded-3xl border border-emerald-200 p-6 sm:p-8 shadow-lg flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="max-w-4xl mx-auto bg-white rounded-3xl border border-teal-200 p-6 sm:p-8 shadow-lg flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0">
+            <div className="w-14 h-14 rounded-2xl bg-teal-50 border border-teal-200 flex items-center justify-center text-teal-600 shrink-0">
               {React.createElement(flowNodes[activeNode].icon, { className: "w-7 h-7" })}
             </div>
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-600">
+              <span className="text-xs font-bold uppercase tracking-wider text-teal-600">
                 Pipeline Node #{activeNode + 1}
               </span>
               <h3 className="text-lg font-extrabold text-slate-900">
@@ -181,7 +181,7 @@ export default function ConnectedRecordsFlow() {
             </button>
             <button
               onClick={() => setActiveNode((prev) => (prev < flowNodes.length - 1 ? prev + 1 : 0))}
-              className="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-xs"
+              className="px-4 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold shadow-xs"
             >
               Next Step →
             </button>

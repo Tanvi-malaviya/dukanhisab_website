@@ -67,14 +67,14 @@ export default function FAQPage() {
     : faqData.filter(f => f.category === activeCategory);
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-emerald-100 selection:text-emerald-900">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-teal-100 selection:text-teal-900">
       <Navbar />
 
       <main className="flex-1">
         {/* Page Header */}
-        <section className="pt-12 pb-12 bg-gradient-to-b from-emerald-50/50 via-white to-slate-50 border-b border-slate-200">
+        <section className="pt-12 pb-12 bg-gradient-to-b section-hero border-b border-slate-200">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">
+            <span className="text-xs font-bold uppercase tracking-wider text-teal-700 bg-teal-100 px-3 py-1 rounded-full">
               Knowledge & Help
             </span>
             <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mt-3">
@@ -95,7 +95,7 @@ export default function FAQPage() {
                   }}
                   className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                     activeCategory === c.id
-                      ? "bg-emerald-600 text-white shadow-xs"
+                      ? "bg-teal-600 text-white shadow-xs"
                       : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-100"
                   }`}
                 >
@@ -125,7 +125,7 @@ export default function FAQPage() {
                       {faq.q}
                     </span>
                     <div className={`w-7 h-7 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 transition-transform ${
-                      isOpen ? "rotate-180 bg-emerald-600 text-white border-emerald-600" : "text-slate-500"
+                      isOpen ? "rotate-180 bg-teal-600 text-white border-teal-600" : "text-slate-500"
                     }`}>
                       <ChevronDownIcon className="w-4 h-4" />
                     </div>
@@ -142,7 +142,7 @@ export default function FAQPage() {
           </div>
 
           {/* Need more help contact card */}
-          <div className="mt-14 bg-white border border-emerald-200 rounded-3xl p-8 shadow-md flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="mt-14 bg-white border border-teal-200 rounded-3xl p-8 shadow-md flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
               <h3 className="text-xl font-bold text-slate-900">
                 Still have questions about your specific shop?
@@ -153,7 +153,7 @@ export default function FAQPage() {
             </div>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-xl shadow-md shrink-0 transition-all"
+              className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-bold px-6 py-3 rounded-xl shadow-md shrink-0 transition-all"
             >
               <span>Contact Support</span>
               <ArrowRightIcon className="w-4 h-4" />

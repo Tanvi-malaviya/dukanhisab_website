@@ -114,13 +114,13 @@ export default function BusinessNetworkMap() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3">
-            <SparklesIcon className="w-3.5 h-3.5 text-emerald-600" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider mb-3">
+            <SparklesIcon className="w-3.5 h-3.5 text-teal-600" />
             Interactive Ecosystem Map
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
             Your Business Isn't a List of Screens. <br />
-            <span className="text-emerald-600">It's a Connected System.</span>
+            <span className="text-teal-600">It's a Connected System.</span>
           </h2>
           <p className="mt-4 text-base sm:text-xl text-slate-600 font-medium">
             Hover or click any node to see how DukanHisab connects it across your whole shop.
@@ -133,7 +133,7 @@ export default function BusinessNetworkMap() {
           {/* Left / Center: Interactive Node Grid */}
           <div className="lg:col-span-8 bg-slate-50 border border-slate-200/90 rounded-3xl p-6 sm:p-8 relative">
             <div className="text-center mb-6">
-              <span className="inline-block bg-emerald-600 text-white font-black text-sm px-4 py-1.5 rounded-full shadow-md">
+              <span className="inline-block bg-teal-600 text-white font-black text-sm px-4 py-1.5 rounded-full shadow-md">
                 DUKANHISAB MEMORY HUB
               </span>
             </div>
@@ -151,20 +151,20 @@ export default function BusinessNetworkMap() {
                     onMouseEnter={() => setActiveNode(node.name)}
                     className={`p-3.5 rounded-2xl border text-left transition-all duration-200 flex flex-col justify-between ${
                       isSelected
-                        ? "bg-emerald-600 text-white border-emerald-600 shadow-lg scale-105 z-10"
+                        ? "bg-teal-600 text-white border-teal-600 shadow-lg scale-105 z-10"
                         : isConnected
-                        ? "bg-emerald-50 text-emerald-950 border-emerald-300 shadow-xs ring-2 ring-emerald-200/50"
+                        ? "bg-teal-50 text-teal-950 border-teal-300 shadow-xs ring-2 ring-teal-200/50"
                         : "bg-white text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
                     }`}
                   >
                     <div className="flex items-center justify-between mb-2">
                       <div className={`w-8 h-8 rounded-xl flex items-center justify-center ${
-                        isSelected ? "bg-white/20 text-white" : isConnected ? "bg-emerald-200 text-emerald-800" : "bg-slate-100 text-slate-600"
+                        isSelected ? "bg-white/20 text-white" : isConnected ? "bg-teal-200 text-teal-800" : "bg-slate-100 text-slate-600"
                       }`}>
                         <Icon className="w-4 h-4" />
                       </div>
                       {isConnected && !isSelected && (
-                        <span className="text-[9px] font-bold uppercase tracking-wider bg-emerald-200 text-emerald-800 px-1.5 py-0.5 rounded">
+                        <span className="text-[9px] font-bold uppercase tracking-wider bg-teal-200 text-teal-800 px-1.5 py-0.5 rounded">
                           Linked
                         </span>
                       )}
@@ -183,11 +183,11 @@ export default function BusinessNetworkMap() {
           {/* Right: Active Node Detail & Connected Subsystems */}
           <div className="lg:col-span-4 bg-slate-900 text-white rounded-3xl p-6 sm:p-7 border border-slate-800 shadow-xl">
             <div className="flex items-center gap-3 pb-4 border-b border-slate-800">
-              <div className="w-11 h-11 rounded-xl bg-emerald-600/30 border border-emerald-500 text-emerald-400 flex items-center justify-center">
+              <div className="w-11 h-11 rounded-xl bg-teal-600/30 border border-teal-500 text-teal-400 flex items-center justify-center">
                 {React.createElement(currentNodeObj.icon, { className: "w-5 h-5" })}
               </div>
               <div>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-400">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-teal-400">
                   SELECTED SUBSYSTEM
                 </span>
                 <h3 className="text-xl font-black text-white">{currentNodeObj.name}</h3>
@@ -206,9 +206,9 @@ export default function BusinessNetworkMap() {
                 {currentNodeObj.connectedTo.map((cName) => (
                   <span
                     key={cName}
-                    className="text-xs font-semibold bg-slate-800 border border-slate-700 text-emerald-300 px-2.5 py-1 rounded-lg flex items-center gap-1.5"
+                    className="text-xs font-semibold bg-slate-800 border border-slate-700 text-teal-300 px-2.5 py-1 rounded-lg flex items-center gap-1.5"
                   >
-                    <CheckIcon className="w-3 h-3 text-emerald-400" />
+                    <CheckIcon className="w-3 h-3 text-teal-400" />
                     {cName}
                   </span>
                 ))}

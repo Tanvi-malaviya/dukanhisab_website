@@ -41,13 +41,13 @@ export default function MobileAndWebSection() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3">
-            <CloudSyncIcon className="w-3.5 h-3.5 text-emerald-700" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider mb-3">
+            <CloudSyncIcon className="w-3.5 h-3.5 text-teal-700" />
             Synchronized Ecosystem
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
             Your Shop in Your Pocket. <br />
-            <span className="text-emerald-600">Your Business on Your Screen.</span>
+            <span className="text-teal-600">Your Business on Your Screen.</span>
           </h2>
           <p className="mt-4 text-base sm:text-xl text-slate-600 font-medium">
             Run fast everyday operations from your mobile app. Sit down in the evening and understand the full picture on the web panel.
@@ -57,17 +57,17 @@ export default function MobileAndWebSection() {
         {/* Central Visual Sync Pipeline Pill */}
         <div className="flex items-center justify-center mb-12">
           <div className="inline-flex items-center gap-3 bg-slate-900 text-white px-5 py-2.5 rounded-full shadow-lg text-xs font-bold tracking-wide">
-            <span className="flex items-center gap-1.5 text-emerald-400">
+            <span className="flex items-center gap-1.5 text-teal-400">
               <SmartphoneIcon className="w-4 h-4" />
               MOBILE APP
             </span>
             <span className="text-slate-500 font-mono">⟷</span>
             <span className="flex items-center gap-1.5 text-slate-300">
-              <CloudSyncIcon className="w-4 h-4 text-emerald-400 animate-spin" style={{ animationDuration: '12s' }} />
+              <CloudSyncIcon className="w-4 h-4 text-teal-400 animate-spin" style={{ animationDuration: '12s' }} />
               DUKANHISAB CLOUD MEMORY
             </span>
             <span className="text-slate-500 font-mono">⟷</span>
-            <span className="flex items-center gap-1.5 text-emerald-400">
+            <span className="flex items-center gap-1.5 text-teal-400">
               <MonitorIcon className="w-4 h-4" />
               WEB PANEL
             </span>
@@ -81,18 +81,18 @@ export default function MobileAndWebSection() {
           <div className="bg-slate-50 rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shadow-md">
+                <div className="w-12 h-12 rounded-2xl bg-teal-600 text-white flex items-center justify-center shadow-md">
                   <SmartphoneIcon className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
+                  <span className="text-xs font-bold text-teal-700 uppercase tracking-wider">
                     Counter & Floor Mobility
                   </span>
                   <h3 className="text-2xl font-black text-slate-900">Mobile App</h3>
                 </div>
               </div>
 
-              <div className="p-3 bg-emerald-100/70 border border-emerald-300/80 rounded-2xl text-emerald-900 font-bold text-sm mb-6">
+              <div className="p-3 bg-teal-100/70 border border-teal-300/80 rounded-2xl text-teal-900 font-bold text-sm mb-6">
                 "Built for everyday shop operations."
               </div>
 
@@ -106,7 +106,7 @@ export default function MobileAndWebSection() {
                   return (
                     <div key={f.title} className="bg-white p-3.5 rounded-2xl border border-slate-200/90 shadow-2xs">
                       <div className="flex items-center gap-2 mb-1">
-                        <Icon className="w-4 h-4 text-emerald-600" />
+                        <Icon className="w-4 h-4 text-teal-600" />
                         <h4 className="text-xs font-bold text-slate-900">{f.title}</h4>
                       </div>
                       <p className="text-[11px] text-slate-500 leading-tight">{f.desc}</p>
@@ -116,9 +116,17 @@ export default function MobileAndWebSection() {
               </div>
             </div>
 
-            <div className="mt-8 pt-4 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
-              <span>Android & iOS compatible</span>
-              <span className="font-bold text-emerald-700">Instant counter sync ✓</span>
+            <div className="mt-8 pt-4 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.app.dukanhisab&hl=en_IN"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs px-4 py-2 rounded-xl shadow transition-all active:scale-95"
+              >
+                <span>Download on Google Play</span>
+                <span>↗</span>
+              </a>
+              <span className="font-bold text-teal-700">Instant counter sync ✓</span>
             </div>
           </div>
 
@@ -126,18 +134,18 @@ export default function MobileAndWebSection() {
           <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-xl flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-slate-800 border border-slate-700 text-emerald-400 flex items-center justify-center shadow-md">
+                <div className="w-12 h-12 rounded-2xl bg-slate-800 border border-slate-700 text-teal-400 flex items-center justify-center shadow-md">
                   <MonitorIcon className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">
+                  <span className="text-xs font-bold text-teal-400 uppercase tracking-wider">
                     Office & Deep Business Control
                   </span>
                   <h3 className="text-2xl font-black text-white">Web Panel</h3>
                 </div>
               </div>
 
-              <div className="p-3 bg-slate-800 border border-slate-700 rounded-2xl text-emerald-300 font-bold text-sm mb-6">
+              <div className="p-3 bg-slate-800 border border-slate-700 rounded-2xl text-teal-300 font-bold text-sm mb-6">
                 "Built for understanding and managing the bigger picture."
               </div>
 
@@ -151,7 +159,7 @@ export default function MobileAndWebSection() {
                   return (
                     <div key={f.title} className="bg-slate-800/90 p-3.5 rounded-2xl border border-slate-700 shadow-2xs">
                       <div className="flex items-center gap-2 mb-1">
-                        <Icon className="w-4 h-4 text-emerald-400" />
+                        <Icon className="w-4 h-4 text-teal-400" />
                         <h4 className="text-xs font-bold text-white">{f.title}</h4>
                       </div>
                       <p className="text-[11px] text-slate-400 leading-tight">{f.desc}</p>
@@ -161,9 +169,17 @@ export default function MobileAndWebSection() {
               </div>
             </div>
 
-            <div className="mt-8 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-              <span>Any browser (Chrome, Safari, Edge)</span>
-              <span className="font-bold text-emerald-400">100% cloud secure ✓</span>
+            <div className="mt-8 pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400">
+              <a
+                href="https://dukanhisab.in/shop"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-400 text-slate-950 font-black text-xs px-4 py-2 rounded-xl shadow transition-all active:scale-95"
+              >
+                <span>Open Web Panel (dukanhisab.in/shop)</span>
+                <span>↗</span>
+              </a>
+              <span className="font-bold text-teal-400">100% cloud secure ✓</span>
             </div>
           </div>
 

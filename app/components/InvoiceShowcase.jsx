@@ -26,8 +26,8 @@ export default function InvoiceShowcase() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3">
-            <ReceiptIcon className="w-3.5 h-3.5 text-emerald-700" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider mb-3">
+            <ReceiptIcon className="w-3.5 h-3.5 text-teal-700" />
             Instant Digital Invoicing
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
@@ -53,13 +53,13 @@ export default function InvoiceShowcase() {
               {/* WhatsApp Share Button */}
               <button
                 onClick={() => triggerShare("whatsapp")}
-                className="w-full flex items-center justify-between p-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md shadow-emerald-700/20 transition-all active:scale-98"
+                className="w-full flex items-center justify-between p-3.5 rounded-2xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm shadow-md shadow-teal-700/20 transition-all active:scale-98"
               >
                 <div className="flex items-center gap-3">
                   <WhatsAppIcon className="w-5 h-5" />
                   <span>Send via WhatsApp</span>
                 </div>
-                <span className="text-xs bg-emerald-700/60 px-2 py-0.5 rounded-md font-mono">
+                <span className="text-xs bg-teal-700/60 px-2 py-0.5 rounded-md font-mono">
                   Popular
                 </span>
               </button>
@@ -92,8 +92,8 @@ export default function InvoiceShowcase() {
 
               {/* Feedback toast */}
               {shareStatus && (
-                <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-300 text-xs text-emerald-800 font-bold flex items-center gap-2 animate-bounce">
-                  <CheckIcon className="w-4 h-4 text-emerald-600" />
+                <div className="p-3 rounded-xl bg-teal-50 border border-teal-300 text-xs text-teal-800 font-bold flex items-center gap-2 animate-bounce">
+                  <CheckIcon className="w-4 h-4 text-teal-600" />
                   <span>
                     {shareStatus === "whatsapp" && "WhatsApp message prepared for Rahul Patel (+91 98765 43210)"}
                     {shareStatus === "pdf" && "PDF Invoice generated with QR code and GST breakdown"}
@@ -105,7 +105,7 @@ export default function InvoiceShowcase() {
 
             <div className="bg-white p-4 rounded-2xl border border-slate-200 text-xs text-slate-600 space-y-1.5">
               <p className="font-bold text-slate-900 flex items-center gap-1.5">
-                <CheckIcon className="w-4 h-4 text-emerald-600" />
+                <CheckIcon className="w-4 h-4 text-teal-600" />
                 Printer Compatibility
               </p>
               <p>Supports 2-inch & 3-inch Bluetooth thermal printers, standard USB POS receipt printers, and regular A4 office printers.</p>
@@ -119,7 +119,7 @@ export default function InvoiceShowcase() {
               {/* Receipt Header */}
               <div className="text-center pb-4 border-b border-dashed border-slate-300">
                 <div className="inline-flex items-center gap-1.5 justify-center mb-1">
-                  <StoreIcon className="w-4 h-4 text-emerald-600" />
+                  <StoreIcon className="w-4 h-4 text-teal-600" />
                   <span className="font-black text-base text-slate-900 tracking-tight uppercase">
                     Shree Ganesh General Store
                   </span>
@@ -180,12 +180,12 @@ export default function InvoiceShowcase() {
                 </div>
                 <div className="flex justify-between text-base font-extrabold text-slate-900 pt-2 border-t border-slate-200">
                   <span>Grand Total:</span>
-                  <span className="text-emerald-700 font-black">₹2,070.00</span>
+                  <span className="text-teal-700 font-black">₹2,070.00</span>
                 </div>
 
                 <div className="flex justify-between text-xs pt-1">
                   <span className="text-slate-500 font-medium">Payment Mode:</span>
-                  <span className="font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">
+                  <span className="font-bold bg-teal-100 text-teal-800 px-2 py-0.5 rounded">
                     Cash Paid ✓
                   </span>
                 </div>

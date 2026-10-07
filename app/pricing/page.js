@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "../components/Navbar";
 import PricingSection from "../components/PricingSection";
+import ComparePlansTable from "../components/ComparePlansTable";
 import FAQSection from "../components/FAQSection";
 import FinalCTA from "../components/FinalCTA";
 import Footer from "../components/Footer";
@@ -12,42 +14,63 @@ export const metadata = {
 };
 
 export default function PricingPage() {
-  const comparisonFeatures = [
-    { name: "Counter POS Billing & Receipts", free: "Yes", pro: "Yes", biz: "Yes" },
-    { name: "Product Catalog Limit", free: "Up to 200", pro: "Unlimited", biz: "Unlimited" },
-    { name: "Customer Khata & Ledgers", free: "Yes", pro: "Yes", biz: "Yes" },
-    { name: "WhatsApp & PDF Invoices", free: "Yes", pro: "Yes", biz: "Yes" },
-    { name: "Barcode Scanning (Laser / Camera)", free: "Basic", pro: "Full Speed", biz: "Full Speed" },
-    { name: "Customer-Specific Pricing", free: "No", pro: "Yes", biz: "Yes" },
-    { name: "Supplier Purchases & Debit Notes", free: "No", pro: "Yes", biz: "Yes" },
-    { name: "Sale & Purchase Returns", free: "No", pro: "Yes", biz: "Yes" },
-    { name: "Web Panel Browser Access", free: "No", pro: "Yes", biz: "Yes" },
-    { name: "Everyday Expense Tracking", free: "No", pro: "Yes", biz: "Yes" },
-    { name: "Excel Data Export", free: "No", pro: "Yes", biz: "Yes" },
-    { name: "Multi-Counter / Multi-Device Billing", free: "1 Mobile", pro: "1 Mobile + 1 Web", biz: "Unlimited Devices" },
-    { name: "Staff Permissions & Roles", free: "No", pro: "No", biz: "Yes" },
-    { name: "Priority Support & Onboarding", free: "Standard", pro: "Priority WhatsApp", biz: "Dedicated Manager" },
-  ];
-
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-emerald-100 selection:text-emerald-900">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-teal-100 selection:text-teal-900">
       <Navbar />
 
       <main className="flex-1">
-        {/* Page Hero Header */}
-        <section className="pt-12 pb-8 bg-gradient-to-b from-emerald-50/50 via-white to-slate-50 border-b border-slate-200">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-4">
-              <RupeeIcon className="w-3.5 h-3.5 text-emerald-700" />
-              Transparent Shop Tiers
+        {/* Hero Section with Ambient Store Background */}
+        <section className="relative overflow-hidden w-full border-b border-slate-200/90 pt-16 pb-14 sm:pt-20 sm:pb-18 text-center bg-slate-100">
+          {/* Background Image Container with Balanced Contrast */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/images/pricing-hero-bg.jpg"
+              alt="Indian Retail Store Background"
+              fill
+              priority
+              className="object-cover object-center opacity-85 select-none pointer-events-none"
+            />
+            {/* Subtle, translucent overlay so store image is clearly visible while keeping text legible */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white/55 via-white/35 to-slate-50/75" />
+          </div>
+
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            {/* Pill Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-100/90 border border-teal-200 text-teal-800 text-xs font-black tracking-wider uppercase mb-5 shadow-2xs">
+              <RupeeIcon className="w-3.5 h-3.5 text-teal-700" />
+              <span>Simple, Honest Pricing</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
-              Invest in Your Shop's Memory. <br />
-              <span className="text-emerald-600">Zero Hidden Surcharges.</span>
+
+            {/* Main Headline */}
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
+              Simple Pricing <br className="hidden sm:inline" />
+              <span className="text-teal-600">For Every Shopkeeper</span>
             </h1>
-            <p className="mt-4 text-base sm:text-xl text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
-              Transparent plans designed to pay for themselves by stopping forgotten khatas, pricing errors, and lost expense records.
+
+            {/* Subtitle */}
+            <p className="mt-4 text-base sm:text-lg lg:text-xl text-slate-700 font-semibold max-w-2xl mx-auto leading-relaxed">
+              Powerful features. Affordable plans. No hidden charges. Designed to make shop accounting fast and stress-free.
             </p>
+
+            {/* 4 Feature Badges (Centered Wrap) */}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+              {[
+                "All essential features included",
+                "Upgrade anytime",
+                "No credit card required to start",
+                "Trusted by Indian shopkeepers",
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/95 backdrop-blur-xs border border-slate-300/80 text-xs sm:text-sm font-bold text-slate-800 shadow-sm hover:border-teal-400 transition-colors"
+                >
+                  <div className="w-4 h-4 rounded-full bg-teal-600 text-white flex items-center justify-center shrink-0">
+                    <CheckIcon className="w-2.5 h-2.5 text-white stroke-[2.5]" />
+                  </div>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -58,40 +81,19 @@ export default function PricingPage() {
         <section className="py-16 bg-white border-b border-slate-200">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-                Detailed Plan Comparison
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                Compare Plans
               </h2>
               <p className="text-sm text-slate-500 mt-1">
-                Everything you get in each tier at a glance.
+                See what&apos;s included in each plan and choose what works best for you.
               </p>
             </div>
 
-            <div className="overflow-x-auto border border-slate-200 rounded-3xl shadow-sm">
-              <table className="w-full text-left text-xs sm:text-sm">
-                <thead className="bg-slate-50 text-slate-700 border-b border-slate-200 font-bold">
-                  <tr>
-                    <th className="py-4 px-5">Capability / Feature</th>
-                    <th className="py-4 px-4 text-center">Starter Core</th>
-                    <th className="py-4 px-4 text-center text-emerald-700 bg-emerald-50/70 font-extrabold">Shop Pro</th>
-                    <th className="py-4 px-4 text-center">Business Growth</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100">
-                  {comparisonFeatures.map((row) => (
-                    <tr key={row.name} className="hover:bg-slate-50/70 transition-colors">
-                      <td className="py-3.5 px-5 font-semibold text-slate-800">{row.name}</td>
-                      <td className="py-3.5 px-4 text-center text-slate-600 font-medium">{row.free}</td>
-                      <td className="py-3.5 px-4 text-center text-emerald-700 bg-emerald-50/30 font-bold">{row.pro}</td>
-                      <td className="py-3.5 px-4 text-center text-slate-900 font-bold">{row.biz}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            <ComparePlansTable />
 
             {/* Satisfaction Guarantee Banner */}
             <div className="mt-12 bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
-              <div className="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+              <div className="w-14 h-14 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center shrink-0">
                 <ShieldCheckIcon className="w-8 h-8" />
               </div>
               <div>
