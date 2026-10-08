@@ -118,7 +118,7 @@ Calculated with DukanHisab (dukanhisab.com)`;
                 </div>
 
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight leading-tight">
-                  GST <span className="text-[#0d9488]">Calculator</span>
+                  GST <span className="text-[#036272]">Calculator</span>
                 </h1>
 
                 <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-xl font-medium">
@@ -272,7 +272,7 @@ Calculated with DukanHisab (dukanhisab.com)`;
                 <div className="flex items-center gap-3 pt-4 border-t border-slate-200">
                   <button
                     type="button"
-                    className="flex-1 py-3 px-4 rounded-xl bg-[#0d9488] hover:bg-[#0f766e] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all active:scale-95"
+                    className="flex-1 py-3 px-4 rounded-xl bg-[#036272] hover:bg-[#024f5c] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all active:scale-95"
                   >
                     <CalculatorIcon className="w-4 h-4" />
                     <span>Calculate</span>
@@ -455,7 +455,7 @@ Calculated with DukanHisab (dukanhisab.com)`;
                           </span>
                           <span className="text-[10px] text-slate-500">Final Payable Bill</span>
                         </div>
-                        <span className="relative z-10 text-xl sm:text-2xl font-black text-[#0d9488] font-mono tracking-tight">
+                        <span className="relative z-10 text-xl sm:text-2xl font-black text-[#036272] font-mono tracking-tight">
                           ₹{totalAmount.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                         </span>
                       </div>

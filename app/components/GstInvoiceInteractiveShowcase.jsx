@@ -332,7 +332,7 @@ export default function GstInvoiceInteractiveShowcase() {
           <button
             type="button"
             onClick={() => triggerNotice("💬 Sent instant GST Bill to WhatsApp: +91 98250...")}
-            className="flex-1 bg-[#0d9488] hover:bg-[#0f766e] text-white text-[11px] font-bold py-2 px-2 rounded-xl transition-all flex items-center justify-center gap-1.5 active:scale-95 shadow-md shadow-teal-900/50"
+            className="flex-1 bg-[#036272] hover:bg-[#024f5c] text-white text-[11px] font-bold py-2 px-2 rounded-xl transition-all flex items-center justify-center gap-1.5 active:scale-95 shadow-md shadow-teal-900/50"
           >
             <span>💬</span>
             <span>WhatsApp</span>

@@ -316,7 +316,21 @@ export function XIcon({ className = "w-5 h-5" }) {
   );
 }
 
-export function GooglePlayIcon({ className = "w-5 h-5" }) {
+export function GooglePlayColorIcon({ className = "w-5 h-5" }) {
+  return (
+    <svg className={className} viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32.2 26.6C25.1 34.3 21 45.9 21 60.5v391c0 14.6 4.1 26.2 11.2 33.9l1.9 1.8L253.1 268.2v-5.2L34.1 24.8l-1.9 1.8z" fill="#00D3FF"/>
+      <path d="M328.9 182.6L71.8 37.2C56.7 28.6 43.3 29.7 35.1 38.4L254.1 257.4l74.8-74.8z" fill="#00E676"/>
+      <path d="M328.9 329.4L254.1 254.6 35.1 473.6c8.2 8.7 21.6 9.8 36.7 1.2l257.1-145.4z" fill="#FF3A44"/>
+      <path d="M327.2 330.4l-73.1-73.1v-5.2l73.1-73.1 1.7 1 86.8 49.3c24.8 14.1 24.8 37.1 0 51.2l-86.8 48.9-1.7 1z" fill="#FFCE00"/>
+    </svg>
+  );
+}
+
+export function GooglePlayIcon({ className = "w-5 h-5", color = true }) {
+  if (color) {
+    return <GooglePlayColorIcon className={className} />;
+  }
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
       <path d="M3.609 1.814L13.792 12 3.61 22.186c-.359-.34-.582-.823-.582-1.357V3.171c0-.534.223-1.017.581-1.357zm11.238 11.241l2.54 2.54-12.06 6.892 9.52-9.432zM4.727 2.052l12.66 7.234-2.54 2.54-10.12-9.774zm13.748 8.878l2.97 1.698c.703.402.703 1.056 0 1.458l-2.97 1.698-2.613-2.427 2.613-2.427z" />
@@ -428,6 +442,16 @@ export function GlobeIcon({ className = "w-5 h-5" }) {
       <circle cx="12" cy="12" r="10" />
       <line x1="2" x2="22" y1="12" y2="12" />
       <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </svg>
+  );
+}
+
+
+export function CopyIcon({ className = "w-5 h-5" }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
     </svg>
   );
 }

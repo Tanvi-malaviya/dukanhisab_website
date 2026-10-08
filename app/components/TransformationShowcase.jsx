@@ -64,7 +64,7 @@ export default function TransformationShowcase() {
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Say Goodbye to Lost Diaries. <br />
-            <span className="text-[#0d9488]">Welcome to Connected Shop Memory.</span>
+            <span className="text-[#036272]">Welcome to Connected Shop Memory.</span>
           </h2>
           <p className="mt-3 text-slate-600 text-sm sm:text-base">
             See how Indian retailers are upgrading from messy paper registers to DukanHisab.
@@ -77,7 +77,7 @@ export default function TransformationShowcase() {
               onClick={() => setActiveTab("digital")}
               className={`px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center gap-2 ${
                 activeTab === "digital"
-                  ? "bg-[#0d9488] text-white shadow-md"
+                  ? "bg-[#036272] text-white shadow-md"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >

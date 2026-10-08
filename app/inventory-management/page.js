@@ -63,7 +63,7 @@ export default function InventoryManagementPage() {
 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
                   Total Control <br />
-                  <span className="text-[#0d9488]">Over Your Stock</span>
+                  <span className="text-[#036272]">Over Your Stock</span>
                 </h1>
 
                 <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl font-medium">
@@ -96,7 +96,7 @@ export default function InventoryManagementPage() {
                     href="https://play.google.com/store/apps/details?id=com.app.dukanhisab&hl=en_IN"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2.5 bg-[#0d9488] hover:bg-[#0f766e] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-2xl shadow-lg shadow-teal-700/20 hover:shadow-xl transition-all active:scale-95"
+                    className="inline-flex items-center gap-2.5 bg-[#036272] hover:bg-[#024f5c] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-2xl shadow-lg shadow-teal-700/20 hover:shadow-xl transition-all active:scale-95"
                   >
                     <GooglePlayIcon className="w-5 h-5 text-white" />
                     <span>Download App</span>
@@ -115,17 +115,80 @@ export default function InventoryManagementPage() {
                 </div>
               </div>
 
-              {/* Right Column: Seamless Full-Width Hero Graphic */}
-              <div className="lg:col-span-6 relative flex justify-center lg:justify-end items-end w-full">
-                <div className="relative w-full flex justify-center lg:justify-end">
-                  <Image
-                    src="/images/inventory-hero-seamless.png"
-                    alt="Inventory Management - Stock Control, Shopkeeper and Products Mobile App"
-                    width={548}
-                    height={377}
-                    priority
-                    className="w-full h-auto max-w-lg lg:max-w-none object-contain drop-shadow-2xl"
-                  />
+              {/* Right Column: Real-Life In-Store Stock Audit & Barcode Scanning Showcase */}
+              <div className="lg:col-span-6 relative flex items-center justify-center lg:justify-end">
+                
+                {/* Ambient Soft Glow Behind Photo */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] h-[460px] bg-gradient-to-tr from-teal-300/20 via-emerald-200/15 to-transparent rounded-full blur-3xl pointer-events-none" />
+
+                <div className="relative w-full max-w-lg lg:max-w-xl">
+                  
+                  {/* Main Authentic Photograph Card with Rounded Edges & Premium Frame */}
+                  <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/90 ring-1 ring-slate-200/80 bg-slate-100 group">
+                    <Image
+                      src="/images/inventory-person-using-app.jpg"
+                      alt="DukanHisab Shopkeeper Scanning Barcodes & Managing Inventory in Supermarket"
+                      width={1024}
+                      height={768}
+                      priority
+                      className="w-full h-auto object-cover block group-hover:scale-[1.02] transition-transform duration-500"
+                    />
+
+                    {/* Laser Scanner Visual Effect Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
+
+                    {/* Simulated Camera Scanning Laser Line */}
+                    <div className="absolute top-1/2 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-transparent via-red-500 to-transparent shadow-[0_0_8px_#ef4444] animate-pulse pointer-events-none" />
+
+                    {/* Bottom Status Bar on Photo */}
+                    <div className="absolute bottom-3 left-4 right-4 bg-black/60 backdrop-blur-md rounded-xl py-2 px-3.5 flex items-center justify-between text-white text-xs border border-white/10">
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                        <span className="font-semibold text-[11px]">Live Camera Barcode Scanner</span>
+                      </div>
+                      <span className="text-[10px] font-mono text-emerald-300 font-bold">EAN-13 DETECTED</span>
+                    </div>
+                  </div>
+
+                  {/* Floating Live Scanned Product HUD Card (Bottom Left) */}
+                  <div className="absolute -bottom-6 -left-3 sm:-left-6 z-30 bg-white/95 backdrop-blur-md rounded-2xl p-3.5 sm:p-4 shadow-2xl border border-slate-200/90 w-56 sm:w-64 text-left">
+                    <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-base">📦</span>
+                        <span className="text-xs font-black text-slate-900">Scanned Item</span>
+                      </div>
+                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">
+                        ✓ In Stock: 48 Pcs
+                      </span>
+                    </div>
+
+                    <div className="space-y-1">
+                      <div className="font-extrabold text-xs text-slate-900 truncate">
+                        Tata Tea Gold (500g Pack)
+                      </div>
+                      <div className="flex items-center justify-between text-[11px] text-slate-600 font-mono">
+                        <span>Barcode: 890103038312</span>
+                        <span className="font-bold text-slate-900">₹280</span>
+                      </div>
+                    </div>
+
+                    <div className="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-500">
+                      <span>Shelf: Aisle 3 • Rack B</span>
+                      <span className="text-teal-700 font-bold">Auto-Logged</span>
+                    </div>
+                  </div>
+
+                  {/* Floating Low-Stock Alert Warning Badge (Top Right) */}
+                  <div className="absolute -top-4 -right-2 sm:-right-4 z-30 bg-white/95 backdrop-blur-md rounded-2xl p-3 shadow-xl border border-amber-200/80 flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center font-bold text-lg shrink-0">
+                      🔔
+                    </div>
+                    <div className="text-left pr-1">
+                      <div className="text-xs font-black text-slate-900">Low Stock Alert</div>
+                      <div className="text-[10px] font-bold text-amber-700">Refill 12 Units Today</div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
@@ -190,7 +253,7 @@ export default function InventoryManagementPage() {
               {/* Center Column: Smart Inventory Copy */}
               <div className="lg:col-span-4 space-y-6">
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#0d9488]">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#036272]">
                     SMART INVENTORY
                   </span>
                   <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-2">
@@ -258,7 +321,7 @@ export default function InventoryManagementPage() {
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-10">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#0d9488]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#036272]">
                 PERFECT FOR EVERY BUSINESS
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">

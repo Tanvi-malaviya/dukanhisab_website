@@ -13,12 +13,12 @@ export default function CtaBanner({
   secondaryButtonHref = "/pricing",
   slogan = "Chhota Business Nahi, Bada Sapna!",
   checks = ["Easy to Use", "Secure & Reliable", "Made for Indian Shops"],
-  imageSrc = "/images/cta-phone.png"
+  imageSrc = "/images/dukanhisab-mobile-dashboard.png"
 }) {
   return (
     <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#014737] via-[#025642] to-[#014737] text-white p-8 sm:p-12 shadow-xl">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#01353e] via-[#036272] to-[#01353e] text-white p-8 sm:p-12 shadow-xl">
           
           {/* Subtle background glow */}
           <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>

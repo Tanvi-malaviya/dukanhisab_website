@@ -151,7 +151,7 @@ export default function HeroVisualHub({ onOpenVideo }) {
         <div>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
             Apni Dukaan Ka <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0d9488] via-teal-600 to-teal-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#036272] via-teal-600 to-teal-500">
               Complete Digital Hisab
             </span>
           </h1>
@@ -239,7 +239,7 @@ export default function HeroVisualHub({ onOpenVideo }) {
             href="https://play.google.com/store/apps/details?id=com.app.dukanhisab&hl=en_IN"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 bg-[#0d9488] hover:bg-[#0f766e] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-2xl shadow-lg shadow-teal-700/25 hover:shadow-xl transition-all active:scale-95 group"
+            className="inline-flex items-center gap-2.5 bg-[#036272] hover:bg-[#024f5c] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-2xl shadow-lg shadow-teal-700/25 hover:shadow-xl transition-all active:scale-95 group"
           >
             <GooglePlayIcon className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
             <span>Download Free App</span>

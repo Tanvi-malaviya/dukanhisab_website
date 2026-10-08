@@ -20,11 +20,11 @@ export default function KhataHeroTypographic() {
           <div className="flex items-center gap-2 text-xs font-semibold text-slate-500">
             <Link href="/" className="hover:text-teal-700">Home</Link>
             <span>›</span>
-            <span className="text-[#0d9488] font-bold">Khata &amp; Accounting</span>
+            <span className="text-[#036272] font-bold">Khata &amp; Accounting</span>
           </div>
 
           <div className="inline-flex items-center gap-2 bg-[#ccfbf1] text-[#115e59] px-3.5 py-1 rounded-full text-xs font-bold tracking-tight shadow-2xs">
-            <span className="w-2 h-2 rounded-full bg-[#0d9488] animate-pulse"></span>
+            <span className="w-2 h-2 rounded-full bg-[#036272] animate-pulse"></span>
             <span>Zero Calculation Mistakes • 100% Automatic</span>
           </div>
         </div>
@@ -48,7 +48,7 @@ export default function KhataHeroTypographic() {
               {/* Card 2: UPI GPay (White Card with Teal Border) */}
               <div className="absolute left-5.5 bottom-1 w-13 sm:w-15 h-16 sm:h-20 rounded-xl bg-white border border-teal-200/90 p-1.5 shadow-md transform -rotate-10 -translate-y-1.5 hover:-translate-y-3 hover:rotate-0 transition-transform duration-300 cursor-pointer">
                 <div className="flex items-center gap-0.5">
-                  <span className="w-2 h-2 rounded-full bg-[#0d9488]"></span>
+                  <span className="w-2 h-2 rounded-full bg-[#036272]"></span>
                   <span className="text-[8px] font-black text-slate-800">GPay</span>
                 </div>
                 <span className="text-[9px] font-bold text-teal-700 block mt-2.5">UPI</span>
@@ -56,7 +56,7 @@ export default function KhataHeroTypographic() {
               </div>
 
               {/* Card 3: WhatsApp Pay (Brand Teal) */}
-              <div className="absolute left-13 bottom-1 w-13 sm:w-15 h-16 sm:h-20 rounded-xl bg-gradient-to-br from-[#0d9488] to-[#0f766e] p-1.5 shadow-lg transform -rotate-2 -translate-y-2 hover:-translate-y-4 hover:rotate-0 transition-transform duration-300 cursor-pointer text-white">
+              <div className="absolute left-13 bottom-1 w-13 sm:w-15 h-16 sm:h-20 rounded-xl bg-gradient-to-br from-[#036272] to-[#024f5c] p-1.5 shadow-lg transform -rotate-2 -translate-y-2 hover:-translate-y-4 hover:rotate-0 transition-transform duration-300 cursor-pointer text-white">
                 <span className="text-[8px] font-bold text-teal-100 block">💬 Pay</span>
                 <span className="text-[9px] font-black text-white block mt-1.5">Auto</span>
                 <div className="w-4 h-1.5 bg-teal-300/40 rounded-xs mt-1.5"></div>
@@ -77,7 +77,7 @@ export default function KhataHeroTypographic() {
 
               {/* Clicking Mouse Pointer Cursor */}
               <div className="absolute bottom-[-2px] left-[42%] z-20 pointer-events-none drop-shadow-md transform -rotate-12 animate-bounce">
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#0d9488] fill-[#0d9488] stroke-white stroke-2" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#036272] fill-[#036272] stroke-white stroke-2" viewBox="0 0 24 24">
                   <path d="M3 3l7 18 3-7 7-3L3 3z" />
                 </svg>
               </div>
@@ -95,7 +95,7 @@ export default function KhataHeroTypographic() {
               onClick={() => setToggleActive(!toggleActive)}
               className={`w-13 sm:w-15 h-7.5 sm:h-8.5 rounded-full p-1 transition-all duration-300 flex items-center cursor-pointer shadow-inner border-2 ${
                 toggleActive 
-                  ? "bg-[#0d9488] border-[#14b8a6] justify-end shadow-teal-900/30" 
+                  ? "bg-[#036272] border-teal-500 justify-end shadow-teal-900/30" 
                   : "bg-slate-300 border-slate-400 justify-start"
               }`}
               title="Toggle Auto Reminders"
@@ -116,7 +116,7 @@ export default function KhataHeroTypographic() {
           <div className="flex flex-wrap items-center justify-center gap-x-2.5 sm:gap-x-4 gap-y-1.5 mb-2.5 sm:mb-3">
             
             {/* Word: "effortless" in DukanHisab Teal/Emerald theme */}
-            <span className="text-4xl sm:text-6xl lg:text-7xl font-black text-[#0d9488] tracking-tight leading-none drop-shadow-xs">
+            <span className="text-4xl sm:text-6xl lg:text-7xl font-black text-[#036272] tracking-tight leading-none drop-shadow-xs">
               effortless
             </span>
 
@@ -124,17 +124,17 @@ export default function KhataHeroTypographic() {
             <div className="flex items-center gap-1.5 sm:gap-2 pl-1">
               
               {/* Badge 1: Brand Teal squircle with lightning */}
-              <div className="w-9 h-9 sm:w-11 sm:h-11 bg-[#0d9488] rounded-xl sm:rounded-2xl flex items-center justify-center shadow-md border border-teal-400 transform -rotate-6 hover:rotate-0 transition-transform">
+              <div className="w-9 h-9 sm:w-11 sm:h-11 bg-[#036272] rounded-xl sm:rounded-2xl flex items-center justify-center shadow-md border border-teal-400 transform -rotate-6 hover:rotate-0 transition-transform">
                 <span className="text-base sm:text-lg text-white">⚡</span>
               </div>
 
               {/* Badge 2: Crisp white squircle with WhatsApp reminder */}
               <div className="w-9 h-9 sm:w-11 sm:h-11 bg-white rounded-xl sm:rounded-2xl flex items-center justify-center shadow-md border border-teal-200 transform rotate-3 hover:rotate-0 transition-transform">
-                <WhatsAppIcon className="w-4.5 h-4.5 sm:w-5.5 sm:h-5.5 text-[#0d9488]" />
+                <WhatsAppIcon className="w-4.5 h-4.5 sm:w-5.5 sm:h-5.5 text-[#036272]" />
               </div>
 
               {/* Badge 3: Deep Forest Teal squircle with metallic lock */}
-              <div className="w-9 h-9 sm:w-11 sm:h-11 bg-gradient-to-br from-[#115e59] to-[#0f766e] rounded-xl sm:rounded-2xl flex items-center justify-center shadow-md border border-teal-600 transform rotate-12 hover:rotate-0 transition-transform text-white">
+              <div className="w-9 h-9 sm:w-11 sm:h-11 bg-gradient-to-br from-[#01353e] to-[#024f5c] rounded-xl sm:rounded-2xl flex items-center justify-center shadow-md border border-teal-600 transform rotate-12 hover:rotate-0 transition-transform text-white">
                 <span className="text-xs sm:text-sm">🔒</span>
               </div>
 
@@ -155,7 +155,7 @@ export default function KhataHeroTypographic() {
               href="https://play.google.com/store/apps/details?id=com.app.dukanhisab&hl=en_IN"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 bg-[#0d9488] hover:bg-[#0f766e] text-white font-bold text-sm sm:text-base px-7 py-3 rounded-2xl shadow-lg shadow-teal-700/25 hover:shadow-xl transition-all active:scale-95 cursor-pointer"
+              className="inline-flex items-center gap-2.5 bg-[#036272] hover:bg-[#024f5c] text-white font-bold text-sm sm:text-base px-7 py-3 rounded-2xl shadow-lg shadow-teal-700/25 hover:shadow-xl transition-all active:scale-95 cursor-pointer"
             >
               <GooglePlayIcon className="w-5 h-5 text-white" />
               <span>Download App</span>
@@ -167,7 +167,7 @@ export default function KhataHeroTypographic() {
               className="inline-flex items-center gap-2 bg-white hover:bg-teal-50/60 text-slate-800 font-bold text-sm sm:text-base px-6 py-3 rounded-2xl border border-teal-200 shadow-xs hover:border-teal-300 transition-all"
             >
               <span>Book a Free Demo</span>
-              <ArrowRightIcon className="w-4 h-4 text-[#0d9488]" />
+              <ArrowRightIcon className="w-4 h-4 text-[#036272]" />
             </Link>
 
           </div>
@@ -175,15 +175,15 @@ export default function KhataHeroTypographic() {
           {/* Trust Footnote (Tight spacing) */}
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-slate-500 font-semibold mt-2.5 sm:mt-3">
             <span className="flex items-center gap-1.5">
-              <span className="text-[#0d9488] font-bold">✓</span> 100% Free Forever Plan
+              <span className="text-[#036272] font-bold">✓</span> 100% Free Forever Plan
             </span>
             <span className="hidden sm:inline">•</span>
             <span className="flex items-center gap-1.5">
-              <span className="text-[#0d9488] font-bold">✓</span> Auto WhatsApp Reminders
+              <span className="text-[#036272] font-bold">✓</span> Auto WhatsApp Reminders
             </span>
             <span className="hidden sm:inline">•</span>
             <span className="flex items-center gap-1.5">
-              <span className="text-[#0d9488] font-bold">✓</span> Bank-Grade 256-bit Backup
+              <span className="text-[#036272] font-bold">✓</span> Bank-Grade 256-bit Backup
             </span>
           </div>
 

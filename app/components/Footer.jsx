@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { StoreIcon, SmartphoneIcon, MonitorIcon, WhatsAppIcon, MailIcon } from "./Icons";
 
 export default function Footer() {
@@ -14,16 +15,23 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="w-9 h-9 rounded-xl bg-teal-600 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
-                <StoreIcon className="w-5 h-5 text-white" />
+              <div className="w-10 h-10 rounded-2xl overflow-hidden shadow-md group-hover:scale-105 transition-transform bg-[#036272] flex items-center justify-center p-0.5 border border-teal-700/40">
+                <Image
+                  src="/images/dukanhisab-app-icon.png"
+                  alt="DukanHisab Logo"
+                  width={80}
+                  height={80}
+                  quality={100}
+                  className="w-full h-full object-contain rounded-xl"
+                />
               </div>
               <span className="text-xl font-extrabold text-white tracking-tight">
-                Dukan<span className="text-teal-500">Hisab</span>
+                Dukan<span className="text-teal-400">Hisab</span>
               </span>
             </Link>
 
             <p className="text-sm font-semibold text-slate-300">
-              "Your Business Has a Memory."
+              "Dukan Ka Hisab, Bilkul Aasan"
             </p>
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
               DukanHisab connects every sale, purchase, payment, product, customer and expense into one unified, intelligent shop management ecosystem.

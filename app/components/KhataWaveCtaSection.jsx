@@ -27,14 +27,14 @@ export default function KhataWaveCtaSection() {
               <defs>
                 {/* Glowing Light Beam Gradients */}
                 <linearGradient id="waveTealBeam" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#0d9488" stopOpacity="0" />
+                  <stop offset="0%" stopColor="#036272" stopOpacity="0" />
                   <stop offset="50%" stopColor="#10b981" stopOpacity="1" />
-                  <stop offset="100%" stopColor="#0d9488" stopOpacity="0" />
+                  <stop offset="100%" stopColor="#036272" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient id="waveAmberBeam" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#f59e0b" stopOpacity="0" />
                   <stop offset="50%" stopColor="#14b8a6" stopOpacity="0.9" />
-                  <stop offset="100%" stopColor="#0d9488" stopOpacity="0" />
+                  <stop offset="100%" stopColor="#036272" stopOpacity="0" />
                 </linearGradient>
               </defs>
 
@@ -148,7 +148,7 @@ export default function KhataWaveCtaSection() {
             
             {/* Top Micro Eyebrow */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-200/80 text-[11px] font-bold text-slate-600 mb-5 shadow-2xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0d9488] animate-pulse"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#036272] animate-pulse"></span>
               <span>Join 50,000+ Smart Shopkeepers</span>
             </div>
 
@@ -171,7 +171,7 @@ export default function KhataWaveCtaSection() {
                 href="https://play.google.com/store/apps/details?id=com.app.dukanhisab&hl=en_IN"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center justify-center gap-2.5 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-amber-500 via-[#0d9488] to-[#115e59] text-white font-extrabold text-sm sm:text-base tracking-wide shadow-xl shadow-teal-900/20 hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer overflow-hidden"
+                className="group relative inline-flex items-center justify-center gap-2.5 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-amber-500 via-[#036272] to-[#01353e] text-white font-extrabold text-sm sm:text-base tracking-wide shadow-xl shadow-teal-900/20 hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer overflow-hidden"
               >
                 {/* Gentle Shimmer Highlight */}
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/25 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
@@ -193,15 +193,15 @@ export default function KhataWaveCtaSection() {
             {/* Trust Badges Footnote */}
             <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-slate-500 mt-6 sm:mt-8">
               <span className="flex items-center gap-1.5">
-                <span className="text-[#0d9488] font-bold">✓</span> 100% Free Forever Plan
+                <span className="text-[#036272] font-bold">✓</span> 100% Free Forever Plan
               </span>
               <span>•</span>
               <span className="flex items-center gap-1.5">
-                <span className="text-[#0d9488] font-bold">✓</span> No Credit Card Required
+                <span className="text-[#036272] font-bold">✓</span> No Credit Card Required
               </span>
               <span className="hidden sm:inline">•</span>
               <span className="hidden sm:flex items-center gap-1.5">
-                <span className="text-[#0d9488] font-bold">✓</span> Instant Setup in 2 Mins
+                <span className="text-[#036272] font-bold">✓</span> Instant Setup in 2 Mins
               </span>
             </div>
 

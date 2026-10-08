@@ -104,7 +104,7 @@ export default function ResourcesCtaSection() {
                   href="https://play.google.com/store/apps/details?id=com.app.dukanhisab&hl=en_IN"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-teal-500 via-[#0d9488] to-emerald-600 hover:from-teal-400 hover:to-emerald-500 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-teal-950/50 hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer overflow-hidden border border-teal-300/30"
+                  className="group relative inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-teal-500 via-[#036272] to-emerald-600 hover:from-teal-400 hover:to-emerald-500 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-teal-950/50 hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer overflow-hidden border border-teal-300/30"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                   <GooglePlayIcon className="w-5 h-5 text-white shrink-0" />

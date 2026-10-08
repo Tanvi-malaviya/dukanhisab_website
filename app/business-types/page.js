@@ -549,7 +549,7 @@ export default function BusinessTypesPage() {
                     href="https://play.google.com/store/apps/details?id=com.app.dukanhisab&hl=en_IN"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#0d9488] hover:bg-[#0f766e] text-white font-bold text-sm px-6 py-3 rounded-xl shadow-md transition-all active:scale-95"
+                    className="inline-flex items-center gap-2 bg-[#036272] hover:bg-[#024f5c] text-white font-bold text-sm px-6 py-3 rounded-xl shadow-md transition-all active:scale-95"
                   >
                     <GooglePlayIcon className="w-4 h-4 text-white" />
                     <span>Download App</span>

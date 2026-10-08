@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import StatsBar from "../components/StatsBar";
 import CtaBanner from "../components/CtaBanner";
+import Shop3DHeroAnimation from "../components/Shop3DHeroAnimation";
 import { 
   GooglePlayIcon, 
   PlayIcon, 
@@ -56,13 +57,13 @@ export default function ShopManagementPage() {
               
               {/* Left Column */}
               <div className="lg:col-span-7 space-y-6">
-                <div className="inline-flex items-center gap-2 bg-[#ccfbf1] text-[#115e59] px-3.5 py-1.5 rounded-full text-xs font-bold tracking-tight shadow-xs">
+                <div className="inline-flex items-center gap-2 bg-[#d6eff2] text-[#013e48] px-3.5 py-1.5 rounded-full text-xs font-bold tracking-tight shadow-xs">
                   <span>SHOP MANAGEMENT SOFTWARE</span>
                 </div>
 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
                   Run Your Shop <br />
-                  <span className="text-[#0d9488]">Smarter, Easier</span>
+                  <span className="text-[#036272]">Smarter, Easier</span>
                 </h1>
 
                 <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl font-medium">
@@ -72,19 +73,19 @@ export default function ShopManagementPage() {
                 {/* 4 Badges */}
                 <div className="grid grid-cols-2 gap-3 pt-2">
                   <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700">
-                    <span className="w-6 h-6 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center">🏪</span>
+                    <span className="w-6 h-6 rounded-full bg-teal-100 text-[#036272] flex items-center justify-center">🏪</span>
                     <span>Complete Shop Management</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700">
-                    <span className="w-6 h-6 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center">⚡</span>
+                    <span className="w-6 h-6 rounded-full bg-teal-100 text-[#036272] flex items-center justify-center">⚡</span>
                     <span>Save Time &amp; Effort</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700">
-                    <span className="w-6 h-6 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center">📱</span>
+                    <span className="w-6 h-6 rounded-full bg-teal-100 text-[#036272] flex items-center justify-center">📱</span>
                     <span>Access Anywhere</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700">
-                    <span className="w-6 h-6 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center">🔒</span>
+                    <span className="w-6 h-6 rounded-full bg-teal-100 text-[#036272] flex items-center justify-center">🔒</span>
                     <span>Safe &amp; Secure Your Data</span>
                   </div>
                 </div>
@@ -95,7 +96,7 @@ export default function ShopManagementPage() {
                     href="https://play.google.com/store/apps/details?id=com.app.dukanhisab&hl=en_IN"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2.5 bg-[#0d9488] hover:bg-[#0f766e] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-2xl shadow-lg shadow-teal-700/20 hover:shadow-xl transition-all active:scale-95"
+                    className="inline-flex items-center gap-2.5 bg-[#036272] hover:bg-[#024f5c] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-2xl shadow-lg shadow-[#036272]/20 hover:shadow-xl transition-all active:scale-95"
                   >
                     <GooglePlayIcon className="w-5 h-5 text-white" />
                     <span>Download App</span>
@@ -114,38 +115,9 @@ export default function ShopManagementPage() {
                 </div>
               </div>
 
-              {/* Right Column: Shopkeeper & Phone Mockup */}
-              <div className="lg:col-span-5 relative flex justify-center items-end">
-                <div className="absolute top-2 left-2 z-20 bg-white/90 backdrop-blur-xs border border-teal-200 px-3 py-1.5 rounded-xl shadow-md hidden sm:block">
-                  <span className="text-xs font-black text-teal-800 italic font-serif">
-                    Dukaan Ab Zyada Aasaan! ✨<br />
-                    Chhoti Dukaan Bada Sapna!
-                  </span>
-                </div>
-
-                <div className="relative flex items-end justify-center w-full max-w-md">
-                  <div className="relative w-64 sm:w-72 h-auto z-10">
-                    <Image
-                      src="/images/shopkeeper-man.png"
-                      alt="Shopkeeper"
-                      width={320}
-                      height={305}
-                      priority
-                      className="w-full h-auto object-contain drop-shadow-xl"
-                    />
-                  </div>
-
-                  <div className="relative -ml-16 mb-4 w-44 sm:w-50 z-20 drop-shadow-2xl">
-                    <Image
-                      src="/images/phone-feature-hero.png"
-                      alt="Shop management overview mobile app"
-                      width={190}
-                      height={295}
-                      priority
-                      className="w-full h-auto object-contain rounded-3xl"
-                    />
-                  </div>
-                </div>
+              {/* Right Column: 3D POS Counter & Shop Terminal Animation */}
+              <div className="lg:col-span-5 relative flex justify-center items-center">
+                <Shop3DHeroAnimation />
               </div>
 
             </div>
@@ -183,26 +155,48 @@ export default function ShopManagementPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               
-              {/* Left Column: Lady Shopkeeper Photo */}
-              <div className="lg:col-span-5 flex justify-center relative">
-                <div className="w-full max-w-sm rounded-3xl overflow-hidden shadow-xl border border-slate-200 relative group">
-                  <div className="absolute top-3 left-3 z-10 bg-teal-700/90 text-white text-xs font-black px-3 py-1 rounded-full shadow-sm">
-                    Manage Everything In One Place 📱
-                  </div>
+              {/* Left Column: Authentic Indian Store Owner */}
+              <div className="lg:col-span-5 relative flex justify-center">
+                <div className="relative w-full max-w-md rounded-3xl overflow-hidden shadow-2xl border-4 border-white group bg-slate-100">
                   <Image
-                    src="/images/shopkeeper-lady-phone.png"
-                    alt="Indian shopkeeper managing store from mobile"
-                    width={400}
-                    height={230}
-                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform"
+                    src="/images/shop-management-store-owner.jpg"
+                    alt="Indian shopkeeper managing store from mobile with DukanHisab"
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500"
+                    priority
                   />
+                  {/* Subtle soft gradient overlay at bottom for depth */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
+
+                  {/* Top Floating Badge */}
+                  <div className="absolute top-3.5 left-3.5 z-10 bg-teal-800/90 backdrop-blur-md text-white text-xs font-black px-3.5 py-1.5 rounded-full shadow-md flex items-center gap-1.5 border border-white/20">
+                    <span>🏪</span>
+                    <span>Dukaan Ab Smart &amp; Digital</span>
+                  </div>
+
+                  {/* Bottom Floating Micro Badge: "All-In-One Counter App" */}
+                  <div className="absolute bottom-3.5 left-3.5 right-3.5 bg-white/95 backdrop-blur-md rounded-2xl p-3 shadow-lg border border-teal-100 flex items-center justify-between">
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-8 h-8 rounded-xl bg-teal-100 text-teal-800 flex items-center justify-center font-bold text-sm">
+                        ✓
+                      </span>
+                      <div className="text-left">
+                        <p className="text-xs font-black text-slate-900 leading-tight">All-In-One Counter App</p>
+                        <p className="text-[10px] text-teal-700 font-semibold leading-tight">Billing • Stock • Udhar • Reports</p>
+                      </div>
+                    </div>
+                    <span className="text-[10px] font-extrabold bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-md">
+                      Active
+                    </span>
+                  </div>
                 </div>
               </div>
 
               {/* Center Column: Value Proposition */}
               <div className="lg:col-span-4 space-y-6">
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#0d9488]">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#036272]">
                     YOUR SHOP. YOUR CONTROL
                   </span>
                   <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-2">
@@ -270,6 +264,7 @@ export default function ShopManagementPage() {
           slogan="Chhota Business Nahi, Bada Sapna!"
           secondaryButtonText="Explore Features"
           secondaryButtonHref="/features"
+          imageSrc="/images/dukanhisab-mobile-dashboard.png"
         />
       </main>
 

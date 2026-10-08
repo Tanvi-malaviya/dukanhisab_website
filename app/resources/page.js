@@ -176,11 +176,11 @@ export default function ResourcesPage() {
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-500">
                 <Link href="/" className="hover:text-teal-700">Home</Link>
                 <span>›</span>
-                <span className="text-[#0d9488] font-bold">Resources &amp; Hub</span>
+                <span className="text-[#036272] font-bold">Resources &amp; Hub</span>
               </div>
 
               <div className="inline-flex items-center gap-2 bg-[#ccfbf1] text-[#115e59] px-3.5 py-1 rounded-full text-xs font-bold tracking-tight shadow-2xs">
-                <span className="w-2 h-2 rounded-full bg-[#0d9488] animate-pulse"></span>
+                <span className="w-2 h-2 rounded-full bg-[#036272] animate-pulse"></span>
                 <span>Updated Weekly • 100% Free Business Guides</span>
               </div>
             </div>
@@ -193,7 +193,7 @@ export default function ResourcesPage() {
 
                 <h1 className="text-3xl sm:text-5xl lg:text-[52px] font-black text-slate-900 tracking-tight leading-[1.15]">
                   Learn. Grow. Manage Better. <br />
-                  <span className="text-[#0d9488]">Smart Guides &amp; Tools For Shopkeepers.</span>
+                  <span className="text-[#036272]">Smart Guides &amp; Tools For Shopkeepers.</span>
                 </h1>
 
                 <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl font-medium">
@@ -204,7 +204,7 @@ export default function ResourcesPage() {
                 <div className="flex flex-wrap items-center gap-3 pt-2">
                   <Link
                     href="/tools/gst-calculator"
-                    className="inline-flex items-center gap-2 bg-[#0d9488] hover:bg-[#0f766e] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-2xl shadow-lg shadow-teal-700/20 hover:shadow-xl transition-all active:scale-95"
+                    className="inline-flex items-center gap-2 bg-[#036272] hover:bg-[#024f5c] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-2xl shadow-lg shadow-teal-700/20 hover:shadow-xl transition-all active:scale-95"
                   >
                     <span>Explore Free Tools</span>
                     <ArrowRightIcon className="w-4 h-4 text-white" />
@@ -248,7 +248,7 @@ export default function ResourcesPage() {
                     {/* Bottom Floating Badge: 100% Free Resources */}
                     <div className="absolute bottom-3.5 left-3.5 right-3.5 bg-white/95 backdrop-blur-md rounded-2xl p-3 shadow-lg border border-teal-100 flex items-center justify-between">
                       <div className="flex items-center gap-2.5">
-                        <div className="w-8 h-8 rounded-xl bg-[#ccfbf1] text-[#0d9488] flex items-center justify-center font-black text-sm shrink-0">
+                        <div className="w-8 h-8 rounded-xl bg-[#ccfbf1] text-[#036272] flex items-center justify-center font-black text-sm shrink-0">
                           ✓
                         </div>
                         <div>
@@ -297,11 +297,11 @@ export default function ResourcesPage() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
               <div className="max-w-2xl">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-200 text-xs font-bold text-teal-800 mb-2.5">
-                  <span className="w-2 h-2 rounded-full bg-[#0d9488]"></span>
+                  <span className="w-2 h-2 rounded-full bg-[#036272]"></span>
                   <span>Personalized Playbooks</span>
                 </div>
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                  Curated Guides For <span className="text-[#0d9488]">Your Shop Type</span>
+                  Curated Guides For <span className="text-[#036272]">Your Shop Type</span>
                 </h2>
                 <p className="mt-1.5 text-slate-600 text-sm sm:text-base font-medium">
                   Every retail business has different billing and inventory needs. Choose your category for specialized daily playbooks.
@@ -347,7 +347,7 @@ export default function ResourcesPage() {
                     <div className="mt-4 pt-3 border-t border-slate-100 space-y-2">
                       {item.tips.map((tip, tipIdx) => (
                         <div key={tipIdx} className="flex items-start gap-2 text-[11px] text-slate-700 font-semibold leading-tight">
-                          <span className="text-[#0d9488] font-black shrink-0">✓</span>
+                          <span className="text-[#036272] font-black shrink-0">✓</span>
                           <span>{tip}</span>
                         </div>
                       ))}
@@ -387,9 +387,7 @@ export default function ResourcesPage() {
                 </p>
               </div>
 
-              <a href="#blog" className="text-xs font-bold text-slate-700 border border-slate-200 bg-white px-3.5 py-2 rounded-xl hover:bg-slate-50 transition-colors">
-                View All Blogs →
-              </a>
+             
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -408,7 +406,7 @@ export default function ResourcesPage() {
                         height={270}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <span className="absolute top-3 left-3 bg-[#0d9488] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-xs">
+                      <span className="absolute top-3 left-3 bg-[#036272] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-xs">
                         {post.tag}
                       </span>
                     </div>
@@ -541,7 +539,7 @@ export default function ResourcesPage() {
                 <div className="shrink-0 flex flex-col sm:flex-row lg:flex-col gap-3">
                   <Link
                     href="/tools/gst-calculator"
-                    className="inline-flex items-center justify-center gap-2 bg-[#0d9488] hover:bg-[#0f766e] text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-lg shadow-teal-900/40 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                    className="inline-flex items-center justify-center gap-2 bg-[#036272] hover:bg-[#024f5c] text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-lg shadow-teal-900/40 transition-all hover:scale-[1.02] active:scale-[0.98]"
                   >
                     <span>Open Free GST Calculator</span>
                     <ArrowRightIcon className="w-4 h-4" />

@@ -1,17 +1,56 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-50: #edf7f8;
+  --color-brand-100: #d6eff2;
+  --color-brand-200: #b0e0e6;
+  --color-brand-300: #7ac9d4;
+  --color-brand-400: #42adbc;
+  --color-brand-500: #128e9f;
+  --color-brand-600: #036272;
+  --color-brand-700: #024f5c;
+  --color-brand-800: #013e48;
+  --color-brand-900: #01353e;
+  --color-brand-950: #011f25;
+
+  --color-teal-50: #edf7f8;
+  --color-teal-100: #d6eff2;
+  --color-teal-200: #b0e0e6;
+  --color-teal-300: #7ac9d4;
+  --color-teal-400: #42adbc;
+  --color-teal-500: #128e9f;
+  --color-teal-600: #036272;
+  --color-teal-700: #024f5c;
+  --color-teal-800: #013e48;
+  --color-teal-900: #01353e;
+  --color-teal-950: #011f25;
+
+  --color-emerald-50: #edf7f8;
+  --color-emerald-100: #d6eff2;
+  --color-emerald-200: #b0e0e6;
+  --color-emerald-300: #7ac9d4;
+  --color-emerald-400: #42adbc;
+  --color-emerald-500: #128e9f;
+  --color-emerald-600: #036272;
+  --color-emerald-700: #024f5c;
+  --color-emerald-800: #013e48;
+  --color-emerald-900: #01353e;
+  --color-emerald-950: #011f25;
+}
+
 :root {
-  /* DukanHisab Brand Teal - matches logo & app dashboards */
-  --brand-50:   #f0fdfa;
-  --brand-100:  #ccfbf1;
-  --brand-200:  #99f6e4;
-  --brand-300:  #5eead4;
-  --brand-400:  #2dd4bf;
-  --brand-500:  #14b8a6;
-  --brand-600:  #0d9488;
-  --brand-700:  #0f766e;
-  --brand-800:  #115e59;
-  --brand-900:  #134e4a;
+  /* DukanHisab Official Brand Theme - extracted directly from official logo (#036272) */
+  --brand-50:   #edf7f8;
+  --brand-100:  #d6eff2;
+  --brand-200:  #b0e0e6;
+  --brand-300:  #7ac9d4;
+  --brand-400:  #42adbc;
+  --brand-500:  #128e9f;
+  --brand-600:  #036272;
+  --brand-700:  #024f5c;
+  --brand-800:  #013e48;
+  --brand-900:  #01353e;
+  --brand-950:  #011f25;
 
   --primary:          var(--brand-600);
   --primary-hover:    var(--brand-700);
@@ -19,9 +58,9 @@
   --primary-mid:      var(--brand-100);
   --primary-dark:     var(--brand-900);
 
-  --cta-bg:           #0d9488;
-  --cta-bg-hover:     #0f766e;
-  --cta-shadow:       rgba(13, 148, 136, 0.28);
+  --cta-bg:           #036272;
+  --cta-bg-hover:     #024f5c;
+  --cta-shadow:       rgba(3, 98, 114, 0.28);
 
   --background:   #f8fafc;
   --surface:      #ffffff;
@@ -29,17 +68,17 @@
   --muted:        #64748b;
   --border:       #e2e8f0;
 
-  /* Section gradient tokens */
-  --section-hero-from: #e6f7f6;
-  --section-hero-via:  #f2fbfa;
+  /* Section gradient tokens matching #036272 */
+  --section-hero-from: #e5f4f6;
+  --section-hero-via:  #f0f8fa;
   --section-hero-to:   #ffffff;
-  --section-alt-from:  #f0fdfa;
+  --section-alt-from:  #edf7f8;
   --section-alt-to:    #ffffff;
-  --section-light:     #f5fafa;
+  --section-light:     #f4f9fa;
 
   /* Legacy compat */
-  --primary-green: #0d9488;
-  --primary-dark:  #115e59;
+  --primary-green: #036272;
+  --primary-dark:  #013e48;
 }
 
 body {

@@ -25,12 +25,12 @@ export default function SavingsCalculator() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#0d9488] bg-teal-50 px-3 py-1 rounded-full border border-teal-200">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#036272] bg-teal-50 px-3 py-1 rounded-full border border-teal-200">
             BUSINESS ROI ESTIMATOR
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mt-3">
             See How Much Time & Money <br />
-            <span className="text-[#0d9488]">DukanHisab Saves Your Shop</span>
+            <span className="text-[#036272]">DukanHisab Saves Your Shop</span>
           </h2>
           <p className="mt-3 text-slate-600 text-sm sm:text-base">
             Adjust the sliders below based on your daily shop activity to see your real monthly return.
@@ -61,7 +61,7 @@ export default function SavingsCalculator() {
                   step="5"
                   value={dailyBills}
                   onChange={(e) => setDailyBills(Number(e.target.value))}
-                  className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#0d9488]"
+                  className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#036272]"
                 />
                 <div className="flex justify-between text-[11px] text-slate-400 mt-1 font-mono">
                   <span>10 bills</span>
@@ -87,7 +87,7 @@ export default function SavingsCalculator() {
                   step="10000"
                   value={monthlyKhata}
                   onChange={(e) => setMonthlyKhata(Number(e.target.value))}
-                  className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#0d9488]"
+                  className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#036272]"
                 />
                 <div className="flex justify-between text-[11px] text-slate-400 mt-1 font-mono">
                   <span>₹10,000</span>
@@ -173,7 +173,7 @@ export default function SavingsCalculator() {
                 </div>
                 <Link
                   href="/pricing"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0d9488] hover:bg-[#0f766e] text-white px-5 py-2.5 rounded-xl font-bold text-xs shadow-md transition-all active:scale-95"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#036272] hover:bg-[#024f5c] text-white px-5 py-2.5 rounded-xl font-bold text-xs shadow-md transition-all active:scale-95"
                 >
                   <span>View Plans</span>
                   <ArrowRightIcon className="w-3.5 h-3.5" />

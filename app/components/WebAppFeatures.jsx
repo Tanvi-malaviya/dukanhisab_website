@@ -86,7 +86,7 @@ const webAppModules = [
         { name: "Casio Desktop Calculator MJ-120D", qty: "Out of Stock (0 left)", rate: "Office", total: "₹525" },
       ],
       total: "Live Catalog: 320 Products",
-      tax: "Theme: Teal (#0F766E)",
+      tax: "Theme: Brand Teal (#036272)",
       grand: "1-Click WhatsApp Ordering",
       customer: "Uma Stationery & Xerox",
       mode: "Synced Live with POS",

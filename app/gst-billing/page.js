@@ -16,7 +16,9 @@ import {
   TagIcon,
   LayersIcon,
   FilePdfIcon,
-  ShieldCheckIcon
+  ShieldCheckIcon,
+  WhatsAppIcon,
+  ArrowRightIcon
 } from "../components/Icons";
 
 export default function GstBillingPage() {
@@ -40,16 +42,16 @@ export default function GstBillingPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
 
-              {/* Left Column */}
-              <div className="lg:col-span-7 space-y-5 sm:space-y-6">
-                <div className="inline-flex items-center gap-2 bg-[#ccfbf1] text-[#115e59] px-3.5 py-1.5 rounded-full text-xs font-bold tracking-tight shadow-xs">
-                  <span className="w-2 h-2 rounded-full bg-[#0d9488] animate-pulse" />
+              {/* Left Column (Span 6) */}
+              <div className="lg:col-span-6 space-y-5 sm:space-y-6">
+                <div className="inline-flex items-center gap-2 bg-[#d6eff2] text-[#013e48] px-3.5 py-1.5 rounded-full text-xs font-bold tracking-tight shadow-xs">
+                  <span className="w-2 h-2 rounded-full bg-[#036272] animate-pulse" />
                   <span>GST BILLING SOFTWARE</span>
                 </div>
 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.12]">
                   GST Billing <br />
-                  <span className="text-[#0d9488]">Made Simple &amp; Fast</span>
+                  <span className="text-[#036272]">Made Simple &amp; Fast</span>
                 </h1>
 
                 <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl font-medium">
@@ -59,19 +61,19 @@ export default function GstBillingPage() {
                 {/* 4 Feature Badges */}
                 <div className="grid grid-cols-2 gap-2.5 sm:gap-3 pt-1">
                   <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700 bg-white p-2.5 rounded-xl border border-slate-200/80 shadow-2xs">
-                    <span className="w-7 h-7 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center shrink-0">🛡️</span>
+                    <span className="w-7 h-7 rounded-lg bg-teal-100 text-[#036272] flex items-center justify-center shrink-0">🛡️</span>
                     <span>100% GST Compliant</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700 bg-white p-2.5 rounded-xl border border-slate-200/80 shadow-2xs">
-                    <span className="w-7 h-7 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center shrink-0">📑</span>
+                    <span className="w-7 h-7 rounded-lg bg-teal-100 text-[#036272] flex items-center justify-center shrink-0">📑</span>
                     <span>Auto CGST / SGST Split</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700 bg-white p-2.5 rounded-xl border border-slate-200/80 shadow-2xs">
-                    <span className="w-7 h-7 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center shrink-0">⚡</span>
+                    <span className="w-7 h-7 rounded-lg bg-teal-100 text-[#036272] flex items-center justify-center shrink-0">⚡</span>
                     <span>3-Sec Instant Billing</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700 bg-white p-2.5 rounded-xl border border-slate-200/80 shadow-2xs">
-                    <span className="w-7 h-7 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center shrink-0">📱</span>
+                    <span className="w-7 h-7 rounded-lg bg-teal-100 text-[#036272] flex items-center justify-center shrink-0">📱</span>
                     <span>WhatsApp Bill Delivery</span>
                   </div>
                 </div>
@@ -82,7 +84,7 @@ export default function GstBillingPage() {
                     href="https://play.google.com/store/apps/details?id=com.app.dukanhisab&hl=en_IN"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2.5 bg-[#0d9488] hover:bg-[#0f766e] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-2xl shadow-lg shadow-teal-700/20 hover:shadow-xl transition-all active:scale-95"
+                    className="inline-flex items-center gap-2.5 bg-[#036272] hover:bg-[#024f5c] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-2xl shadow-lg shadow-[#036272]/20 hover:shadow-xl transition-all active:scale-95"
                   >
                     <GooglePlayIcon className="w-5 h-5 text-white" />
                     <span>Download App</span>
@@ -108,20 +110,147 @@ export default function GstBillingPage() {
                 </div>
               </div>
 
-              {/* Right Column: Hero Graphic (Matching Customer Management Photo Style) */}
-              <div className="lg:col-span-5 relative flex items-end justify-center pt-4 lg:pt-0">
-                {/* Ambient Soft Glow Behind Mockup */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-96 sm:h-96 bg-gradient-to-tr from-teal-400/20 via-emerald-300/15 to-transparent rounded-full blur-3xl pointer-events-none" />
+              {/* Right Column (Span 6): 100% Unique Digital GST Tax Invoice Showcase */}
+              <div className="lg:col-span-6 relative flex items-center justify-center lg:justify-end">
+                
+                {/* Ambient Soft Glow Behind Invoice */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] h-[460px] bg-gradient-to-tr from-teal-300/25 via-emerald-200/20 to-transparent rounded-full blur-3xl pointer-events-none" />
 
-                <div className="relative w-full max-w-lg lg:max-w-xl flex justify-center items-end">
-                  <Image
-                    src="/images/customer-hero-seamless.png"
-                    alt="DukanHisab Shopkeeper with Mobile App"
-                    width={562}
-                    height={502}
-                    priority
-                    className="w-full h-auto object-contain drop-shadow-xl hover:scale-101 transition-transform duration-300"
-                  />
+                <div className="relative w-full max-w-md lg:max-w-lg">
+                  
+                  {/* Floating Badge 1: 100% GST Compliant (Top Right) */}
+                  <div className="absolute -top-4 -right-2 sm:-right-4 z-30 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 shadow-xl border border-teal-200/80 flex items-center gap-2.5 animate-bounce [animation-duration:5s]">
+                    <div className="w-8 h-8 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center font-black text-sm">
+                      🛡️
+                    </div>
+                    <div className="text-left pr-1">
+                      <div className="text-[11px] font-black text-slate-900">100% GST Compliant</div>
+                      <div className="text-[9px] font-semibold text-teal-700">Auto CGST &amp; SGST Split</div>
+                    </div>
+                  </div>
+
+                  {/* Main Visual: Official Digital Tax Invoice Document Card */}
+                  <div className="relative z-20 bg-white rounded-3xl p-5 sm:p-6 shadow-2xl shadow-teal-950/10 border-2 border-slate-200/90 text-left space-y-4 hover:border-teal-400 transition-colors">
+                    
+                    {/* Invoice Top Header */}
+                    <div className="flex items-start justify-between border-b border-slate-100 pb-3">
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <span className="w-6 h-6 rounded-lg bg-teal-700 text-white flex items-center justify-center text-xs font-black">
+                            DH
+                          </span>
+                          <span className="font-black text-sm text-slate-900 tracking-tight">
+                            TAX INVOICE
+                          </span>
+                        </div>
+                        <div className="text-[10px] text-slate-500 font-medium mt-0.5">
+                          Original for Recipient • Reverse Charge: No
+                        </div>
+                      </div>
+
+                      <div className="text-right">
+                        <span className="text-[10px] font-mono font-bold bg-teal-50 text-teal-800 border border-teal-200/70 px-2 py-0.5 rounded-md block">
+                          #INV-2026-0842
+                        </span>
+                        <span className="text-[9px] text-slate-400 font-mono mt-0.5 block">
+                          Date: 08 Oct 2026
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Shop details & Customer details sub-grid */}
+                    <div className="grid grid-cols-2 gap-2 text-[10px] bg-slate-50/80 p-2.5 rounded-xl border border-slate-100">
+                      <div>
+                        <span className="font-bold text-slate-500 block uppercase text-[9px]">Billed By:</span>
+                        <strong className="text-slate-900 block truncate">Patel Hardware &amp; Electricals</strong>
+                        <span className="text-slate-500 font-mono text-[9px] block">GSTIN: 24AAACP1234M1Z2</span>
+                      </div>
+                      <div>
+                        <span className="font-bold text-slate-500 block uppercase text-[9px]">Billed To:</span>
+                        <strong className="text-slate-900 block truncate">Royal Construction &amp; Co.</strong>
+                        <span className="text-slate-500 font-mono text-[9px] block">State: 24 (Gujarat)</span>
+                      </div>
+                    </div>
+
+                    {/* Items table */}
+                    <div className="space-y-1.5 text-[11px]">
+                      <div className="flex justify-between font-bold text-slate-400 uppercase text-[9px] border-b border-slate-100 pb-1">
+                        <span>Item Description</span>
+                        <span>Rate &amp; Tax</span>
+                        <span>Total</span>
+                      </div>
+
+                      <div className="flex justify-between items-center py-0.5">
+                        <div className="truncate pr-2">
+                          <div className="font-bold text-slate-800">Havells 2.5mm Wire (90m)</div>
+                          <div className="text-[9px] text-slate-400 font-mono">HSN: 8544 • 2 Coils</div>
+                        </div>
+                        <div className="text-center text-[10px] text-slate-500">
+                          ₹1,850 <span className="text-teal-700 font-bold">(18%)</span>
+                        </div>
+                        <div className="font-mono font-black text-slate-900 text-right">
+                          ₹4,366.00
+                        </div>
+                      </div>
+
+                      <div className="flex justify-between items-center py-0.5">
+                        <div className="truncate pr-2">
+                          <div className="font-bold text-slate-800">Polycab Modular Switch</div>
+                          <div className="text-[9px] text-slate-400 font-mono">HSN: 8538 • 6 Pcs</div>
+                        </div>
+                        <div className="text-center text-[10px] text-slate-500">
+                          ₹320 <span className="text-teal-700 font-bold">(18%)</span>
+                        </div>
+                        <div className="font-mono font-black text-slate-900 text-right">
+                          ₹2,265.60
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Calculation Summary Highlight Box */}
+                    <div className="bg-gradient-to-r from-teal-50/80 to-emerald-50/80 rounded-2xl p-3 border border-teal-200/80 space-y-1 text-xs">
+                      <div className="flex justify-between text-slate-600 text-[11px]">
+                        <span>Taxable Value:</span>
+                        <span className="font-mono font-bold text-slate-800">₹5,620.00</span>
+                      </div>
+                      <div className="flex justify-between text-slate-600 text-[11px]">
+                        <span>CGST (9.0%):</span>
+                        <span className="font-mono font-bold text-teal-800">+ ₹505.80</span>
+                      </div>
+                      <div className="flex justify-between text-slate-600 text-[11px]">
+                        <span>SGST (9.0%):</span>
+                        <span className="font-mono font-bold text-teal-800">+ ₹505.80</span>
+                      </div>
+                      <div className="flex justify-between items-center border-t border-teal-200 pt-1.5 mt-1 font-black text-sm">
+                        <span className="text-slate-900">Total Invoice Amount:</span>
+                        <span className="text-teal-900 font-mono text-base font-black">
+                          ₹6,631.60
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Bottom Validation Ribbon */}
+                    <div className="flex items-center justify-between pt-1 border-t border-slate-100 text-[10px] text-slate-500 font-medium">
+                      <div className="flex items-center gap-1.5 text-emerald-700 font-bold">
+                        <CheckIcon className="w-3.5 h-3.5 stroke-[3]" />
+                        <span>Digitally Signed &amp; Verified</span>
+                      </div>
+                      <span className="font-mono text-slate-400">⚡ Generated in 1.4s</span>
+                    </div>
+
+                  </div>
+
+                  {/* Floating Badge 2: WhatsApp PDF Delivery (Bottom Left) */}
+                  <div className="absolute -bottom-5 -left-3 sm:-left-6 z-30 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 shadow-xl border border-slate-200/90 flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-xl bg-[#25D366]/15 text-[#25D366] flex items-center justify-center font-black text-sm">
+                      <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
+                    </div>
+                    <div className="text-left pr-1">
+                      <div className="text-[11px] font-black text-slate-900">Instant WhatsApp PDF</div>
+                      <div className="text-[9px] font-semibold text-emerald-700">Sent with UPI QR Link ✓</div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
@@ -137,7 +266,7 @@ export default function GstBillingPage() {
               {/* Left Column: 4 Feature Highlights */}
               <div className="lg:col-span-4 space-y-6">
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#0d9488]">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#036272]">
                     PROFESSIONAL GST INVOICES
                   </span>
                   <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-2">
@@ -221,7 +350,7 @@ export default function GstBillingPage() {
                 <div className="pt-2">
                   <Link
                     href="/tools/gst-calculator"
-                    className="w-full inline-flex items-center justify-center gap-2 bg-[#0d9488] text-white text-xs font-bold py-3 px-4 rounded-xl shadow-md hover:bg-[#0f766e] transition-colors"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-[#036272] text-white text-xs font-bold py-3 px-4 rounded-xl shadow-md hover:bg-[#024f5c] transition-colors"
                   >
                     <span>Use Free GST Calculator</span>
                   </Link>

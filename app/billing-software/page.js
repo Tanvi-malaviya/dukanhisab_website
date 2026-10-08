@@ -65,7 +65,7 @@ export default function BillingSoftwarePage() {
 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
                   Fast Billing <br />
-                  <span className="text-[#0d9488]">For Smarter Business</span>
+                  <span className="text-[#036272]">For Smarter Business</span>
                 </h1>
 
                 <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl font-medium">
@@ -94,7 +94,7 @@ export default function BillingSoftwarePage() {
                     href="https://play.google.com/store/apps/details?id=com.app.dukanhisab&hl=en_IN"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2.5 bg-[#0d9488] hover:bg-[#0f766e] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-2xl shadow-lg shadow-teal-700/20 hover:shadow-xl transition-all active:scale-95"
+                    className="inline-flex items-center gap-2.5 bg-[#036272] hover:bg-[#024f5c] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-2xl shadow-lg shadow-teal-700/20 hover:shadow-xl transition-all active:scale-95"
                   >
                     <GooglePlayIcon className="w-5 h-5 text-white" />
                     <span>Download App</span>
@@ -150,7 +150,7 @@ export default function BillingSoftwarePage() {
               {/* Left Column: Live App Preview Copy */}
               <div className="lg:col-span-4 space-y-6">
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#0d9488]">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#036272]">
                     LIVE APP PREVIEW
                   </span>
                   <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-2">
@@ -183,7 +183,7 @@ export default function BillingSoftwarePage() {
                     href="https://play.google.com/store/apps/details?id=com.app.dukanhisab&hl=en_IN"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#0d9488] hover:bg-[#0f766e] text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-md transition-all active:scale-95"
+                    className="inline-flex items-center gap-2 bg-[#036272] hover:bg-[#024f5c] text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-md transition-all active:scale-95"
                   >
                     <GooglePlayIcon className="w-4 h-4 text-white" />
                     <span>Download App</span>

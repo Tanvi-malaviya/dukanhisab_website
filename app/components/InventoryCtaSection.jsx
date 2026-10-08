@@ -10,7 +10,7 @@ export default function InventoryCtaSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Ripple Style CTA Card */}
-        <div className="relative rounded-[2rem] sm:rounded-[2.8rem] bg-[#0d9488] text-white p-8 sm:p-14 lg:p-16 shadow-2xl overflow-hidden">
+        <div className="relative rounded-[2rem] sm:rounded-[2.8rem] bg-[#036272] text-white p-8 sm:p-14 lg:p-16 shadow-2xl overflow-hidden">
           
           {/* Layered Concentric Ripple Rings (Right Side) */}
           <div className="absolute right-0 top-0 bottom-0 w-full sm:w-[65%] lg:w-[55%] pointer-events-none overflow-hidden flex items-center justify-end">

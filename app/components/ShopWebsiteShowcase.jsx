@@ -19,13 +19,13 @@ import {
 export default function ShopWebsiteShowcase() {
   // Interactive state for the storefront simulator
   const [subdomain, setSubdomain] = useState("uma-stationery");
-  const [themeColor, setThemeColor] = useState("#0F766E"); // Default Teal from docs
+  const [themeColor, setThemeColor] = useState("#036272"); // Official DukanHisab Brand Teal
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedProductForWhatsApp, setSelectedProductForWhatsApp] = useState(null);
 
   const themeOptions = [
-    { name: "Teal (Signature)", hex: "#0F766E", bgClass: "bg-[#0F766E]", textClass: "text-[#0F766E]" },
+    { name: "Teal (Signature)", hex: "#036272", bgClass: "bg-[#036272]", textClass: "text-[#036272]" },
     { name: "Royal Blue", hex: "#2563EB", bgClass: "bg-[#2563EB]", textClass: "text-[#2563EB]" },
     { name: "Purple", hex: "#7C3AED", bgClass: "bg-[#7C3AED]", textClass: "text-[#7C3AED]" },
     { name: "Crimson Red", hex: "#DC2626", bgClass: "bg-[#DC2626]", textClass: "text-[#DC2626]" },

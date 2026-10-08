@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import HomeHeroShowcase from "./HomeHeroShowcase";
 import { 
   BarcodeIcon, 
   ReceiptIcon, 
@@ -378,9 +379,9 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* ===================== HERO 2-COLUMN SECTION (PREMIUM INDIAN SAAS) ===================== */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center mb-16 pt-4 lg:pt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center mb-16 pt-3 lg:pt-6">
           
-          {/* Left Column: Pill, Headline, Copy, 4 Trust Points & Two CTA Buttons */}
+          {/* Left Column: Pill, Headline, Copy, Trust Points & CTA Buttons */}
           <div className="lg:col-span-6 space-y-6 text-left">
             
             {/* Small Pill/Badge: MADE FOR INDIAN SHOPKEEPERS */}
@@ -392,7 +393,7 @@ export default function Hero() {
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-black text-slate-900 tracking-tight leading-[1.12]">
               Everything Your Shop Needs, <br className="hidden sm:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-emerald-700 to-teal-700">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#036272] via-[#0b8093] to-[#02515e]">
                 All in One App
               </span>
             </h1>
@@ -402,19 +403,19 @@ export default function Hero() {
               From billing and inventory to customers, suppliers and business reports — DukanHisab helps you manage your entire shop simply and professionally.
             </p>
 
-            {/* 4 Small Trust Points with Green Check Icons */}
-            <div className="grid grid-cols-2 gap-3.5 pt-1">
+            {/* 4 Feature Badges */}
+            <div className="grid grid-cols-2 gap-3 pt-1">
               {[
-                { title: "Easy to Use" },
-                { title: "Works Offline" },
-                { title: "Secure & Reliable" },
-                { title: "Made for Indian Shops" },
+                { title: "Easy to Use", icon: "✓" },
+                { title: "Works Offline", icon: "⚡" },
+                { title: "Secure & Reliable", icon: "🔒" },
+                { title: "Made for Indian Shops", icon: "🏪" },
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-2.5">
-                  <div className="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-2xs">
-                    <CheckIcon className="w-3 h-3 text-white" />
-                  </div>
-                  <span className="text-sm font-bold text-slate-800">
+                  <span className="w-5 h-5 rounded-full bg-teal-100 text-[#036272] flex items-center justify-center text-xs font-black shrink-0">
+                    {item.icon}
+                  </span>
+                  <span className="text-xs sm:text-sm font-bold text-slate-800">
                     {item.title}
                   </span>
                 </div>
@@ -427,7 +428,7 @@ export default function Hero() {
                 href="https://play.google.com/store/apps/details?id=com.app.dukanhisab&hl=en_IN"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-bold text-base px-6 py-3.5 rounded-2xl shadow-lg shadow-emerald-700/25 hover:shadow-xl transition-all active:scale-98 group cursor-pointer"
+                className="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#036272] via-[#0a7a8d] to-[#02515e] hover:from-[#02515e] hover:to-[#01353e] text-white font-bold text-base px-6 py-3.5 rounded-full shadow-lg shadow-[#036272]/25 hover:shadow-xl transition-all active:scale-98 group cursor-pointer"
               >
                 <GooglePlayIcon className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
                 <span>Download App</span>
@@ -437,112 +438,27 @@ export default function Hero() {
                 href="https://dukanhisab.in/shop"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-bold text-base px-6 py-3.5 rounded-2xl border border-slate-300 shadow-2xs hover:border-emerald-500 hover:text-emerald-700 transition-all cursor-pointer group"
+                className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-bold text-base px-6 py-3.5 rounded-full border border-slate-300 shadow-2xs hover:border-emerald-500 hover:text-emerald-700 transition-all cursor-pointer group"
               >
                 <MonitorIcon className="w-4 h-4 text-emerald-600 group-hover:scale-110 transition-transform" />
-                <span>Open Web Panel</span>
+                <span>Try Web Panel</span>
                 <ArrowRightIcon className="w-4 h-4 text-slate-400 group-hover:translate-x-1 group-hover:text-emerald-600 transition-transform" />
               </a>
             </div>
 
-            {/* Trust Line */}
-            <div className="pt-1 flex items-center gap-2 text-xs text-slate-500 font-medium">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-              <span>No complicated setup • Built for everyday shopkeepers</span>
+            {/* Social Trust Line */}
+            <div className="pt-2 flex items-center gap-2 sm:gap-3 text-xs text-slate-500 font-medium">
+              <div className="flex text-amber-400 text-sm">★★★★★</div>
+              <span className="font-bold text-slate-800">4.8 Rating</span>
+              <span className="text-slate-300">•</span>
+              <span>Trusted by 50,000+ Indian Retailers</span>
             </div>
 
           </div>
 
-          {/* Right Column: High-Polished Product Showcase (Shopkeeper + Smartphone + Floating Cards + Handwritten Note) */}
+          {/* Right Column: Interactive Dual-Device POS Command Center */}
           <div className="lg:col-span-6 relative flex justify-center items-center">
-            
-            {/* Subtle Abstract Green Blobs Behind Product */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[480px] bg-gradient-to-tr from-emerald-400/20 via-teal-300/15 to-transparent rounded-full blur-3xl pointer-events-none" />
-
-            <div className="relative w-full max-w-lg lg:max-w-xl">
-              
-              {/* Main Realistic Shopkeeper + Phone Visual */}
-              <div className="relative z-10">
-                <Image
-                  src="/images/home_hero_shopkeeper_smooth.png"
-                  alt="DukanHisab - Indian Shopkeeper and Mobile Billing Dashboard"
-                  width={796}
-                  height={780}
-                  priority
-                  className="w-full h-auto object-contain block drop-shadow-xl select-none pointer-events-none"
-                />
-              </div>
-
-              {/* Decorative Handwritten Note & Curved Arrow */}
-              <div className="absolute -top-3 left-0 sm:left-4 z-20 bg-white/95 backdrop-blur-sm border border-emerald-200/90 py-2 px-3.5 rounded-2xl shadow-md rotate-[-5deg] pointer-events-none select-none">
-                <p className="text-xs font-black text-slate-900 leading-tight">Simple.</p>
-                <p className="text-xs font-black text-emerald-700 leading-tight">Powerful.</p>
-                <p className="text-[11px] font-bold text-slate-600 leading-tight">Made for Shopkeepers.</p>
-                {/* Curved Hand-Drawn Arrow pointing to Smartphone */}
-                <svg
-                  className="w-8 h-8 text-emerald-600 mt-1 translate-x-12 rotate-6"
-                  viewBox="0 0 40 40"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M 6,8 Q 24,24 34,18" />
-                  <path d="M 26,13 L 34,18 L 29,26" />
-                </svg>
-              </div>
-
-              {/* Floating UI Card 1: Today's Sales ₹12,450 +12% */}
-              <div className="absolute -top-2 right-2 sm:right-6 z-20 bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg animate-float-slow hidden sm:flex items-center gap-3 pointer-events-none select-none">
-                <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-base border border-emerald-100">
-                  ₹
-                </div>
-                <div>
-                  <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Today's Sales</span>
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-sm font-black text-slate-900 font-mono">₹12,450</span>
-                    <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100/90 px-1.5 py-0.2 rounded-md">
-                      +12% ↑
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating UI Card 2: Stock Updated ✓ */}
-              <div className="absolute top-1/3 -left-3 sm:-left-6 z-20 bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl py-2 px-3.5 shadow-lg animate-float-delayed flex items-center gap-2 pointer-events-none select-none">
-                <div className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-2xs">
-                  <CheckIcon className="w-3.5 h-3.5 text-white" />
-                </div>
-                <span className="text-xs font-black text-slate-800">
-                  Stock Updated ✓
-                </span>
-              </div>
-
-              {/* Floating UI Card 3: New Invoice Created */}
-              <div className="absolute top-1/2 -right-2 sm:-right-5 z-20 bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl py-2 px-3.5 shadow-lg animate-float-reverse flex items-center gap-2.5 pointer-events-none select-none">
-                <div className="w-7 h-7 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100">
-                  <ReceiptIcon className="w-4 h-4 text-blue-600" />
-                </div>
-                <div>
-                  <span className="text-xs font-black text-slate-800 block">New Invoice Created</span>
-                  <span className="text-[10px] text-slate-400 font-mono">Bill #DH-4029 • ₹2,128</span>
-                </div>
-              </div>
-
-              {/* Floating UI Card 4: Payment Received ₹2,500 */}
-              <div className="absolute bottom-6 left-2 sm:left-8 z-20 bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl py-2 px-3.5 shadow-lg animate-float-slow flex items-center gap-2.5 pointer-events-none select-none">
-                <div className="w-7 h-7 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-sm border border-emerald-100">
-                  ₹
-                </div>
-                <div>
-                  <span className="text-[10px] text-slate-400 font-bold uppercase block">Payment Received</span>
-                  <span className="text-xs font-black text-emerald-700 font-mono">+₹2,500 (UPI QR)</span>
-                </div>
-              </div>
-
-            </div>
-
+            <HomeHeroShowcase />
           </div>
 
         </div>

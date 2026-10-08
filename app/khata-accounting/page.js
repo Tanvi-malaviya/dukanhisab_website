@@ -88,7 +88,7 @@ export default function KhataAccountingPage() {
                   {/* Floating Micro Badge: "Old Bahi Khata ➔ 100% Digital" */}
                   <div className="absolute bottom-3.5 left-3.5 right-3.5 bg-white/95 backdrop-blur-md rounded-2xl p-3 shadow-lg border border-teal-100 flex items-center justify-between">
                     <div className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-xl bg-[#ccfbf1] text-[#0d9488] flex items-center justify-center font-black text-sm shrink-0">
+                      <div className="w-8 h-8 rounded-xl bg-[#ccfbf1] text-[#036272] flex items-center justify-center font-black text-sm shrink-0">
                         ✓
                       </div>
                       <div>
@@ -113,7 +113,7 @@ export default function KhataAccountingPage() {
               {/* Center Column: Digital Khata Details */}
               <div className="lg:col-span-4 space-y-6">
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#0d9488]">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#036272]">
                     STAY ORGANIZED
                   </span>
                   <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-2">
@@ -175,7 +175,7 @@ export default function KhataAccountingPage() {
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-10">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#0d9488]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#036272]">
                 BUILT FOR EVERY SHOPKEEPER
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
