@@ -1,8 +1,8 @@
 import os
 from PIL import Image
 
-photos_dir = r"d:\sathwara_infotech\dukanhisab_website\photos"
-pub_dir = r"d:\sathwara_infotech\dukanhisab_website\public\images"
+photos_dir = r"/var/www/html/dukanhisab-folder/dukanhisab_website/photos"
+pub_dir = r"/var/www/html/dukanhisab-folder/dukanhisab_website/public/images"
 
 def crop_and_save(img_path, box, out_name):
     im = Image.open(img_path)
