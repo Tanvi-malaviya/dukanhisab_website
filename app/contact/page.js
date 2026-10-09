@@ -58,13 +58,13 @@ export default function ContactPage() {
                 </div>
 
                 <a
-                  href="https://wa.me/919825000000"
+                  href="https://wa.me/916352709531"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-3 bg-teal-600 hover:bg-teal-700 text-white font-bold py-3.5 px-6 rounded-2xl shadow-md transition-all active:scale-98"
                 >
                   <WhatsAppIcon className="w-5 h-5" />
-                  <span>Chat on WhatsApp: +91 98250 00000</span>
+                  <span>Chat on WhatsApp: +91 63527 09531</span>
                 </a>
 
                 <div className="pt-4 border-t border-slate-100 space-y-3 text-xs text-slate-600">
@@ -74,7 +74,9 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <span className="font-bold text-slate-900 block">Email Support</span>
-                      <span>support@dukanhisab.com</span>
+                      <a href="mailto:info@dukanhisab.in" className="hover:text-teal-700 font-medium hover:underline">
+                        info@dukanhisab.in
+                      </a>
                     </div>
                   </div>
 

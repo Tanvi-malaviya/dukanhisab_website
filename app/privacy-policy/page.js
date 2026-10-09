@@ -108,11 +108,11 @@ export default function PrivacyPolicyPage() {
                     Questions about your privacy?
                   </p>
                   <a
-                    href="mailto:support@dukanhisab.com"
+                    href="mailto:info@dukanhisab.in"
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-teal-700 hover:underline mt-1"
                   >
                     <MailIcon className="w-3.5 h-3.5" />
-                    <span>support@dukanhisab.com</span>
+                    <span>info@dukanhisab.in</span>
                   </a>
                 </div>
               </div>
@@ -395,7 +395,7 @@ export default function PrivacyPolicyPage() {
                       <strong>Direct In-App Deletion:</strong> You can delete your account from within the DukanHisab app via <code>Settings &gt; Shop Profile &gt; Account Settings &gt; Delete Account</code>. The deletion requires OTP confirmation for security.
                     </li>
                     <li>
-                      <strong>Email Request:</strong> You can email us at <a href="mailto:support@dukanhisab.com" className="text-teal-700 font-bold hover:underline">support@dukanhisab.com</a> from your registered email/phone number. Our grievance officer will process your request within 7 business days.
+                      <strong>Email Request:</strong> You can email us at <a href="mailto:info@dukanhisab.in" className="text-teal-700 font-bold hover:underline">info@dukanhisab.in</a> from your registered email/phone number. Our grievance officer will process your request within 7 business days.
                     </li>
                     <li>
                       <strong>Complete Data Wipe:</strong> Upon deletion, your profile, staff logins, inventory entries, customer khata balances, and daily sales registers are permanently wiped from live databases, and all cloud backup archives are permanently deleted within 30 days.
@@ -455,7 +455,8 @@ export default function PrivacyPolicyPage() {
                 <div className="bg-slate-50 rounded-2xl p-5 border border-slate-200 space-y-2 text-xs text-slate-700">
                   <p><strong>Entity Name:</strong> Sathwara Infotech (DukanHisab)</p>
                   <p><strong>Designation:</strong> Data Privacy &amp; Grievance Officer</p>
-                  <p><strong>Email Address:</strong> <a href="mailto:support@dukanhisab.com" className="text-teal-700 font-bold hover:underline">support@dukanhisab.com</a></p>
+                  <p><strong>Phone / WhatsApp:</strong> <a href="tel:+916352709531" className="text-teal-700 font-bold hover:underline">+91 63527 09531</a></p>
+                  <p><strong>Email Address:</strong> <a href="mailto:info@dukanhisab.in" className="text-teal-700 font-bold hover:underline">info@dukanhisab.in</a></p>
                   <p><strong>Official Website:</strong> <a href="https://dukanhisab.in" target="_blank" rel="noopener noreferrer" className="text-teal-700 font-bold hover:underline">https://dukanhisab.in</a></p>
                   <p><strong>Operating Region:</strong> Gujarat, India</p>
                 </div>

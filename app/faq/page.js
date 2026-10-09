@@ -599,7 +599,7 @@ export default function FAQPage() {
                   </div>
 
                   <a
-                    href="https://wa.me/919876543210?text=Hello%20DukanHisab%20Team%2C%20I%20have%20a%20question%20about%20the%20software"
+                    href="https://wa.me/916352709531?text=Hello%20DukanHisab%20Team%2C%20I%20have%20a%20question%20about%20the%20software"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2.5 w-full bg-[#25D366] hover:bg-[#1faa53] text-white text-xs font-black py-3.5 px-4 rounded-xl transition-all shadow-md shadow-emerald-950/20 hover:scale-[1.02] active:scale-[0.98]"
@@ -609,10 +609,10 @@ export default function FAQPage() {
                   </a>
 
                   <a
-                    href="tel:+919876543210"
+                    href="tel:+916352709531"
                     className="inline-flex items-center justify-center gap-2 w-full bg-white/10 hover:bg-white/20 text-white text-xs font-bold py-2.5 px-4 rounded-xl transition-colors border border-white/15"
                   >
-                    <span>📞 Call Us: +91 98765 43210</span>
+                    <span>📞 Call Us: +91 63527 09531</span>
                   </a>
                 </div>
               </div>
@@ -708,7 +708,7 @@ export default function FAQPage() {
                       Clear Search &amp; Show All
                     </button>
                     <a
-                      href="https://wa.me/919876543210?text=Hello%2C%20I%20have%20a%20question%20not%20found%20in%20FAQ"
+                      href="https://wa.me/916352709531?text=Hello%2C%20I%20have%20a%20question%20not%20found%20in%20FAQ"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-4 py-2 bg-[#25D366] text-white text-xs font-bold rounded-xl shadow-sm hover:bg-[#1faa53] transition-colors inline-flex items-center gap-1.5"
@@ -923,7 +923,7 @@ export default function FAQPage() {
 
                 <div className="pt-4 flex flex-wrap items-center gap-3">
                   <a
-                    href="https://wa.me/919876543210?text=Hello%20DukanHisab%20Team%2C%20I%20need%20help%20with%20my%20shop%20setup"
+                    href="https://wa.me/916352709531?text=Hello%20DukanHisab%20Team%2C%20I%20need%20help%20with%20my%20shop%20setup"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1faa53] text-white text-sm font-extrabold py-3.5 px-6 rounded-xl transition-all shadow-lg hover:scale-105"
@@ -941,10 +941,10 @@ export default function FAQPage() {
                   </Link>
 
                   <a
-                    href="tel:+919876543210"
+                    href="tel:+916352709531"
                     className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-sm font-bold py-3.5 px-5 rounded-xl border border-white/20 transition-colors"
                   >
-                    <span>📞 +91 98765 43210</span>
+                    <span>📞 +91 63527 09531</span>
                   </a>
                 </div>
               </div>

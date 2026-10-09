@@ -109,11 +109,11 @@ export default function TermsOfServicePage() {
                     Questions about our terms?
                   </p>
                   <a
-                    href="mailto:support@dukanhisab.com"
+                    href="mailto:info@dukanhisab.in"
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-teal-700 hover:underline mt-1"
                   >
                     <MailIcon className="w-3.5 h-3.5" />
-                    <span>support@dukanhisab.com</span>
+                    <span>info@dukanhisab.in</span>
                   </a>
                 </div>
               </div>
@@ -356,7 +356,7 @@ export default function TermsOfServicePage() {
                       <strong>Direct In-App Deletion:</strong> You can initiate account deletion directly within the DukanHisab Mobile Application by navigating to <code>Settings &gt; Shop Profile &gt; Account Settings &gt; Delete Account</code>. You will receive an OTP confirmation on your registered mobile number to verify your identity.
                     </li>
                     <li>
-                      <strong>Helpdesk / Email Request:</strong> Alternatively, you can email our support team at <a href="mailto:support@dukanhisab.com" className="text-teal-700 font-bold hover:underline">support@dukanhisab.com</a> from your registered email or phone number with the subject line <em>"Request Account Deletion"</em>. Our team will verify ownership and process the removal within 7 business days.
+                      <strong>Helpdesk / Email Request:</strong> Alternatively, you can email our support team at <a href="mailto:info@dukanhisab.in" className="text-teal-700 font-bold hover:underline">info@dukanhisab.in</a> from your registered email or phone number with the subject line <em>"Request Account Deletion"</em>. Our team will verify ownership and process the removal within 7 business days.
                     </li>
                     <li>
                       <strong>Mandatory Data Export Notice:</strong> Account deletion is permanent and cannot be undone. We strongly advise that you export all your sales registers, customer udhaar khata ledgers, tax invoices, and inventory sheets into Excel / PDF format using the In-App Export feature prior to submitting a deletion request.
@@ -408,7 +408,8 @@ export default function TermsOfServicePage() {
 
                 <div className="bg-slate-50 rounded-2xl p-5 border border-slate-200 space-y-2 text-xs text-slate-700">
                   <p><strong>Operating Company:</strong> Sathwara Infotech</p>
-                  <p><strong>Support &amp; Legal Desk:</strong> <a href="mailto:support@dukanhisab.com" className="text-teal-700 font-bold hover:underline">support@dukanhisab.com</a></p>
+                  <p><strong>Phone / WhatsApp:</strong> <a href="tel:+916352709531" className="text-teal-700 font-bold hover:underline">+91 63527 09531</a></p>
+                  <p><strong>Support &amp; Legal Desk:</strong> <a href="mailto:info@dukanhisab.in" className="text-teal-700 font-bold hover:underline">info@dukanhisab.in</a></p>
                   <p><strong>Official Portal:</strong> <a href="https://dukanhisab.in" target="_blank" rel="noopener noreferrer" className="text-teal-700 font-bold hover:underline">https://dukanhisab.in</a></p>
                   <p><strong>State / Country:</strong> Gujarat, India</p>
                 </div>

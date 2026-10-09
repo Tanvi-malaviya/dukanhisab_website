@@ -126,13 +126,25 @@ export default function Footer() {
               Get in Touch
             </h4>
             <ul className="space-y-2.5">
-              <li className="flex items-center gap-2">
-                <WhatsAppIcon className="w-4 h-4 text-teal-400" />
-                <span className="text-slate-300">WhatsApp: +91 98250 00000</span>
+              <li>
+                <a
+                  href="https://wa.me/916352709531"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-teal-400 transition-colors"
+                >
+                  <WhatsAppIcon className="w-4 h-4 text-teal-400" />
+                  <span className="text-slate-300">WhatsApp: +91 63527 09531</span>
+                </a>
               </li>
-              <li className="flex items-center gap-2">
-                <MailIcon className="w-4 h-4 text-slate-400" />
-                <span className="text-slate-300">support@dukanhisab.com</span>
+              <li>
+                <a
+                  href="mailto:info@dukanhisab.in"
+                  className="flex items-center gap-2 hover:text-teal-400 transition-colors"
+                >
+                  <MailIcon className="w-4 h-4 text-slate-400" />
+                  <span className="text-slate-300">info@dukanhisab.in</span>
+                </a>
               </li>
               <li className="pt-2 text-slate-500">
                 Built with pride for Indian small business owners, kirana stores, and retail entrepreneurs.

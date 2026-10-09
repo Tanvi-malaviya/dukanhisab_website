@@ -25,7 +25,7 @@ export default function SupportPage() {
   const [openFaq, setOpenFaq] = useState(1);
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("support@dukanhisab.com");
+    navigator.clipboard.writeText("info@dukanhisab.in");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -354,7 +354,7 @@ export default function SupportPage() {
                     </div>
 
                     <a
-                      href="https://wa.me/919876543210?text=Hello%20DukanHisab%20Support%20Team"
+                      href="https://wa.me/916352709531?text=Hello%20DukanHisab%20Support%20Team"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1faa53] text-white text-xs font-black py-2.5 px-3 rounded-lg transition-all shadow-sm hover:shadow-md cursor-pointer active:scale-98"
@@ -377,7 +377,7 @@ export default function SupportPage() {
                     </div>
 
                     <div className="flex items-center justify-between bg-slate-50 border border-slate-200/90 rounded-lg px-2.5 py-1.5 text-[11px] font-mono font-bold text-slate-800">
-                      <span className="truncate select-all">support@dukanhisab.com</span>
+                      <span className="truncate select-all">info@dukanhisab.in</span>
                       <button
                         type="button"
                         onClick={copyEmail}
@@ -507,7 +507,7 @@ export default function SupportPage() {
                     </div>
 
                     <a
-                      href="https://wa.me/919876543210?text=Hello%20DukanHisab%20Team%2C%20I%20have%20a%20question"
+                      href="https://wa.me/916352709531?text=Hello%20DukanHisab%20Team%2C%20I%20have%20a%20question"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#1faa53] text-white text-xs font-black py-3 px-4 rounded-xl transition-all shadow-md shadow-emerald-950/20 hover:scale-[1.02] active:scale-[0.98]"
@@ -687,7 +687,7 @@ export default function SupportPage() {
 
                     {/* WhatsApp Action Button */}
                     <a
-                      href="https://wa.me/919876543210?text=Hello%20DukanHisab%20Team%2C%20I%20have%20a%20question"
+                      href="https://wa.me/916352709531?text=Hello%20DukanHisab%20Team%2C%20I%20have%20a%20question"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1faa53] text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-md transition-all active:scale-95"

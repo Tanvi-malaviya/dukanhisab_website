@@ -265,7 +265,7 @@ export default function ShopWebsiteShowcase() {
                   {/* Header Fast Action Buttons */}
                   <div className="flex items-center gap-2">
                     <a
-                      href="tel:+919876543210"
+                      href="tel:+916352709531"
                       className="bg-white/15 hover:bg-white/25 text-white text-xs font-bold px-3 py-1.5 rounded-xl border border-white/25 transition-all"
                     >
                       📞 Call Shop
