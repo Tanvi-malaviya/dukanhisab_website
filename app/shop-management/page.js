@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import StatsBar from "../components/StatsBar";
 import CtaBanner from "../components/CtaBanner";
-import Shop3DHeroAnimation from "../components/Shop3DHeroAnimation";
+import ShopManagementHeroVisual from "../components/ShopManagementHeroVisual";
 import { 
   GooglePlayIcon, 
   PlayIcon, 
@@ -43,7 +43,7 @@ export default function ShopManagementPage() {
 
       <main className="flex-1">
         {/* ===================== HERO SECTION ===================== */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#e6f7f6] via-[#f2fbfa] to-white pt-24 sm:pt-28 lg:pt-32 pb-16 lg:pb-20">
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#e6f7f6] via-[#f2fbfa] to-white pt-24 sm:pt-28 lg:pt-32 pb-14 lg:pb-18">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Breadcrumb */}
@@ -53,71 +53,83 @@ export default function ShopManagementPage() {
               <span className="text-teal-700">Shop Management</span>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               
               {/* Left Column */}
               <div className="lg:col-span-7 space-y-6">
-                <div className="inline-flex items-center gap-2 bg-[#d6eff2] text-[#013e48] px-3.5 py-1.5 rounded-full text-xs font-bold tracking-tight shadow-xs">
-                  <span>SHOP MANAGEMENT SOFTWARE</span>
+                <div className="inline-flex items-center gap-2 bg-[#d6eff2] text-[#013e48] px-3.5 py-1.5 rounded-full text-xs font-black tracking-wide shadow-xs border border-teal-200/50">
+                  <span className="text-teal-800">🏪</span>
+                  <span>COMPLETE DUKAAN MANAGEMENT APP</span>
                 </div>
 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
-                  Run Your Shop <br />
-                  <span className="text-[#036272]">Smarter, Easier</span>
+                  Manage Your Shop <br />
+                  <span className="text-[#036272]">Smarter, Faster &amp; Digital</span>
                 </h1>
 
                 <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl font-medium">
-                  Manage sales, purchases, stock, customers and expenses — all in one app. Designed specially for Indian retail and wholesale counters.
+                  Track every sale, product inventory, customer udhaar khata, purchase entry, and daily profit in one seamless app. Built specially for Indian retailers and shopkeepers.
                 </p>
 
-                {/* 4 Badges */}
-                <div className="grid grid-cols-2 gap-3 pt-2">
-                  <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700">
-                    <span className="w-6 h-6 rounded-full bg-teal-100 text-[#036272] flex items-center justify-center">🏪</span>
-                    <span>Complete Shop Management</span>
+                {/* 4 Feature Badges */}
+                <div className="grid grid-cols-2 gap-3 pt-1">
+                  <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700 bg-white/70 p-2 rounded-xl border border-teal-100/60 shadow-2xs">
+                    <span className="w-6 h-6 rounded-lg bg-teal-100 text-[#036272] flex items-center justify-center text-xs">🛒</span>
+                    <span>Quick Sales &amp; Invoices</span>
                   </div>
-                  <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700">
-                    <span className="w-6 h-6 rounded-full bg-teal-100 text-[#036272] flex items-center justify-center">⚡</span>
-                    <span>Save Time &amp; Effort</span>
+                  <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700 bg-white/70 p-2 rounded-xl border border-teal-100/60 shadow-2xs">
+                    <span className="w-6 h-6 rounded-lg bg-teal-100 text-[#036272] flex items-center justify-center text-xs">📦</span>
+                    <span>Live Stock &amp; Low Alert</span>
                   </div>
-                  <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700">
-                    <span className="w-6 h-6 rounded-full bg-teal-100 text-[#036272] flex items-center justify-center">📱</span>
-                    <span>Access Anywhere</span>
+                  <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700 bg-white/70 p-2 rounded-xl border border-teal-100/60 shadow-2xs">
+                    <span className="w-6 h-6 rounded-lg bg-teal-100 text-[#036272] flex items-center justify-center text-xs">👥</span>
+                    <span>Customer Udhaar Khata</span>
                   </div>
-                  <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700">
-                    <span className="w-6 h-6 rounded-full bg-teal-100 text-[#036272] flex items-center justify-center">🔒</span>
-                    <span>Safe &amp; Secure Your Data</span>
+                  <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700 bg-white/70 p-2 rounded-xl border border-teal-100/60 shadow-2xs">
+                    <span className="w-6 h-6 rounded-lg bg-teal-100 text-[#036272] flex items-center justify-center text-xs">📊</span>
+                    <span>Daily Profit &amp; Galla Tally</span>
                   </div>
                 </div>
 
-                {/* Buttons */}
-                <div className="flex flex-wrap items-center gap-4 pt-4">
-                  <a
-                    href="https://play.google.com/store/apps/details?id=com.app.dukanhisab&hl=en_IN"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2.5 bg-[#036272] hover:bg-[#024f5c] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-2xl shadow-lg shadow-[#036272]/20 hover:shadow-xl transition-all active:scale-95"
-                  >
-                    <GooglePlayIcon className="w-5 h-5 text-white" />
-                    <span>Download App</span>
-                  </a>
+                {/* Buttons & Trust Metrics */}
+                <div className="pt-2 space-y-4">
+                  <div className="flex flex-wrap items-center gap-4">
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.app.dukanhisab&hl=en_IN"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2.5 bg-[#036272] hover:bg-[#024f5c] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-2xl shadow-lg shadow-[#036272]/20 hover:shadow-xl transition-all active:scale-95"
+                    >
+                      <GooglePlayIcon className="w-5 h-5 text-white" />
+                      <span>Download Free App</span>
+                    </a>
 
-                  <button
-                    type="button"
-                    onClick={() => setVideoModalOpen(true)}
-                    className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm sm:text-base px-5 py-3.5 rounded-2xl border border-slate-200 shadow-sm transition-all"
-                  >
-                    <span className="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center">
-                      <PlayIcon className="w-3 h-3 text-white ml-0.5" />
+                    <button
+                      type="button"
+                      onClick={() => setVideoModalOpen(true)}
+                      className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm sm:text-base px-5 py-3.5 rounded-2xl border border-slate-200 shadow-sm transition-all"
+                    >
+                      <span className="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center">
+                        <PlayIcon className="w-3 h-3 text-white ml-0.5" />
+                      </span>
+                      <span>Watch Demo</span>
+                    </button>
+                  </div>
+
+                  <div className="flex items-center gap-3 text-xs text-slate-500 font-medium pt-1">
+                    <div className="flex text-amber-400 text-sm">
+                      ★★★★★
+                    </div>
+                    <span>
+                      <strong className="text-slate-800 font-bold">4.8/5 Rating</strong> • 50,000+ Indian Dukaan Owners
                     </span>
-                    <span>Watch Video</span>
-                  </button>
+                  </div>
                 </div>
               </div>
 
-              {/* Right Column: 3D POS Counter & Shop Terminal Animation */}
+              {/* Right Column: Smart Dukaan App & Operations Showcase (No Hardware POS) */}
               <div className="lg:col-span-5 relative flex justify-center items-center">
-                <Shop3DHeroAnimation />
+                <ShopManagementHeroVisual />
               </div>
 
             </div>
