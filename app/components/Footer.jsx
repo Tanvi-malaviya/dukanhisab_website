@@ -148,8 +148,10 @@ export default function Footer() {
             © {new Date().getFullYear()} DukanHisab • Sathwara Infotech. All rights reserved.
           </div>
 
-          <div className="flex items-center gap-6">
-            <Link href="/faq" className="hover:text-slate-400 transition-colors">Help & FAQ</Link>
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            <Link href="/privacy-policy" className="hover:text-teal-400 transition-colors">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="hover:text-teal-400 transition-colors">Terms of Service</Link>
+            <Link href="/faq" className="hover:text-slate-400 transition-colors">Help &amp; FAQ</Link>
             <Link href="/contact" className="hover:text-slate-400 transition-colors">Contact Us</Link>
             <Link href="/pricing" className="hover:text-slate-400 transition-colors">Pricing</Link>
           </div>
