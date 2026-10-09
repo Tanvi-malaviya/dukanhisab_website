@@ -51,7 +51,7 @@ export default function BusinessMemoryStory() {
   const current = dayData[selectedDay];
 
   return (
-    <section className="py-20 lg:py-28 bg-slate-900 text-white relative overflow-hidden">
+    <section className="py-10 lg:py-14 bg-slate-900 text-white relative overflow-hidden">
       {/* Ambient background lights */}
       <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-teal-600/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />

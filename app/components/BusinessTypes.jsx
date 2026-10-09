@@ -5,17 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   StoreIcon,
-  PackageIcon,
-  UsersIcon,
-  TruckIcon,
-  BarcodeIcon,
-  CheckIcon,
   ArrowRightIcon,
-  SparklesIcon,
-  ReceiptIcon,
-  TagIcon,
-  ShieldCheckIcon,
-  SmartphoneIcon
+  GooglePlayIcon
 } from "./Icons";
 
 const businessSectors = [
@@ -23,7 +14,7 @@ const businessSectors = [
     id: "kirana",
     title: "Kirana & Supermarket",
     category: "fmcg",
-    img: "/images/business-types/kirana.png",
+    img: "/images/business-types/kirana-hd.jpg",
     accent: "teal",
     badge: "Fastest Barcode & Khata",
     tagline: "Loose Items • Rush Hour Billing • Customer Udhar",
@@ -50,7 +41,7 @@ const businessSectors = [
     id: "hardware",
     title: "Hardware & Sanitary",
     category: "trade",
-    img: "/images/business-types/hardware.png",
+    img: "/images/business-types/hardware-hd.jpg",
     accent: "amber",
     badge: "Contractor Rates & SKUs",
     tagline: "Large Catalog • Multi-Unit Bills • Supplier Inward",
@@ -77,7 +68,7 @@ const businessSectors = [
     id: "mobile",
     title: "Mobile & Electronics",
     category: "electronics",
-    img: "/images/business-types/mobile.png",
+    img: "/images/business-types/mobile-hd.jpg",
     accent: "cyan",
     badge: "IMEI & Serial Number",
     tagline: "IMEI Tracking • Repair Job Sheets • Warranty Invoices",
@@ -104,7 +95,7 @@ const businessSectors = [
     id: "garment",
     title: "Garments & Footwear",
     category: "fashion",
-    img: "/images/business-types/garment.png",
+    img: "/images/business-types/garment-hd.jpg",
     accent: "indigo",
     badge: "Size & Color Matrix",
     tagline: "Size/Color Matrix • Barcode Tags • Seasonal Sales",
@@ -131,7 +122,7 @@ const businessSectors = [
     id: "medical",
     title: "Medical & Chemist",
     category: "health",
-    img: "/images/business-types/medical.png",
+    img: "/images/business-types/medical-hd.jpg",
     accent: "rose",
     badge: "Batch & Expiry Safe",
     tagline: "Batch Tracking • Expiry Warnings • Patient Records",
@@ -158,7 +149,7 @@ const businessSectors = [
     id: "wholesale",
     title: "Wholesale & Agencies",
     category: "trade",
-    img: "/images/business-types/wholesale.png",
+    img: "/images/business-types/wholesale-hd.jpg",
     accent: "purple",
     badge: "B2B & Credit Terms",
     tagline: "Carton/Bulk Billing • Bilty Tracking • Credit Terms",
@@ -184,7 +175,7 @@ const businessSectors = [
     id: "electrical",
     title: "Electrical & Lighting",
     category: "electronics",
-    img: "/images/business-types/electrical.png",
+    img: "/images/business-types/electrical-hd.jpg",
     accent: "amber",
     badge: "Electrician Khata",
     tagline: "Wire Bundles • Brand Warranties • Electrician Commission",
@@ -210,7 +201,7 @@ const businessSectors = [
     id: "automobile",
     title: "Automobile & Spare Parts",
     category: "trade",
-    img: "/images/business-types/automobile.png",
+    img: "/images/business-types/automobile-hd.jpg",
     accent: "blue",
     badge: "Part # & Model Lookup",
     tagline: "Vehicle Models • Part Number Search • Mechanic Ledger",
@@ -237,7 +228,6 @@ const businessSectors = [
 
 export default function BusinessTypes() {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [selectedBusinessId, setSelectedBusinessId] = useState("kirana");
 
   const categories = [
     { id: "all", label: "All Business Types" },
@@ -252,246 +242,160 @@ export default function BusinessTypes() {
     activeCategory === "all" ? true : b.category === activeCategory
   );
 
-  const selectedBusiness =
-    businessSectors.find((b) => b.id === selectedBusinessId) || businessSectors[0];
-
   return (
-    <section className="py-20 lg:py-28 bg-slate-50 border-y border-slate-200 relative overflow-hidden">
+    <section className="py-10 sm:py-12 lg:py-10 sm:py-12 bg-slate-50 border-y border-slate-200 relative overflow-hidden">
       {/* Background Decorative Ambient Halos */}
       <div className="absolute top-1/3 left-10 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider shadow-2xs mb-3.5">
+        <div className="text-center max-w-3xl mx-auto mb-10 lg:mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider shadow-2xs mb-3">
             <StoreIcon className="w-3.5 h-3.5 text-teal-700" />
             <span>Built Around Your Real Counter Workflow</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight leading-tight">
             Tailored For Everyday{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-teal-700">
               Indian Small Businesses.
             </span>
           </h2>
 
-          <p className="mt-3.5 text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-            From rapid evening rushes at Kirana counters to IMEI tracking in mobile shops and contractor pricing in hardware stores — DukanHisab adapts naturally.
+          <p className="mt-2.5 text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            Whether you run a grocery store, retail showroom, electronics outlet, hardware shop, or wholesale business — DukanHisab provides simple, fast tools to bill, track inventory, and manage Khata.
           </p>
         </div>
 
         {/* Category Filter Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10 max-w-4xl mx-auto">
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-8 max-w-4xl mx-auto">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2 rounded-2xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                activeCategory === cat.id
-                  ? "bg-teal-600 text-white shadow-md shadow-teal-700/20 scale-[1.02]"
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${activeCategory === cat.id
+                  ? "bg-teal-600 text-white shadow-sm shadow-teal-700/20"
                   : "bg-white text-slate-700 border border-slate-200 hover:border-slate-300"
-              }`}
+                }`}
             >
               {cat.label}
             </button>
           ))}
         </div>
 
-        {/* Dynamic Business Sector Cards Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-12">
-          {filteredBusinesses.map((b) => {
-            const isSelected = selectedBusinessId === b.id;
+        {/* Dynamic Business Sector Cards Grid (Clean, Flush HD Image Banner, Compact & Proper) */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-10">
+          {filteredBusinesses.map((b) => (
+            <div
+              key={b.id}
+              className="bg-white rounded-2xl border border-slate-200/90 shadow-2xs hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between overflow-hidden group"
+            >
+              {/* Proper Business Shop Image Banner with balanced 16:10 aspect ratio */}
+              <div className="relative aspect-[16/10] w-full bg-slate-100 overflow-hidden">
+                <Image
+                  src={b.img}
+                  alt={b.title}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
 
-            return (
-              <div
-                key={b.id}
-                onClick={() => setSelectedBusinessId(b.id)}
-                className={`bg-white rounded-3xl p-4 sm:p-5 border transition-all cursor-pointer flex flex-col justify-between group relative overflow-hidden ${
-                  isSelected
-                    ? "border-teal-500 ring-2 ring-teal-500/20 shadow-xl shadow-teal-900/10 scale-[1.02]"
-                    : "border-slate-200/90 hover:border-slate-300 hover:shadow-md"
-                }`}
-              >
-                {/* Active Indicator Ribbon */}
-                {isSelected && (
-                  <div className="absolute top-0 right-0 bg-teal-600 text-white text-[9px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-bl-xl shadow-xs">
-                    Inspecting
-                  </div>
-                )}
-
+              {/* Card Content */}
+              <div className="p-3.5 sm:p-4 flex flex-col justify-between flex-1">
                 <div>
-                  {/* Business Image Container */}
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3.5 relative flex items-center justify-center bg-slate-50 rounded-2xl border border-slate-100 p-2.5 group-hover:scale-105 transition-transform">
-                    <Image
-                      src={b.img}
-                      alt={b.title}
-                      width={80}
-                      height={80}
-                      className="object-contain"
-                    />
-                  </div>
-
-                  {/* Title & Badge */}
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-teal-700 bg-teal-50 px-2 py-0.5 rounded-md inline-block mb-1.5">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-teal-700 bg-teal-50 px-2 py-0.5 rounded inline-block mb-1.5">
                     {b.badge}
                   </span>
 
-                  <h3 className="font-extrabold text-sm sm:text-base text-slate-900 group-hover:text-teal-700 transition-colors leading-snug">
+                  <h3 className="font-extrabold text-sm sm:text-base text-slate-900 leading-snug group-hover:text-teal-700 transition-colors">
                     {b.title}
                   </h3>
 
-                  <p className="text-[11px] text-slate-500 font-medium mt-1 line-clamp-2">
+                  <p className="text-xs text-slate-500 font-medium mt-1 line-clamp-2 leading-relaxed">
                     {b.tagline}
                   </p>
                 </div>
-
-                {/* Bottom Trigger */}
-                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-teal-600">
-                  <span className="text-[11px]">View Workflow</span>
-                  <ArrowRightIcon className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
 
-        {/* Selected Business Deep-Dive Spotlight Card */}
-        <div className="bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl shadow-slate-200/60 max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
-            {/* Left Column: Business Profile & Superpowers */}
-            <div className="lg:col-span-7 space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-16 h-16 rounded-2xl bg-teal-50 border border-teal-100 p-2 shrink-0 flex items-center justify-center">
-                  <Image
-                    src={selectedBusiness.img}
-                    alt={selectedBusiness.title}
-                    width={64}
-                    height={64}
-                    className="object-contain"
-                  />
+        {/* Join Thousands of Shopkeepers Across India (From Official Design) */}
+        <div className="mt-12 rounded-3xl bg-gradient-to-br from-teal-50/90 via-emerald-50/40 to-white border border-teal-100 p-6 sm:p-8 lg:p-10 shadow-xs max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+
+            {/* Left Content */}
+            <div className="lg:col-span-6 space-y-5">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight leading-tight">
+                Join Thousands of Shopkeepers{" "}
+                <span className="text-[#036272]">Across India</span>
+              </h3>
+
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                From small retail shops to large wholesale businesses, DukanHisab is trusted by shopkeepers in every industry.
+              </p>
+
+              {/* 4 Trust Metrics */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-3 border-y border-teal-100/80">
+                <div>
+                  <div className="text-xl sm:text-2xl font-black text-slate-900 font-mono">10K+</div>
+                  <div className="text-[11px] font-semibold text-slate-500">Happy Businesses</div>
                 </div>
                 <div>
-                  <span className="text-xs font-extrabold uppercase tracking-wider text-teal-700 bg-teal-100 px-2.5 py-0.5 rounded-full">
-                    Specialized Workflow
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
-                    {selectedBusiness.title}
-                  </h3>
+                  <div className="text-xl sm:text-2xl font-black text-amber-500 font-mono flex items-center gap-0.5">
+                    4.8<span className="text-base">★</span>
+                  </div>
+                  <div className="text-[11px] font-semibold text-slate-500">Play Store Rating</div>
+                </div>
+                <div>
+                  <div className="text-xl sm:text-2xl font-black text-emerald-600 font-mono">100%</div>
+                  <div className="text-[11px] font-semibold text-slate-500">Made for India</div>
+                </div>
+                <div>
+                  <div className="text-xl sm:text-2xl font-black text-teal-700 font-mono">All Types</div>
+                  <div className="text-[11px] font-semibold text-slate-500">Of Businesses</div>
                 </div>
               </div>
 
-              <p className="text-sm sm:text-base font-semibold text-slate-800 leading-snug">
-                {selectedBusiness.tagline}
-              </p>
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center gap-3 pt-1">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.app.dukanhisab&hl=en_IN"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#036272] hover:bg-[#024f5c] text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl shadow-md shadow-teal-900/15 transition-all active:scale-95"
+                >
+                  <GooglePlayIcon className="w-4 h-4 text-white" />
+                  <span>Download App</span>
+                </a>
 
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                {selectedBusiness.description}
-              </p>
-
-              {/* Ready Workflows */}
-              <div className="pt-2 space-y-2">
-                <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                  Built-In Features For This Business:
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {selectedBusiness.keyFeatures.map((kf, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs text-slate-700">
-                      <div className="w-4 h-4 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center shrink-0 mt-0.5">
-                        <CheckIcon className="w-3 h-3 text-teal-600" />
-                      </div>
-                      <span>{kf}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* CTA Link to Full Dedicated Page */}
-              <div className="pt-3">
                 <Link
                   href="/business-types"
-                  className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl transition-all shadow-sm group cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 font-bold text-xs sm:text-sm px-5 py-3 rounded-xl transition-all shadow-2xs hover:border-slate-300"
                 >
-                  <span>Explore All 14+ Business Types</span>
-                  <ArrowRightIcon className="w-4 h-4 text-teal-400 group-hover:translate-x-1 transition-transform" />
+                  <span>See Success Stories</span>
+                  <ArrowRightIcon className="w-3.5 h-3.5 text-teal-600" />
                 </Link>
               </div>
             </div>
 
-            {/* Right Column: Realistic Live Receipt / Simulation Box */}
-            <div className="lg:col-span-5">
-              <div className="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-3.5 shadow-inner">
-                <div className="flex items-center justify-between pb-3 border-b border-slate-200">
-                  <div>
-                    <span className="text-[10px] font-bold text-teal-700 uppercase tracking-wider block">
-                      Live Shop Sample Bill
-                    </span>
-                    <h4 className="font-extrabold text-sm text-slate-900">
-                      {selectedBusiness.sampleCart.shop}
-                    </h4>
-                  </div>
-                  <span className="text-[10px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-mono font-semibold">
-                    {selectedBusiness.sampleCart.bill}
-                  </span>
-                </div>
-
-                {/* Items List */}
-                <div className="divide-y divide-slate-200/80 text-xs">
-                  {selectedBusiness.sampleCart.items.map((it, idx) => (
-                    <div key={idx} className="py-2 flex items-center justify-between">
-                      <div>
-                        <p className="font-bold text-slate-800">{it.name}</p>
-                        <p className="text-[10px] text-slate-500">{it.qty}</p>
-                      </div>
-                      <span className="font-bold text-slate-900 font-mono">{it.price}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Bill Summary */}
-                <div className="pt-2.5 border-t border-slate-200 space-y-1.5 text-xs">
-                  <div className="flex justify-between items-center text-sm font-black text-slate-900">
-                    <span>Total Bill:</span>
-                    <span className="text-teal-700 font-mono text-base">
-                      {selectedBusiness.sampleCart.total}
-                    </span>
-                  </div>
-                  <div className="p-2 rounded-xl bg-teal-50 border border-teal-200 text-[11px] font-semibold text-teal-800 flex items-center gap-1.5">
-                    <CheckIcon className="w-3.5 h-3.5 text-teal-600 shrink-0" />
-                    <span>{selectedBusiness.sampleCart.settlement}</span>
-                  </div>
-                </div>
+            {/* Right Graphic: Shopkeepers Collage */}
+            <div className="lg:col-span-6 flex justify-center">
+              <div className="relative w-full max-w-lg">
+                <Image
+                  src="/images/shopkeepers-collage-hd.png"
+                  alt="DukanHisab Trusted Shopkeepers from Surat, Ahmedabad, and Rajkot"
+                  width={1080}
+                  height={526}
+                  className="w-full h-auto object-contain drop-shadow-md rounded-2xl"
+                />
               </div>
             </div>
 
           </div>
-        </div>
-
-        {/* Bottom Multi-Trade Reassurance Banner */}
-        <div className="mt-12 bg-white border border-slate-200 rounded-2xl p-5 flex flex-wrap items-center justify-between gap-4 shadow-sm max-w-6xl mx-auto">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center shrink-0 border border-teal-100">
-              <ShieldCheckIcon className="w-5 h-5" />
-            </div>
-            <div>
-              <p className="text-sm font-bold text-slate-900">
-                Don&apos;t see your specific trade listed above?
-              </p>
-              <p className="text-xs text-slate-500 mt-0.5">
-                DukanHisab provides customizable units (pieces, meters, kg, boxes, hours), custom barcode tags, and flexible tax slabs for any Indian retail or wholesale shop.
-              </p>
-            </div>
-          </div>
-
-          <Link
-            href="/business-types"
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-teal-700 hover:text-teal-800 bg-teal-50 hover:bg-teal-100 border border-teal-200 px-4 py-2 rounded-xl transition-all"
-          >
-            <span>Browse Full Directory</span>
-            <ArrowRightIcon className="w-3.5 h-3.5" />
-          </Link>
         </div>
 
       </div>

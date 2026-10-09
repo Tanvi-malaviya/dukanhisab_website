@@ -125,7 +125,7 @@ export default function ShopDayTimeline() {
   const IconComponent = current.icon;
 
   return (
-    <section id="day-in-shop" className="py-20 lg:py-28 bg-white border-y border-slate-200 relative">
+    <section id="day-in-shop" className="py-10 lg:py-14 bg-white border-y border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}

@@ -6,11 +6,11 @@ import { GooglePlayIcon, ArrowRightIcon } from "./Icons";
 
 export default function KhataWaveCtaSection() {
   return (
-    <section className="py-12 sm:py-20 bg-white">
+    <section className="py-12 sm:py-10 sm:py-12 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Minimalist Contour Wave Showcase Card */}
-        <div className="relative rounded-3xl sm:rounded-[36px] bg-white border border-slate-200/90 shadow-xl sm:shadow-2xl overflow-hidden py-16 sm:py-24 px-6 sm:px-12 text-center flex flex-col items-center justify-center min-h-[380px] sm:min-h-[460px]">
+        <div className="relative rounded-3xl sm:rounded-[36px] bg-white border border-slate-200/90 shadow-xl sm:shadow-2xl overflow-hidden py-10 sm:py-14 px-6 sm:px-12 text-center flex flex-col items-center justify-center min-h-[380px] sm:min-h-[460px]">
           
           {/* Subtle Ambient Radial Glow */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-teal-100/30 via-emerald-50/20 to-transparent rounded-full blur-3xl pointer-events-none" />

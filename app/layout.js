@@ -4,12 +4,24 @@ export const metadata = {
   title: "DukanHisab — Your Business Has a Memory | Connected Shop Accounting & POS",
   description: "DukanHisab connects every sale, purchase, barcode scan, customer, supplier, payment, and expense in one smart ecosystem with Mobile App and Web Panel.",
   keywords: ["DukanHisab", "shop management", "kirana billing", "POS system", "inventory management", "business accounting", "barcode billing"],
+  icons: {
+    icon: [
+      { url: "/images/dukanhisab-app-icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/images/dukanhisab-app-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/images/dukanhisab-app-icon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-full scroll-smooth">
       <head>
+        <link rel="icon" type="image/png" href="/images/dukanhisab-app-icon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/dukanhisab-app-icon.png" />
+        <link rel="shortcut icon" href="/images/dukanhisab-app-icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />

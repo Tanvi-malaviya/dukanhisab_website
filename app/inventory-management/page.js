@@ -43,7 +43,7 @@ export default function InventoryManagementPage() {
 
       <main className="flex-1">
         {/* ===================== HERO SECTION ===================== */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#e6f7f6] via-[#f2fbfa] to-white pt-6 pb-16 lg:pt-10 lg:pb-20">
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#e6f7f6] via-[#f2fbfa] to-white pt-24 sm:pt-28 lg:pt-32 pb-16 lg:pb-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Breadcrumb */}
@@ -219,7 +219,7 @@ export default function InventoryManagementPage() {
         </section>
 
         {/* ===================== SMART INVENTORY SHOWCASE ===================== */}
-        <section className="py-20 bg-[#f7faf8] border-y border-slate-100">
+        <section className="py-10 sm:py-12 bg-[#f7faf8] border-y border-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               
@@ -318,7 +318,7 @@ export default function InventoryManagementPage() {
         </section>
 
         {/* ===================== MANAGE INVENTORY FOR ANY SHOP ===================== */}
-        <section className="py-16 bg-white">
+        <section className="py-10 sm:py-12 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-10">
               <span className="text-xs font-bold uppercase tracking-wider text-[#036272]">

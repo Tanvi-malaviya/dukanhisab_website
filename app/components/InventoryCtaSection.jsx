@@ -6,7 +6,7 @@ import { GooglePlayIcon, WhatsAppIcon, ArrowRightIcon } from "./Icons";
 
 export default function InventoryCtaSection() {
   return (
-    <section className="py-14 sm:py-20 bg-white">
+    <section className="py-14 sm:py-10 sm:py-12 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Ripple Style CTA Card */}

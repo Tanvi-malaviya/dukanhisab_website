@@ -16,64 +16,65 @@ import {
 } from "../components/Icons";
 
 export default function ResourcesPage() {
-  const businessTracks = [
+  const freeRetailTools = [
     {
-      category: "Kirana & Grocery",
-      icon: "🛒",
-      badge: "High Counter Rush",
+      title: "GST Calculator",
+      icon: "📊",
+      badge: "5%, 12%, 18%, 28%",
       badgeBg: "bg-emerald-100 text-emerald-800",
-      description: "Fast barcode billing, cash register reconciliation & instant WhatsApp Udhar recovery.",
-      tips: [
-        "Barcode speed-scanning during peak hours",
-        "Zero-mistake daily cash galla tally",
-        "Automated WhatsApp payment reminders"
+      description: "Quickly calculate GST inclusive and exclusive pricing with detailed CGST, SGST, and IGST tax breakdowns.",
+      features: [
+        "Add or remove GST in 1 click",
+        "Dual rate preview (Inclusive/Exclusive)",
+        "Instant copy summary for invoices"
       ],
-      toolTag: "Daily Galla & Udhar Tracker",
-      href: "/business-types",
+      href: "/tools/gst-calculator",
+      tag: "Tax & Compliance",
     },
     {
-      category: "Garments & Apparel",
-      icon: "👕",
-      badge: "Variants & Seasonal",
+      title: "Profit Margin & Markup",
+      icon: "📈",
+      badge: "Margin Health Bar",
       badgeBg: "bg-blue-100 text-blue-800",
-      description: "Managing size/color variants, festive discount clearance & VIP customer credit ledgers.",
-      tips: [
-        "Tagging stock by size, color & brand",
-        "Clearance discount & margin planning",
-        "Frequent buyer credit history"
+      description: "Find gross profit margin %, markup %, and ideal selling price from purchase cost to protect store profits.",
+      features: [
+        "Margin vs markup comparison",
+        "Target selling price calculator",
+        "Low, Moderate & Healthy indicators"
       ],
-      toolTag: "Discount & Margin Tool",
-      href: "/business-types",
+      href: "/tools/profit-margin-calculator",
+      tag: "Pricing & Profit",
     },
     {
-      category: "Wholesale & Traders",
-      icon: "🏢",
-      badge: "B2B Credit Cycles",
-      badgeBg: "bg-purple-100 text-purple-800",
-      description: "Multi-tier customer pricing, GST e-Invoicing & supplier credit cycle management.",
-      tips: [
-        "Custom price rates for retail vs bulk buyers",
-        "Full GST-compliant e-Way & thermal bills",
-        "30-day supplier payment ledger alerts"
+      title: "Discount & Sale Calculator",
+      icon: "🏷️",
+      badge: "BOGO & Bulk Deals",
+      badgeBg: "bg-amber-100 text-amber-800",
+      description: "Calculate festival promotional discounts, stackable coupon savings, and Buy X Get Y Free retail margins.",
+      features: [
+        "Flat ₹ and percentage % discounts",
+        "Stackable secondary bank coupons",
+        "BOGO (Buy 2 Get 1) profit breakdown"
       ],
-      toolTag: "B2B GST Invoice Playbook",
-      href: "/business-types",
+      href: "/tools/discount-calculator",
+      tag: "Sales & Promotions",
     },
     {
-      category: "Medical & Pharmacy",
-      icon: "💊",
-      badge: "Expiry & Compliance",
-      badgeBg: "bg-rose-100 text-rose-800",
-      description: "Batch tracking, 60-day expiry warning alerts & GST-compliant medicine records.",
-      tips: [
-        "Fast search by generic & brand names",
-        "Auto-alerts 60 days before expiry date",
-        "Zero-loss expired batch return logs"
+      title: "Barcode & Label Maker",
+      icon: "⚡",
+      badge: "Code 128 / HD SVG",
+      badgeBg: "bg-teal-100 text-teal-800",
+      description: "Generate 100% scannable product barcodes and custom price stickers ready for thermal printer rolls.",
+      features: [
+        "Auto SKU generator for loose items",
+        "High-DPI SVG & PNG download",
+        "Direct thermal sticker roll print"
       ],
-      toolTag: "Batch & Expiry Auditor",
-      href: "/business-types",
+      href: "/tools/barcode-generator",
+      tag: "Inventory & POS",
     },
   ];
+
 
   const blogPosts = [
     {
@@ -168,7 +169,7 @@ export default function ResourcesPage() {
 
       <main className="flex-1">
         {/* ===================== HERO SECTION ===================== */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#e6f7f6] via-[#f2fbfa] to-white pt-4 pb-6 sm:pt-6 sm:pb-6 lg:pt-8 lg:pb-6 border-b border-teal-100/60">
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#e6f7f6] via-[#f2fbfa] to-white pt-24 pb-6 sm:pt-28 sm:pb-6 lg:pt-32 lg:pb-6 border-b border-teal-100/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
             {/* Breadcrumb & Live Status Tag */}
@@ -289,8 +290,8 @@ export default function ResourcesPage() {
           </div>
         </section>
 
-        {/* ===================== CURATED PLAYBOOKS BY BUSINESS TYPE ===================== */}
-        <section className="py-14 sm:py-18 bg-white border-b border-slate-200/80">
+        {/* ===================== FREE INTERACTIVE TOOLS & UTILITIES ===================== */}
+        <section className="py-10 sm:py-14 bg-white border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Section Header */}
@@ -298,73 +299,73 @@ export default function ResourcesPage() {
               <div className="max-w-2xl">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-200 text-xs font-bold text-teal-800 mb-2.5">
                   <span className="w-2 h-2 rounded-full bg-[#036272]"></span>
-                  <span>Personalized Playbooks</span>
+                  <span>100% Free Retail Utilities</span>
                 </div>
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                  Curated Guides For <span className="text-[#036272]">Your Shop Type</span>
+                  Free Interactive <span className="text-[#036272]">Business Tools</span>
                 </h2>
                 <p className="mt-1.5 text-slate-600 text-sm sm:text-base font-medium">
-                  Every retail business has different billing and inventory needs. Choose your category for specialized daily playbooks.
+                  Simplify your everyday retail math with our high-speed, zero-login tools built for shopkeepers and growing merchants.
                 </p>
               </div>
 
               <Link
-                href="/business-types"
-                className="inline-flex items-center gap-2 text-xs font-bold text-teal-700 hover:text-teal-900 border border-teal-200 bg-teal-50/50 hover:bg-teal-100/60 px-4 py-2 rounded-xl transition-all"
+                href="/tools"
+                className="inline-flex items-center gap-2 text-xs font-bold text-teal-700 hover:text-teal-900 border border-teal-200 bg-teal-50/50 hover:bg-teal-100/60 px-4 py-2.5 rounded-xl transition-all shadow-2xs hover:shadow-sm"
               >
-                <span>All 15+ Business Categories</span>
+                <span>View All Free Tools Hub</span>
                 <ArrowRightIcon className="w-3.5 h-3.5" />
               </Link>
             </div>
 
-            {/* 4 Specialized Category Cards (Zero Repetition) */}
+            {/* 4 Specialized Tool Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {businessTracks.map((item, idx) => (
+              {freeRetailTools.map((tool, idx) => (
                 <div
                   key={idx}
-                  className="rounded-3xl border border-slate-200 hover:border-teal-300 bg-white hover:bg-teal-50/30 p-6 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between group"
+                  className="rounded-3xl border border-slate-200 hover:border-teal-400 bg-white hover:bg-teal-50/20 p-6 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
                     {/* Top Row: Icon + Badge */}
                     <div className="flex items-center justify-between gap-2 mb-4">
                       <div className="w-12 h-12 rounded-2xl bg-teal-50 border border-teal-100 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-                        {item.icon}
+                        {tool.icon}
                       </div>
-                      <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full ${item.badgeBg}`}>
-                        {item.badge}
+                      <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full ${tool.badgeBg}`}>
+                        {tool.badge}
                       </span>
                     </div>
 
                     {/* Title & Description */}
                     <h3 className="text-lg font-black text-slate-900 group-hover:text-teal-800 transition-colors">
-                      {item.category}
+                      {tool.title}
                     </h3>
                     <p className="text-xs text-slate-600 mt-2 leading-relaxed font-medium">
-                      {item.description}
+                      {tool.description}
                     </p>
 
-                    {/* 3 Practical Checklist Tips */}
+                    {/* 3 Key Feature Bullets */}
                     <div className="mt-4 pt-3 border-t border-slate-100 space-y-2">
-                      {item.tips.map((tip, tipIdx) => (
-                        <div key={tipIdx} className="flex items-start gap-2 text-[11px] text-slate-700 font-semibold leading-tight">
+                      {tool.features.map((feat, fIdx) => (
+                        <div key={fIdx} className="flex items-start gap-2 text-[11px] text-slate-700 font-semibold leading-tight">
                           <span className="text-[#036272] font-black shrink-0">✓</span>
-                          <span>{tip}</span>
+                          <span>{feat}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  {/* Bottom Action & Tool Tag */}
+                  {/* Bottom Action & Tag */}
                   <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md truncate max-w-[150px]">
-                      {item.toolTag}
+                    <span className="text-[10px] font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">
+                      {tool.tag}
                     </span>
                     <Link
-                      href={item.href}
-                      className="inline-flex items-center gap-1 text-xs font-black text-teal-700 group-hover:text-teal-900 group-hover:translate-x-1 transition-all"
+                      href={tool.href}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#036272] group-hover:text-teal-900 group-hover:translate-x-1 transition-all"
                     >
-                      {/* <span>Explore</span> */}
-                      {/* <ArrowRightIcon className="w-3.5 h-3.5" /> */}
+                      <span>Open Tool</span>
+                      <ArrowRightIcon className="w-3.5 h-3.5" />
                     </Link>
                   </div>
                 </div>
@@ -375,7 +376,7 @@ export default function ResourcesPage() {
         </section>
 
         {/* ===================== LATEST BLOG POSTS ===================== */}
-        <section id="blog" className="py-16 bg-[#f8faf9] border-y border-slate-200">
+        <section id="blog" className="py-10 sm:py-12 bg-[#f8faf9] border-y border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-10">
               <div>
@@ -433,7 +434,7 @@ export default function ResourcesPage() {
         </section>
 
         {/* ===================== POPULAR GUIDES & FREE TOOLS ===================== */}
-        <section id="guides" className="py-20 bg-white">
+        <section id="guides" className="py-10 sm:py-12 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Section Header */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
@@ -555,7 +556,7 @@ export default function ResourcesPage() {
         </section>
 
         {/* ===================== SUCCESS STORIES ===================== */}
-        <section id="stories" className="py-20 bg-[#f8faf9] border-t border-slate-200">
+        <section id="stories" className="py-10 sm:py-12 bg-[#f8faf9] border-t border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-10">
               <div>

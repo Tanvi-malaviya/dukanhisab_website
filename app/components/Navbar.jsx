@@ -22,9 +22,10 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Features", href: "/features" },
+    { name: "Live Demo", href: "/demo" },
     { name: "Business Types", href: "/business-types" },
     { name: "Pricing", href: "/pricing" },
-    { name: "GST Calculator", href: "/tools/gst-calculator" },
+    { name: "Free Tools", href: "/tools" },
     { name: "Resources", href: "/resources" },
     { name: "Support", href: "/support" },
   ];
@@ -36,21 +37,21 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-2 sm:top-4 z-50 px-3 sm:px-6 max-w-7xl mx-auto w-full transition-all duration-300">
+    <header className="sticky top-2 sm:top-4 z-50 px-3 sm:px-6 max-w-7xl mx-auto w-full transition-all duration-300 pointer-events-none -mb-16 sm:-mb-20">
       {/* Floating Island Capsule Bar */}
-      <nav className="relative backdrop-blur-2xl bg-white/90 border border-slate-200/90 shadow-xl shadow-slate-900/5 rounded-full px-3.5 sm:px-5 py-2 sm:py-2.5 flex items-center justify-between transition-all">
+      <nav className="pointer-events-auto relative backdrop-blur-2xl bg-white/95 border border-slate-200/90 shadow-xl shadow-slate-900/5 rounded-full px-3.5 sm:px-5 py-2 sm:py-2.5 flex items-center justify-between transition-all">
         
         {/* Official DukanHisab HD Brand Logo & Tagline */}
         <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl overflow-hidden shadow-md shadow-teal-950/20 group-hover:scale-105 transition-transform shrink-0 border border-teal-700/30 bg-[#036272] flex items-center justify-center p-0.5">
+          <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden shadow-md shadow-teal-950/20 group-hover:scale-105 transition-transform shrink-0 border border-teal-700/30 bg-[#036272] flex items-center justify-center">
             <Image
-              src="/images/dukanhisab-app-icon.png"
+              src="/images/dukanhisab-logo.png"
               alt="DukanHisab Official Logo"
-              width={88}
-              height={88}
+              width={96}
+              height={96}
               priority
               quality={100}
-              className="w-full h-full object-contain rounded-xl"
+              className="w-full h-full object-cover"
             />
           </div>
           <div>
@@ -59,8 +60,8 @@ export default function Navbar() {
                 Dukan<span className="text-[#036272]">Hisab</span>
               </span>
               <span className="relative flex h-2 w-2 ml-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                {/* <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span> */}
+                {/* <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span> */}
               </span>
             </div>
             <p className="text-[10px] font-bold text-slate-500 tracking-tight leading-none hidden md:block mt-0.5">
@@ -72,7 +73,7 @@ export default function Navbar() {
         {/* Desktop Navigation Links */}
         <div className="hidden xl:flex items-center gap-1 bg-slate-100/70 p-1 rounded-full border border-slate-200/50">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive = pathname === link.href || (link.href === "/tools" && pathname?.startsWith("/tools"));
             return (
               <Link
                 key={link.name}
@@ -167,7 +168,7 @@ export default function Navbar() {
 
       {/* Floating Mobile Drawer Dropdown */}
       {mobileMenuOpen && (
-        <div className="xl:hidden mt-2 rounded-3xl bg-white/95 backdrop-blur-2xl border border-slate-200/90 p-4 space-y-3 shadow-2xl animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className="pointer-events-auto xl:hidden mt-2 rounded-3xl bg-white/95 backdrop-blur-2xl border border-slate-200/90 p-4 space-y-3 shadow-2xl animate-in fade-in slide-in-from-top-2 duration-200">
           <div className="flex items-center justify-between pb-2 border-b border-slate-100 text-xs text-slate-500 font-semibold px-1">
             <span>DukanHisab Navigation</span>
             <span className="text-emerald-700 font-bold flex items-center gap-1">
@@ -178,7 +179,7 @@ export default function Navbar() {
 
           <div className="grid grid-cols-2 gap-1.5">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive = pathname === link.href || (link.href === "/tools" && pathname?.startsWith("/tools"));
               return (
                 <Link
                   key={link.name}

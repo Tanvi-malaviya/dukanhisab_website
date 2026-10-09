@@ -88,7 +88,7 @@ export default function HowItWorksHero() {
   const ActiveIcon = current.icon;
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#eaf6f4] via-[#f3f9f8] to-white pt-6 pb-16 sm:pt-10 sm:pb-24 border-b border-teal-100/70">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#eaf6f4] via-[#f3f9f8] to-white pt-24 pb-16 sm:pt-28 sm:pb-24 border-b border-teal-100/70">
       
       {/* Background Decorative Ambient Radial Glows */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-teal-200/35 via-emerald-100/25 to-transparent rounded-full blur-3xl pointer-events-none" />

@@ -36,7 +36,7 @@ export default function MobileAndWebSection() {
   ];
 
   return (
-    <section id="mobile-web" className="py-20 lg:py-28 bg-white border-b border-slate-200 relative overflow-hidden">
+    <section id="mobile-web" className="py-10 lg:py-14 bg-white border-b border-slate-200 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

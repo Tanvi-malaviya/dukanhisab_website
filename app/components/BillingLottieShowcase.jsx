@@ -18,7 +18,7 @@ export default function BillingLottieShowcase() {
       icon: "⚡",
       badge: "Real-time Item Scan",
       src: "/animations/receipt_scanner.json",
-      tag: "Auto-Calculate GST & Totals"
+      tag: "Auto-Calculate Totals & Discounts"
     },
     {
       id: "print",
@@ -30,7 +30,7 @@ export default function BillingLottieShowcase() {
     },
     {
       id: "counter",
-      label: "POS Counter",
+      label: "Shop Counter",
       icon: "🏪",
       badge: "Instant Checkout",
       src: "/animations/pos_cash_register.json",
@@ -38,9 +38,9 @@ export default function BillingLottieShowcase() {
     },
     {
       id: "verified",
-      label: "GST Ready",
+      label: "Instant Bills",
       icon: "✓",
-      badge: "100% Tax Compliant",
+      badge: "100% Accurate Invoices",
       src: "/animations/receipt_printer_gold.json",
       tag: "Professional A4 & Thermal Invoices"
     }
@@ -61,7 +61,7 @@ export default function BillingLottieShowcase() {
           <div className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
             <span className="text-[11px] font-black text-slate-700 tracking-wider uppercase">
-              DukanHisab POS 3.0
+              DukanHisab Billing 3.0
             </span>
           </div>
           <div className="flex items-center gap-2">

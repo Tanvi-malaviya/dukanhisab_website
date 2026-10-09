@@ -59,7 +59,7 @@ const webAppModules = [
       mode: "Cash / UPI / Khata Split",
     },
     routeLink: "/billing-software",
-    routeLabel: "Explore POS Billing Features",
+    routeLabel: "Explore Billing Features",
   },
   {
     id: "website",
@@ -296,7 +296,7 @@ export default function WebAppFeatures() {
   const [selectedModule, setSelectedModule] = useState(webAppModules[0]);
 
   return (
-    <section className="py-20 lg:py-28 bg-white border-y border-slate-200 relative overflow-hidden">
+    <section className="py-10 lg:py-14 bg-white border-y border-slate-200 relative overflow-hidden">
       {/* Decorative Subtle Background */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />

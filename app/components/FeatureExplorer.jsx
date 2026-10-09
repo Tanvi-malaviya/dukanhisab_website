@@ -70,7 +70,7 @@ export default function FeatureExplorer() {
   const currentList = categoryFeatures[activeCategory];
 
   return (
-    <section className="py-20 lg:py-28 section-alt border-b border-teal-100">
+    <section className="py-10 lg:py-14 section-alt border-b border-teal-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

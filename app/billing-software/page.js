@@ -6,7 +6,6 @@ import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import BillingCtaSection from "../components/BillingCtaSection";
-import BillingLottieShowcase from "../components/BillingLottieShowcase";
 import { 
   GooglePlayIcon, 
   CheckIcon, 
@@ -24,7 +23,7 @@ import {
 export default function BillingSoftwarePage() {
   const topFeatures = [
     { title: "Create Bills in Seconds", icon: "⚡", bg: "bg-teal-50 text-teal-700" },
-    { title: "GST & Non-GST Support", icon: "📑", bg: "bg-amber-50 text-amber-700" },
+    { title: "Custom Bill & Invoice Support", icon: "📑", bg: "bg-amber-50 text-amber-700" },
     { title: "Print & Share Instantly", icon: "🖨️", bg: "bg-purple-50 text-purple-700" },
     { title: "Apply Discounts & Offers", icon: "%", bg: "bg-blue-50 text-blue-700" },
     { title: "Add Customers Easily", icon: "👤", bg: "bg-rose-50 text-rose-700" },
@@ -45,7 +44,7 @@ export default function BillingSoftwarePage() {
 
       <main className="flex-1">
         {/* ===================== HERO SECTION ===================== */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#e6f7f6] via-[#f2fbfa] to-white pt-6 pb-16 lg:pt-10 lg:pb-20">
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#e6f7f6] via-[#f2fbfa] to-white pt-24 sm:pt-28 lg:pt-32 pb-16 lg:pb-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Breadcrumb */}
@@ -80,7 +79,7 @@ export default function BillingSoftwarePage() {
                   </div>
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-700">
                     <span className="w-6 h-6 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center">📑</span>
-                    <span>GST &amp; Non-GST Invoices</span>
+                    <span>Custom &amp; Standard Invoices</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-700">
                     <span className="w-6 h-6 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center">☁️</span>
@@ -102,7 +101,7 @@ export default function BillingSoftwarePage() {
                 </div>
               </div>
 
-              {/* Right Column: Hero Graphic with Shopkeeper, Phone & POS Terminal */}
+              {/* Right Column: Hero Graphic with Shopkeeper, Phone & Terminal */}
               <div className="lg:col-span-5 relative flex items-end justify-center pt-4 lg:pt-0">
                 {/* Ambient Soft Glow Behind Mockup */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-96 sm:h-96 bg-gradient-to-tr from-teal-400/20 via-emerald-300/15 to-transparent rounded-full blur-3xl pointer-events-none" />
@@ -110,7 +109,7 @@ export default function BillingSoftwarePage() {
                 <div className="relative w-full max-w-lg lg:max-w-xl flex justify-center items-end">
                   <Image
                     src="/images/billing-hero-seamless.png"
-                    alt="DukanHisab Billing Software Shopkeeper with Mobile App & POS Terminal"
+                    alt="DukanHisab Billing Software Shopkeeper with Mobile App & Billing Counter"
                     width={544}
                     height={502}
                     priority
@@ -143,12 +142,12 @@ export default function BillingSoftwarePage() {
         </section>
 
         {/* ===================== LIVE APP PREVIEW ===================== */}
-        <section className="py-20 bg-[#f7faf8] border-y border-slate-100">
+        <section className="py-10 sm:py-12 bg-[#f7faf8] border-y border-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               
               {/* Left Column: Live App Preview Copy */}
-              <div className="lg:col-span-4 space-y-6">
+              <div className="lg:col-span-6 space-y-6">
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-[#036272]">
                     LIVE APP PREVIEW
@@ -164,7 +163,7 @@ export default function BillingSoftwarePage() {
                 <div className="space-y-3 pt-2">
                   {[
                     "Search products quickly by name or barcode",
-                    "Auto calculate totals, discounts & GST rates",
+                    "Auto calculate totals, discounts & tax rates",
                     "Apply discount & tax per line item or overall bill",
                     "Print or share instant receipts on WhatsApp",
                     "Save billing history with zero paperwork"
@@ -191,31 +190,26 @@ export default function BillingSoftwarePage() {
                 </div>
               </div>
 
-              {/* Center Column: Interactive Retail Billing Lottie Showcase */}
-              <div className="lg:col-span-4 flex justify-center w-full">
-                <BillingLottieShowcase />
-              </div>
-
               {/* Right Column: 6 Interactive Action Tiles */}
-              <div className="lg:col-span-4 space-y-4">
+              <div className="lg:col-span-6 space-y-4">
                 <div className="text-right mb-2">
                   <span className="text-xs font-black text-teal-800 italic font-serif">
                     From Products to Profit! 💰
                   </span>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   {previewActions.map((act, idx) => {
                     const IconComp = act.icon;
                     return (
                       <div
                         key={idx}
-                        className="bg-white p-4 rounded-2xl border border-slate-100 shadow-xs hover:border-teal-300 transition-all flex flex-col items-center justify-center text-center group"
+                        className="bg-white p-5 rounded-2xl border border-slate-100 shadow-xs hover:border-teal-300 hover:shadow-md transition-all flex flex-col items-center justify-center text-center group"
                       >
-                        <div className={`w-11 h-11 rounded-xl ${act.bg} flex items-center justify-center mb-2 group-hover:scale-110 transition-transform`}>
-                          <IconComp className="w-5 h-5" />
+                        <div className={`w-12 h-12 rounded-xl ${act.bg} flex items-center justify-center mb-2.5 group-hover:scale-110 transition-transform`}>
+                          <IconComp className="w-6 h-6" />
                         </div>
-                        <span className="text-xs font-bold text-slate-800">
+                        <span className="text-xs sm:text-sm font-bold text-slate-800">
                           {act.title}
                         </span>
                       </div>

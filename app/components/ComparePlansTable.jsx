@@ -55,6 +55,9 @@ export default function ComparePlansTable() {
   useEffect(() => {
     const controller = new AbortController();
     const apiBase = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost/Dukanhisab/public/api";
+    const timeoutId = setTimeout(() => {
+      controller.abort();
+    }, 3500);
 
     async function fetchPlans() {
       try {
@@ -72,16 +75,17 @@ export default function ComparePlansTable() {
           setPlansMap(mapped);
         }
       } catch (err) {
-        if (err.name !== "AbortError") {
-          // Keep static fallback
-        }
+        // Keep static fallback
       } finally {
         setLoading(false);
       }
     }
 
     fetchPlans();
-    return () => controller.abort();
+    return () => {
+      clearTimeout(timeoutId);
+      controller.abort();
+    };
   }, []);
 
   const freePlan = plansMap.free || STATIC_FALLBACK_PLANS.free;
@@ -100,13 +104,13 @@ export default function ComparePlansTable() {
     { name: "Excel Export", free: false, pro: true, biz: true },
     { name: "Shop Website (Themes & Banner)", free: "Basic", pro: true, biz: true },
     { name: "Multiple Shops", free: "1 Shop", pro: "Up to 2 Shops", biz: "Up to 5 Shops" },
-    {
-      name: "Device Support / Staff Logins",
-      free: `${freePlan?.features?.max_devices || 5} Devices`,
-      pro: `${proPlan?.features?.max_devices || 10} Devices`,
-      biz: `${bizPlan?.features?.max_devices || 10} Devices`,
-    },
-    { name: "Ads", free: "With Ads", pro: false, biz: false },
+    // {
+    //   name: "Device Support / Staff Logins",
+    //   free: `${freePlan?.features?.max_devices || 5} Devices`,
+    //   pro: `${proPlan?.features?.max_devices || 10} Devices`,
+    //   biz: `${bizPlan?.features?.max_devices || 10} Devices`,
+    // },
+    // { name: "Ads", free: "With Ads", pro: false, biz: false },
     { name: "Priority Support", free: false, pro: true, biz: true },
     { name: "Lifetime Updates", free: false, pro: false, biz: true },
   ];

@@ -20,7 +20,7 @@ export default function PricingPage() {
 
       <main className="flex-1">
         {/* Hero Section with Ambient Store Background */}
-        <section className="relative overflow-hidden w-full border-b border-slate-200/90 pt-16 pb-14 sm:pt-20 sm:pb-18 text-center bg-slate-100">
+        <section className="relative overflow-hidden w-full border-b border-slate-200/90 pt-24 sm:pt-28 lg:pt-32 pb-10 sm:pb-12 text-center bg-slate-100">
           {/* Background Image Container with Balanced Contrast */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -78,7 +78,7 @@ export default function PricingPage() {
         <PricingSection />
 
         {/* 2. Detailed Comparison Matrix Table */}
-        <section className="py-16 bg-white border-b border-slate-200">
+        <section className="py-10 sm:py-12 bg-white border-b border-slate-200">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">

@@ -145,7 +145,7 @@ export default function SupportPage() {
 
       <main className="flex-1">
         {/* ===================== HERO SECTION ===================== */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#e6f7f6] via-[#f2fbfa] to-white pt-6 pb-12 lg:pt-8 lg:pb-16 border-b border-teal-100/60">
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#e6f7f6] via-[#f2fbfa] to-white pt-24 sm:pt-28 lg:pt-32 pb-12 lg:pb-16 border-b border-teal-100/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Breadcrumb */}
@@ -234,7 +234,7 @@ export default function SupportPage() {
      
 
         {/* ===================== HOW CAN WE HELP YOU & STILL NEED HELP ===================== */}
-        <section className="py-12 sm:py-16 bg-gradient-to-b from-white via-[#f8faf9] to-white relative overflow-hidden">
+        <section className="py-12 sm:py-10 sm:py-12 bg-gradient-to-b from-white via-[#f8faf9] to-white relative overflow-hidden">
           
           {/* Subtle ambient background glow */}
           <div className="absolute top-10 left-10 w-80 h-80 bg-teal-200/15 rounded-full blur-3xl pointer-events-none" />
@@ -465,7 +465,7 @@ export default function SupportPage() {
         </section>
 
         {/* ===================== FREQUENTLY ASKED QUESTIONS (COMPLETELY REVAMPED UNIQUE DESIGN) ===================== */}
-        <section id="faq" className="py-16 sm:py-24 bg-gradient-to-b from-[#f8faf9] via-white to-[#f8faf9] border-t border-slate-200/80 relative overflow-hidden">
+        <section id="faq" className="py-10 sm:py-14 bg-gradient-to-b from-[#f8faf9] via-white to-[#f8faf9] border-t border-slate-200/80 relative overflow-hidden">
           
           {/* Subtle Ambient Background Gradients */}
           <div className="absolute top-1/4 -left-20 w-80 h-80 bg-teal-200/20 rounded-full blur-3xl pointer-events-none" />

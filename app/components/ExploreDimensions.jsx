@@ -63,7 +63,7 @@ export default function ExploreDimensions() {
   };
 
   return (
-    <section className="py-20 lg:py-28 bg-slate-950 text-white relative overflow-hidden">
+    <section className="py-10 lg:py-14 bg-slate-950 text-white relative overflow-hidden">
       {/* Dynamic Ambient Background Glows */}
       <div className="absolute top-1/4 left-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />

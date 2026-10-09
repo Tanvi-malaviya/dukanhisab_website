@@ -18,7 +18,7 @@ export default function EcosystemPage() {
 
       <main className="flex-1">
         {/* Page Hero Header */}
-        <section className="pt-12 pb-14 bg-gradient-to-b section-hero border-b border-slate-200">
+        <section className="pt-24 sm:pt-28 lg:pt-32 pb-14 bg-gradient-to-b section-hero border-b border-slate-200">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider mb-4">
               <CloudSyncIcon className="w-3.5 h-3.5 text-teal-700" />
@@ -41,7 +41,7 @@ export default function EcosystemPage() {
         <WebPanelShowcase />
 
         {/* Multi-Counter & Multi-Device Sync Explanation Banner */}
-        <section className="py-16 bg-white border-y border-slate-200">
+        <section className="py-10 sm:py-12 bg-white border-y border-slate-200">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl">
               <div className="max-w-3xl">

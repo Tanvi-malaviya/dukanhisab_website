@@ -15,14 +15,14 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="w-10 h-10 rounded-2xl overflow-hidden shadow-md group-hover:scale-105 transition-transform bg-[#036272] flex items-center justify-center p-0.5 border border-teal-700/40">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden shadow-md group-hover:scale-105 transition-transform bg-[#036272] flex items-center justify-center border border-teal-700/40">
                 <Image
-                  src="/images/dukanhisab-app-icon.png"
+                  src="/images/dukanhisab-logo.png"
                   alt="DukanHisab Logo"
-                  width={80}
-                  height={80}
+                  width={96}
+                  height={96}
                   quality={100}
-                  className="w-full h-full object-contain rounded-xl"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <span className="text-xl font-extrabold text-white tracking-tight">
@@ -75,7 +75,11 @@ export default function Footer() {
               <li><Link href="/features" className="hover:text-teal-400 transition-colors">Features & Modules</Link></li>
               <li><Link href="/ecosystem" className="hover:text-teal-400 transition-colors">Mobile App & Web Panel</Link></li>
               <li><Link href="/pricing" className="hover:text-teal-400 transition-colors">Pricing & Plans</Link></li>
-              <li><Link href="/tools/gst-calculator" className="hover:text-teal-400 transition-colors">Free GST Calculator</Link></li>
+              <li><Link href="/tools" className="text-teal-400 font-bold hover:underline transition-colors">Free Business Tools Hub</Link></li>
+              <li><Link href="/tools/gst-calculator" className="hover:text-teal-400 transition-colors">GST Calculator (5-28%)</Link></li>
+              <li><Link href="/tools/profit-margin-calculator" className="hover:text-teal-400 transition-colors">Profit Margin Calculator</Link></li>
+              <li><Link href="/tools/discount-calculator" className="hover:text-teal-400 transition-colors">Discount &amp; Sale Calculator</Link></li>
+              <li><Link href="/tools/barcode-generator" className="hover:text-teal-400 transition-colors">Free Barcode Generator</Link></li>
               <li>
                 <a
                   href="https://dukanhisab.in/shop"

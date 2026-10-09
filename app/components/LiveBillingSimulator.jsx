@@ -147,7 +147,7 @@ export default function LiveBillingSimulator() {
   };
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-900 via-[#0a1f18] to-slate-950 text-white relative overflow-hidden">
+    <section className="py-10 lg:py-14 bg-gradient-to-b from-slate-900 via-[#0a1f18] to-slate-950 text-white relative overflow-hidden">
       {/* 3D Grid backdrop lines */}
       <div className="absolute inset-0 bg-grid-subtle opacity-10 pointer-events-none" />
       <div className="absolute -top-40 right-1/4 w-96 h-96 bg-teal-500/15 rounded-full blur-3xl pointer-events-none" />

@@ -113,7 +113,7 @@ export default function MoneyFlowSection() {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200 relative overflow-hidden">
+    <section className="py-10 lg:py-14 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200 relative overflow-hidden">
       
       {/* Decorative Subtle Background */}
       <div className="absolute top-10 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />

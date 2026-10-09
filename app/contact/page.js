@@ -27,7 +27,7 @@ export default function ContactPage() {
 
       <main className="flex-1">
         {/* Page Header */}
-        <section className="pt-12 pb-12 bg-gradient-to-b section-hero border-b border-slate-200">
+        <section className="pt-24 sm:pt-28 lg:pt-32 pb-12 bg-gradient-to-b section-hero border-b border-slate-200">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span className="text-xs font-bold uppercase tracking-wider text-teal-700 bg-teal-100 px-3 py-1 rounded-full">
               We're Here to Help
@@ -42,7 +42,7 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Form & Support Info Grid */}
-        <section className="py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-10 sm:py-12 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             
             {/* Left Column: Direct Contact & WhatsApp */}

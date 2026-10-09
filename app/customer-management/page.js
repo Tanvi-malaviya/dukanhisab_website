@@ -144,7 +144,7 @@ export default function CustomerManagementPage() {
 
       <main className="flex-1">
         {/* ===================== HERO SECTION ===================== */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#e6f7f6] via-[#f1faf9] to-[#f8faf9] pt-8 pb-16 lg:pt-12 lg:pb-22 border-b border-teal-100/70">
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#e6f7f6] via-[#f1faf9] to-[#f8faf9] pt-24 sm:pt-28 lg:pt-32 pb-16 lg:pb-22 border-b border-teal-100/70">
           
           {/* Ambient Lighting Gradients */}
           <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[720px] h-[360px] bg-gradient-to-r from-teal-400/20 via-emerald-300/20 to-teal-500/20 blur-3xl pointer-events-none rounded-full" />
@@ -314,7 +314,7 @@ export default function CustomerManagementPage() {
         </section>
 
         {/* ===================== 4 CORE SUPER-POWERS ===================== */}
-        <section className="py-16 sm:py-20 bg-white border-b border-slate-200/80">
+        <section className="py-10 sm:py-14 bg-white border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
@@ -373,7 +373,7 @@ export default function CustomerManagementPage() {
         </section>
 
         {/* ===================== PAPER KHATA VS DIGITAL KHATA (COMPARISON) ===================== */}
-        <section className="py-16 sm:py-24 bg-gradient-to-b from-white via-teal-50/30 to-white border-b border-slate-200/80">
+        <section className="py-10 sm:py-14 bg-gradient-to-b from-white via-teal-50/30 to-white border-b border-slate-200/80">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
@@ -419,7 +419,7 @@ export default function CustomerManagementPage() {
         </section>
 
         {/* ===================== SIMULATED WHATSAPP INVOICING DEMO ===================== */}
-        <section className="py-16 sm:py-24 bg-white border-b border-slate-200/80">
+        <section className="py-10 sm:py-14 bg-white border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
               
@@ -548,7 +548,7 @@ export default function CustomerManagementPage() {
         </section>
 
         {/* ===================== CUSTOMER CRM FAQS ===================== */}
-        <section className="py-16 sm:py-24 bg-[#f8faf9] border-b border-slate-200/80">
+        <section className="py-10 sm:py-14 bg-[#f8faf9] border-b border-slate-200/80">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div className="text-center mb-12 space-y-3">

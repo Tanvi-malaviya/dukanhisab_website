@@ -34,7 +34,7 @@ const PLAN_UI_CONFIG = {
     ctaText: "Upgrade to Premium",
     ctaStyle: "bg-[#05684f] hover:bg-[#04523e] text-white shadow-lg shadow-emerald-700/25",
     footnote: "Best for small and medium shops",
-    subprice: "(Just ₹1 per day)",
+    // subprice: "(Just ₹1 per day)",
     featureLabels: [
       "All Free Plan Features",
       "No Ads",
@@ -87,7 +87,7 @@ function formatPrice(price, billingPeriod) {
     return {
       display: "₹" + numPrice.toLocaleString("en-IN", { maximumFractionDigits: 0 }),
       period: "per year",
-      subprice: "(Just ₹1 per day)",
+      // subprice: "(Just ₹1 per day)",
     };
   }
   if (billingPeriod === "monthly") {
@@ -100,58 +100,81 @@ function formatPrice(price, billingPeriod) {
   return { display: "₹" + numPrice.toLocaleString("en-IN", { maximumFractionDigits: 0 }), period: "", subprice: "" };
 }
 
-function PlanCardSkeleton() {
-  return (
-    <div className="rounded-3xl p-7 sm:p-8 flex flex-col bg-white border border-slate-200/90 shadow-md animate-pulse">
-      <div className="pb-5 border-b border-slate-100 space-y-3">
-        <div className="h-5 w-32 bg-slate-200 rounded-lg" />
-        <div className="h-3 w-48 bg-slate-100 rounded" />
-        <div className="h-12 w-24 bg-slate-200 rounded-lg mt-4" />
-      </div>
-      <div className="py-6 space-y-3">
-        {[...Array(5)].map((_, i) => (
-          <div key={i} className="flex items-center gap-2.5">
-            <div className="w-4 h-4 rounded-full bg-slate-200 shrink-0" />
-            <div className={"h-3 bg-slate-100 rounded " + (i % 2 === 0 ? "w-40" : "w-32")} />
-          </div>
-        ))}
-      </div>
-      <div className="pt-4 border-t border-slate-100">
-        <div className="h-10 bg-slate-200 rounded-xl" />
-      </div>
-    </div>
-  );
+function formatAddonPrice(price, billingPeriod) {
+  const numPrice = parseFloat(price);
+  if (isNaN(numPrice) || numPrice === 0) {
+    return { display: "₹0", period: "Free Add-on", subprice: "" };
+  }
+  if (billingPeriod === "lifetime") {
+    return {
+      display: "₹" + numPrice.toLocaleString("en-IN", { maximumFractionDigits: 0 }),
+      period: "One-Time",
+      subprice: "(Pay once, keep forever)",
+    };
+  }
+  if (billingPeriod === "yearly") {
+    return {
+      display: "₹" + numPrice.toLocaleString("en-IN", { maximumFractionDigits: 0 }),
+      period: "per year",
+      subprice: "(Extendable yearly anytime)",
+    };
+  }
+  if (billingPeriod === "monthly") {
+    return {
+      display: "₹" + numPrice.toLocaleString("en-IN", { maximumFractionDigits: 0 }),
+      period: "per month",
+      subprice: "",
+    };
+  }
+  return {
+    display: "₹" + numPrice.toLocaleString("en-IN", { maximumFractionDigits: 0 }),
+    period: billingPeriod ? `per ${billingPeriod}` : "",
+    subprice: "",
+  };
 }
 
-const ADDON_UI_META = {
-  website: {
-    badge: "✓ Included in Lifetime Plan",
-  },
+
+const ADDON_UI_CONFIG = {
   shop: {
-    badge: "Centralized Khata & Multi-Branch",
+    displayName: "Extra Shop",
+    tagline: "Add one more shop or branch to your account",
+    badgeText: "Multi-Branch",
+    badgeStyle: "bg-teal-700 text-white",
+    cardBorder: "bg-white border-2 border-teal-600/80 shadow-lg shadow-teal-900/10",
+    ctaText: "Add Extra Shop",
+    ctaStyle: "bg-[#036272] hover:bg-[#024f5c] text-white shadow-md shadow-teal-900/20",
+    footnote: "Centralized Khata & Ledger across all branches",
+    subprice: "(Extendable yearly anytime)",
+    featureLabels: [
+      "1 Additional Shop / Branch access",
+      "Independent inventory & counter billing",
+      "Centralized Khata & ledger reporting",
+      "Switch between shops in 1-click",
+      "Full 1-year validity per purchase",
+      "Multi-staff & device support",
+    ],
   },
-  containers: {
-    badge: "Zero Asset & Crate Leakage",
+  website: {
+    displayName: "Shop Website",
+    tagline: "Your 1-click digital public storefront",
+    badgeText: "One-Time • Lifetime",
+    badgeStyle: "bg-gradient-to-r from-emerald-600 to-teal-600 text-white",
+    cardBorder: "bg-[#f8fdfb] border-2 border-emerald-500/90 shadow-lg shadow-emerald-700/10",
+    ctaText: "Activate Shop Website",
+    ctaStyle: "bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white shadow-md shadow-emerald-700/20",
+    footnote: "✓ Included free in Lifetime Plan",
+    subprice: "(Pay once, keep forever)",
+    featureLabels: [
+      "Instant public website & product catalog",
+      "1-Click direct WhatsApp customer orders",
+      "Real-time stock decrement from counter",
+      "Custom shop banner & brand theme colors",
+      "Customer call button & inquiry form",
+      "Zero monthly or annual hosting fees",
+    ],
   },
 };
 
-function formatAddonPrice(price, billingPeriod) {
-  const num = parseFloat(price);
-  if (isNaN(num) || num === 0 || billingPeriod === "free") {
-    return "Free Add-on";
-  }
-  const formatted = "₹" + num.toLocaleString("en-IN", { maximumFractionDigits: 0 });
-  if (billingPeriod === "lifetime") {
-    return `${formatted} Lifetime`;
-  }
-  if (billingPeriod === "yearly") {
-    return `+${formatted} / year`;
-  }
-  if (billingPeriod === "monthly") {
-    return `+${formatted} / month`;
-  }
-  return formatted;
-}
 
 const STATIC_FALLBACK_PLANS = [
   { id: "fallback-free", name: "Free", slug: "free", price: "0.00", billing_period: "free" },
@@ -191,6 +214,11 @@ export default function PricingSection() {
     const controller = new AbortController();
     const apiBase = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost/Dukanhisab/public/api";
 
+    // 3.5-second timeout safeguard so user is never stuck waiting if local API is slow/offline
+    const timeoutId = setTimeout(() => {
+      controller.abort();
+    }, 3500);
+
     async function loadData() {
       // 1. Fetch Plans
       try {
@@ -201,10 +229,8 @@ export default function PricingSection() {
         setPlans(data.plans || []);
         setIsFallback(false);
       } catch (err) {
-        if (err.name !== "AbortError") {
-          setPlans(STATIC_FALLBACK_PLANS);
-          setIsFallback(true);
-        }
+        setPlans(STATIC_FALLBACK_PLANS);
+        setIsFallback(true);
       } finally {
         setLoading(false);
       }
@@ -221,37 +247,57 @@ export default function PricingSection() {
           setAddons(STATIC_FALLBACK_ADDONS);
         }
       } catch (err) {
-        if (err.name !== "AbortError") {
-          setAddons(STATIC_FALLBACK_ADDONS);
-        }
+        setAddons(STATIC_FALLBACK_ADDONS);
       } finally {
         setAddonsLoading(false);
       }
     }
 
     loadData();
-    return () => controller.abort();
+    return () => {
+      clearTimeout(timeoutId);
+      controller.abort();
+    };
   }, []);
 
   return (
-    <section id="pricing" className="pt-8 sm:pt-10 pb-20 lg:pb-24 bg-slate-50 border-b border-slate-200 relative">
+    <section id="pricing" className="pt-8 sm:pt-10 pb-10 lg:pb-14 bg-slate-50 border-b border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Top Status & Live Indicator */}
         <div className="flex justify-center mb-8">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-teal-50 border border-teal-200/80 rounded-full text-teal-800 text-xs font-semibold shadow-2xs">
-            <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
-            <span>All plans &amp; pricing updated live from admin panel</span>
-          </div>
+          {loading ? (
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 bg-white border border-teal-300 rounded-full text-slate-800 text-xs font-bold shadow-md shadow-teal-900/5 animate-pulse">
+              <span className="w-3.5 h-3.5 rounded-full border-2 border-teal-200 border-t-[#036272] animate-spin shrink-0" />
+              <span>Fetching live plans &amp; pricing from server...</span>
+            </div>
+          ) : (
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-teal-50 border border-teal-200/80 rounded-full text-teal-800 text-xs font-semibold shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
+              <span>All plans &amp; pricing updated live from admin panel</span>
+            </div>
+          )}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
-          {loading ? (
-            <>
-              <PlanCardSkeleton />
-              <PlanCardSkeleton />
-              <PlanCardSkeleton />
-            </>
-          ) : (
-            plans.map((plan) => {
+        {/* Pricing Plans Grid or Animated Loader */}
+        {loading ? (
+          <div className="flex flex-col items-center justify-center py-20 text-center max-w-md mx-auto">
+            <div className="relative w-14 h-14 mb-4">
+              <div className="w-14 h-14 rounded-full border-4 border-teal-100 border-t-[#036272] animate-spin" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#036272] animate-ping" />
+              </div>
+            </div>
+            <h3 className="text-base font-extrabold text-slate-900">
+              Loading Subscription Plans...
+            </h3>
+            <p className="text-xs text-slate-500 mt-1 font-medium">
+              Please wait while we fetch the latest subscription plans
+            </p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+            {plans.map((plan) => {
               const ui = PLAN_UI_CONFIG[plan.slug] || {
                 tagline: plan.description || "",
                 popular: false,
@@ -321,74 +367,145 @@ export default function PricingSection() {
                   </div>
                 </div>
               );
-            })
-          )}
-        </div>
+            })}
+          </div>
+        )}
 
-        {isFallback && (
+        {isFallback && !loading && (
           <p className="text-center text-xs text-slate-400 mt-4">Showing saved plan info. Live prices may vary.</p>
         )}
 
-        <div className="mt-14 max-w-5xl mx-auto bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-8 shadow-sm">
+        {/* Modular Add-ons Marketplace Section */}
+        <div className="mt-14 max-w-5xl mx-auto bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-10 shadow-sm">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-slate-100 gap-4">
             <div>
-              <span className="text-[11px] font-extrabold uppercase tracking-wider text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-200">Modular Add-ons</span>
-              <h3 className="text-xl font-black text-slate-900 mt-2">DukanHisab Add-on Marketplace</h3>
-              <p className="text-xs text-slate-500 mt-0.5">Need specialized capabilities? Add modular extensions without forcing expensive plan changes.</p>
+              <span className="text-[11px] font-extrabold uppercase tracking-wider text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-200">
+                Modular Add-ons
+              </span>
+              <h3 className="text-xl sm:text-2xl font-black text-slate-900 mt-2">
+                DukanHisab Add-on Marketplace
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
+                Need specialized capabilities? Add modular extensions without forcing expensive plan changes.
+              </p>
             </div>
-            <span className="text-xs font-mono bg-slate-100 text-slate-600 px-3 py-1.5 rounded-xl border border-slate-200 shrink-0">Managed in /shop/addons</span>
+            <span className="text-xs font-mono bg-slate-100 text-slate-600 px-3 py-1.5 rounded-xl border border-slate-200 shrink-0">
+              Managed in /shop/addons
+            </span>
           </div>
+
           {addonsLoading ? (
-            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-              {[1, 2].map((i) => (
-                <div key={i} className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 animate-pulse space-y-3">
-                  <div className="flex justify-between items-center">
-                    <div className="h-4 w-28 bg-slate-200 rounded" />
-                    <div className="h-4 w-20 bg-slate-200 rounded" />
-                  </div>
-                  <div className="h-3 w-full bg-slate-100 rounded" />
-                  <div className="h-3 w-3/4 bg-slate-100 rounded" />
-                </div>
-              ))}
+            <div className="flex flex-col items-center justify-center py-14 text-center">
+              <div className="w-10 h-10 rounded-full border-3 border-teal-100 border-t-[#036272] animate-spin mb-3" />
+              <span className="text-xs font-bold text-slate-700">Loading Add-on Extensions...</span>
             </div>
           ) : (
             <div
               className={
-                "mt-6 grid gap-4 " +
-                (addons.length === 2 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3")
+                "mt-8 grid gap-8 items-stretch " +
+                (addons.length === 1
+                  ? "max-w-md mx-auto grid-cols-1"
+                  : addons.length === 2
+                  ? "grid-cols-1 md:grid-cols-2"
+                  : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3")
               }
             >
               {addons.map((addon) => {
-                const meta = ADDON_UI_META[addon.slug] || ADDON_UI_META[addon.type] || {};
-                const badge = addon.badge || meta.badge;
-                const formattedPrice = formatAddonPrice(addon.price, addon.billing_period);
+                const ui =
+                  ADDON_UI_CONFIG[addon.slug] ||
+                  ADDON_UI_CONFIG[addon.type] || {
+                    displayName: addon.title,
+                    tagline: addon.description,
+                    badgeText: addon.billing_period === "lifetime" ? "Lifetime Add-on" : "Modular Add-on",
+                    badgeStyle: "bg-teal-700 text-white",
+                    cardBorder: "bg-white border-2 border-teal-600/70 shadow-lg shadow-teal-900/10",
+                    ctaText: `Activate ${addon.title}`,
+                    ctaStyle: "bg-[#036272] hover:bg-[#024f5c] text-white shadow-md shadow-teal-900/20",
+                    footnote: "Instant activation for your shop",
+                    subprice: addon.billing_period === "lifetime" ? "(Pay once, keep forever)" : "(Extendable anytime)",
+                    featureLabels: [
+                      addon.description || "Modular capability for your shop",
+                      "Instant activation in your account",
+                      "Full customer support & updates",
+                    ],
+                  };
+
+                const { display, period, subprice } = formatAddonPrice(addon.price, addon.billing_period);
+                const finalSubprice = ui.subprice || subprice;
 
                 return (
                   <div
                     key={addon.id || addon.slug}
-                    className="p-5 rounded-2xl bg-slate-50 hover:bg-slate-50/80 border border-slate-200/80 flex flex-col justify-between transition-all hover:shadow-xs group"
+                    className={
+                      "rounded-3xl p-7 sm:p-8 flex flex-col justify-between transition-all relative " +
+                      (ui.cardBorder || "bg-white border-2 border-slate-200 shadow-md")
+                    }
                   >
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="text-sm font-extrabold text-slate-900 group-hover:text-teal-900 transition-colors">
-                          {addon.title}
-                        </span>
-                        <span className="text-xs font-mono font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-lg border border-teal-200/70 shrink-0">
-                          {formattedPrice}
-                        </span>
-                      </div>
-                      <p className="text-xs text-slate-600 leading-relaxed">
-                        {addon.description}
-                      </p>
-                    </div>
-                    {badge && (
-                      <div className="pt-3 border-t border-slate-200/60 mt-3">
-                        <span className="text-[11px] text-teal-800 font-semibold inline-flex items-center gap-1.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
-                          {badge}
-                        </span>
+                    {ui.badgeText && (
+                      <div
+                        className={
+                          "absolute -top-3.5 left-1/2 -translate-x-1/2 text-[11px] font-black uppercase tracking-wider px-4 py-1 rounded-full shadow-md whitespace-nowrap " +
+                          ui.badgeStyle
+                        }
+                      >
+                        {ui.badgeText}
                       </div>
                     )}
+
+                    <div>
+                      <div className="pb-5 border-b border-slate-100">
+                        <h4 className="text-2xl font-black text-slate-900">
+                          {ui.displayName || addon.title}
+                        </h4>
+                        <p className="text-xs text-slate-500 mt-1 min-h-[28px]">
+                          {ui.tagline || addon.description}
+                        </p>
+                        <div className="mt-4 flex items-baseline gap-1.5 flex-wrap">
+                          <span className="text-4xl sm:text-5xl font-black text-slate-900">
+                            {display}
+                          </span>
+                          <span className="text-xs sm:text-sm text-slate-500 font-semibold">
+                            {period}
+                          </span>
+                        </div>
+                        {finalSubprice && (
+                          <p className="text-xs font-semibold text-teal-700 mt-1">
+                            {finalSubprice}
+                          </p>
+                        )}
+                      </div>
+
+                      <div className="py-6 space-y-3">
+                        {ui.featureLabels.map((feat) => (
+                          <div
+                            key={feat}
+                            className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 font-medium"
+                          >
+                            <CheckIcon className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                            <span>{feat}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="pt-4 border-t border-slate-100">
+                      <a
+                        href="https://play.google.com/store/apps/details?id=com.app.dukanhisab"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={
+                          "w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all active:scale-98 cursor-pointer " +
+                          ui.ctaStyle
+                        }
+                      >
+                        <span>{ui.ctaText}</span>
+                      </a>
+                      {ui.footnote && (
+                        <p className="text-center text-[11px] font-medium text-slate-400 mt-2.5">
+                          {ui.footnote}
+                        </p>
+                      )}
+                    </div>
                   </div>
                 );
               })}

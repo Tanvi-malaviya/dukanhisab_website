@@ -99,7 +99,7 @@ Calculated with DukanHisab (dukanhisab.com)`;
 
       <main className="flex-1">
         {/* ===================== HERO SECTION ===================== */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#e6f7f6] via-[#f2fbfa] to-white pt-4 pb-8 sm:pb-10 border-b border-slate-200/60">
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#e6f7f6] via-[#f2fbfa] to-white pt-20 sm:pt-24 lg:pt-28 pb-8 sm:pb-10 border-b border-slate-200/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Breadcrumb */}
@@ -194,7 +194,7 @@ Calculated with DukanHisab (dukanhisab.com)`;
         </section>
 
         {/* ===================== INTERACTIVE GST CALCULATOR ===================== */}
-        <section className="py-16 bg-white">
+        <section className="py-10 sm:py-12 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
               
@@ -473,8 +473,7 @@ Calculated with DukanHisab (dukanhisab.com)`;
                       onClick={handleCopyResult}
                       className="text-[11px] font-bold text-teal-700 hover:text-teal-900 hover:underline cursor-pointer flex items-center gap-1"
                     >
-                      <span>Share</span>
-                      <ArrowRightIcon className="w-3 h-3" />
+                      <span>{copied ? "Copied ✓" : "Copy Summary"}</span>
                     </button>
                   </div>
                 </div>
@@ -525,7 +524,7 @@ Calculated with DukanHisab (dukanhisab.com)`;
         </section>
 
         {/* ===================== EXAMPLE CALCULATION ===================== */}
-        <section className="py-16 bg-white">
+        <section className="py-10 sm:py-12 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               
@@ -701,7 +700,7 @@ Calculated with DukanHisab (dukanhisab.com)`;
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
               {[
                 { title: "GST Billing Software", desc: "Create GST-compliant invoices with automatic tax splits.", href: "/gst-billing", icon: "🧾" },
-                { title: "Mobile & Counter POS", desc: "Rapid 3-second billing with barcode & WhatsApp slips.", href: "/billing-software", icon: "📱" },
+                { title: "Mobile & Counter Billing", desc: "Rapid 3-second billing with barcode & WhatsApp slips.", href: "/billing-software", icon: "📱" },
                 { title: "Inventory Management", desc: "Real-time stock tracking with low-stock alerts.", href: "/inventory-management", icon: "📦" },
                 { title: "Khata & Udhar Ledger", desc: "Track customer credit with automated payment reminders.", href: "/khata-accounting", icon: "📒" },
               ].map((tool, idx) => (
@@ -725,7 +724,7 @@ Calculated with DukanHisab (dukanhisab.com)`;
         </section>
 
         {/* ===================== FAQS ===================== */}
-        <section className="py-16 bg-white">
+        <section className="py-10 sm:py-12 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-xl mx-auto mb-10">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">

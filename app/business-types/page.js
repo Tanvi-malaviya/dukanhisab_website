@@ -12,14 +12,15 @@ import {
   CheckIcon,
   StoreIcon,
   SmartphoneIcon,
-  MonitorIcon
+  MonitorIcon,
+  ChevronDownIcon
 } from "../components/Icons";
 import FunctionalityLottieAnimation from "../components/FunctionalityLottieAnimation";
 
 
 export default function BusinessTypesPage() {
-  const [openFaq, setOpenFaq] = useState(null);
-  const [activeTradeId, setActiveTradeId] = useState("kirana");
+  const [openFaq, setOpenFaq] = useState(0);
+  const [activeModuleId, setActiveModuleId] = useState("pos");
 
   const toggleFaq = (idx) => {
     setOpenFaq(openFaq === idx ? null : idx);
@@ -28,16 +29,24 @@ export default function BusinessTypesPage() {
 
   const faqs = [
     {
-      q: "Is DukanHisab suitable for my business type?",
-      a: "Yes! DukanHisab is custom engineered to adapt to kirana, mobile shops, hardware, garments, electronics, pharmacies, and wholesale businesses with tailored product attributes and billing formats.",
+      q: "Do I need separate software or settings for different business types?",
+      a: "No! DukanHisab is a universal, clean, and flexible retail software. Whether you run a Kirana, Garment shop, Mobile store, Hardware, Medical store, or Wholesale business, you can start billing immediately without complicated setups, industry modules, or staff training.",
     },
     {
-      q: "Does it work offline?",
-      a: "Yes, you can generate bills, add items to cart, and record customer transactions without internet. As soon as you connect online, all data securely backs up to the cloud.",
+      q: "Does it work offline when the shop internet stops working?",
+      a: "Yes! You can scan barcodes, generate bills, and record transactions without internet. The moment your device connects to the internet, all records sync automatically to the cloud and web panel.",
     },
     {
-      q: "Can I manage multiple shops?",
-      a: "Yes! With our Premium and Lifetime plans, you can manage up to 2 or 5 branches respectively from a single mobile login or web dashboard.",
+      q: "Can I print bills on standard Bluetooth thermal printers?",
+      a: "Yes, DukanHisab works with all standard 2-inch and 3-inch Bluetooth thermal printers, USB desktop printers, and regular A4 printers. You can also send instant digital receipts directly to customers via WhatsApp.",
+    },
+    {
+      q: "How does customer Khata & Udhar recovery work?",
+      a: "Every customer gets a dedicated digital Khata ledger. You can record credit sales, partial payments, and send 1-click WhatsApp reminders with your UPI QR code attached for 3x faster udhar recovery.",
+    },
+    {
+      q: "Can I manage multiple shops or counter staff logins?",
+      a: "Yes! With our Premium and Lifetime plans, you can manage multiple branches and assign cashier staff logins from a single mobile login or PC web dashboard.",
     },
     {
       q: "Is GST billing available for all businesses?",
@@ -45,162 +54,191 @@ export default function BusinessTypesPage() {
     },
   ];
 
-  const heroTrades = [
+  const coreModules = [
     {
-      id: "kirana",
-      label: "Kirana & FMCG",
-      emoji: "🛒",
-      img: "/images/business-types/kirana.png",
-      badge: "Scale & Khata Ready",
-      headline: "Loose Grams, Fast Barcode & Udhar Khata",
-      desc: "Connect digital weighing scales, sell loose dal/rice by weight, scan Fortune & Parle barcodes instantly, and track monthly khata book with automatic WhatsApp reminders.",
-      receipt: {
-        billNo: "INV-9021",
-        customer: "Ramesh Bhai (Regular)",
-        items: [
-          { name: "Fortune Kolam Rice (25kg Bag)", qty: "1 Bag", rate: "₹1,250" },
-          { name: "Loose Jeera (Scale: 250g)", qty: "0.25 kg", rate: "₹95" },
-          { name: "Tata Tea Gold (500g)", qty: "2 Pkts", rate: "₹380" },
-        ],
-        total: "₹1,725",
-        khataBalance: "Previous Khata: ₹850 Due",
-        tag: "Weighing Scale Auto-Synced ✓",
-      },
+      id: "pos",
+      tabLabel: "Counter POS",
+      label: "Counter POS Billing",
+      emoji: "⚡",
+      badge: "0.5s Fast Billing",
+      headline: "Point-and-Shoot Barcode Scanning & Instant Receipts",
+      desc: "Scan products with your mobile camera or barcode gun in under 0.5 seconds. Fast item search, split payments (Cash & UPI), instant discounts, and print 2-inch/3-inch Bluetooth thermal receipts with zero lag.",
       stats: [
-        { label: "Billing Speed", val: "< 3 Sec" },
-        { label: "Loose Items", val: "Scale Sync" },
-        { label: "Udhar Reminders", val: "Free SMS/WA" },
+        { label: "Scan Speed", val: "< 0.5s Camera / Gun" },
+        { label: "Invoice Format", val: "Thermal & WhatsApp" },
+        { label: "Offline Mode", val: "100% Without Net" },
       ],
+      terminalUrl: "dukanhisab.in/shop • Counter POS Billing",
+      subhead: "Fast Counter POS & Barcode Scanner",
+      statusPill: "#BILL-4091",
+      contextText: "Counter 1 (Walk-in Customer)",
+      col1Title: "Items Scanned",
+      col2Title: "Rate",
+      items: [
+        { name: "Fortune Sunlite Oil 1L", desc: "1 Pcs (Barcode #89012)", val: "₹175" },
+        { name: "Tata Salt 1kg Pack", desc: "2 Pkts (Barcode #89045)", val: "₹56" },
+        { name: "Amul Butter 100g", desc: "2 Pcs (Barcode #89091)", val: "₹116" },
+      ],
+      footerSub: "Cash Received: ₹500 (Change: ₹153)",
+      tag: "Thermal Printer Connected ✓",
+      footerLabel: "Total Amount",
+      footerTotal: "₹347",
+      bottomBadge: "WhatsApp Bill & Thermal Print Ready",
     },
     {
-      id: "mobile",
-      label: "Mobile & Tech",
-      emoji: "📱",
-      img: "/images/business-types/mobile.png",
-      badge: "IMEI & Warranty Tracking",
-      headline: "Serial Numbers, Warranty Slips & Repair Jobs",
-      desc: "Never lose track of phone serials. Scan IMEI at point of sale, generate manufacturer warranty slips with customer signatures, and manage mobile accessory margins easily.",
-      receipt: {
-        billNo: "MOB-4102",
-        customer: "Ankit Sharma",
-        items: [
-          { name: "Redmi Note 13 5G (8/256GB)", qty: "IMEI: 863920104829104", rate: "₹18,499" },
-          { name: "Tempered Glass + Poly Back Cover", qty: "1 Combo", rate: "₹399" },
-        ],
-        total: "₹18,898",
-        khataBalance: "1-Yr Official Warranty Attached",
-        tag: "Dual IMEI Verified ✓",
-      },
+      id: "khata",
+      tabLabel: "Customer Khata",
+      label: "Customer Khata & Udhar",
+      emoji: "📒",
+      badge: "Recover Udhar 3x Faster",
+      headline: "Replace Paper Khatabook with 1-Click WhatsApp Reminders",
+      desc: "Never lose track of customer credit again. See live customer balances, record part payments, set credit limits, and send polite automated WhatsApp payment reminders with your UPI QR code attached.",
       stats: [
-        { label: "IMEI Scanner", val: "Camera / Gun" },
-        { label: "Warranty Slips", val: "Auto PDF" },
-        { label: "Accessory Margins", val: "High Profit View" },
+        { label: "Recovery", val: "3x Faster via WhatsApp" },
+        { label: "Payment Links", val: "Instant UPI QR" },
+        { label: "History", val: "100% Lifetime Record" },
       ],
+      terminalUrl: "dukanhisab.in/shop • Customer Khata Ledger",
+      subhead: "Digital Khata & Automated UPI Collection",
+      statusPill: "Khata Active",
+      contextText: "Rahul Patel (+91 98765 43210)",
+      col1Title: "Transaction History",
+      col2Title: "Amount",
+      items: [
+        { name: "Grocery Purchase (Bill #3019)", desc: "10 Oct • Credit Added to Khata", val: "+₹1,450" },
+        { name: "Cash Payment Received", desc: "08 Oct • Counter Payment", val: "-₹1,000" },
+        { name: "Milk & Daily Items", desc: "05 Oct • Credit Added to Khata", val: "+₹620" },
+      ],
+      footerSub: "1-Tap 'Send WhatsApp Reminder' Button Active",
+      tag: "WhatsApp Reminder with UPI QR Sent ✓",
+      footerLabel: "Total Due Balance",
+      footerTotal: "₹1,070",
+      bottomBadge: "Automated WhatsApp Payment Reminder",
     },
     {
-      id: "garment",
-      label: "Garments & Apparel",
-      emoji: "👗",
-      img: "/images/business-types/garment.png",
-      badge: "Size & Color Matrix",
-      headline: "Sizes (S/M/L/XL), Barcode Tags & Festive Sales",
-      desc: "Manage multi-variant inventory effortlessly. Print thermal barcode stickers with size, color, brand, and MRP. Handle trial returns and festive discounts in one tap.",
-      receipt: {
-        billNo: "GAR-2831",
-        customer: "Pooja Ben",
-        items: [
-          { name: "Cotton Kurti (Teal - Size L)", qty: "1 Pcs (Tag #8901)", rate: "₹899" },
-          { name: "Rayon Leggings (Black - Free)", qty: "2 Pcs (Tag #8904)", rate: "₹598" },
-        ],
-        total: "₹1,497",
-        khataBalance: "Exchange within 7 Days Allowed",
-        tag: "Barcode Sticker Printed ✓",
-      },
-      stats: [
-        { label: "Variant Matrix", val: "Size & Color" },
-        { label: "Barcode Printing", val: "Thermal Tags" },
-        { label: "GST Rate", val: "5% / 12% Auto" },
-      ],
-    },
-    {
-      id: "hardware",
-      label: "Hardware & Paints",
-      emoji: "🔧",
-      img: "/images/business-types/hardware.png",
-      badge: "Units, Feet & Contractor Ledgers",
-      headline: "Multi-Unit Conversions, Contractor Rates & Challans",
-      desc: "Sell in Bags, Bundles, Kgs, Liters, or Running Feet. Store contractor-specific rates and dispatch goods with delivery challans before converting to final tax invoice.",
-      receipt: {
-        billNo: "HDW-7740",
-        customer: "Contractor Bharat Bhai",
-        items: [
-          { name: "UltraTech Super Cement", qty: "50 Bags @ ₹380", rate: "₹19,000" },
-          { name: "Asian Paints Apex Exterior (20L)", qty: "2 Buckets", rate: "₹7,200" },
-          { name: "Tata Tiscon 12mm TMT Bars", qty: "120 Kgs", rate: "₹7,800" },
-        ],
-        total: "₹34,000",
-        khataBalance: "Contractor Ledger: ₹45,000 Outstanding",
-        tag: "Contractor Rate (-5%) Applied ✓",
-      },
-      stats: [
-        { label: "Units Handled", val: "Bags / Ft / Kg" },
-        { label: "Contractor Khata", val: "Bulk Ledger" },
-        { label: "Delivery Challan", val: "Instant Convert" },
-      ],
-    },
-    {
-      id: "medical",
-      label: "Pharma & Chemist",
-      emoji: "💊",
-      img: "/images/business-types/medical.png",
-      badge: "Batch & Expiry Guardian",
-      headline: "Batch Numbers, Expiry Dates & HSN GST Billing",
-      desc: "Stay completely compliant with drug regulations. Automatically track near-expiry tablets, log strip vs tablet cuts, and manage doctor referrals and wholesale supplier returns.",
-      receipt: {
-        billNo: "RX-5120",
-        customer: "Dr. Kothari Ref - Walk-in",
-        items: [
-          { name: "Dolo 650mg (Batch: DL-902, Exp: 10/27)", qty: "2 Strips (30 Tabs)", rate: "₹68" },
-          { name: "Azithral 500mg (Batch: AZ-411, Exp: 04/28)", qty: "1 Strip (5 Tabs)", rate: "₹119" },
-        ],
-        total: "₹187",
-        khataBalance: "Schedule H Register Verified",
-        tag: "Batch & Expiry Safe ✓",
-      },
-      stats: [
-        { label: "Expiry Warning", val: "30-90 Days Alert" },
-        { label: "Strip Cuts", val: "Per-Tab Math" },
-        { label: "Drug Invoices", val: "HSN Compliant" },
-      ],
-    },
-    {
-      id: "wholesale",
-      label: "Wholesale & Mandi",
+      id: "stock",
+      tabLabel: "Stock & Inventory",
+      label: "Stock & Inventory",
       emoji: "📦",
-      img: "/images/business-types/wholesale.png",
-      badge: "Bulk Carton & Multi-Pricing",
-      headline: "Carton Breakups, B2B Invoicing & Supplier Credit",
-      desc: "Scale your high-volume distribution. Auto-calculate Carton-to-Unit breakdown, apply Tier-1/Tier-2/Tier-3 pricing tiers, and generate bulk e-invoices with transport vehicle info.",
-      receipt: {
-        billNo: "WHL-1092",
-        customer: "Siddhi Traders (Retailer)",
-        items: [
-          { name: "Fortune Sunflower Oil 1L (Carton: 16)", qty: "10 Cartons (160 Pkts)", rate: "₹18,400" },
-          { name: "Madhur Pure Sugar 50kg Jute Bag", qty: "8 Bags (400 Kgs)", rate: "₹16,800" },
-        ],
-        total: "₹35,200",
-        khataBalance: "Credit Due Date: 15 Oct 2026",
-        tag: "Tier-2 Distributor Margin Applied ✓",
-      },
+      badge: "Zero Stock-Outs",
+      headline: "Real-Time Stock Deduction & Automated Low-Stock Alerts",
+      desc: "Track live quantities across your entire shop in real time. Quantities deduct automatically when you bill. Get instant low-stock alerts before items run out, and track product profit margins easily.",
       stats: [
-        { label: "Box to Unit", val: "Auto Split" },
-        { label: "B2B Credit", val: "Due Date Tracker" },
-        { label: "E-Way Invoicing", val: "Transport Ready" },
+        { label: "Stock Sync", val: "Auto on Every Sale" },
+        { label: "Low Stock Alert", val: "Instant Warning" },
+        { label: "Profit Margins", val: "Live Per-Item" },
       ],
+      terminalUrl: "dukanhisab.in/shop • Inventory Stock Manager",
+      subhead: "Live Shelf Stock & Product Quantities",
+      statusPill: "Inventory Live",
+      contextText: "Main Warehouse & Counter Shelf",
+      col1Title: "Product & Stock Status",
+      col2Title: "Stock Level",
+      items: [
+        { name: "Fortune Oil 5L Can", desc: "In Stock: 24 Cans • Purchase: ₹710", val: "Healthy Stock" },
+        { name: "Tata Tea Gold 500g", desc: "⚠️ Reorder Warning: Only 2 Pkts Left", val: "LOW STOCK" },
+        { name: "Kolam Rice 25kg Bag", desc: "In Stock: 14 Bags • Purchase: ₹1,050", val: "Healthy Stock" },
+      ],
+      footerSub: "Stock Value: ₹1,85,400 across 340 Items",
+      tag: "Stock Auto-Decrements with Billing ✓",
+      footerLabel: "Total Catalog",
+      footerTotal: "340 SKUs",
+      bottomBadge: "Instant Low-Stock Alert Notifications",
+    },
+    {
+      id: "website",
+      tabLabel: "Shop Website",
+      label: "1-Click Shop Website",
+      emoji: "🌐",
+      badge: "Free Online Storefront",
+      headline: "Publish an Online Catalog & Receive Direct WhatsApp Orders",
+      desc: "Turn your physical shop into an online e-commerce website with 1 click. Zero hosting fees. Customers browse your products on their phone and place orders directly to your WhatsApp with quantities and addresses pre-formatted.",
+      stats: [
+        { label: "Setup Time", val: "Instant 1-Click" },
+        { label: "Customer Orders", val: "Direct to WhatsApp" },
+        { label: "Hosting Cost", val: "₹0 Forever" },
+      ],
+      terminalUrl: "dukanhisab.in/shree-ganesh-store • Online Catalog",
+      subhead: "Branded Digital Storefront for Customers",
+      statusPill: "Store Online",
+      contextText: "Share Link: dukanhisab.in/your-shop",
+      col1Title: "Featured Products Online",
+      col2Title: "Price",
+      items: [
+        { name: "Pure Cow Ghee 1L Jar", desc: "In Stock • 1-Click WhatsApp Order", val: "₹650" },
+        { name: "Organic Jaggery Powder 1kg", desc: "In Stock • 1-Click WhatsApp Order", val: "₹95" },
+        { name: "Premium Almonds 500g Pouch", desc: "In Stock • 1-Click WhatsApp Order", val: "₹450" },
+      ],
+      footerSub: "Customers Order Directly to Your WhatsApp 24/7",
+      tag: "Zero Commission & Free Web Hosting ✓",
+      footerLabel: "Catalog Status",
+      footerTotal: "Active",
+      bottomBadge: "Instant WhatsApp Order Notifications",
+    },
+    {
+      id: "webpanel",
+      tabLabel: "Web Panel",
+      label: "Web Command Panel",
+      emoji: "💻",
+      badge: "Big Screen PC & Laptop",
+      headline: "Full-Screen Web Dashboard & Bulk Excel Product Uploads",
+      desc: "Manage your shop from any PC or laptop browser at dukanhisab.in/shop. Bulk upload thousands of items with Excel in seconds, monitor multiple cashier staff logins, and access multi-branch controls effortlessly.",
+      stats: [
+        { label: "Browser Access", val: "Chrome, Safari, Edge" },
+        { label: "Bulk Upload", val: "Excel Sheets in 1s" },
+        { label: "Multi-Store", val: "Up to 5 Branches" },
+      ],
+      terminalUrl: "dukanhisab.in/shop • Web Admin Dashboard",
+      subhead: "Desktop Command Center for PC & Laptop",
+      statusPill: "Cloud Active",
+      contextText: "Branch: Surat Main Branch (#01)",
+      col1Title: "Web Dashboard Operations",
+      col2Title: "Status",
+      items: [
+        { name: "Today's Gross Sales (All Counters)", desc: "148 Invoices Generated Across 2 Tills", val: "₹48,950" },
+        { name: "Active Cashier Staff Logins", desc: "Counter 1, Counter 2 & Store Admin", val: "3 Active" },
+        { name: "Excel Product Catalog Import", desc: "5,000 SKUs Processed and Synced", val: "Completed" },
+      ],
+      footerSub: "Zero Software Installation Needed on PC",
+      tag: "Live Cloud Synced Across All Devices ✓",
+      footerLabel: "Counters",
+      footerTotal: "Live 2/2",
+      bottomBadge: "Accessible from Any Computer Browser",
+    },
+    {
+      id: "cashbook",
+      tabLabel: "Cashbook & Reports",
+      label: "Cashbook & Reports",
+      emoji: "📈",
+      badge: "Zero Error Cash Tally",
+      headline: "Daily Cash Galla Balancing & Clear Net Profit Insights",
+      desc: "Close your shop at night with complete peace of mind. DukanHisab automatically calculates opening cash, cash sales, UPI collections, supplier payouts, and exact cash in your drawer with zero math mistakes.",
+      stats: [
+        { label: "Closing Tally", val: "Zero Error Math" },
+        { label: "Profit Tracking", val: "Live Net Margins" },
+        { label: "Reports", val: "PDF & Excel Export" },
+      ],
+      terminalUrl: "dukanhisab.in/shop • Daily Cash Galla Closing",
+      subhead: "Cash Drawer Reconciliation & Profit/Loss",
+      statusPill: "Reconciled",
+      contextText: "Today's Cash Drawer Evening Tally",
+      col1Title: "Cash Flow Inflow & Outflow",
+      col2Title: "Tally",
+      items: [
+        { name: "Morning Opening Cash in Drawer", desc: "Cash In Hand at Shop Opening", val: "₹5,000" },
+        { name: "Cash Counter Sales Today", desc: "+ Cash Collected from Invoices", val: "+₹18,450" },
+        { name: "Khata Udhar Recovered in Cash", desc: "+ Customer Udhar Received", val: "+₹4,200" },
+        { name: "Supplier Payouts & Shop Expenses", desc: "- Cash Paid out from Drawer", val: "-₹6,800" },
+      ],
+      footerSub: "Exact Cash in Galla Drawer (100% Balanced)",
+      tag: "Zero-Stress Evening Shutter Closing ✓",
+      footerLabel: "Cash in Drawer",
+      footerTotal: "₹20,850",
+      bottomBadge: "Daily Closing Cash Report Generated",
     },
   ];
 
-  const currentHeroTrade = heroTrades.find((t) => t.id === activeTradeId) || heroTrades[0];
+  const currentModule = coreModules.find((m) => m.id === activeModuleId) || coreModules[0];
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-slate-900 selection:bg-teal-100 selection:text-teal-900">
@@ -208,7 +246,7 @@ export default function BusinessTypesPage() {
 
       <main className="flex-1">
         {/* ===================== HERO SECTION ===================== */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#eaf7f2] via-[#f2fbf7] to-white pt-8 pb-14 lg:pt-12 lg:pb-16 border-b border-slate-200/90">
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#eaf7f2] via-[#f2fbf7] to-white pt-24 sm:pt-28 lg:pt-32 pb-14 lg:pb-16 border-b border-slate-200/90">
 
           {/* Subtle Ambient Glowing Mesh */}
           <div className="absolute top-0 right-10 w-[500px] h-[500px] bg-emerald-300/15 rounded-full blur-3xl pointer-events-none" />
@@ -220,71 +258,76 @@ export default function BusinessTypesPage() {
             <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 space-y-3">
               <div className="inline-flex items-center gap-2 bg-emerald-100/90 border border-emerald-300/80 text-emerald-900 px-3.5 py-1 rounded-full text-xs font-black tracking-wide uppercase shadow-2xs">
                 <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
-                <span>TAILORED FOR 30+ INDIAN RETAIL &amp; WHOLESALE TRADES</span>
+                <span>EVERY TOOL YOUR SHOP NEEDS IN ONE SYSTEM</span>
               </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.15]">
-                Software That Truly Speaks <br />
+                One Simple Platform for <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-700 to-emerald-800">
-                  Your Trade &amp; Counter.
+                  Every Retail &amp; Wholesale Counter.
                 </span>
               </h1>
 
               <p className="text-slate-600 text-xs sm:text-sm lg:text-base leading-relaxed font-medium max-w-2xl mx-auto">
-                No two businesses run the same. Whether you bill in loose grams, track mobile phones by IMEI, organize garments by size and color, or manage contractor credit in hardware — DukanHisab configures itself to your exact everyday workflow.
+                No complex training or complicated setups. From rapid barcode billing and digital customer Khata to real-time inventory, web management, and automated evening cash tally — run your entire store effortlessly.
               </p>
             </div>
 
-            {/* Interactive Industry Switcher Pill Tabs */}
-            <div className="flex items-center justify-center mb-8 overflow-x-auto pb-2 scrollbar-none">
-              <div className="inline-flex items-center gap-1.5 p-1.5 bg-white/95 rounded-2xl border border-slate-200 shadow-md backdrop-blur-sm">
-                {heroTrades.map((t) => {
-                  const isActive = t.id === activeTradeId;
+            {/* Modern Segmented Feature Switcher Tabs */}
+            <div className="max-w-6xl mx-auto mb-10 px-2 sm:px-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-2.5 p-1.5 sm:p-2 bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-md">
+                {coreModules.map((m) => {
+                  const isActive = m.id === activeModuleId;
                   return (
                     <button
-                      key={t.id}
+                      key={m.id}
                       type="button"
-                      onClick={() => setActiveTradeId(t.id)}
-                      className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap ${isActive
-                          ? "bg-gradient-to-r from-emerald-600 to-emerald-700 text-white shadow-md shadow-emerald-700/25 scale-[1.02]"
-                          : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/80"
-                        }`}
+                      onClick={() => setActiveModuleId(m.id)}
+                      className={`group relative flex items-center justify-center gap-2 py-2.5 sm:py-3 px-2 sm:px-3 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-extrabold transition-all duration-200 cursor-pointer text-center select-none active:scale-95 ${
+                        isActive
+                          ? "bg-[#036272] text-white shadow-md shadow-teal-950/20 scale-[1.02]"
+                          : "text-slate-600 hover:text-[#036272] hover:bg-slate-100/80"
+                      }`}
                     >
-                      <span className="text-base">{t.emoji}</span>
-                      <span>{t.label}</span>
+                      <span className="text-base sm:text-lg leading-none shrink-0 group-hover:scale-110 transition-transform">
+                        {m.emoji}
+                      </span>
+                      <span className="whitespace-nowrap tracking-tight">
+                        {m.tabLabel || m.label}
+                      </span>
                     </button>
                   );
                 })}
               </div>
             </div>
 
-            {/* Main Interactive Showcase Grid: Left Trade Capability, Right Live POS Terminal */}
+            {/* Main Interactive Showcase Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
 
-              {/* Left Column: Trade Details, Fast Features, CTAs & Trust Badges */}
+              {/* Left Column: Feature Details, Fast Highlights, CTAs & Badges */}
               <div className="lg:col-span-6 space-y-6 text-left">
 
-                {/* Active Trade Banner Pill */}
+                {/* Active Module Banner Pill */}
                 <div className="flex items-center gap-3">
-                  <span className="text-3xl">{currentHeroTrade.emoji}</span>
+                  <span className="text-3xl">{currentModule.emoji}</span>
                   <div>
                     <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-emerald-100 text-emerald-800 text-[11px] font-black uppercase tracking-wider">
-                      {currentHeroTrade.badge}
+                      {currentModule.badge}
                     </div>
                     <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
-                      {currentHeroTrade.headline}
+                      {currentModule.headline}
                     </h2>
                   </div>
                 </div>
 
-                {/* Trade Description */}
+                {/* Module Description */}
                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
-                  {currentHeroTrade.desc}
+                  {currentModule.desc}
                 </p>
 
-                {/* 3 Trade Highlights / Capability Metrics */}
+                {/* 3 Module Highlights / Metrics */}
                 <div className="grid grid-cols-3 gap-3 pt-1">
-                  {currentHeroTrade.stats.map((s, idx) => (
+                  {currentModule.stats.map((s, idx) => (
                     <div key={idx} className="bg-white p-3.5 rounded-2xl border border-slate-200/90 shadow-2xs">
                       <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-tight">
                         {s.label}
@@ -350,13 +393,13 @@ export default function BusinessTypesPage() {
 
               </div>
 
-              {/* Right Column: High-Polished Interactive POS Terminal Mockup */}
+              {/* Right Column: High-Polished Interactive Terminal / Feature Mockup */}
               <div className="lg:col-span-6 relative">
 
                 {/* Floating Top Badge */}
                 <div className="absolute -top-3.5 -right-2 z-20 bg-slate-900 text-white text-xs font-black px-3.5 py-1.5 rounded-full shadow-lg border border-slate-700 flex items-center gap-1.5 hidden sm:flex">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                  <span>Auto-Formatted for {currentHeroTrade.label}</span>
+                  <span>{currentModule.label}</span>
                 </div>
 
                 {/* Terminal Mockup Window */}
@@ -369,7 +412,7 @@ export default function BusinessTypesPage() {
                       <span className="w-3 h-3 rounded-full bg-amber-500"></span>
                       <span className="w-3 h-3 rounded-full bg-emerald-500"></span>
                       <span className="ml-2 text-xs font-mono text-slate-300 font-bold truncate max-w-[220px] sm:max-w-none">
-                        dukanhisab.in/shop • {currentHeroTrade.label} POS
+                        {currentModule.terminalUrl}
                       </span>
                     </div>
 
@@ -378,91 +421,79 @@ export default function BusinessTypesPage() {
                     </span>
                   </div>
 
-                  {/* Business Category Banner & Header */}
+                  {/* Module Banner & Header */}
                   <div className="relative px-5 py-3.5 bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-100 flex items-center justify-between border-b border-slate-200">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-emerald-200/60 flex items-center justify-center p-1.5 shrink-0 overflow-hidden">
-                        {currentHeroTrade?.img && currentHeroTrade.img.trim() !== "" ? (
-                          <Image
-                            src={currentHeroTrade.img}
-                            alt={currentHeroTrade.label || "Counter"}
-                            width={44}
-                            height={44}
-                            className="w-full h-full object-contain"
-                          />
-                        ) : (
-                          <StoreIcon className="w-6 h-6 text-emerald-700" />
-                        )}
+                      <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-emerald-200/60 flex items-center justify-center p-1.5 shrink-0 overflow-hidden text-2xl">
+                        {currentModule.emoji}
                       </div>
                       <div>
                         <div className="flex items-center gap-1.5">
-                          <span className="text-base">{currentHeroTrade.emoji}</span>
                           <span className="text-xs sm:text-sm font-black text-slate-900">
-                            {currentHeroTrade.label} Counter
+                            {currentModule.label}
                           </span>
                         </div>
                         <span className="text-[11px] font-bold text-emerald-800">
-                          {currentHeroTrade.badge}
+                          {currentModule.subhead}
                         </span>
                       </div>
                     </div>
 
                     <div className="text-right">
-                      <span className="text-[10px] text-slate-500 uppercase font-bold block">Bill Reference</span>
+                      <span className="text-[10px] text-slate-500 uppercase font-bold block">Status</span>
                       <span className="text-xs font-mono font-black text-emerald-800 bg-white px-2.5 py-0.5 rounded-lg border border-emerald-200 shadow-2xs inline-block">
-                        #{currentHeroTrade.receipt.billNo}
+                        {currentModule.statusPill}
                       </span>
                     </div>
                   </div>
 
-                  {/* Live POS Receipt Card */}
+                  {/* Live Module Display Card */}
                   <div className="p-4 sm:p-6 bg-slate-50/70 space-y-4">
 
-                    {/* Bill Header Info */}
+                    {/* Header Info */}
                     <div className="flex items-center justify-between text-xs pb-3 border-b border-slate-200">
                       <div>
-                        <span className="text-slate-400 font-medium">Customer: </span>
-                        <span className="font-bold text-slate-800">{currentHeroTrade.receipt.customer}</span>
+                        <span className="text-slate-500 font-medium">{currentModule.contextText}</span>
                       </div>
                       <div className="flex items-center gap-1.5 text-emerald-700 font-bold">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                        <span>POS Active</span>
+                        <span>Active System</span>
                       </div>
                     </div>
 
                     {/* Line Items Table */}
                     <div className="space-y-2">
                       <div className="text-[11px] font-black uppercase tracking-wider text-slate-400 flex items-center justify-between">
-                        <span>Items Billed</span>
-                        <span>Amount</span>
+                        <span>{currentModule.col1Title}</span>
+                        <span>{currentModule.col2Title}</span>
                       </div>
 
-                      {currentHeroTrade.receipt.items.map((item, i) => (
+                      {currentModule.items.map((item, i) => (
                         <div key={i} className="flex items-start justify-between text-xs bg-white p-2.5 rounded-xl border border-slate-200/80 shadow-2xs">
                           <div>
                             <div className="font-bold text-slate-800">{item.name}</div>
-                            <div className="text-[11px] text-slate-500 font-mono mt-0.5">{item.qty}</div>
+                            <div className="text-[11px] text-slate-500 font-mono mt-0.5">{item.desc}</div>
                           </div>
-                          <span className="font-black text-slate-900 shrink-0 ml-3">{item.rate}</span>
+                          <span className="font-black text-slate-900 shrink-0 ml-3">{item.val}</span>
                         </div>
                       ))}
                     </div>
 
-                    {/* Total & Khata Status Row */}
+                    {/* Total & Summary Row */}
                     <div className="pt-3 border-t border-slate-200 flex items-center justify-between bg-emerald-50/80 -mx-4 -mb-4 sm:-mx-6 sm:-mb-6 p-4 border-t-2 border-emerald-500">
                       <div>
                         <div className="text-[11px] font-semibold text-slate-600">
-                          {currentHeroTrade.receipt.khataBalance}
+                          {currentModule.footerSub}
                         </div>
                         <div className="text-[11px] font-black text-emerald-800 mt-0.5 flex items-center gap-1">
-                          <span>{currentHeroTrade.receipt.tag}</span>
+                          <span>{currentModule.tag}</span>
                         </div>
                       </div>
 
                       <div className="text-right">
-                        <span className="text-[10px] text-slate-500 uppercase font-bold block">Total Amount</span>
+                        <span className="text-[10px] text-slate-500 uppercase font-bold block">{currentModule.footerLabel}</span>
                         <span className="text-xl sm:text-2xl font-black text-emerald-700">
-                          {currentHeroTrade.receipt.total}
+                          {currentModule.footerTotal}
                         </span>
                       </div>
                     </div>
@@ -474,7 +505,7 @@ export default function BusinessTypesPage() {
                 {/* Floating Bottom Badge */}
                 <div className="absolute -bottom-3 -left-3 z-20 bg-white border border-emerald-200/90 text-slate-800 text-xs font-bold px-3 py-1.5 rounded-xl shadow-lg flex items-center gap-1.5 hidden sm:flex">
                   <span className="text-emerald-600">✓</span>
-                  <span>WhatsApp Bill &amp; Thermal Print Ready</span>
+                  <span>{currentModule.bottomBadge}</span>
                 </div>
 
               </div>
@@ -511,7 +542,7 @@ export default function BusinessTypesPage() {
         </section>
 
         {/* ===================== JOIN THOUSANDS OF SHOPKEEPERS ACROSS INDIA ===================== */}
-        <section id="how-it-works" className="py-16 bg-[#f8faf9] border-t border-slate-200">
+        <section id="how-it-works" className="py-10 sm:py-12 bg-[#f8faf9] border-t border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
 
@@ -587,52 +618,83 @@ export default function BusinessTypesPage() {
         </section>
 
         {/* ===================== FREQUENTLY ASKED QUESTIONS ===================== */}
-        <section className="py-16 bg-white">
+        <section className="py-10 sm:py-14 bg-slate-50/70 border-t border-slate-200/80">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
+
+            {/* FAQ Section Header */}
+            <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 space-y-3">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-100/80 border border-teal-200/80 text-teal-800 text-xs font-black uppercase tracking-wider shadow-2xs">
+                <span>HELP &amp; COMMON QUESTIONS</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight leading-tight">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-slate-600 text-xs sm:text-sm lg:text-base font-medium leading-relaxed">
+                Clear, straightforward answers about how DukanHisab adapts to your daily counter operations.
+              </p>
+            </div>
+
+            {/* Single-Column Premium Accordion List */}
+            <div className="space-y-3 max-w-3xl mx-auto">
+              {faqs.map((faq, idx) => {
+                const isOpen = openFaq === idx;
+                return (
+                  <div
+                    key={idx}
+                    className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
+                      isOpen
+                        ? "bg-white border-teal-500/60 shadow-md shadow-teal-900/5 ring-2 ring-teal-500/10"
+                        : "bg-white border-slate-200/90 hover:border-slate-300 hover:shadow-2xs"
+                    }`}
+                  >
+                    <button
+                      type="button"
+                      onClick={() => toggleFaq(idx)}
+                      className="w-full flex items-center justify-between text-left p-4 sm:p-5 gap-4 cursor-pointer select-none transition-colors"
+                    >
+                      <span className={`text-sm sm:text-base font-extrabold leading-snug transition-colors ${
+                        isOpen ? "text-[#036272]" : "text-slate-900"
+                      }`}>
+                        {faq.q}
+                      </span>
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${
+                        isOpen
+                          ? "bg-[#036272] text-white rotate-180 shadow-xs"
+                          : "bg-slate-100 text-slate-500 hover:bg-slate-200"
+                      }`}>
+                        <ChevronDownIcon className="w-4 h-4" />
+                      </div>
+                    </button>
+
+                    {isOpen && (
+                      <div className="px-4 pb-4 sm:px-5 sm:pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 animate-in fade-in duration-200">
+                        <p className="pt-3">{faq.a}</p>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Still Have Questions? Banner */}
+            <div className="mt-10 max-w-3xl mx-auto bg-gradient-to-r from-teal-50 via-emerald-50 to-teal-50 border border-teal-200/80 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
               <div>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-                  Frequently Asked Questions
-                </h2>
-                <p className="mt-1 text-slate-600 text-xs sm:text-sm">
-                  Get answers to common questions about using DukanHisab for different businesses.
+                <h4 className="text-sm sm:text-base font-extrabold text-slate-900">
+                  Still have questions about your shop setup?
+                </h4>
+                <p className="text-xs text-slate-600 mt-0.5">
+                  Our team is available 7 days a week to help you get started.
                 </p>
               </div>
-
               <Link
-                href="/support#faq"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 border border-slate-200 px-3.5 py-2 rounded-xl hover:bg-slate-50 transition-colors"
+                href="/support"
+                className="inline-flex items-center gap-2 bg-[#036272] hover:bg-[#02505d] text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-sm transition-all shrink-0 active:scale-95 cursor-pointer"
               >
-                <span>View All FAQs</span>
+                <span>Chat with Support</span>
                 <ArrowRightIcon className="w-3.5 h-3.5" />
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {faqs.map((faq, idx) => (
-                <div
-                  key={idx}
-                  className="bg-slate-50 border border-slate-200/80 rounded-2xl p-5 hover:border-teal-300 transition-colors"
-                >
-                  <button
-                    type="button"
-                    onClick={() => toggleFaq(idx)}
-                    className="w-full flex items-center justify-between text-left font-bold text-slate-900 text-sm gap-2"
-                  >
-                    <span>{faq.q}</span>
-                    <span className="text-teal-700 text-base font-black shrink-0">
-                      {openFaq === idx ? "−" : "+"}
-                    </span>
-                  </button>
-
-                  {openFaq === idx && (
-                    <p className="text-xs text-slate-600 mt-3 pt-3 border-t border-slate-200 leading-relaxed animate-in fade-in">
-                      {faq.a}
-                    </p>
-                  )}
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 

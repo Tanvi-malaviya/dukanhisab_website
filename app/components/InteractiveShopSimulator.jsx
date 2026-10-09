@@ -88,7 +88,7 @@ export default function InteractiveShopSimulator() {
   };
 
   return (
-    <section id="interactive-demo" className="py-20 lg:py-28 bg-slate-900 text-white relative overflow-hidden">
+    <section id="interactive-demo" className="py-10 lg:py-14 bg-slate-900 text-white relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-teal-600/20 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-600/20 rounded-full blur-3xl pointer-events-none"></div>

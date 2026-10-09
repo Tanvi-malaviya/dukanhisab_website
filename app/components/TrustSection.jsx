@@ -105,7 +105,7 @@ export default function TrustSection() {
   const activeStory = realityStories[activeStoryIndex];
 
   return (
-    <section className="py-24 lg:py-32 bg-slate-900 text-white relative overflow-hidden">
+    <section className="py-12 lg:py-10 sm:py-12 bg-slate-900 text-white relative overflow-hidden">
       {/* Background Ambient Cosmic Glows */}
       <div className="absolute top-10 left-1/4 w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />

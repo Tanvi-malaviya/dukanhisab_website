@@ -356,7 +356,7 @@ export default function FAQPage() {
 
       <main className="flex-1">
         {/* ===================== HERO SECTION ===================== */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#e6f7f6] via-[#f1faf9] to-[#f8faf9] pt-10 pb-16 lg:pt-14 lg:pb-20 border-b border-teal-100/70">
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#e6f7f6] via-[#f1faf9] to-[#f8faf9] pt-24 sm:pt-28 lg:pt-32 pb-16 lg:pb-20 border-b border-teal-100/70">
           
           {/* Ambient Lighting Gradients */}
           <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[720px] h-[360px] bg-gradient-to-r from-teal-400/20 via-emerald-300/20 to-teal-500/20 blur-3xl pointer-events-none rounded-full" />
@@ -507,7 +507,7 @@ export default function FAQPage() {
         </section>
 
         {/* ===================== MAIN FAQ ACCORDION & SIDEBAR HUB ===================== */}
-        <section className="py-12 lg:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-12 lg:py-10 sm:py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             
             {/* ===================== LEFT COLUMN (SPAN 4): STICKY HELP HUB ===================== */}
@@ -900,7 +900,7 @@ export default function FAQPage() {
         </section>
 
         {/* ===================== BOTTOM INTERACTIVE HELP CONTACT STRIP ===================== */}
-        <section className="py-16 bg-white border-t border-slate-200/80">
+        <section className="py-10 sm:py-12 bg-white border-t border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-teal-900 via-[#024032] to-[#012e24] rounded-3xl p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
               

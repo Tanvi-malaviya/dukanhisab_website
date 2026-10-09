@@ -1,260 +1,229 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
+import React from "react";
+import Image from "next/image";
 import { 
   GooglePlayIcon, 
+  MonitorIcon,
   ArrowRightIcon, 
   CheckIcon, 
   StarIcon, 
-  SparklesIcon,
   ShieldCheckIcon,
   ZapIcon,
-  RupeeIcon,
-  CloudSyncIcon
+  CloudSyncIcon,
+  SparklesIcon
 } from "./Icons";
 
 export default function ResourcesCtaSection() {
-  const [activeTab, setActiveTab] = useState("billing");
-
-  const tabData = {
-    billing: {
-      badge: "⚡ Fast 5-Sec Counter Speed",
-      headline: "Create Professional GST Bills in Seconds",
-      metric1: { label: "Average Bill Time", value: "3.8 Sec", sub: "Barcode Ready" },
-      metric2: { label: "Tax Accuracy", value: "100%", sub: "Automated GST & Cess" },
-      highlight: "Print 2-inch, 3-inch thermal or A4 bills & share directly via WhatsApp with zero calculation mistakes.",
-      tag: "Billing & Invoicing"
-    },
-    khata: {
-      badge: "👥 3x Faster Udhar Recovery",
-      headline: "Zero-Loss Customer & Supplier Credit",
-      metric1: { label: "Recovered Faster", value: "3x Rate", sub: "WhatsApp Reminders" },
-      metric2: { label: "Ledger Disputes", value: "0 Dues", sub: "Digital Audit Trail" },
-      highlight: "Send automated gentle payment links with UPI QR code. Customers pay faster without any awkward calls.",
-      tag: "Khata Accounting"
-    },
-    inventory: {
-      badge: "📦 Never Run Out of High-Demand Stock",
-      headline: "Real-Time Stock & Expiry Control",
-      metric1: { label: "Dead Stock Reduced", value: "35%", sub: "In First 60 Days" },
-      metric2: { label: "Stock Visibility", value: "Live", sub: "Batch & Item Tracking" },
-      highlight: "Get instant low-stock alerts before items run out and track wholesale vs retail profit margins live.",
-      tag: "Smart Inventory"
-    }
-  };
-
-  const current = tabData[activeTab];
-
   return (
-    <section className="py-16 sm:py-24 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-10 sm:py-14 bg-white relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Main Growth Launchpad Card */}
-        <div className="relative rounded-3xl sm:rounded-[40px] bg-gradient-to-br from-[#041c19] via-[#062c26] to-[#021714] text-white p-7 sm:p-12 lg:p-16 border border-teal-500/30 shadow-2xl overflow-hidden">
+        {/* Main Hero Card Container (Compact & Refined) */}
+        <div className="relative rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#012a32] via-[#036272] to-[#012229] text-white p-6 sm:p-8 lg:p-10 border border-teal-500/30 shadow-xl overflow-hidden">
           
           {/* Subtle Ambient Radial Lighting */}
-          <div className="absolute top-0 right-1/4 w-[500px] h-[350px] bg-teal-500/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-20 -left-20 w-[450px] h-[350px] bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(#14b8a6_0.8px,transparent_0.8px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
+          <div className="absolute top-0 right-0 w-[400px] h-[300px] bg-teal-400/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-[350px] h-[250px] bg-emerald-400/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(#2dd4bf_0.75px,transparent_0.75px)] [background-size:20px_20px] opacity-10 pointer-events-none" />
 
-          {/* Top Pill Row */}
-          <div className="relative z-10 flex flex-wrap items-center justify-between gap-4 mb-10 pb-6 border-b border-teal-800/40">
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-teal-950/80 border border-teal-500/30 text-teal-300 text-xs font-bold tracking-wide">
+          {/* Top Pill / Status Ribbon */}
+          <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 mb-6 sm:mb-7 pb-4 border-b border-teal-400/20">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-950/70 border border-teal-400/30 text-teal-200 text-[11px] font-bold tracking-wide">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
               </span>
-              <span>GROWTH TOOLKIT • DUKANHISAB BUSINESS SUITE</span>
+              <span>100% FREE SETUP • DUKANHISAB BUSINESS SUITE</span>
             </div>
 
-            {/* Micro rating chip */}
-            <div className="flex items-center gap-2 text-xs font-semibold text-slate-300">
-              <div className="flex items-center text-amber-400">
-                <StarIcon className="w-4 h-4 fill-amber-400" />
-                <StarIcon className="w-4 h-4 fill-amber-400" />
-                <StarIcon className="w-4 h-4 fill-amber-400" />
-                <StarIcon className="w-4 h-4 fill-amber-400" />
-                <StarIcon className="w-4 h-4 fill-amber-400" />
+            {/* Rating Chip */}
+            <div className="flex items-center gap-2 text-xs font-semibold text-teal-100">
+              <div className="flex items-center text-amber-300">
+                <StarIcon className="w-3.5 h-3.5 fill-amber-300" />
+                <StarIcon className="w-3.5 h-3.5 fill-amber-300" />
+                <StarIcon className="w-3.5 h-3.5 fill-amber-300" />
+                <StarIcon className="w-3.5 h-3.5 fill-amber-300" />
+                <StarIcon className="w-3.5 h-3.5 fill-amber-300" />
               </div>
-              <span className="font-bold text-white">4.8/5</span>
-              <span className="text-teal-400/80">• 50,000+ Indian Dukandars</span>
+              <span className="font-bold text-white">4.8/5.0</span>
+              <span className="text-teal-300/80 text-[11px]">• 50,000+ Indian Shopkeepers</span>
             </div>
           </div>
 
-          {/* Two-Column Grid: Left Pitch & Right Interactive Terminal */}
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          {/* Two-Column Grid: Left Pitch & Right Phone Mockup */}
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             
-            {/* Left Column (Span 6) */}
-            <div className="lg:col-span-6 space-y-6">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.12]">
+            {/* Left Column (Span 7) */}
+            <div className="lg:col-span-7 space-y-4">
+              
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-[1.18]">
                 Put Knowledge Into Action. <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-300 to-amber-300">
-                  Upgrade Your Shop Today.
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-200 via-emerald-200 to-amber-200">
+                  Upgrade Your Shop in 60 Seconds.
                 </span>
               </h2>
 
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal max-w-xl">
-                You’ve explored the guides and business blueprints — now experience how effortless daily billing, automated Udhar recovery, and live inventory control can be.
+              <p className="text-xs sm:text-sm text-teal-100/90 leading-relaxed font-normal max-w-lg">
+                You’ve seen the tools and guides — now experience how effortless daily counter billing, automated WhatsApp Udhar collection, and stock tracking can be for your retail store.
               </p>
 
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+              {/* Dual Action Buttons: Android App & Web Panel */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+                
+                {/* Google Play Download Button */}
                 <a
                   href="https://play.google.com/store/apps/details?id=com.app.dukanhisab&hl=en_IN"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-teal-500 via-[#036272] to-emerald-600 hover:from-teal-400 hover:to-emerald-500 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-teal-950/50 hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer overflow-hidden border border-teal-300/30"
+                  className="group relative inline-flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-900 font-extrabold text-xs sm:text-sm shadow-lg shadow-teal-950/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer border border-white"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-                  <GooglePlayIcon className="w-5 h-5 text-white shrink-0" />
-                  <span>Download Free on Android</span>
-                  <ArrowRightIcon className="w-4 h-4 text-white/90 group-hover:translate-x-1 transition-transform" />
+                  <GooglePlayIcon className="w-4 h-4 text-teal-700 shrink-0" />
+                  <div className="text-left leading-tight">
+                    <span className="block text-[8px] uppercase font-bold text-slate-500 tracking-wider">Free Download</span>
+                    <span className="text-xs sm:text-sm font-black text-slate-900">Google Play Store</span>
+                  </div>
+                  <ArrowRightIcon className="w-3.5 h-3.5 text-slate-600 group-hover:translate-x-1 transition-transform ml-0.5" />
                 </a>
 
-                <Link
-                  href="/ecosystem"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-white/10 hover:bg-white/15 text-white font-bold text-sm border border-white/15 hover:border-white/25 backdrop-blur-sm transition-all"
+                {/* Web Panel Button */}
+                <a
+                  href="https://dukanhisab.in/shop"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-teal-950/70 hover:bg-teal-900/90 text-white font-bold text-xs sm:text-sm border border-teal-400/40 hover:border-teal-300 shadow-md transition-all active:scale-[0.98]"
                 >
-                  <span>Explore Web Ecosystem</span>
-                </Link>
+                  <MonitorIcon className="w-4 h-4 text-teal-300" />
+                  <span>Launch Web Panel</span>
+                </a>
+
               </div>
 
-              {/* Trust Badges Check Strip */}
-              <div className="pt-4 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-slate-300 font-medium">
-                <div className="flex items-center gap-1.5">
-                  <CheckIcon className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>100% Free Plan Forever</span>
+              {/* 4 Feature Value Points Grid */}
+              <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-teal-100 font-medium">
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 rounded-full bg-teal-400/20 flex items-center justify-center text-teal-300 shrink-0">
+                    <CheckIcon className="w-3 h-3 stroke-[3]" />
+                  </div>
+                  <span>100% Works Offline (No Wi-Fi needed)</span>
                 </div>
-                <div className="flex items-center gap-1.5">
-                  <CheckIcon className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Works Completely Offline</span>
+
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 rounded-full bg-teal-400/20 flex items-center justify-center text-teal-300 shrink-0">
+                    <CheckIcon className="w-3 h-3 stroke-[3]" />
+                  </div>
+                  <span>WhatsApp Invoices with UPI QR Code</span>
                 </div>
-                <div className="flex items-center gap-1.5">
-                  <CheckIcon className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Cloud Auto-Backup</span>
+
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 rounded-full bg-teal-400/20 flex items-center justify-center text-teal-300 shrink-0">
+                    <CheckIcon className="w-3 h-3 stroke-[3]" />
+                  </div>
+                  <span>Free Lifetime Plan Available</span>
                 </div>
-                <div className="flex items-center gap-1.5">
-                  <CheckIcon className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>No Credit Card Required</span>
+
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 rounded-full bg-teal-400/20 flex items-center justify-center text-teal-300 shrink-0">
+                    <CheckIcon className="w-3 h-3 stroke-[3]" />
+                  </div>
+                  <span>Automatic Encrypted Cloud Backup</span>
                 </div>
               </div>
+
             </div>
 
-            {/* Right Column: Interactive Live Toolkit Terminal (Span 6) */}
-            <div className="lg:col-span-6">
-              <div className="bg-[#0b2b26]/90 border border-teal-500/40 rounded-3xl p-6 sm:p-7 shadow-2xl backdrop-blur-md relative overflow-hidden">
+            {/* Right Column: Mobile App Showcase + Live Reconciled Floating Metrics (Span 5) */}
+            <div className="lg:col-span-5 relative flex justify-center items-center">
+              
+              <div className="relative w-full max-w-xs py-2 sm:py-3 flex justify-center">
                 
-                {/* Header with Interactive Tabs */}
-                <div className="flex items-center justify-between pb-4 border-b border-teal-800/50 mb-5">
-                  <div className="flex items-center gap-2">
-                    <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
-                    <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
-                    <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
-                    <span className="ml-2 text-xs font-bold text-teal-200 tracking-wider">DUKANHISAB LIVE ENGINE</span>
+                {/* Real Smartphone Mockup (Compact) */}
+                <div className="relative w-[145px] sm:w-[165px] rounded-3xl p-1.5 bg-gradient-to-b from-slate-700 via-slate-900 to-slate-950 border-2 sm:border-[3px] border-slate-700/80 shadow-xl overflow-hidden ring-1 ring-white/10">
+                  {/* Dynamic Island pill */}
+                  <div className="absolute top-2 left-1/2 -translate-x-1/2 w-10 h-2.5 bg-slate-950 rounded-full z-20 flex items-center justify-center">
+                    <div className="w-1 h-1 rounded-full bg-slate-800 mr-1"></div>
+                    <div className="w-4 h-0.5 rounded-full bg-slate-800"></div>
                   </div>
-                  <span className="text-[11px] font-semibold text-emerald-300 bg-emerald-950/80 border border-emerald-400/30 px-2.5 py-0.5 rounded-full">
-                    Active & Ready
-                  </span>
+
+                  {/* Screen Content */}
+                  <div className="relative rounded-[1.3rem] overflow-hidden bg-white shadow-inner aspect-[459/920]">
+                    <Image
+                      src="/images/dukanhisab-mobile-dashboard.png"
+                      alt="DukanHisab Shop Billing App Interface"
+                      width={488}
+                      height={980}
+                      className="w-full h-full object-cover block"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-white/5 pointer-events-none" />
+                  </div>
                 </div>
 
-                {/* Tab Switcher Buttons */}
-                <div className="grid grid-cols-3 gap-2 p-1 bg-black/30 rounded-xl mb-5 border border-teal-900/60">
-                  <button
-                    type="button"
-                    onClick={() => setActiveTab("billing")}
-                    className={`text-xs font-bold py-2 px-2 rounded-lg transition-all text-center ${
-                      activeTab === "billing"
-                        ? "bg-gradient-to-r from-teal-500 to-emerald-600 text-white shadow-md shadow-teal-950/60"
-                        : "text-slate-400 hover:text-white"
-                    }`}
-                  >
-                    🧾 Billing
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setActiveTab("khata")}
-                    className={`text-xs font-bold py-2 px-2 rounded-lg transition-all text-center ${
-                      activeTab === "khata"
-                        ? "bg-gradient-to-r from-teal-500 to-emerald-600 text-white shadow-md shadow-teal-950/60"
-                        : "text-slate-400 hover:text-white"
-                    }`}
-                  >
-                    👥 Udhar
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setActiveTab("inventory")}
-                    className={`text-xs font-bold py-2 px-2 rounded-lg transition-all text-center ${
-                      activeTab === "inventory"
-                        ? "bg-gradient-to-r from-teal-500 to-emerald-600 text-white shadow-md shadow-teal-950/60"
-                        : "text-slate-400 hover:text-white"
-                    }`}
-                  >
-                    📦 Stock
-                  </button>
+                {/* Floating Metric Card 1: Today's Counter Sales (Top Left) */}
+                <div className="absolute top-1 -left-2 sm:-left-5 bg-white/95 backdrop-blur-md rounded-xl p-2.5 shadow-lg border border-teal-100 text-slate-900 flex items-center gap-2 animate-bounce-subtle z-20">
+                  <div className="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-black shrink-0">
+                    ₹
+                  </div>
+                  <div>
+                    <span className="text-[9px] font-bold text-slate-500 uppercase tracking-tight block">Today's Sales</span>
+                    <span className="text-xs sm:text-sm font-black text-slate-900 block leading-tight">₹18,450.00</span>
+                    <span className="text-[9px] font-bold text-emerald-600 block">↑ 24% Growth</span>
+                  </div>
                 </div>
 
-                {/* Active Tab Showcase Box */}
-                <div className="space-y-4">
-                  <div className="inline-block text-[11px] font-bold text-amber-300 bg-amber-950/60 border border-amber-500/30 px-3 py-1 rounded-full">
-                    {current.badge}
+                {/* Floating Metric Card 2: 3-Second Counter Speed (Bottom Right) */}
+                <div className="absolute bottom-2 -right-2 sm:-right-4 bg-white/95 backdrop-blur-md rounded-xl p-2.5 shadow-lg border border-teal-100 text-slate-900 flex items-center gap-2 z-20">
+                  <div className="w-7 h-7 rounded-lg bg-teal-100 text-[#036272] flex items-center justify-center text-xs font-black shrink-0">
+                    ⚡
                   </div>
-
-                  <h3 className="text-lg sm:text-xl font-extrabold text-white">
-                    {current.headline}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                    {current.highlight}
-                  </p>
-
-                  {/* Two Key Live Metrics Cards */}
-                  <div className="grid grid-cols-2 gap-3 pt-2">
-                    <div className="bg-black/35 rounded-2xl p-4 border border-teal-800/40">
-                      <p className="text-[11px] text-teal-300/80 font-medium">{current.metric1.label}</p>
-                      <p className="text-2xl font-black text-white mt-1">{current.metric1.value}</p>
-                      <span className="text-[10px] text-emerald-400 font-semibold">{current.metric1.sub}</span>
-                    </div>
-
-                    <div className="bg-black/35 rounded-2xl p-4 border border-teal-800/40">
-                      <p className="text-[11px] text-teal-300/80 font-medium">{current.metric2.label}</p>
-                      <p className="text-2xl font-black text-white mt-1">{current.metric2.value}</p>
-                      <span className="text-[10px] text-emerald-400 font-semibold">{current.metric2.sub}</span>
-                    </div>
-                  </div>
-
-                  {/* Mini Bottom Footnote */}
-                  <div className="pt-3 border-t border-teal-900/60 flex items-center justify-between text-[11px] text-slate-400">
-                    <span className="flex items-center gap-1.5">
-                      <CloudSyncIcon className="w-3.5 h-3.5 text-teal-400" />
-                      <span>Syncs across Phone, Tablet & PC</span>
-                    </span>
-                    <Link
-                      href="/how-it-works"
-                      className="text-teal-300 hover:text-white font-bold flex items-center gap-1"
-                    >
-                      <span>How it works</span>
-                      <ArrowRightIcon className="w-3 h-3" />
-                    </Link>
+                  <div>
+                    <span className="text-[9px] font-bold text-slate-500 uppercase tracking-tight block">Billing Speed</span>
+                    <span className="text-xs sm:text-sm font-black text-slate-900 block leading-tight">3.2 Seconds</span>
+                    <span className="text-[9px] font-bold text-teal-700 block">Barcode Ready</span>
                   </div>
                 </div>
 
               </div>
+
             </div>
 
           </div>
 
-          {/* Bottom Banner Accent */}
-          <div className="mt-12 pt-8 border-t border-teal-800/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-            <p className="text-center sm:text-left">
-              🇮🇳 Crafted with pride to empower Indian retail and wholesale shopkeepers.
-            </p>
-            <div className="flex items-center gap-4">
-              <span className="text-teal-400 font-semibold">Need assistance?</span>
-              <Link href="/contact" className="text-white hover:text-teal-300 font-bold underline underline-offset-4">
-                Chat with our Team
-              </Link>
+          {/* Bottom Trust & Peace-of-Mind Strip */}
+          <div className="mt-8 pt-5 border-t border-teal-400/20 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
+              
+              <div className="p-1.5 sm:p-2">
+                <div className="w-7 h-7 rounded-full bg-teal-400/20 text-teal-300 flex items-center justify-center mx-auto mb-1">
+                  <ZapIcon className="w-3.5 h-3.5" />
+                </div>
+                <span className="text-xs font-bold text-white block">60-Sec Setup</span>
+                <span className="text-[10px] text-teal-200/80 block">Instant billing</span>
+              </div>
+
+              <div className="p-1.5 sm:p-2">
+                <div className="w-7 h-7 rounded-full bg-teal-400/20 text-teal-300 flex items-center justify-center mx-auto mb-1">
+                  <ShieldCheckIcon className="w-3.5 h-3.5" />
+                </div>
+                <span className="text-xs font-bold text-white block">100% Private</span>
+                <span className="text-[10px] text-teal-200/80 block">Encrypted data</span>
+              </div>
+
+              <div className="p-1.5 sm:p-2">
+                <div className="w-7 h-7 rounded-full bg-teal-400/20 text-teal-300 flex items-center justify-center mx-auto mb-1">
+                  <CloudSyncIcon className="w-3.5 h-3.5" />
+                </div>
+                <span className="text-xs font-bold text-white block">All-in-One Sync</span>
+                <span className="text-[10px] text-teal-200/80 block">Phone &amp; Laptop</span>
+              </div>
+
+              <div className="p-1.5 sm:p-2">
+                <div className="w-7 h-7 rounded-full bg-teal-400/20 text-teal-300 flex items-center justify-center mx-auto mb-1">
+                  <SparklesIcon className="w-3.5 h-3.5" />
+                </div>
+                <span className="text-xs font-bold text-white block">Free Forever Tier</span>
+                <span className="text-[10px] text-teal-200/80 block">No credit card</span>
+              </div>
+
             </div>
           </div>
 

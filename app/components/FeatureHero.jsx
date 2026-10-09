@@ -96,7 +96,7 @@ export default function FeatureHero() {
   ];
 
   return (
-    <section className="relative overflow-hidden w-full bg-gradient-to-b from-[#eaf6f2] via-[#f1fbf7] to-white border-b border-slate-200/90 pt-8 lg:pt-12 pb-16">
+    <section className="relative overflow-hidden w-full bg-gradient-to-b from-[#eaf6f2] via-[#f1fbf7] to-white border-b border-slate-200/90 pt-24 sm:pt-28 lg:pt-32 pb-16">
       
       {/* Background Soft Glow Accents */}
       <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-teal-400/10 rounded-full blur-3xl pointer-events-none" />

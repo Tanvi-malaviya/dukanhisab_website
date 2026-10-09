@@ -13,7 +13,7 @@ import {
 
 export default function BillingCtaSection() {
   return (
-    <section className="py-16 sm:py-20 bg-white">
+    <section className="py-10 sm:py-14 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Simple & Sober Premium Banner */}
@@ -51,7 +51,7 @@ export default function BillingCtaSection() {
                   <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center shrink-0">
                     <CheckIcon className="w-3.5 h-3.5" />
                   </div>
-                  <span>Instant GST & Non-GST billing in less than 30 seconds</span>
+                  <span>Instant retail &amp; wholesale billing in less than 30 seconds</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-sm text-teal-50">

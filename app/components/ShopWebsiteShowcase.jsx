@@ -50,7 +50,7 @@ export default function ShopWebsiteShowcase() {
   });
 
   return (
-    <section id="make-website" className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 via-teal-50/20 to-white border-b border-slate-200 relative overflow-hidden">
+    <section id="make-website" className="py-10 lg:py-14 bg-gradient-to-b from-slate-50 via-teal-50/20 to-white border-b border-slate-200 relative overflow-hidden">
       {/* Decorative Glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-teal-400/10 rounded-full blur-3xl pointer-events-none" />
 

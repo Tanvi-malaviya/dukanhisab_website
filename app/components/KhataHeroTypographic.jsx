@@ -8,7 +8,7 @@ export default function KhataHeroTypographic() {
   const [toggleActive, setToggleActive] = useState(true);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#e6f7f6] via-[#f2fbfa] to-white pt-2 pb-5 sm:pt-3 sm:pb-7 border-b border-teal-100/60">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#e6f7f6] via-[#f2fbfa] to-white pt-20 pb-5 sm:pt-24 sm:pb-7 border-b border-teal-100/60">
       
       {/* Subtle Brand Background Radial Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[380px] bg-gradient-to-tr from-teal-200/25 via-emerald-100/20 to-transparent rounded-full blur-3xl pointer-events-none" />

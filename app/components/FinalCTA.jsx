@@ -20,7 +20,7 @@ export default function FinalCTA() {
   const [activeTab, setActiveTab] = useState("all");
 
   return (
-    <section className="py-20 sm:py-28 lg:py-32 bg-[#090e17] text-white relative overflow-hidden border-t border-slate-800/80">
+    <section className="py-12 sm:py-10 sm:py-12 bg-[#090e17] text-white relative overflow-hidden border-t border-slate-800/80">
       {/* Background Decorative Mesh & Radial Lights */}
       <div className="absolute inset-0 bg-[radial-gradient(#14b8a6_1px,transparent_1px)] [background-size:28px_28px] opacity-10 pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-gradient-to-b from-teal-500/20 via-emerald-600/10 to-transparent rounded-full blur-3xl pointer-events-none" />

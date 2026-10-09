@@ -8,7 +8,7 @@ import SupplierSection from "../components/SupplierSection";
 import MoneyFlowSection from "../components/MoneyFlowSection";
 import ReturnsSection from "../components/ReturnsSection";
 import InvoiceShowcase from "../components/InvoiceShowcase";
-import FinalCTA from "../components/FinalCTA";
+import FeaturesCtaSection from "../components/FeaturesCtaSection";
 import Footer from "../components/Footer";
 import { PackageIcon, ArrowRightIcon } from "../components/Icons";
 
@@ -59,31 +59,12 @@ export default function FeaturesPage() {
           <InvoiceShowcase />
         </div>
 
-        {/* Next step teaser: Mobile + Web */}
-        <section className="py-16 bg-white border-y border-slate-200 text-center">
-          <div className="max-w-3xl mx-auto px-4">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-              Works seamlessly on phone and computer
-            </h2>
-            <p className="mt-2 text-sm sm:text-base text-slate-600">
-              See how the mobile app at your counter syncs in real-time with the web panel in your office.
-            </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/ecosystem"
-                className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all"
-              >
-                <span>Explore Mobile App & Web Panel</span>
-                <ArrowRightIcon className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        <FinalCTA />
+        {/* Distinctive Features Page Bento Launchpad CTA */}
+        <FeaturesCtaSection />
       </main>
 
       <Footer />
     </div>
   );
 }
+
